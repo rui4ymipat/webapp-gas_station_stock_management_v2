@@ -37,8 +37,8 @@
 
       <div class="login_wrapper">
         <div class="animate form login_form">
-          <section class="login_content">
-            <form action="login-pro.php">
+          <section class="login_content" >
+            <form action="login-pro.php" method="POST">
               <h1>Login </h1>
               <?php 
               if(!empty($_SESSION['error']))
@@ -48,10 +48,11 @@
                 session_destroy();
               } ?>
               <div>
-                <input type="text" class="form-control" placeholder="Username" method="POST" name="id" >
+
+                <input type="text" class="form-control" placeholder="Username"  name="id" >
               </div>
               <div>
-                <input type="password" method="POST" class="form-control" placeholder="Password"  name="password">
+                <input type="password"  class="form-control" placeholder="Password"  name="password">
               </div>
               <div>
                 <button type="submit" class="btn btn-success">Login</button>
