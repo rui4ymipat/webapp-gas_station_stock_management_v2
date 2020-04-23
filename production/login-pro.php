@@ -1,0 +1,25 @@
+<?php
+
+    require_once "connect.php";
+    session_start();
+    $id = $_POST['id'];
+    $pass = $_POST['password'];
+    $userQuery="SELECT * from user where username = '$id'";
+    $result=mysqli_query($connect, $userQuery);
+    $row=mysqli_fetch_assoc($result);
+    if(!$result) {
+        die ("Could not successfully run the query $userQuery".mysqli_error($connect));
+    }
+    if($row['username'] == $id && $row['password'] == $pass)
+    {
+        $_SESSION['user_level'] = $row['level']; 
+        $_SESSION['user_name'] = $row['Fname'];
+        header("Location:index.php");
+    }
+    else
+    {
+        $_SESSION['error'] = "Username หรือ Password ผิด";
+        header("Location:login.php");       
+    }
+
+?>
