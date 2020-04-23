@@ -4,8 +4,10 @@
 <head>
   <?php 
   session_start();
+  
    if(empty($_SESSION['user_level']))
    {
+    $_SESSION['error'] = "Username หรือ Password ผิด";
      header("Location:login.php");
    }
 
