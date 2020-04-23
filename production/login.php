@@ -46,7 +46,8 @@
                 echo $_SESSION['error']."<br>";
                 session_unset();
                 session_destroy();
-              } ?>
+              } 
+              ?>
               <div>
                 <input type="text" class="form-control" placeholder="Username"  name="id" >
               </div>

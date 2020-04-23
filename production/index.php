@@ -160,7 +160,9 @@
               <!-- /footer content -->
             </div>
           </div>
-
+                <?php
+                  echo $_SESSION['id'],"---",$_SESSION['pass'];
+                ?>
           <!-- jQuery -->
           <script src="../vendors/jquery/dist/jquery.min.js"></script>
           <!-- Bootstrap -->
