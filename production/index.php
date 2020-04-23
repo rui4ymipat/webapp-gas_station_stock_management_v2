@@ -2,6 +2,14 @@
 <html lang="en">
 
 <head>
+  <?php 
+
+   if(empty($_SESSION['level']))
+   {
+     header("Location:login.php");
+   }
+
+  ?>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <!-- Meta, title, CSS, favicons, etc. -->
   <meta charset="utf-8">
@@ -160,9 +168,7 @@
               <!-- /footer content -->
             </div>
           </div>
-                <?php
-                  echo $_SESSION['id'],"---",$_SESSION['pass'];
-                ?>
+
           <!-- jQuery -->
           <script src="../vendors/jquery/dist/jquery.min.js"></script>
           <!-- Bootstrap -->
