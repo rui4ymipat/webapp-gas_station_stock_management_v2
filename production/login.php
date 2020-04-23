@@ -44,7 +44,7 @@
               if(!empty($_SESSION['error']))
               {
                 ?>
-                <h4 style="color: red"><?php echo $_SESSION['error'] ?></h4>
+                <h6 style="color: red"><?php echo $_SESSION['error'] ?></h6>
                 <br>
                 <?php
                 session_unset();
