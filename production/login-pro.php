@@ -17,8 +17,7 @@
     }
     if($row['username'] == $id && $row['password'] == $pass)
     {
-        $_SESSION['id'] = $id;
-        $_SESSION['pass'] = $pass;
+
         $_SESSION['user_level'] = $row['level']; 
         $_SESSION['user_name'] = $row['Fname'];
         header("Location:index.php");

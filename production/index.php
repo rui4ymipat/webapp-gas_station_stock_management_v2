@@ -3,8 +3,8 @@
 
 <head>
   <?php 
-
-   if(empty($_SESSION['level']))
+  session_start();
+   if(empty($_SESSION['user_level']))
    {
      header("Location:login.php");
    }
