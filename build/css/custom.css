@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url('http://www.natui.com.au/media/fonts/sukhumvit/');
+
 @font-face {
   font-family: 'Glyphicons Halflings';
   src: url("https://netdna.bootstrapcdn.com/bootstrap/3.0.0/fonts/glyphicons-halflings-regular.eot");
@@ -9,7 +9,7 @@
   position: relative;
   top: 1px;
   display: inline-block;
-  font-family: 'Sukhumvit Set';
+  font-family: 'Glyphicons Halflings';
   font-style: normal;
   font-weight: normal;
   line-height: 1;
