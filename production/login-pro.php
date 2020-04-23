@@ -10,6 +10,10 @@
     if(!$result) {
         die ("Could not successfully run the query $userQuery".mysqli_error($connect));
     }
+    if(empty($id) || empty($pass))
+    {
+        header("Location:login.php");       
+    }
     if($row['username'] == $id && $row['password'] == $pass)
     {
         $_SESSION['user_level'] = $row['level']; 
