@@ -75,7 +75,7 @@
                 <li><a href="#"><i class="fa fa-history"></i> ประวัติการสั่งซื้อ</a></li>
                 <li><a href="#"><i class="fa fa-truck"></i> ข้อมูลรถน้ำมัน</a></li>
                 <li><a href="#"><i class="fa fa-cube"></i> สต็อกน้ำมัน</a></li>
-                <li><a href="login.html"><i class="fa fa-sign-out"> </i>Log Out</a></li>
+                <li><a href="logout.php"><i class="fa fa-sign-out"> </i>Log Out</a></li>
               </ul>
             </div>
 
