@@ -32,6 +32,7 @@
   
   <body class="login">
     <div>
+      <h1 style="color: red"></h1>
       <a class="hiddenanchor" id="signup"></a>
       <a class="hiddenanchor" id="signin"></a>
 
@@ -43,7 +44,7 @@
               <?php 
               if(!empty($_SESSION['error']))
               {
-                echo $_SESSION['error']."<br>";
+                echo "<h4 style="color: red;">",$_SESSION['error'],"</h4><br>";
                 session_unset();
                 session_destroy();
               } 
