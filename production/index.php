@@ -47,7 +47,7 @@
       <div class="col-md-3 left_col">
         <div class="left_col scroll-view">
           <div class="navbar nav_title" style="border: 0;">
-            <a href="index.html" class="site_title"><i class="fa fa-book"></i> <span>หจก.บ้านท่าบริการ</span></a>
+            <a href="index.php" class="site_title"><i class="fa fa-book"></i> <span>หจก.บ้านท่าบริการ</span></a>
           </div>
 
           <div class="clearfix"></div>
@@ -76,9 +76,9 @@
             <div class="menu_section">
               <h3>เมนู</h3>
               <ul class="nav side-menu">
-                <li><a href="index.html"><i class="fa fa-home"></i> หน้าแรก</a></li>
+                <li><a href="index.php"><i class="fa fa-home"></i> หน้าแรก</a></li>
                 <?php if($_SESSION['user_level'] == 2) {?>
-                <li><a href="#"><i class="fa fa-money"></i> ราคาน้ำมัน</a></li>
+                <li><a href=""><i class="fa fa-money"></i> ราคาน้ำมัน</a></li>
                 <li><a href="#"><i class="fa fa-bar-chart"></i> ต้นทุน</a></li>
                 <li><a href="#"><i class="fa fa-history"></i> ประวัติการสั่งซื้อ</a></li>
                 <li><a href="#"><i class="fa fa-truck"></i> ข้อมูลรถน้ำมัน</a></li>
