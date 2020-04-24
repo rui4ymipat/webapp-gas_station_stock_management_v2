@@ -170,7 +170,7 @@
 
               <?php if($_SESSION['user_level'] == 2) {?>
 
-              <div id="barchart_material" style="width: 900px; height: 500px;"></div>
+              
 
               <?php } 
               else { ?>
