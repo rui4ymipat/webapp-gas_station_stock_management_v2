@@ -59,7 +59,12 @@
             </div>
             <div class="profile_info">
               <span>ยินดีต้อนรับ</span>
-              <h2>aaaaaaaaaaaaaaaaaaaa</h2>
+              <h2>
+              <?php 
+              session_start();
+              echo $_SESSION['user_name'];
+              ?>
+              </h2>
             </div>
           </div>
           <!-- /menu profile quick info -->
