@@ -3,7 +3,7 @@
     require_once "connect.php";
     session_start();
     session_unset();
-    $id = $_POST['id'];
+    $id = str_replace("\'"," ",$_POST['id'] );
     $pass = $_POST['password'];
     $userQuery="SELECT * from user where username = '$id'";
     $result=mysqli_query($connect, $userQuery);
