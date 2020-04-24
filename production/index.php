@@ -72,12 +72,19 @@
               <h3>เมนู</h3>
               <ul class="nav side-menu">
                 <li><a href="index.html"><i class="fa fa-home"></i> หน้าแรก</a></li>
+                <?php if($_SESSION['user_level'] == 2) {?>
                 <li><a href="#"><i class="fa fa-money"></i> ราคาน้ำมัน</a></li>
                 <li><a href="#"><i class="fa fa-bar-chart"></i> ต้นทุน</a></li>
                 <li><a href="#"><i class="fa fa-history"></i> ประวัติการสั่งซื้อ</a></li>
                 <li><a href="#"><i class="fa fa-truck"></i> ข้อมูลรถน้ำมัน</a></li>
                 <li><a href="#"><i class="fa fa-cube"></i> สต็อกน้ำมัน</a></li>
                 <li><a href="logout.php"><i class="fa fa-sign-out"> </i>Log Out</a></li>
+                <?php } 
+                else { ?>
+                <li><a href="#"><i class="fa fa-truck"></i> ข้อมูลรถน้ำมัน</a></li>
+                <li><a href="#"><i class="fa fa-cube"></i> สต็อกน้ำมัน</a></li>
+                <li><a href="logout.php"><i class="fa fa-sign-out"> </i>Log Out</a></li>
+                <?php } ?>
               </ul>
             </div>
 
@@ -156,8 +163,14 @@
                 }
               </script>
 
+              <?php if($_SESSION['user_level'] == 2) {?>
+
               <div id="barchart_material" style="width: 900px; height: 500px;"></div>
 
+              <?php } 
+              else { ?>
+
+             <?php } ?>
 
 
               <!-- /page content -->
