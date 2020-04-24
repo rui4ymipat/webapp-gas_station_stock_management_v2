@@ -3,13 +3,13 @@
     require_once "connect.php";
     session_start();
     session_unset();
-    $id = str_replace("\'"," ",$_POST['id'] );
+    $id = $_POST['id'];
     $pass = $_POST['password'];
     $userQuery="SELECT * from user where username = '$id'";
     $result=mysqli_query($connect, $userQuery);
     $row=mysqli_fetch_assoc($result);
     if(!$result) {
-        die ("Could not successfully run the query $userQuery".mysqli_error($connect));
+        header("Location:login.php");  
     }
     if(empty($id) || empty($pass))
     {
