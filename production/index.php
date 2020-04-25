@@ -6,12 +6,11 @@
     table.showgas tr.name td{
       padding-right: 100px;
       padding-top: 7px;
-      font-size: 90%;
+      font-size: 130%;
       
     }
     table.showgas tr.price td{
       padding-right: 100px;
-      padding-top: 7px;
       font-size: 100%;
       color: #73879C;
     }
