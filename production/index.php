@@ -5,8 +5,8 @@
   <style>
     table.showgas tr.name td{
       padding-right: 100px;
-      padding-top: 10px;
-      font-size: 70%;
+      padding-top: 7px;
+      font-size: 80%;
       
     }
     table.showgas tr.price td{
