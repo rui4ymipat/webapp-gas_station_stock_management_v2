@@ -200,7 +200,7 @@
                   ]);
 
                   var options = {
-                    bars: 'horizontal' // Required for Material Bar Charts.
+                    bars: 'vertical' // Required for Material Bar Charts.
                   };
 
                   var chart = new google.charts.Bar(document.getElementById('barchart_material'));
@@ -254,7 +254,7 @@
                   <h1 class="todayprice">ยอดขายประจำเดือน เมษายน</h1>
                 </div>
                 <br>
-                <div id="barchart_material" style="width:800 px; height: 1000px;"></div>
+                <div id="barchart_material" style="width: 1300px; height: 600px;"></div>
 
 
               <?php } else { ?>
