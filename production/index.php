@@ -170,7 +170,22 @@
 
               <?php if($_SESSION['user_level'] == 2) {?>
 
-              <div id="barchart_material" style="width: 900px; height: 500px;"></div>
+              <!-- <div id="barchart_material" style="width: 900px; height: 500px;"></div> -->
+             <div style="margin-left: 10%">
+             <h1>ราคาน้ำมันวันนี้</h1>
+              <table>
+                <tr>
+                  <td><h6>Gasohol 91</h6></td>
+                  <td><h6>Gasohol 95</h6></td>
+                  <td><h6>Diesel</h6></td>
+                </tr>
+                <tr>
+                  <td><h2>฿ 16.68</h2></td>
+                  <td><h2>฿ 16.95</h2></td>
+                  <td><h2>฿ 14.72</h2></td>
+                </tr>
+             </div>
+              </table>
 
               <?php } 
               else { ?>
