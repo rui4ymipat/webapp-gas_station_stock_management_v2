@@ -5,13 +5,13 @@
   <style>
     table.showgas tr.name td{
       padding-right: 100px;
-      padding-top: 30px;
+      padding-top: 10px;
       font-size: 70%;
       
     }
     table.showgas tr.price td{
       padding-right: 100px;
-      padding-top: 30px;
+      padding-top: 7px;
       font-size: 100%;
       color: #73879C;
     }
