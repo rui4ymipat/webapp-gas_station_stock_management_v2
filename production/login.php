@@ -8,7 +8,7 @@
     .menu_section,
     .profile_info,
     .site_title ,
-    {
+    h1{
       font-family: 'Prompt', sans-serif;
     }
   </style>
