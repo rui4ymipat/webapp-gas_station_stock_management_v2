@@ -226,10 +226,10 @@
                       <td>ส่วนลดจากบริษัท</td>
                     </tr>
                     <tr class="price">
-                      <td>32,000 ลิตร</td>
-                      <td>21,000 ลิตร</td>
-                      <td>11,000 ลิตร</td>
-                      <td>23,100 บาท</td>
+                      <td>32,000 <div style="font-size: 70%;">ลิตร</div></td>
+                      <td>21,000 <div style="font-size: 70%;">ลิตร</div></td>
+                      <td>11,000 <div style="font-size: 70%;">ลิตร</div></td>
+                      <td>23,100 <div style="font-size: 70%;">บาท</div></td>
                     </tr>
                   </table>
                 </div>
