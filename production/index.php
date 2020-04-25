@@ -258,7 +258,7 @@
                   <h1 class="todayprice">ยอดขายประจำเดือน เมษายน</h1>
                 </div>
                 <br>
-                <div id="barchart_material" style="width: 1400px; height: 600px;"></div>
+                <div id="barchart_material" style="width: 1450px; height: 600px;"></div>
 
 
               <?php } else { ?>
