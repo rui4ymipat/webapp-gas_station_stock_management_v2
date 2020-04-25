@@ -2,6 +2,12 @@
 <html lang="en">
 
 <head>
+  <style>
+    table.showgas tr td{
+      margin-right: 100px;
+      margin-top: 30px;
+    }
+  </style>
   <?php 
   session_start();
   
@@ -171,9 +177,9 @@
               <?php if($_SESSION['user_level'] == 2) {?>
 
               <!-- <div id="barchart_material" style="width: 900px; height: 500px;"></div> -->
-             <div style="margin-left: 10%">
-             <h1>ราคาน้ำมันวันนี้</h1>
-              <table>
+             <div style="margin-left: 30px">
+             <h1><b>ราคาน้ำมันวันนี้</b></h1>
+              <table class="showgas">
                 <tr>
                   <td><h6>Gasohol 91</h6></td>
                   <td><h6>Gasohol 95</h6></td>
