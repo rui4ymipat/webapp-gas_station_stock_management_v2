@@ -8,7 +8,7 @@
     .menu_section,
     .profile_info,
     .site_title ,
-    .login_wrapper{
+    {
       font-family: 'Prompt', sans-serif;
     }
   </style>
