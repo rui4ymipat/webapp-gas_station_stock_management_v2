@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;1,100;1,200;1,300&display=swap');
+
+    .setfont1,
+    .menu_section,
+    .profile_info,
+    .site_title ,
+    .login{
+      font-family: 'Prompt', sans-serif;
+    }
+  </style>
   <?php session_start(); ?>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Meta, title, CSS, favicons, etc. -->
