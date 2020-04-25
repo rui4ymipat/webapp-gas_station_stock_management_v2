@@ -200,7 +200,7 @@
                   ]);
 
                   var options = {
-                    bars: 'vertical' // Required for Material Bar Charts.
+                    bars: 'horizontal' // Required for Material Bar Charts.
                   };
 
                   var chart = new google.charts.Bar(document.getElementById('barchart_material'));
