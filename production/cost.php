@@ -2,14 +2,23 @@
 <html lang="en">
 
 <head>
-  <?php 
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;1,100;1,200;1,300&display=swap');
+
+    .setfont1,
+    .menu_section,
+    .profile_info,
+    .site_title {
+      font-family: 'Prompt', sans-serif;
+    }
+  </style>
+  <?php
   session_start();
-  
-   if(empty($_SESSION['user_level']))
-   {
+
+  if (empty($_SESSION['user_level'])) {
     $_SESSION['error'] = "Username หรือ Password ผิด";
-     header("Location:login.php");
-   }
+    header("Location:login.php");
+  }
 
   ?>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -60,10 +69,10 @@
             <div class="profile_info">
               <span>ยินดีต้อนรับ</span>
               <h2>
-              <?php 
-              session_start();
-              echo $_SESSION['user_name'];
-              ?>
+                <?php
+                session_start();
+                echo $_SESSION['user_name'];
+                ?>
               </h2>
             </div>
           </div>
@@ -77,18 +86,17 @@
               <h3>เมนู</h3>
               <ul class="nav side-menu">
                 <li><a href="index.php"><i class="fa fa-home"></i> หน้าแรก</a></li>
-                <?php if($_SESSION['user_level'] == 2) {?>
-                <li><a href="fuelprice.php"><i class="fa fa-money"></i> ราคาน้ำมัน</a></li>
-                <li><a href="cost.php"><i class="fa fa-bar-chart"></i> ต้นทุน</a></li>
-                <li><a href="history.php"><i class="fa fa-history"></i> ประวัติการสั่งซื้อ</a></li>
-                <li><a href="informationGasCar.php"><i class="fa fa-truck"></i> ข้อมูลรถน้ำมัน</a></li>
-                <li><a href="stockFuel.php"><i class="fa fa-cube"></i> สต็อกน้ำมัน</a></li>
-                <li><a href="logout.php"><i class="fa fa-sign-out"> </i>Log Out</a></li>
-                <?php } 
-                else { ?>
-                <li><a href="informationGasCar.php"><i class="fa fa-truck"></i> ข้อมูลรถน้ำมัน</a></li>
-                <li><a href="stockFuel.php"><i class="fa fa-cube"></i> สต็อกน้ำมัน</a></li>
-                <li><a href="logout.php"><i class="fa fa-sign-out"> </i>Log Out</a></li>
+                <?php if ($_SESSION['user_level'] == 2) { ?>
+                  <li><a href="fuelprice.php"><i class="fa fa-money"></i> ราคาน้ำมัน</a></li>
+                  <li><a href="cost.php"><i class="fa fa-bar-chart"></i> ต้นทุน</a></li>
+                  <li><a href="history.php"><i class="fa fa-history"></i> ประวัติการสั่งซื้อ</a></li>
+                  <li><a href="informationGasCar.php"><i class="fa fa-truck"></i> ข้อมูลรถน้ำมัน</a></li>
+                  <li><a href="stockFuel.php"><i class="fa fa-cube"></i> สต็อกน้ำมัน</a></li>
+                  <li><a href="logout.php"><i class="fa fa-sign-out"> </i>Log Out</a></li>
+                <?php } else { ?>
+                  <li><a href="informationGasCar.php"><i class="fa fa-truck"></i> ข้อมูลรถน้ำมัน</a></li>
+                  <li><a href="stockFuel.php"><i class="fa fa-cube"></i> สต็อกน้ำมัน</a></li>
+                  <li><a href="logout.php"><i class="fa fa-sign-out"> </i>Log Out</a></li>
                 <?php } ?>
               </ul>
             </div>
@@ -96,7 +104,7 @@
 
           </div>
           <!-- /sidebar menu -->
-          
+
 
         </div>
       </div>
@@ -130,7 +138,9 @@
 
               <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
               <script type="text/javascript">
-                google.charts.load('current', { 'packages': ['bar'] });
+                google.charts.load('current', {
+                  'packages': ['bar']
+                });
                 google.charts.setOnLoadCallback(drawChart);
 
                 function drawChart() {
@@ -168,14 +178,13 @@
                 }
               </script>
 
-              <?php if($_SESSION['user_level'] == 2) {?>
+              <?php if ($_SESSION['user_level'] == 2) { ?>
 
-              
 
-              <?php } 
-              else { ?>
 
-             <?php } ?>
+              <?php } else { ?>
+
+              <?php } ?>
 
 
               <!-- /page content -->

@@ -17,7 +17,10 @@
       font-weight: 900;
     }
 
-    .setfont1,.menu_section {
+    .setfont1,
+    .menu_section,
+    .profile_info,
+    .site_title {
       font-family: 'Prompt', sans-serif;
     }
 
