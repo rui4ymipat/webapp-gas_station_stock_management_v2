@@ -215,9 +215,10 @@
                     </tr>
                   </table>
                 </div>
+                <br>
                 <div class="setfont1">
                   <h1 class="todayprice">ประวัติการสั่งซื้อ</h1>
-                  <table>
+                  <table class="showgas">
                     <tr class="name">
                       <td>บัญชี 1</td>
                       <td>บัญชี 2</td>
@@ -232,6 +233,7 @@
                     </tr>
                   </table>
                 </div>
+                <br>
                 <div id="barchart_material" style="width: 1200px; height: 700px;"></div>
 
 
