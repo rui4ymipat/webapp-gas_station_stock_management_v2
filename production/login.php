@@ -48,8 +48,8 @@
 
       <div class="login_wrapper">
         <div class="animate form login_form">
-          <section class="login_content" >
-            <form action="login-pro.php" method="POST">
+            <form action="login-pro.php" method="POST" >
+              <div class="setfont1">
               <h1>หจก.บ้านท่าบริการ </h1>
               <?php 
               if(!empty($_SESSION['error']))
@@ -72,9 +72,11 @@
                 <button type="submit" class="btn btn-success">Login</button>
               </div>
 
+              </div>
+
 
             </form>
-          </section>
+
         </div>
   </body>
 </html>
