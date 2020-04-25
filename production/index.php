@@ -9,16 +9,19 @@
       padding-right: 100px;
       padding-top: 7px;
       font-size: 130%;
-
     }
 h1.todayprice{
   font-weight: 900;
+}
+.setfont1{
   font-family: 'Prompt', sans-serif;
+}
 }
     table.showgas tr.price td {
       padding-right: 100px;
       font-size: 100%;
       color: #73879C;
+      font-family: 'Prompt', sans-serif;
     }
   </style>
   <?php
@@ -190,7 +193,7 @@ h1.todayprice{
               <?php if ($_SESSION['user_level'] == 2) { ?>
 
                 <!-- <div id="barchart_material" style="width: 900px; height: 500px;"></div> -->
-                <div>
+                <div class="setfont1">
                   <h1 class="todayprice">ราคาน้ำมันวันนี้</h1>
                   <table class="showgas">
                     <tr class="name">
