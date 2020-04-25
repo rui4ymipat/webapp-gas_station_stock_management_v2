@@ -199,7 +199,7 @@
 
               <?php if ($_SESSION['user_level'] == 2) { ?>
 
-                <!-- <div id="barchart_material" style="width: 900px; height: 500px;"></div> -->
+
                 <div class="setfont1">
                   <h1 class="todayprice">ราคาน้ำมันวันนี้</h1>
                   <table class="showgas">
@@ -213,8 +213,27 @@
                       <td>฿ 16.95</td>
                       <td>฿ 14.72</td>
                     </tr>
+                  </table>
                 </div>
-                </table>
+                <div class="setfont1">
+                  <h1 class="todayprice">ประวัติการสั่งซื้อ</h1>
+                  <table>
+                    <tr>
+                      <td>บัญชี 1</td>
+                      <td>บัญชี 2</td>
+                      <td>บัญชี 3</td>
+                      <td>ส่วนลดจากบริษัท</td>
+                    </tr>
+                    <tr>
+                      <td>32,000 ลิตร</td>
+                      <td>21,000 ลิตร</td>
+                      <td>11,000 ลิตร</td>
+                      <td>฿ 23,100</td>
+                    </tr>
+                  </table>
+                </div>
+                <div id="barchart_material" style="width: 900px; height: 500px;"></div>
+
 
               <?php } else { ?>
 
