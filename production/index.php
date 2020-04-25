@@ -15,10 +15,9 @@
 
     h1.todayprice {
       font-weight: 900;
-
     }
 
-    .setfont1 {
+    body{
       font-family: 'Prompt', sans-serif;
     }
 
