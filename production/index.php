@@ -4,7 +4,7 @@
 <head>
 
   <style>
-
+    @import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;1,100;1,200;1,300&display=swap');
 
     table.showgas tr.name td {
       padding-right: 100px;
@@ -221,9 +221,12 @@
                       <td>Diesel</td>
                     </tr>
                     <tr class="price">
-                      <td>฿ 16.68</td>
-                      <td>฿ 16.95</td>
-                      <td>฿ 14.72</td>
+                      <td>16.68<div style="font-size: 60%;">บาท/ลิตร</div>
+                      </td>
+                      <td>16.95<div style="font-size: 60%;">บาท/ลิตร</div>
+                      </td>
+                      <td>14.72<div style="font-size: 60%;">บาท/ลิตร</div>
+                      </td>
                     </tr>
                   </table>
                 </div>
