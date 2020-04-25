@@ -10,11 +10,12 @@
       padding-right: 100px;
       padding-top: 7px;
       font-size: 130%;
-
+      
     }
 
     h1.todayprice {
       font-weight: 900;
+      color: #2B3E54;
     }
 
     .setfont1,
