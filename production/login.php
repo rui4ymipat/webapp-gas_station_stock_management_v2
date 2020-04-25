@@ -7,7 +7,7 @@
     .setfont1,
     .menu_section,
     .profile_info,
-    .site_title,.login_content form h1 {
+    .site_title,.login_content form h1,.login_content form h6 {
       font-family: 'Prompt', sans-serif;
     }
   </style>
