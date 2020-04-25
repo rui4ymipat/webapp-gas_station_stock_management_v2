@@ -186,10 +186,6 @@
                   ]);
 
                   var options = {
-                    chart: {
-                      title: 'ยอดขาย',
-                      subtitle: 'ประจำเดือน เมษายน',
-                    },
                     bars: 'vertical' // Required for Material Bar Charts.
                   };
 
@@ -236,6 +232,7 @@
                   </table>
                 </div>
                 <br>
+                <div class="setfont1"><h1 class="todayprice">ยอดขายประจำเดือน เมษายน</h1></div>
                 <div id="barchart_material" style="width: 1200px; height: 700px;"></div>
 
 
