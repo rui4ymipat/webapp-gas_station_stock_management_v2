@@ -12,8 +12,8 @@
     table.showgas tr.price td{
       margin-right: 100px;
       margin-top: 30px;
-      font-size: 170%;
-
+      font-size: 100%;
+      color: #73879C;
     }
   </style>
   <?php 
