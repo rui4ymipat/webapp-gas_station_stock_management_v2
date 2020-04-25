@@ -2,32 +2,28 @@
 <html lang="en">
 
 <head>
+
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&display=swap');
-    table.showgas tr.name td{
+    table.showgas tr.name td {
       padding-right: 100px;
       padding-top: 7px;
       font-size: 130%;
-      
+
     }
-    body{
-      font-family: 'Prompt', sans-serif;
-    }
-    table.showgas tr.price td{
+
+    table.showgas tr.price td {
       padding-right: 100px;
       font-size: 100%;
       color: #73879C;
-      
     }
   </style>
-  <?php 
+  <?php
   session_start();
-  
-   if(empty($_SESSION['user_level']))
-   {
+
+  if (empty($_SESSION['user_level'])) {
     $_SESSION['error'] = "Username หรือ Password ผิด";
-     header("Location:login.php");
-   }
+    header("Location:login.php");
+  }
 
   ?>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -78,10 +74,10 @@
             <div class="profile_info">
               <span>ยินดีต้อนรับ</span>
               <h2>
-              <?php 
-              session_start();
-              echo $_SESSION['user_name'];
-              ?>
+                <?php
+                session_start();
+                echo $_SESSION['user_name'];
+                ?>
               </h2>
             </div>
           </div>
@@ -95,18 +91,17 @@
               <h3>เมนู</h3>
               <ul class="nav side-menu">
                 <li><a href="index.php"><i class="fa fa-home"></i> หน้าแรก</a></li>
-                <?php if($_SESSION['user_level'] == 2) {?>
-                <li><a href="fuelprice.php"><i class="fa fa-money"></i> ราคาน้ำมัน</a></li>
-                <li><a href="cost.php"><i class="fa fa-bar-chart"></i> ต้นทุน</a></li>
-                <li><a href="history.php"><i class="fa fa-history"></i> ประวัติการสั่งซื้อ</a></li>
-                <li><a href="informationGasCar.php"><i class="fa fa-truck"></i> ข้อมูลรถน้ำมัน</a></li>
-                <li><a href="stockFuel.php"><i class="fa fa-cube"></i> สต็อกน้ำมัน</a></li>
-                <li><a href="logout.php"><i class="fa fa-sign-out"> </i>Log Out</a></li>
-                <?php } 
-                else { ?>
-                <li><a href="informationGasCar.php"><i class="fa fa-truck"></i> ข้อมูลรถน้ำมัน</a></li>
-                <li><a href="stockFuel.php"><i class="fa fa-cube"></i> สต็อกน้ำมัน</a></li>
-                <li><a href="logout.php"><i class="fa fa-sign-out"> </i>Log Out</a></li>
+                <?php if ($_SESSION['user_level'] == 2) { ?>
+                  <li><a href="fuelprice.php"><i class="fa fa-money"></i> ราคาน้ำมัน</a></li>
+                  <li><a href="cost.php"><i class="fa fa-bar-chart"></i> ต้นทุน</a></li>
+                  <li><a href="history.php"><i class="fa fa-history"></i> ประวัติการสั่งซื้อ</a></li>
+                  <li><a href="informationGasCar.php"><i class="fa fa-truck"></i> ข้อมูลรถน้ำมัน</a></li>
+                  <li><a href="stockFuel.php"><i class="fa fa-cube"></i> สต็อกน้ำมัน</a></li>
+                  <li><a href="logout.php"><i class="fa fa-sign-out"> </i>Log Out</a></li>
+                <?php } else { ?>
+                  <li><a href="informationGasCar.php"><i class="fa fa-truck"></i> ข้อมูลรถน้ำมัน</a></li>
+                  <li><a href="stockFuel.php"><i class="fa fa-cube"></i> สต็อกน้ำมัน</a></li>
+                  <li><a href="logout.php"><i class="fa fa-sign-out"> </i>Log Out</a></li>
                 <?php } ?>
               </ul>
             </div>
@@ -114,7 +109,7 @@
 
           </div>
           <!-- /sidebar menu -->
-          
+
 
         </div>
       </div>
@@ -148,7 +143,9 @@
 
               <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
               <script type="text/javascript">
-                google.charts.load('current', { 'packages': ['bar'] });
+                google.charts.load('current', {
+                  'packages': ['bar']
+                });
                 google.charts.setOnLoadCallback(drawChart);
 
                 function drawChart() {
@@ -186,29 +183,28 @@
                 }
               </script>
 
-              <?php if($_SESSION['user_level'] == 2) {?>
+              <?php if ($_SESSION['user_level'] == 2) { ?>
 
-              <!-- <div id="barchart_material" style="width: 900px; height: 500px;"></div> -->
-             <div >
-             <h1 style="font-weight: 900;">ราคาน้ำมันวันนี้</h1>
-              <table class="showgas">
-                <tr class="name">
-                  <td>Gasohol 91</td>
-                  <td>Gasohol 95</td>
-                  <td>Diesel</td>
-                </tr>
-                <tr class="price">
-                  <td>฿ 16.68</td>
-                  <td>฿ 16.95</td>
-                  <td>฿ 14.72</td>
-                </tr>
-             </div>
-              </table>
+                <!-- <div id="barchart_material" style="width: 900px; height: 500px;"></div> -->
+                <div>
+                  <h1 style="font-weight: 900;">ราคาน้ำมันวันนี้</h1>
+                  <table class="showgas">
+                    <tr class="name">
+                      <td>Gasohol 91</td>
+                      <td>Gasohol 95</td>
+                      <td>Diesel</td>
+                    </tr>
+                    <tr class="price">
+                      <td>฿ 16.68</td>
+                      <td>฿ 16.95</td>
+                      <td>฿ 14.72</td>
+                    </tr>
+                </div>
+                </table>
 
-              <?php } 
-              else { ?>
+              <?php } else { ?>
 
-             <?php } ?>
+              <?php } ?>
 
 
               <!-- /page content -->
