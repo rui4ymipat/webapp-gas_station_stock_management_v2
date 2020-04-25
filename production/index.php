@@ -3,15 +3,17 @@
 
 <head>
   <style>
-    table.showgas tr td.name{
+    table.showgas tr.name td{
       margin-right: 100px;
       margin-top: 30px;
       font-size: 70%;
+      
     }
-    table.showgas tr td.price{
+    table.showgas tr.price td{
       margin-right: 100px;
       margin-top: 30px;
       font-size: 170%;
+
     }
   </style>
   <?php 
@@ -184,7 +186,7 @@
 
               <!-- <div id="barchart_material" style="width: 900px; height: 500px;"></div> -->
              <div >
-             <h1><b>ราคาน้ำมันวันนี้</b></h1>
+             <h1>ราคาน้ำมันวันนี้</h1>
               <table class="showgas">
                 <tr class="name">
                   <td>Gasohol 91</td>
