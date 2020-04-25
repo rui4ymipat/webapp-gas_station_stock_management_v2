@@ -186,7 +186,7 @@
 
               <!-- <div id="barchart_material" style="width: 900px; height: 500px;"></div> -->
              <div >
-             <h1>ราคาน้ำมันวันนี้</h1>
+             <h1 style="font-weight: 900;">ราคาน้ำมันวันนี้</h1>
               <table class="showgas">
                 <tr class="name">
                   <td>Gasohol 91</td>
