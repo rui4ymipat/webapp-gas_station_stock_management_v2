@@ -2,15 +2,22 @@
 <html lang="en">
 
 <head>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;1,100;1,200;1,300&display=swap');
+
+
+    @media only screen and (max-width: 480px) {
+      .site-title {
+        font-size: 25px;
+      }
+    }
 
     table.showgas tr.name td {
       padding-right: 100px;
       padding-top: 7px;
       font-size: 100%;
-      
+
     }
 
     h1.todayprice {
@@ -238,15 +245,21 @@
                       <td>ส่วนลดจากบริษัท</td>
                     </tr>
                     <tr class="price">
-                      <td>32,000 <div style="font-size: 60%;">ลิตร</div></td>
-                      <td>21,000 <div style="font-size: 60%;">ลิตร</div></td>
-                      <td>11,000 <div style="font-size: 60%;">ลิตร</div></td>
-                      <td>23,100 <div style="font-size: 60%;">บาท</div></td>
+                      <td>32,000 <div style="font-size: 60%;">ลิตร</div>
+                      </td>
+                      <td>21,000 <div style="font-size: 60%;">ลิตร</div>
+                      </td>
+                      <td>11,000 <div style="font-size: 60%;">ลิตร</div>
+                      </td>
+                      <td>23,100 <div style="font-size: 60%;">บาท</div>
+                      </td>
                     </tr>
                   </table>
                 </div>
                 <br>
-                <div class="setfont1"><h1 class="todayprice">ยอดขายประจำเดือน เมษายน</h1></div>
+                <div class="setfont1">
+                  <h1 class="todayprice">ยอดขายประจำเดือน เมษายน</h1>
+                </div>
                 <br>
                 <div id="barchart_material" style="width: 1300px; height: 600px;"></div>
 
