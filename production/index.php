@@ -2,16 +2,9 @@
 <html lang="en">
 
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;1,100;1,200;1,300&display=swap');
 
-
-    @media only screen and (max-width: 480px) {
-      .site-title {
-        font-size: 25px;
-      }
-    }
 
     table.showgas tr.name td {
       padding-right: 100px;
@@ -77,7 +70,7 @@
   <link href="../build/css/custom.min.css" rel="stylesheet">
 </head>
 
-<body class="nav-md">
+<body class="nav-md" style="background-color: white;">
   <div class="container body">
     <div class="main_container">
       <div class="col-md-3 left_col">
