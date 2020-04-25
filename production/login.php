@@ -7,8 +7,7 @@
     .setfont1,
     .menu_section,
     .profile_info,
-    .site_title ,
-    h1{
+    .site_title,h1 {
       font-family: 'Prompt', sans-serif;
     }
   </style>
@@ -48,7 +47,8 @@
 
       <div class="login_wrapper">
         <div class="animate form login_form">
-            <form action="login-pro.php" method="POST" >
+          <section class="login_content" >
+            <form action="login-pro.php" method="POST">
               <h1>หจก.บ้านท่าบริการ </h1>
               <?php 
               if(!empty($_SESSION['error']))
@@ -73,7 +73,7 @@
 
 
             </form>
-
+          </section>
         </div>
   </body>
 </html>
