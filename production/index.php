@@ -218,13 +218,13 @@
                 <div class="setfont1">
                   <h1 class="todayprice">ประวัติการสั่งซื้อ</h1>
                   <table>
-                    <tr>
+                    <tr class="name">
                       <td>บัญชี 1</td>
                       <td>บัญชี 2</td>
                       <td>บัญชี 3</td>
                       <td>ส่วนลดจากบริษัท</td>
                     </tr>
-                    <tr>
+                    <tr class="price">
                       <td>32,000 ลิตร</td>
                       <td>21,000 ลิตร</td>
                       <td>11,000 ลิตร</td>
@@ -232,7 +232,7 @@
                     </tr>
                   </table>
                 </div>
-                <div id="barchart_material" style="width: 900px; height: 500px;"></div>
+                <div id="barchart_material" style="width: 1200px; height: 700px;"></div>
 
 
               <?php } else { ?>
