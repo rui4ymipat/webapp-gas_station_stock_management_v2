@@ -3,16 +3,21 @@
 
 <head>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&display=swap');
     table.showgas tr.name td{
       padding-right: 100px;
       padding-top: 7px;
       font-size: 130%;
       
     }
+    body{
+      font-family: 'Prompt', sans-serif;
+    }
     table.showgas tr.price td{
       padding-right: 100px;
       font-size: 100%;
       color: #73879C;
+      
     }
   </style>
   <?php 
@@ -37,7 +42,7 @@
   <!-- Bootstrap -->
   <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Font Awesome -->
-  <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <!-- <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet"> -->
   <!-- NProgress -->
   <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
   <!-- iCheck -->
