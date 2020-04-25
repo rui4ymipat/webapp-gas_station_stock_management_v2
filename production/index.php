@@ -4,13 +4,17 @@
 <head>
 
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;1,100;1,200;1,300&display=swap');
     table.showgas tr.name td {
       padding-right: 100px;
       padding-top: 7px;
       font-size: 130%;
 
     }
-
+h1.todayprice{
+  font-weight: 900;
+  font-family: 'Prompt', sans-serif;
+}
     table.showgas tr.price td {
       padding-right: 100px;
       font-size: 100%;
@@ -187,7 +191,7 @@
 
                 <!-- <div id="barchart_material" style="width: 900px; height: 500px;"></div> -->
                 <div>
-                  <h1 style="font-weight: 900;">ราคาน้ำมันวันนี้</h1>
+                  <h1 class="todayprice">ราคาน้ำมันวันนี้</h1>
                   <table class="showgas">
                     <tr class="name">
                       <td>Gasohol 91</td>
