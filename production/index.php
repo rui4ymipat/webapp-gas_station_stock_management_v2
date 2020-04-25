@@ -3,9 +3,15 @@
 
 <head>
   <style>
-    table.showgas tr td{
+    table.showgas tr td.name{
       margin-right: 100px;
       margin-top: 30px;
+      font-size: 70%;
+    }
+    table.showgas tr td.price{
+      margin-right: 100px;
+      margin-top: 30px;
+      font-size: 170%;
     }
   </style>
   <?php 
@@ -177,18 +183,18 @@
               <?php if($_SESSION['user_level'] == 2) {?>
 
               <!-- <div id="barchart_material" style="width: 900px; height: 500px;"></div> -->
-             <div style="margin-left: 30px">
+             <div >
              <h1><b>ราคาน้ำมันวันนี้</b></h1>
               <table class="showgas">
-                <tr>
-                  <td><h6>Gasohol 91</h6></td>
-                  <td><h6>Gasohol 95</h6></td>
-                  <td><h6>Diesel</h6></td>
+                <tr class="name">
+                  <td>Gasohol 91</td>
+                  <td>Gasohol 95</td>
+                  <td>Diesel</td>
                 </tr>
-                <tr>
-                  <td><h2>฿ 16.68</h2></td>
-                  <td><h2>฿ 16.95</h2></td>
-                  <td><h2>฿ 14.72</h2></td>
+                <tr class="price">
+                  <td>฿ 16.68</td>
+                  <td>฿ 16.95</td>
+                  <td>฿ 14.72</td>
                 </tr>
              </div>
               </table>
