@@ -9,13 +9,14 @@
     table.showgas tr.name td {
       padding-right: 100px;
       padding-top: 7px;
-      font-size: 130%;
+      font-size: 100%;
       
     }
 
     h1.todayprice {
       font-weight: 900;
       color: #2B3E54;
+      font-size: 220%
     }
 
     .setfont1,
@@ -27,7 +28,7 @@
 
     table.showgas tr.price td {
       padding-right: 100px;
-      font-size: 100%;
+      font-size: 80%;
       color: #73879C;
     }
   </style>
@@ -227,10 +228,10 @@
                       <td>ส่วนลดจากบริษัท</td>
                     </tr>
                     <tr class="price">
-                      <td>32,000 <div style="font-size: 70%;">ลิตร</div></td>
-                      <td>21,000 <div style="font-size: 70%;">ลิตร</div></td>
-                      <td>11,000 <div style="font-size: 70%;">ลิตร</div></td>
-                      <td>23,100 <div style="font-size: 70%;">บาท</div></td>
+                      <td>32,000 <div style="font-size: 60%;">ลิตร</div></td>
+                      <td>21,000 <div style="font-size: 60%;">ลิตร</div></td>
+                      <td>11,000 <div style="font-size: 60%;">ลิตร</div></td>
+                      <td>23,100 <div style="font-size: 60%;">บาท</div></td>
                     </tr>
                   </table>
                 </div>
