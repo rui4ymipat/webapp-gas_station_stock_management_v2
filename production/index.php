@@ -221,11 +221,11 @@
                       <td>Diesel</td>
                     </tr>
                     <tr class="price">
-                      <td>16.68<div style="font-size: 60%;">บาท/ลิตร</div>
+                      <td>16.68<div style="font-size: 40%;">บาท/ลิตร</div>
                       </td>
-                      <td>16.95<div style="font-size: 60%;">บาท/ลิตร</div>
+                      <td>16.95<div style="font-size: 40%;">บาท/ลิตร</div>
                       </td>
-                      <td>14.72<div style="font-size: 60%;">บาท/ลิตร</div>
+                      <td>14.72<div style="font-size: 40%;">บาท/ลิตร</div>
                       </td>
                     </tr>
                   </table>
@@ -241,13 +241,13 @@
                       <td>ส่วนลดจากบริษัท</td>
                     </tr>
                     <tr class="price">
-                      <td>32,000 <div style="font-size: 60%;">ลิตร</div>
+                      <td>32,000 <div style="font-size: 40%;">ลิตร</div>
                       </td>
-                      <td>21,000 <div style="font-size: 60%;">ลิตร</div>
+                      <td>21,000 <div style="font-size: 40%;">ลิตร</div>
                       </td>
-                      <td>11,000 <div style="font-size: 60%;">ลิตร</div>
+                      <td>11,000 <div style="font-size: 40%;">ลิตร</div>
                       </td>
-                      <td>23,100 <div style="font-size: 60%;">บาท</div>
+                      <td>23,100 <div style="font-size: 40%;">บาท</div>
                       </td>
                     </tr>
                   </table>
@@ -257,7 +257,7 @@
                   <h1 class="todayprice">ยอดขายประจำเดือน เมษายน</h1>
                 </div>
                 <br>
-                <div id="barchart_material" style="width: 1300px; height: 600px;"></div>
+                <div id="barchart_material" style="width: 1400px; height: 600px;"></div>
 
 
               <?php } else { ?>
