@@ -4,14 +4,14 @@
 <head>
   <style>
     table.showgas tr.name td{
-      margin-right: 100px;
-      margin-top: 30px;
+      padding-right: 100px;
+      padding-top: 30px;
       font-size: 70%;
       
     }
     table.showgas tr.price td{
-      margin-right: 100px;
-      margin-top: 30px;
+      padding-right: 100px;
+      padding-top: 30px;
       font-size: 100%;
       color: #73879C;
     }
