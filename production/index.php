@@ -17,7 +17,7 @@
       font-weight: 900;
     }
 
-    body{
+    .setfont1,.menu_section {
       font-family: 'Prompt', sans-serif;
     }
 
