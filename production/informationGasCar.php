@@ -202,49 +202,8 @@
                 <div class="setfont1">
                   <div class="setborder">
                     <form action="today.php">
-                      <table>
-                        <tr>
-                          <td>
-                            <div class="showdetail">รถขนน้ำมัน</div>
-                            <select name="cars" style="padding-left: 5%;width: 60%;height: 35px;margin-bottom: 15px;" class="form-control">
-                              <?php while ($row = mysqli_fetch_assoc($result)) { ?>
-                                <option value="<?php echo $row['id'] ?>"><?php echo $row['name'] ?></option>
-                              <?php } ?>
-                            </select>
-                          </td>
-                          <td>
-                            <div class="showdetail">ปริมาณที่รับมา</div>
-                            <table>
-                              <tr>
-                                <td class="name">G91</td>
-                                <td><input type="text" name="g91"></td>
-                                <td class="lit">ลิตร</td>
-                              </tr>
-                              <tr>
-                                <td class="name">G95</td>
-                                <td><input type="text" name="g95"></td>
-                                <td class="lit">ลิตร</td>
-                              </tr>
-                              <tr>
-                                <td class="name">Diesel</td>
-                                <td><input type="text" name="de"></td>
-                                <td class="lit">ลิตร</td>
-                              </tr>
-                            </table>
-                          </td>
-                          <td>
-                            <div class="showdetail">ค่าเที่ยว</div>
-                            <table>
-                              <tr>
-                                <td class="name">ทะเบียนต่อรอบ</td>
-                                <td><input type="text" name="6134" placeholder="2,800"></td>
-                                <td class="lit">บาท</td>
-                              </tr>
-                            </table>
-                          </td>
-                        </tr>
-                      </table>
-                      <!-- <div class="column1">
+                      
+                      <div class="column1">
                         <div class="showdetail">รถขนน้ำมัน</div>
                         <select name="cars" style="padding-left: 5%;width: 60%;height: 35px;margin-bottom: 15px;" class="form-control">
                           <?php while ($row = mysqli_fetch_assoc($result)) { ?>
@@ -281,7 +240,7 @@
                             <td class="lit">บาท</td>
                           </tr>
                         </table>
-                      </div> -->
+                      </div>
                       <input type="submit" class="btn btn-success" value="Submit">
                     </form>
                   </div>
