@@ -43,9 +43,7 @@
       padding: 20px 20px 20px 20px;
     }
 
-    .column2 , .column3 {
-      display: inline;
-    }
+
 
     .account tr.detail {
       font-size: 60%;
