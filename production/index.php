@@ -167,7 +167,7 @@
                 function drawChart() {
                   var data = google.visualization.arrayToDataTable([
                     ['ยอดขาย', 'แก๊สโซฮอล์ 91', 'แก๊สโซฮอล์ 95', 'ดีเซล'],
-                    ['1/04', 1000, 400, 200],
+                    ['1/04', <?php echo "100"; ?>, 400, 200],
                     ['2/04', 1170, 460, 250],
                     ['3/04', 660, 1120, 300],
                     ['4/04', 1030, 540, 350],
@@ -262,7 +262,51 @@
 
 
               <?php } else { ?>
-
+                <div class="setfont1">
+                  <h1 class="todayprice">ปริมาณน้ำมันบนรถทะเบียน 6134</h1>
+                  <table class="showgas">
+                    <tr class="name">
+                      <td>Gasohol 91</td>
+                      <td>Gasohol 95</td>
+                      <td>Diesel</td>
+                    </tr>
+                    <tr class="price"> 
+                      <td>32,000 <div style="font-size: 40%;">ลิตร</div></td>
+                      <td>21,000 <div style="font-size: 40%;">ลิตร</div></td>
+                      <td>1,000 <div style="font-size: 40%;">ลิตร</div></td>
+                    </tr>
+                  </table>
+                  <br>
+                  <h1 class="todayprice">ปริมาณน้ำมันบนรถทะเบียน 1815</h1>
+                  <table class="showgas">
+                    <tr class="name">
+                      <td>Gasohol 91</td>
+                      <td>Gasohol 95</td>
+                      <td>Diesel</td>
+                    </tr>
+                    <tr class="price"> 
+                      <td>32,000 <div style="font-size: 40%;">ลิตร</div></td>
+                      <td>21,000 <div style="font-size: 40%;">ลิตร</div></td>
+                      <td>1,000 <div style="font-size: 40%;">ลิตร</div></td>
+                    </tr>
+                  </table>
+                  <br>
+                  <h1 class="todayprice">ปริมาณน้ำมันบนรถทะเบียน ISUZU</h1>
+                  <table class="showgas">
+                    <tr class="name">
+                      <td>Gasohol 91</td>
+                      <td>Gasohol 95</td>
+                      <td>Diesel</td>
+                    </tr>
+                    <tr class="price"> 
+                      <td>32,000 <div style="font-size: 40%;">ลิตร</div></td>
+                      <td>21,000 <div style="font-size: 40%;">ลิตร</div></td>
+                      <td>1,000 <div style="font-size: 40%;">ลิตร</div></td>
+                    </tr>
+                  </table>
+                  <h1 class="today price">ตารางการประจำวัน</h1>
+                  <h2>- ????????????</h2>
+                </div>
               <?php } ?>
 
 
