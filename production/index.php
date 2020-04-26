@@ -314,10 +314,10 @@
                     </tr>
                   </table>
                   <br>
-                  <h1 class="today price">ตารางการประจำวัน</h1>
+                  <h1 class="todayprice">ตารางการประจำวัน</h1>
                   <table class="showgas">
                     <tr class="price">
-                      <td>- ????????????</td>
+                      <td>- กรอกข้อมูลลงตาราง</td>
                     </tr>
                   </table>
 
