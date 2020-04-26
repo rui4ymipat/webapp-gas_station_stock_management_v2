@@ -237,11 +237,6 @@
                           <td><input type="text" name="91p_a3" placeholder="ราคา"></td>
                           <td><input type="text" name="91d_a3" placeholder="ส่วนลด"></td>
                         </tr>
-                        <tr class="detail">
-                          <td></td>
-                          <td>ราคา</td>
-                          <td>ส่วนลด</td>
-                        </tr>
                         <tr>
                           <td class="name">G95</td>
                           <td><input type="text" name="95p_a3" placeholder="ราคา"></td>
