@@ -25,7 +25,7 @@
     input[type="text"] {
       border: 1px solid rgb(202, 206, 215);
       margin-right: 15px;
-      width: 20%;
+      width: 93%;
       height: 35px;
       text-align: center;
       margin-bottom: 10px;
@@ -42,14 +42,17 @@
       border: 0.5px solid rgb(202, 206, 215);
       padding: 20px 20px 20px 20px;
     }
-    .column1{
+
+    .column1 {
       display: inline-block;
-      width: 25;
+      width: 25%;
     }
-      .column2 , .column3{
-       display: inline-block;
-       width: 37.35%;
-     }
+
+    .column2,
+    .column3 {
+      display: inline-block;
+      width: 37.35%;
+    }
 
     .account tr.detail {
       font-size: 60%;
@@ -196,6 +199,7 @@
                   <div class="setborder">
                     <form action="today.php">
                       <div class="column1">
+                        <br>
                         <div class="showdetail">รถขนน้ำมัน</div>
                         <select name="cars" style="padding-left: 5%;width: 60%;height: 35px;margin-bottom: 15px;" class="form-control">
                           <?php while ($row = mysqli_fetch_assoc($result)) { ?>
@@ -227,7 +231,7 @@
                         <div class="showdetail">ค่าเที่ยว</div>
                         <table>
                           <tr>
-                            <td class="name">ทะเบียน 6134</td>
+                            <td class="name">ทะเบียนต่อรอบ</td>
                             <td><input type="text" name="6134" placeholder="2,800"></td>
                             <td class="lit">บาท</td>
                           </tr>
