@@ -317,7 +317,7 @@
                   <h1 class="todayprice">ตารางการประจำวัน</h1>
                   <table class="showgas">
                     <tr class="price">
-                      <td>- กรอกข้อมูลลงตาราง</td>
+                      <td style="font-size: 60%">- กรอกข้อมูลลงตาราง</td>
                     </tr>
                   </table>
 
