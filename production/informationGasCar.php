@@ -212,8 +212,6 @@
                               <?php } ?>
                             </select>
                           </td>
-                        </tr>
-                        <tr>
                           <td>
                             <div class="showdetail">ปริมาณที่รับมา</div>
                             <table>
@@ -234,8 +232,6 @@
                               </tr>
                             </table>
                           </td>
-                        </tr>
-                        <tr>
                           <td>
                             <div class="showdetail">ค่าเที่ยว</div>
                             <table>
