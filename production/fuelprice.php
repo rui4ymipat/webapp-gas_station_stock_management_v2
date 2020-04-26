@@ -16,6 +16,7 @@
       font-size: 150%;
       font-weight: 600;
       padding-bottom: 5px;
+      margin-bottom: 10px;
       border-bottom: 0.5px solid rgb(202, 206, 215);
     }
     .column1 ,.column2{
