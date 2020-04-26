@@ -18,7 +18,9 @@
       padding-bottom: 5px;
       border-bottom: 0.5px solid rgb(202, 206, 215);
     }
-
+    .column1 ,.column2{
+      display: inline-block;
+    }
     input[type="text"] {
       border: 1px solid rgb(202, 206, 215);
       margin-right: 15px;
@@ -41,7 +43,7 @@
     }
 
     .column1 {
-      width: 32%;
+      width: 44%;
     }
 
     td.name {
@@ -253,6 +255,9 @@
                       <input type="submit" class="btn btn-success" value="Submit">
                     </form>
                   </div>
+                </div>
+                <div class="column2">
+                  asdasdasdasd
                 </div>
               </div>
 
