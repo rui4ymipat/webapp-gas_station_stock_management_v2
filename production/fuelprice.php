@@ -43,8 +43,8 @@
     }
 
     .column1 {
-      width: 44%;
-      padding-left: 13%;
+      width: 31%;
+
     }
 
     td.name {
