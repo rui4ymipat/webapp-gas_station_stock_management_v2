@@ -40,7 +40,7 @@
     }
 
     .setborder {
-      width: 70%;
+      width: 100%;
       border: 0.5px solid rgb(202, 206, 215);
       padding: 20px 20px 20px 20px;
       border-radius: 5px;
@@ -209,7 +209,7 @@
                       
                       <div class="column1">
                         <div class="showdetail">รถขนน้ำมัน</div>
-                        <select name="cars" style="padding-left: 5%;width: 60%;height: 35px;margin-bottom: 15px;" class="form-control">
+                        <select name="cars" style="padding-left: 5%;width: 71%;height: 35px;margin-bottom: 15px;" class="form-control">
                           <?php while ($row = mysqli_fetch_assoc($result)) { ?>
                             <option value="<?php echo $row['id'] ?>"><?php echo $row['name'] ?></option>
                           <?php } ?>
