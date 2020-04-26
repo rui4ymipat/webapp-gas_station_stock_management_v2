@@ -12,15 +12,20 @@
       font-family: 'Prompt', sans-serif;
     }
     form .showdetail{
+      font-size: 150%;
+      font-weight: 600;
       padding-bottom: 5px;
-      border-bottom:  0.5px solid #73879C;
+      border-bottom:  0.5px solid rgb(242, 243, 245);
     }
     input[type="text"]{
-      border: 1px solid #73879C;
+      border: 1px solid rgb(242, 243, 245);
     }
     .setborder{
-      border: 0.5px solid #73879C;
+      border: 0.5px solid rgb(242, 243, 245);
       padding: 10px 10px 10px 10px;
+    }
+    .account tr.detail{
+      font-size: 60%;
     }
   </style>
   <?php
@@ -160,7 +165,7 @@
                           <td>ส่วนลด</td>
                         </tr>
                         <tr>
-                          <td>G91</td>
+                          <td class="name">G91</td>
                           <td><input type="text" name="91p_a1"></td>
                           <td><input type="text" name="91d_a1"></td>
                         </tr>
@@ -170,7 +175,7 @@
                           <td>ส่วนลด</td>
                         </tr>
                         <tr>
-                          <td>G95</td>
+                          <td class="name">G95</td>
                           <td><input type="text" name="95p_a1"></td>
                           <td><input type="text" name="95d_a1"></td>
                         </tr>
@@ -180,7 +185,7 @@
                           <td>ส่วนลด</td>
                         </tr>
                         <tr>
-                          <td>Diesel</td>
+                          <td class="name">Diesel</td>
                           <td><input type="text" name="Dep_a1"></td>
                           <td><input type="text" name="Ded_a1"></td>
                         </tr>
