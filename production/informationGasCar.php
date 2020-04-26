@@ -20,9 +20,7 @@
       margin-bottom: 10px;
       border-bottom: 0.5px solid rgb(202, 206, 215);
     }
-    .column1 ,.column2,.column3{
-      display: inline;
-    }
+
 
     input[type="text"] {
       border: 1px solid rgb(202, 206, 215);
@@ -42,6 +40,7 @@
     .setborder {
       border: 0.5px solid rgb(202, 206, 215);
       padding: 20px 20px 20px 20px;
+      display: inline;
     }
 
     .account tr.detail {
