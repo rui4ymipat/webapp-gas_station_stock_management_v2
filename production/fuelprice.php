@@ -22,14 +22,14 @@
     input[type="text"] {
       border: 1px solid rgb(202, 206, 215);
       margin-right: 15px;
-      width: 150;
+      width: 100%;
       height: 25px;
       text-align: center;
       margin-bottom: 10px;
-      margin-top: 10px;
+      margin-top: 15%;
     }
     input[type="submit"]{
-      margin-left: 42%;
+      margin-left: 44%;
     }
     .setborder {
       border: 0.5px solid rgb(202, 206, 215);
