@@ -270,10 +270,13 @@
                       <td>Gasohol 95</td>
                       <td>Diesel</td>
                     </tr>
-                    <tr class="price"> 
-                      <td>32,000 <div style="font-size: 40%;">ลิตร</div></td>
-                      <td>21,000 <div style="font-size: 40%;">ลิตร</div></td>
-                      <td>1,000 <div style="font-size: 40%;">ลิตร</div></td>
+                    <tr class="price">
+                      <td>32,000 <div style="font-size: 40%;">ลิตร</div>
+                      </td>
+                      <td>21,000 <div style="font-size: 40%;">ลิตร</div>
+                      </td>
+                      <td>1,000 <div style="font-size: 40%;">ลิตร</div>
+                      </td>
                     </tr>
                   </table>
                   <br>
@@ -284,10 +287,13 @@
                       <td>Gasohol 95</td>
                       <td>Diesel</td>
                     </tr>
-                    <tr class="price"> 
-                      <td>32,000 <div style="font-size: 40%;">ลิตร</div></td>
-                      <td>21,000 <div style="font-size: 40%;">ลิตร</div></td>
-                      <td>1,000 <div style="font-size: 40%;">ลิตร</div></td>
+                    <tr class="price">
+                      <td>32,000 <div style="font-size: 40%;">ลิตร</div>
+                      </td>
+                      <td>21,000 <div style="font-size: 40%;">ลิตร</div>
+                      </td>
+                      <td>1,000 <div style="font-size: 40%;">ลิตร</div>
+                      </td>
                     </tr>
                   </table>
                   <br>
@@ -298,23 +304,24 @@
                       <td>Gasohol 95</td>
                       <td>Diesel</td>
                     </tr>
-                    <tr class="price"> 
-                      <td>32,000 <div style="font-size: 40%;">ลิตร</div></td>
-                      <td>21,000 <div style="font-size: 40%;">ลิตร</div></td>
-                      <td>1,000 <div style="font-size: 40%;">ลิตร</div></td>
+                    <tr class="price">
+                      <td>32,000 <div style="font-size: 40%;">ลิตร</div>
+                      </td>
+                      <td>21,000 <div style="font-size: 40%;">ลิตร</div>
+                      </td>
+                      <td>1,000 <div style="font-size: 40%;">ลิตร</div>
+                      </td>
                     </tr>
                   </table>
                   <br>
-                  <table class="showgas">
                   <h1 class="today price">ตารางการประจำวัน</h1>
+                  <table class="showgas">
                     <tr class="price">
-                      
                       <td>- ????????????</td>
-
                     </tr>
                   </table>
-                  
-                  
+
+
                 </div>
               <?php } ?>
 
