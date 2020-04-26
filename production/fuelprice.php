@@ -22,10 +22,15 @@
     input[type="text"] {
       border: 1px solid rgb(202, 206, 215);
       margin-right: 15px;
-      width: 100px;
+      width: 150;
       height: 25px;
+      text-align: center;
+      margin-bottom: 10px;
+      margin-top: 10px;
     }
-
+    input[type="submit"]{
+      margin-left: 42%;
+    }
     .setborder {
       border: 0.5px solid rgb(202, 206, 215);
       padding: 20px 20px 20px 20px;
@@ -36,12 +41,14 @@
     }
 
     .column1 {
-      width: 55%;
+      width: 48%;
     }
 
     td.name {
       font-size: 140%;
-      padding-right: 5%;
+      padding-right: 20px;
+      padding-top: 10px;
+
     }
   </style>
   <?php
@@ -170,7 +177,7 @@
 
               <div class="setfont1">
                 <div class="column1">
-                  <h1>กรอกข้อมูลประจำวัน</h1>
+                  <h1 style="font-weight: 800;">กรอกข้อมูลประจำวัน</h1>
                   <div class="setborder">
                     <form action="add-pricegas.php">
                       <div class="showdetail">ข้อมูลราคา บัญชี 1</div>
@@ -242,6 +249,8 @@
                           <td><input type="text" name="Ded_a3" placeholder="ส่วนลด"></td>
                         </tr>
                       </table>
+                      <br>
+
                       <input type="submit" class="btn btn-success" value="Submit">
                     </form>
                   </div>
