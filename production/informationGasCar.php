@@ -38,11 +38,13 @@
     }
 
     .setborder {
+      width: 100%;
       border: 0.5px solid rgb(202, 206, 215);
       padding: 20px 20px 20px 20px;
+    }
+    form{
       display: inline;
     }
-
     .account tr.detail {
       font-size: 60%;
     }
