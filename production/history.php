@@ -191,7 +191,7 @@
                 <div class="column1">
                   <h1 style="font-weight: 800;">กรอกข้อมูลประจำวัน</h1>
                   <div class="setborder">
-                  <select name="cars" >
+                  <select name="cars" style="padding-left: 5%;" class="form-control">
                       <?php while( $row=mysqli_fetch_assoc($result)){ ?>
                         <option value="<?php echo $row['id'] ?>"><?php echo $row['name'] ?></option>
                       <?php }?>
