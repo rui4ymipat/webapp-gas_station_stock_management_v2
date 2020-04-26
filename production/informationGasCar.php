@@ -21,8 +21,7 @@
       border-bottom: 0.5px solid rgb(202, 206, 215);
     }
     .column1 ,.column2,.column3{
-      display: inline-block;
-      width: 33.33%
+      display: inline;
     }
 
     input[type="text"] {
