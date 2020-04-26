@@ -26,7 +26,7 @@
       height: 25px;
       text-align: center;
       margin-bottom: 10px;
-      margin-top: 15%;
+      margin-top: 4%;
     }
     input[type="submit"]{
       margin-left: 44%;
@@ -47,7 +47,7 @@
     td.name {
       font-size: 140%;
       padding-right: 20px;
-      padding-top: 10px;
+      padding-top: 1%;
 
     }
   </style>
