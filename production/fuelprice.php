@@ -33,6 +33,7 @@
     }
     input[type="submit"]{
       margin-left: 44%;
+      margin-top: 3.5px;
     }
     .setborder {
       border: 0.5px solid rgb(202, 206, 215);
