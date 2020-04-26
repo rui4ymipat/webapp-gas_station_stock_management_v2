@@ -13,7 +13,7 @@
     }
 
     form .showdetail {
-      font-size: 200%;
+      font-size: 165%;
       color: #2B3E54;
       font-weight: 600;
       padding-bottom: 5px;
@@ -22,11 +22,13 @@
     }
     .column1 ,.column2,.column3{
       display: inline-block;
+      width: 33.33%
     }
+
     input[type="text"] {
       border: 1px solid rgb(202, 206, 215);
       margin-right: 15px;
-      width: 100%;
+      width: 20%;
       height: 35px;
       text-align: center;
       margin-bottom: 10px;
