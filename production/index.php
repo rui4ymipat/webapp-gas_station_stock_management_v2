@@ -304,8 +304,17 @@
                       <td>1,000 <div style="font-size: 40%;">ลิตร</div></td>
                     </tr>
                   </table>
+                  <br>
+                  <table class="showgas">
                   <h1 class="today price">ตารางการประจำวัน</h1>
-                  <h2>- ????????????</h2>
+                    <tr class="price">
+                      
+                      <td>- ????????????</td>
+
+                    </tr>
+                  </table>
+                  
+                  
                 </div>
               <?php } ?>
 
