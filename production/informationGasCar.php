@@ -189,13 +189,13 @@
                 <div class="setfont1">
                   <div class="setborder">
                     <form action="today.php">
-                      <div class="column1">
+                      <!-- <div class="column1">
                         <div class="showdetail">รถขนน้ำมัน</div>
                         <select name="cars" style="padding-left: 5%;width: 60%;height: 35px;margin-bottom: 15px;" class="form-control">
                           <?php while ($row = mysqli_fetch_assoc($result)) { ?>
                             <option value="<?php echo $row['id'] ?>"><?php echo $row['name'] ?></option>
                           <?php } ?>
-                      </div>
+                      </div> -->
                       <div class="column2">
                         <div class="showdetail">ปริมาณที่รับมา</div>
                         <table>
@@ -216,7 +216,7 @@
                           </tr>
                         </table>
                       </div>
-                      <div class="column3">
+                      <!-- <div class="column3">
                         <div class="showdetail">ค่าเที่ยว</div>
                         <table>
                           <tr>
@@ -225,7 +225,7 @@
                             <td class="lit">บาท</td>
                           </tr>
                         </table>
-                      </div>
+                      </div> -->
                       <input type="submit" class="btn btn-success" value="Submit">
                     </form>
                   </div>
