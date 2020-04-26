@@ -167,7 +167,7 @@
                 function drawChart() {
                   var data = google.visualization.arrayToDataTable([
                     ['ยอดขาย', 'แก๊สโซฮอล์ 91', 'แก๊สโซฮอล์ 95', 'ดีเซล'],
-                    ['1/04', <?php echo "100"; ?>, 400, 200],
+                    ['1/04', 100, 400, 200],
                     ['2/04', 1170, 460, 250],
                     ['3/04', 660, 1120, 300],
                     ['4/04', 1030, 540, 350],
@@ -258,7 +258,7 @@
                   <h1 class="todayprice">ยอดขายประจำเดือน เมษายน</h1>
                 </div>
                 <br>
-                <div id="barchart_material" style="width: 1450px; height: 500px;"></div>
+                <div id="barchart_material" style="width: 1450px; height: 450px;"></div>
 
 
               <?php } else { ?>
