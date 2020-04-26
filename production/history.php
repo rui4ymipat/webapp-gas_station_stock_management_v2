@@ -195,7 +195,7 @@
                     <div class="showdetail">รถขนน้ำมัน</div>
                     <select name="cars" >
                       <?php while( $row=mysqli_fetch_assoc($result)){ ?>
-                        <option value="<?php echo $row['id'] ?>"><?php $row['name'] ?></option>
+                        <option value="<?php echo $row['id'] ?>"><?php echo $row['name'] ?></option>
                       <?php }?>
                     </select>
                       <div class="showdetail">ปริมาณที่สั่งซื้อ บัญชี 1</div>
