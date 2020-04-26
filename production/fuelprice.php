@@ -26,7 +26,7 @@
       border: 1px solid rgb(202, 206, 215);
       margin-right: 15px;
       width: 100%;
-      height: 25px;
+      height: 35px;
       text-align: center;
       margin-bottom: 10px;
       margin-top: 4%;
