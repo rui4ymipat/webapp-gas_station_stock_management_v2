@@ -190,13 +190,12 @@
               <div class="setfont1">
                 <div class="column1">
                   <h1 style="font-weight: 800;">กรอกข้อมูลประจำวัน</h1>
+                  <div class="setborder">
                   <select name="cars" >
                       <?php while( $row=mysqli_fetch_assoc($result)){ ?>
                         <option value="<?php echo $row['id'] ?>"><?php echo $row['name'] ?></option>
                       <?php }?>
                     </select>
-                  <div class="setborder">
-                  
                     <form action="add-pricegas.php">
                     <div class="showdetail">รถขนน้ำมัน</div>
                     
