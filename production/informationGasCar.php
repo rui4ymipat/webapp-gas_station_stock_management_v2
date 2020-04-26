@@ -30,7 +30,7 @@
       text-align: center;
       margin-bottom: 10px;
       margin-top: 4%;
-      border-radius: 10px;
+      border-radius: 5px;
     }
 
     input[type="submit"] {
@@ -43,7 +43,7 @@
       width: 70%;
       border: 0.5px solid rgb(202, 206, 215);
       padding: 20px 20px 20px 20px;
-      border-radius: 10px;
+      border-radius: 5px;
     }
 
     .column1 {
