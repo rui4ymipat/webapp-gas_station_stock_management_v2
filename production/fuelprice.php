@@ -41,7 +41,7 @@
     }
 
     .column1 {
-      width: 48%;
+      width: 29%;
     }
 
     td.name {
