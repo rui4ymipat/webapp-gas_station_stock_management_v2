@@ -200,6 +200,7 @@
               </div>
               <?php if ($_SESSION['user_level'] == 2) { ?>
                 <div class="setfont1">
+                <h1 style="font-weight: 800;color: #2B3E54;font-size: 200%;">กรอกข้อมูลประจำวัน</h1>
                   <div class="setborder">
                     <form action="today.php">
                       
