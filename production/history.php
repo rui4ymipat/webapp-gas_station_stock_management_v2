@@ -51,7 +51,7 @@
     }
 
     .column1 {
-      width: 46%;
+      width: 32%;
 
     }
 
