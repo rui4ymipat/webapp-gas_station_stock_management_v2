@@ -42,9 +42,11 @@
       border: 0.5px solid rgb(202, 206, 215);
       padding: 20px 20px 20px 20px;
     }
-    form{
+
+    .column2 , .column3 {
       display: inline;
     }
+
     .account tr.detail {
       font-size: 60%;
     }
@@ -189,44 +191,44 @@
                 <div class="setfont1">
                   <div class="setborder">
                     <form action="today.php">
-                    <div class="column1">
-                      <div class="showdetail">รถขนน้ำมัน</div>
-                      <select name="cars" style="padding-left: 5%;width: 60%;height: 35px;margin-bottom: 15px;" class="form-control">
-                        <?php while ($row = mysqli_fetch_assoc($result)) { ?>
-                          <option value="<?php echo $row['id'] ?>"><?php echo $row['name'] ?></option>
-                        <?php } ?>
-                    </div>
-                    <div class="column2">
-                      <div class="showdetail">ปริมาณที่รับมา</div>
-                      <table>
-                        <tr>
-                          <td class="name">G91</td>
-                          <td><input type="text" name="g91"></td>
-                          <td class="lit">ลิตร</td>
-                        </tr>
-                        <tr>
-                          <td class="name">G95</td>
-                          <td><input type="text" name="g95"></td>
-                          <td class="lit">ลิตร</td>
-                        </tr>
-                        <tr>
-                          <td class="name">Diesel</td>
-                          <td><input type="text" name="de"></td>
-                          <td class="lit">ลิตร</td>
-                        </tr>
-                      </table>
-                    </div>
-                    <div class="column3">
-                    <div class="showdetail">ค่าเที่ยว</div>
-                    <table>
-                      <tr>
-                        <td class="name">ทะเบียน 6134</td>
-                        <td><input type="text" name="6134" placeholder="2,800"></td>
-                        <td class="lit">บาท</td>
-                      </tr>
-                    </table>
-                    </div>
-                    <input type="submit" class="btn btn-success" value="Submit">
+                      <div class="column1">
+                        <div class="showdetail">รถขนน้ำมัน</div>
+                        <select name="cars" style="padding-left: 5%;width: 60%;height: 35px;margin-bottom: 15px;" class="form-control">
+                          <?php while ($row = mysqli_fetch_assoc($result)) { ?>
+                            <option value="<?php echo $row['id'] ?>"><?php echo $row['name'] ?></option>
+                          <?php } ?>
+                      </div>
+                      <div class="column2">
+                        <div class="showdetail">ปริมาณที่รับมา</div>
+                        <table>
+                          <tr>
+                            <td class="name">G91</td>
+                            <td><input type="text" name="g91"></td>
+                            <td class="lit">ลิตร</td>
+                          </tr>
+                          <tr>
+                            <td class="name">G95</td>
+                            <td><input type="text" name="g95"></td>
+                            <td class="lit">ลิตร</td>
+                          </tr>
+                          <tr>
+                            <td class="name">Diesel</td>
+                            <td><input type="text" name="de"></td>
+                            <td class="lit">ลิตร</td>
+                          </tr>
+                        </table>
+                      </div>
+                      <div class="column3">
+                        <div class="showdetail">ค่าเที่ยว</div>
+                        <table>
+                          <tr>
+                            <td class="name">ทะเบียน 6134</td>
+                            <td><input type="text" name="6134" placeholder="2,800"></td>
+                            <td class="lit">บาท</td>
+                          </tr>
+                        </table>
+                      </div>
+                      <input type="submit" class="btn btn-success" value="Submit">
                     </form>
                   </div>
                 </div>
