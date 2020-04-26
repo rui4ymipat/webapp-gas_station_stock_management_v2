@@ -34,6 +34,7 @@
       text-align: center;
       margin-bottom: 10px;
       margin-top: 4%;
+      border-radius: 10px;
     }
 
     input[type="submit"] {
@@ -42,8 +43,9 @@
     }
 
     .setborder {
-      border: 0.5px solid rgb(202, 206, 215);
+      border: 1px solid rgb(202, 206, 215);
       padding: 20px 20px 20px 20px;
+      border-radius: 10px;
     }
 
     .account tr.detail {
@@ -265,7 +267,7 @@
                         </tr>
                       </table>
 
-                      <input type="submit" class="btn btn-success" value="Submit">
+                      <input style="border-radius: 10px;" type="submit" class="btn btn-success" value="Submit">
                     </form>
                   </div>
                 </div>
