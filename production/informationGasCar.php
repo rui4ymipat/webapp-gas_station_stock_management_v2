@@ -33,18 +33,18 @@
     }
 
     input[type="submit"] {
-      margin-left: 44%;
+      margin-left: 88%;
       margin-top: 3.5px;
     }
 
     .setborder {
-      width: 100%;
+      width: 70%;
       border: 0.5px solid rgb(202, 206, 215);
       padding: 20px 20px 20px 20px;
     }
 
     .column1 {
-      display: inline-block;
+      display: inline-table;
       width: 25%;
       margin-left: 5px;
       margin-right: 5px;
@@ -52,8 +52,8 @@
 
     .column2,
     .column3 {
-      display: inline-block;
-      width: 35.5%;
+      display: inline-table;
+      width: 33%;
       margin-left: 5px;
       margin-right: 5px;
     }
