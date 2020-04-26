@@ -15,18 +15,25 @@
       font-size: 150%;
       font-weight: 600;
       padding-bottom: 5px;
-      border-bottom:  0.5px solid rgb(242, 243, 245);
+      border-bottom:  0.5px solid rgb(202, 206, 215);
     }
     input[type="text"]{
-      border: 1px solid rgb(242, 243, 245);
+      border: 1px solid rgb(202, 206, 215);
     }
     .setborder{
-      border: 0.5px solid rgb(242, 243, 245);
-      padding: 10px 10px 10px 10px;
+      border: 0.5px solid rgb(202, 206, 215);
+      padding: 20px 20px 20px 20px;
     }
     .account tr.detail{
       font-size: 60%;
     }
+    .column1{
+      width: 45%;
+    }
+    td.name{
+      font-size: 140%;
+    }
+    
   </style>
   <?php
   session_start();
@@ -198,7 +205,7 @@
                           <td>ส่วนลด</td>
                         </tr>
                         <tr>
-                          <td>G91</td>
+                          <td class="name">G91</td>
                           <td><input type="text" name="91p_a2"></td>
                           <td><input type="text" name="91d_a2"></td>
                         </tr>
@@ -208,7 +215,7 @@
                           <td>ส่วนลด</td>
                         </tr>
                         <tr>
-                          <td>G95</td>
+                          <td class="name">G95</td>
                           <td><input type="text" name="95p_a2"></td>
                           <td><input type="text" name="95d_a2"></td>
                         </tr>
@@ -218,7 +225,7 @@
                           <td>ส่วนลด</td>
                         </tr>
                         <tr>
-                          <td>Diesel</td>
+                          <td class="name">Diesel</td>
                           <td><input type="text" name="Dep_a2"></td>
                           <td><input type="text" name="Ded_a2"></td>
                         </tr>
@@ -231,13 +238,13 @@
                           <td>ส่วนลด</td>
                         </tr>
                         <tr>
-                          <td>G91</td>
+                          <td class="name">G91</td>
                           <td><input type="text" name="91p_a3"></td>
                           <td><input type="text" name="91d_a3"></td>
                         </tr>
                         <tr class="detail">
                           <td></td>
-                          <td>ราคา</td>
+                          <td class="name">ราคา</td>
                           <td>ส่วนลด</td>
                         </tr>
                         <tr>
