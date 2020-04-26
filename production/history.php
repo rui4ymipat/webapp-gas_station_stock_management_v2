@@ -13,7 +13,7 @@
     }
 
     form .showdetail {
-      font-size: 220%;
+      font-size: 200%;
       color: #2B3E54;
       font-weight: 600;
       padding-bottom: 5px;
@@ -51,7 +51,7 @@
     }
 
     .column1 {
-      width: 31%;
+      width: 46%;
 
     }
 
