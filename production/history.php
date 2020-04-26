@@ -13,7 +13,8 @@
     }
 
     form .showdetail {
-      font-size: 150%;
+      font-size: 220%;
+      color: #2B3E54;
       font-weight: 600;
       padding-bottom: 5px;
       margin-bottom: 10px;
@@ -189,7 +190,7 @@
                   
               <div class="setfont1">
                 <div class="column1">
-                  <h1 style="font-weight: 800;">กรอกข้อมูลประจำวัน</h1>
+                  <h1 style="font-weight: 800;color: #2B3E54;">กรอกข้อมูลประจำวัน</h1>
                   <div class="setborder">
                   
                     <form action="add-pricegas.php">
