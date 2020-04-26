@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<style>
+  <style>
     @import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;1,100;1,200;1,300&display=swap');
 
     .setfont1,
@@ -11,15 +11,25 @@
     .site_title {
       font-family: 'Prompt', sans-serif;
     }
+    form .showdetail{
+      padding-bottom: 5px;
+      border-bottom:  0.5px solid #73879C;
+    }
+    input[type="text"]{
+      border: 1px solid #73879C;
+    }
+    .setborder{
+      border: 0.5px solid #73879C;
+      padding: 10px 10px 10px 10px;
+    }
   </style>
-  <?php 
+  <?php
   session_start();
-  
-   if(empty($_SESSION['user_level']))
-   {
+
+  if (empty($_SESSION['user_level'])) {
     $_SESSION['error'] = "Username หรือ Password ผิด";
-     header("Location:login.php");
-   }
+    header("Location:login.php");
+  }
 
   ?>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -70,10 +80,10 @@
             <div class="profile_info">
               <span>ยินดีต้อนรับ</span>
               <h2>
-              <?php 
-              session_start();
-              echo $_SESSION['user_name'];
-              ?>
+                <?php
+                session_start();
+                echo $_SESSION['user_name'];
+                ?>
               </h2>
             </div>
           </div>
@@ -87,19 +97,18 @@
               <h3>เมนู</h3>
               <ul class="nav side-menu">
                 <li><a href="index.php"><i class="fa fa-home"></i> หน้าแรก</a></li>
-                <?php if($_SESSION['user_level'] == 2) {?>
-                <li><a href="fuelprice.php"><i class="fa fa-money"></i> ราคาน้ำมัน</a></li>
-                <li><a href="cost.php"><i class="fa fa-bar-chart"></i> ต้นทุน</a></li>
-                <li><a href="history.php"><i class="fa fa-history"></i> ประวัติการสั่งซื้อ</a></li>
-                <li><a href="informationGasCar.php"><i class="fa fa-truck"></i> ข้อมูลรถน้ำมัน</a></li>
-                <li><a href="stockFuel.php"><i class="fa fa-cube"></i> สต็อกน้ำมัน</a></li>
-                <li><a href="management.php"><i class="fa fa-users"></i> จัดการบัญชีผู้ใช้</a></li>
-                <li><a href="logout.php"><i class="fa fa-sign-out"> </i>Log Out</a></li>
-                <?php } 
-                else { ?>
-                <li><a href="informationGasCar.php"><i class="fa fa-truck"></i> ข้อมูลรถน้ำมัน</a></li>
-                <li><a href="stockFuel.php"><i class="fa fa-cube"></i> สต็อกน้ำมัน</a></li>
-                <li><a href="logout.php"><i class="fa fa-sign-out"> </i>Log Out</a></li>
+                <?php if ($_SESSION['user_level'] == 2) { ?>
+                  <li><a href="fuelprice.php"><i class="fa fa-money"></i> ราคาน้ำมัน</a></li>
+                  <li><a href="cost.php"><i class="fa fa-bar-chart"></i> ต้นทุน</a></li>
+                  <li><a href="history.php"><i class="fa fa-history"></i> ประวัติการสั่งซื้อ</a></li>
+                  <li><a href="informationGasCar.php"><i class="fa fa-truck"></i> ข้อมูลรถน้ำมัน</a></li>
+                  <li><a href="stockFuel.php"><i class="fa fa-cube"></i> สต็อกน้ำมัน</a></li>
+                  <li><a href="management.php"><i class="fa fa-users"></i> จัดการบัญชีผู้ใช้</a></li>
+                  <li><a href="logout.php"><i class="fa fa-sign-out"> </i>Log Out</a></li>
+                <?php } else { ?>
+                  <li><a href="informationGasCar.php"><i class="fa fa-truck"></i> ข้อมูลรถน้ำมัน</a></li>
+                  <li><a href="stockFuel.php"><i class="fa fa-cube"></i> สต็อกน้ำมัน</a></li>
+                  <li><a href="logout.php"><i class="fa fa-sign-out"> </i>Log Out</a></li>
                 <?php } ?>
               </ul>
             </div>
@@ -107,7 +116,7 @@
 
           </div>
           <!-- /sidebar menu -->
-          
+
 
         </div>
       </div>
@@ -138,55 +147,116 @@
                 </div>
               </div>
 
+              <div class="setfont1">
+                <div class="column1">
+                  <h1>กรอกข้อมูลประจำวัน</h1>
+                  <div class="setborder">
+                    <form action="add-pricegas.php">
+                      <div class="showdetail">ข้อมูลราคา บัญชี 1</div>
+                      <table class="account">
+                        <tr class="detail">
+                          <td></td>
+                          <td>ราคา</td>
+                          <td>ส่วนลด</td>
+                        </tr>
+                        <tr>
+                          <td>G91</td>
+                          <td><input type="text" name="91p_a1"></td>
+                          <td><input type="text" name="91d_a1"></td>
+                        </tr>
+                        <tr class="detail">
+                          <td></td>
+                          <td>ราคา</td>
+                          <td>ส่วนลด</td>
+                        </tr>
+                        <tr>
+                          <td>G95</td>
+                          <td><input type="text" name="95p_a1"></td>
+                          <td><input type="text" name="95d_a1"></td>
+                        </tr>
+                        <tr class="detail">
+                          <td></td>
+                          <td>ราคา</td>
+                          <td>ส่วนลด</td>
+                        </tr>
+                        <tr>
+                          <td>Diesel</td>
+                          <td><input type="text" name="Dep_a1"></td>
+                          <td><input type="text" name="Ded_a1"></td>
+                        </tr>
+                      </table>
+                      <div class="showdetail">ข้อมูลราคา บัญชี 2</div>
+                      <table class="account">
+                        <tr class="detail">
+                          <td></td>
+                          <td>ราคา</td>
+                          <td>ส่วนลด</td>
+                        </tr>
+                        <tr>
+                          <td>G91</td>
+                          <td><input type="text" name="91p_a2"></td>
+                          <td><input type="text" name="91d_a2"></td>
+                        </tr>
+                        <tr class="detail">
+                          <td></td>
+                          <td>ราคา</td>
+                          <td>ส่วนลด</td>
+                        </tr>
+                        <tr>
+                          <td>G95</td>
+                          <td><input type="text" name="95p_a2"></td>
+                          <td><input type="text" name="95d_a2"></td>
+                        </tr>
+                        <tr class="detail">
+                          <td></td>
+                          <td>ราคา</td>
+                          <td>ส่วนลด</td>
+                        </tr>
+                        <tr>
+                          <td>Diesel</td>
+                          <td><input type="text" name="Dep_a2"></td>
+                          <td><input type="text" name="Ded_a2"></td>
+                        </tr>
+                      </table>
+                      <div class="showdetail">ข้อมูลราคา บัญชี 3</div>
+                      <table class="account">
+                        <tr class="detail">
+                          <td></td>
+                          <td>ราคา</td>
+                          <td>ส่วนลด</td>
+                        </tr>
+                        <tr>
+                          <td>G91</td>
+                          <td><input type="text" name="91p_a3"></td>
+                          <td><input type="text" name="91d_a3"></td>
+                        </tr>
+                        <tr class="detail">
+                          <td></td>
+                          <td>ราคา</td>
+                          <td>ส่วนลด</td>
+                        </tr>
+                        <tr>
+                          <td>G95</td>
+                          <td><input type="text" name="95p_a3"></td>
+                          <td><input type="text" name="95d_a3"></td>
+                        </tr>
+                        <tr class="detail">
+                          <td></td>
+                          <td>ราคา</td>
+                          <td>ส่วนลด</td>
+                        </tr>
+                        <tr>
+                          <td>Diesel</td>
+                          <td><input type="text" name="Dep_a3"></td>
+                          <td><input type="text" name="Ded_a3"></td>
+                        </tr>
+                      </table>
+                      <input type="submit" class="btn btn-success" value="Submit">
+                    </form>
+                  </div>
+                </div>
+              </div>
 
-              <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-              <script type="text/javascript">
-                google.charts.load('current', { 'packages': ['bar'] });
-                google.charts.setOnLoadCallback(drawChart);
-
-                function drawChart() {
-                  var data = google.visualization.arrayToDataTable([
-                    ['ยอดขาย', 'แก๊สโซฮอล์ 91', 'แก๊สโซฮอล์ 95', 'ดีเซล'],
-                    ['15/04', 1000, 400, 200],
-                    ['16/04', 1170, 460, 250],
-                    ['17/04', 660, 1120, 300],
-                    ['18/04', 1030, 540, 350],
-                    ['19/04', 1000, 400, 200],
-                    ['20/04', 1170, 460, 250],
-                    ['21/04', 660, 1120, 300],
-                    ['22/04', 1030, 540, 350],
-                    ['23/04', 1000, 400, 200],
-                    ['24/04', 1170, 460, 250],
-                    ['25/04', 660, 1120, 300],
-                    ['26/04', 1030, 540, 350],
-                    ['27/04', 1000, 400, 200],
-                    ['28/04', 1170, 460, 250],
-                    ['29/04', 660, 1120, 300],
-                    ['30/04', 1030, 540, 350]
-                  ]);
-
-                  var options = {
-                    chart: {
-                      title: 'ยอดขาย',
-                      subtitle: 'ประจำเดือน เมษายน',
-                    },
-                    bars: 'vertical' // Required for Material Bar Charts.
-                  };
-
-                  var chart = new google.charts.Bar(document.getElementById('barchart_material'));
-
-                  chart.draw(data, google.charts.Bar.convertOptions(options));
-                }
-              </script>
-
-              <?php if($_SESSION['user_level'] == 2) {?>
-
-              
-
-              <?php } 
-              else { ?>
-
-             <?php } ?>
 
 
               <!-- /page content -->
