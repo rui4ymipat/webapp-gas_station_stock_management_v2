@@ -249,8 +249,7 @@
                           <td><input type="text" name="Ded_a3" placeholder="ส่วนลด"></td>
                         </tr>
                       </table>
-                      <br>
-
+                      
                       <input type="submit" class="btn btn-success" value="Submit">
                     </form>
                   </div>
