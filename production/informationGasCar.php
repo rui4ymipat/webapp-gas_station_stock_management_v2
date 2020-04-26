@@ -42,9 +42,13 @@
       border: 0.5px solid rgb(202, 206, 215);
       padding: 20px 20px 20px 20px;
     }
-
-     .column1 , .column2 , .column3{
+    .column1{
+      display: inline-block;
+      width: 25;
+    }
+      .column2 , .column3{
        display: inline-block;
+       width: 37.35%;
      }
 
     .account tr.detail {
