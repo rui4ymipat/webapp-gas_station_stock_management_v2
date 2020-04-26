@@ -239,7 +239,7 @@
                         <div class="showdetail">ค่าเที่ยว</div>
                         <table>
                           <tr>
-                            <td class="name">ค่าเที่ยวต่อรอบ</td>
+                            <td class="name">ต่อรอบ</td>
                             <td><input type="text" name="6134" placeholder="2,800"></td>
                             <td class="lit">บาท</td>
                           </tr>
