@@ -46,12 +46,16 @@
     .column1 {
       display: inline-block;
       width: 25%;
+      margin-left: 5px;
+      margin-right: 5px;
     }
 
     .column2,
     .column3 {
       display: inline-block;
-      width: 37.35%;
+      width: 35.5%;
+      margin-left: 5px;
+      margin-right: 5px;
     }
 
     .account tr.detail {
@@ -198,8 +202,7 @@
                 <div class="setfont1">
                   <div class="setborder">
                     <form action="today.php">
-                      <div class="column1">
-                        <br>
+                      <div class="column1">   
                         <div class="showdetail">รถขนน้ำมัน</div>
                         <select name="cars" style="padding-left: 5%;width: 60%;height: 35px;margin-bottom: 15px;" class="form-control">
                           <?php while ($row = mysqli_fetch_assoc($result)) { ?>
