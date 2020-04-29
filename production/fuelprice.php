@@ -14,7 +14,7 @@
 
     @media only screen and (min-width: 1200px) {
       .column1 {
-        width: 55%;
+        width: 33%;
       }
     }
 
