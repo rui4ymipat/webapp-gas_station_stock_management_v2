@@ -2,7 +2,7 @@
  session_start();
 require_once "connect.php";
 $id = $_GET['id'];
-$userQuery="DELETE user WHERE id = $id";
+$userQuery="DELETE FROM user WHERE id = $id";
 $result=mysqli_query($connect, $userQuery);
 if(!$result)
 {

@@ -11,7 +11,22 @@ $id = $_POST['id'];
 $pass = $_POST['pass'];
 $Fname = $_POST['Fname'];
 $Lname = $_POST['Lname'];
-if(empty($id) || empty($pass) || empty($Fname) || empty($Lname))
+if(empty($id))
+{
+    $_SESSION['msg'] = 'การดำเนินการไม่สำเร็จ กรุณาลองใหม่อีกครั้ง';
+    header("Location:management.php");
+}
+else if(empty($pass))
+{
+    $_SESSION['msg'] = 'การดำเนินการไม่สำเร็จ กรุณาลองใหม่อีกครั้ง';
+    header("Location:management.php");
+}
+else if(empty($Fname))
+{
+    $_SESSION['msg'] = 'การดำเนินการไม่สำเร็จ กรุณาลองใหม่อีกครั้ง';
+    header("Location:management.php");
+}
+else if(empty($Lname))
 {
     $_SESSION['msg'] = 'การดำเนินการไม่สำเร็จ กรุณาลองใหม่อีกครั้ง';
     header("Location:management.php");
