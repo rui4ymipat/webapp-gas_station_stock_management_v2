@@ -25,12 +25,12 @@
 
     }
 
-    /* @media only screen and (max-width: 1920px) {
+    @media only screen and (min-width: 1366px) {
       .column1 {
         width: 33%;
       }
 
-    } */
+    }
 
     form .showdetail {
       font-weight: 600;
