@@ -60,7 +60,8 @@
       display: inline-block;
     }
 
-    input[type="text"] ,input[type="password"]{
+    input[type="text"],
+    input[type="password"] {
       border: 1px solid rgb(202, 206, 215);
       margin-right: 15px;
       width: 100%;
@@ -110,19 +111,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <?php
-  if (!empty($_SESSION['msg'])) {
-    session_start();
-  ?>
-    <script type="text/javascript">
-      alert('<?php echo $_SESSION['msg'] ?>');
-    </script>
-  <?php
-    unset($_SESSION['error']);
-  }
 
-
-  ?>
   <title>ระบบจัดการสต็อกน้ำมัน</title>
 
   <!-- Bootstrap -->
@@ -233,9 +222,9 @@
               <div class="setfont1">
                 <div class="row1">
                   <div class="setborder">
-                  <h1 style="font-weight: 800;color: #2B3E54;font-size: 200%;">จัดการบัญชีผู้ใช้</h1>
+                    <h1 style="font-weight: 800;color: #2B3E54;font-size: 200%;">จัดการบัญชีผู้ใช้</h1>
                     <form action="addUser.php" method="POST">
-                      
+
                       <div class="showdetail">เพิ่มบัญชีผู้ใช้</div>
                       <table>
                         <tr>
@@ -329,7 +318,17 @@
 
             </div>
           </div>
-
+          <?php
+          if (!empty($_SESSION['msg'])) {
+            session_start();
+          ?>
+            <script type="text/javascript">
+              alert('<?php echo $_SESSION['msg'] ?>');
+            </script>
+          <?php
+            unset($_SESSION['error']);
+          }
+          ?>
           <!-- jQuery -->
           <script src="../vendors/jquery/dist/jquery.min.js"></script>
           <!-- Bootstrap -->
