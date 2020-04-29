@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 require_once "connect.php";
 $userQuery = "SELECT username from user";
 $result = mysqli_query($connect, $userQuery);
@@ -10,6 +11,11 @@ $id = $_POST['id'];
 $pass = $_POST['pass'];
 $Fname = $_POST['Fname'];
 $Lname = $_POST['Lname'];
+if(empty($id) || empty($pass) || empty($Fname) || empty($Lname))
+{
+    $_SESSION['msg'] = 'การดำเนินการไม่สำเร็จ กรุณาลองใหม่อีกครั้ง';
+    header("Location:management.php");
+}
 for ($i = 0; $i < count($username); $i++) {
     if ($id == $username[$i]) {
         $_SESSION['msg'] = 'การดำเนินการไม่สำเร็จ ID ถูกใช้ไปแล้ว';
