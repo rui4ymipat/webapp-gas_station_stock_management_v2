@@ -7,6 +7,7 @@ $id = $_POST['id'];
 $pass = $_POST['pass'];
 $Fname = $_POST['Fname'];
 $Lname = $_POST['Lname'];
+$uid = $_POST['Uid'];
 if (empty($_POST['id'])) {
     $_SESSION['msg'] = 'การดำเนินการไม่สำเร็จ กรุณาลองใหม่อีกครั้ง';
     header("Location:management.php");
@@ -21,7 +22,7 @@ if (empty($_POST['id'])) {
     header("Location:management.php");
 } else {
 
-        $userQuery = "UPDATE user SET username = '$id' , password = '$pass' , Fname = '$Fname' , Lname = '$Lname'";
+        $userQuery = "UPDATE user SET username = '$id' , password = '$pass' , Fname = '$Fname' , Lname = '$Lname' WHERE id = $uid";
         $result = mysqli_query($connect, $userQuery);
         if (!$result) {
             $_SESSION['msg'] = 'การดำเนินการไม่สำเร็จ กรุณาลองใหม่อีกครั้ง';

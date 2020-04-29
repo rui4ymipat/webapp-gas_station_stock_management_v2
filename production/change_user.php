@@ -248,6 +248,7 @@
                                                 <td><input type="text" name="Lname" placeholder="<?php echo $row['Lname'] ?>" value="<?php echo $row['Lname'] ?>"></td>
                                             </tr>
                                         </table>
+                                        <input type="hidden" value="<?php echo $id;?>" name="Uid"> 
                                         <input type="submit" class="btn btn-success" value="Submit">
 
                                     </form>
