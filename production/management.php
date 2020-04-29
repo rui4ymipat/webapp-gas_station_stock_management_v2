@@ -233,19 +233,24 @@
               <div class="setfont1">
                 <div class="row1">
                   <div class="setborder">
+                  <h1 style="font-weight: 800;color: #2B3E54;font-size: 200%;">จัดการบัญชีผู้ใช้</h1>
                     <form action="addUser.php" method="POST">
-                      <h1 style="font-weight: 800;color: #2B3E54;font-size: 200%;">จัดการบัญชีผู้ใช้</h1>
+                      
                       <div class="showdetail">เพิ่มบัญชีผู้ใช้</div>
                       <table>
                         <tr>
                           <td class="name">ID </td>
                           <td><input type="text" name="id" placeholder="ID"></td>
+                        </tr>
+                        <tr>
                           <td class="name">Password </td>
                           <td><input type="text" name="pass" placeholder="Password"></td>
                         </tr>
                         <tr>
                           <td class="name">ชื่อ</td>
                           <td><input type="text" name="Fname" placeholder="ชื่อจริง"></td>
+                        </tr>
+                        <tr>
                           <td class="name">นามสกุล</td>
                           <td><input type="text" name="Lname" placeholder="นามสกุล"></td>
                         </tr>
@@ -260,14 +265,11 @@
 
                   <div class="x_panel">
                     <div class="x_title">
-                      <h2>บัญชีผู้ใช่ <small>จัดการบัญชีผู้ใช้</small></h2>
+                      <h2 style="font-weight: 800;color: #2B3E54;font-size: 200%;">บัญชีผู้ใช่ <small style="font-weight: 800;color: #2B3E54;font-size: 100%;">จัดการบัญชีผู้ใช้</small></h2>
                       <ul class="nav navbar-right panel_toolbox">
                         <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                         </li>
-                        <li class="dropdown">
-                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
 
-                        </li>
 
                       </ul>
                       <div class="clearfix"></div>
@@ -287,18 +289,18 @@
                         <tbody>
                           <?php for ($i = 0; $i < count($id); $i++) { ?>
                             <tr>
-                              <td><?php echo $Fname[$i]; ?></td>
-                              <td><?php echo $Lname[$i]; ?></td>
-                              <td><button class="btn btn-round btn-danger"><a href="delete_user.php?id=<?php echo $id[$i]; ?>" style="color: white;">ลบบัญชี</a></button></td>
-                              <td><button class="btn btn-round btn-info"><a href="change_user.php?id=<?php echo $id[$i]; ?>" style="color: white;">แก้ไขบัญชี</a></button></td>
+                              <td style="font-weight: 800;color: #2B3E54;font-size: 85%;"><?php echo $Fname[$i]; ?></td>
+                              <td style="font-weight: 800;color: #2B3E54;font-size: 85%;"><?php echo $Lname[$i]; ?></td>
+                              <td style="font-weight: 800;color: #2B3E54;font-size: 85%;"><button class="btn btn-round btn-danger"><a href="delete_user.php?id=<?php echo $id[$i]; ?>" style="color: white;">ลบบัญชี</a></button></td>
+                              <td style="font-weight: 800;color: #2B3E54;font-size: 85%;"><button class="btn btn-round btn-info"><a href="change_user.php?id=<?php echo $id[$i]; ?>" style="color: white;">แก้ไขบัญชี</a></button></td>
                               <?php
                               if ($level[$i] == 1) {
                               ?>
-                                <td><button class="btn btn-round btn-success"><a href="add_admin.php?id=<?php echo $id[$i]; ?>" style="color: white;">เพิ่มสิทธิ์แอดมิน</a></button></td>
+                                <td style="font-weight: 800;color: #2B3E54;font-size: 85%;"><button class="btn btn-round btn-success"><a href="add_admin.php?id=<?php echo $id[$i]; ?>" style="color: white;">เพิ่มสิทธิ์แอดมิน</a></button></td>
                               <?php
                               } else {
                               ?>
-                                <td><button class="btn btn-round btn-success"><a href="drop_admin.php?id=<?php echo $id[$i]; ?>" style="color: white;">ลดสิทธิ์แอดมิน</a></button></td>
+                                <td style="font-weight: 800;color: #2B3E54;font-size: 85%;"><button class="btn btn-round btn-success"><a href="drop_admin.php?id=<?php echo $id[$i]; ?>" style="color: white;">ลดสิทธิ์แอดมิน</a></button></td>
                               <?php
                               }
                               ?>
