@@ -25,6 +25,13 @@
 
     }
 
+    @media only screen and (min-width: 1024px) {
+      .column1 {
+        width: 33%;
+      }
+
+    }
+
     form .showdetail {
       font-weight: 600;
       padding-bottom: 5px;
