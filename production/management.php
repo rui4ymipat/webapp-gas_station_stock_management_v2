@@ -326,7 +326,7 @@
               alert('<?php echo $_SESSION['msg'] ?>');
             </script>
           <?php
-            unset($_SESSION['error']);
+            unset($_SESSION['msg']);
           }
           ?>
           <!-- jQuery -->
