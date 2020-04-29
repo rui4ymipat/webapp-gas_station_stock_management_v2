@@ -25,7 +25,7 @@
 
     }
 
-    @media only screen and (min-width: 1025px) {
+    @media only screen and (min-width: 1367px) {
       .column1 {
         width: 33%;
       }
