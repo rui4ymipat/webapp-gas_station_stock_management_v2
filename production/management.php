@@ -230,33 +230,34 @@
 
                 </div>
               </div>
-              <div class="row1">
-                <div class="setborder">
-                  <form action="addUser.php" method="POST">
-                    <h1 style="font-weight: 800;color: #2B3E54;font-size: 200%;">จัดการบัญชีผู้ใช้</h1>
-                    <div class="showdetail">เพิ่มบัญชีผู้ใช้</div>
-                    <table>
-                      <tr>
-                        <td class="name">ID </td>
-                        <td><input type="text" name="id" placeholder="ID"></td>
-                        <td class="name">Password </td>
-                        <td><input type="text" name="pass" placeholder="Password"></td>
-                      </tr>
-                      <tr>
-                        <td class="name">ชื่อ</td>
-                        <td><input type="text" name="Fname" placeholder="ชื่อจริง"></td>
-                        <td class="name">นามสกุล</td>
-                        <td><input type="text" name="Lname" placeholder="นามสกุล"></td>
-                      </tr>
-                    </table>
-                    <input type="submit" class="btn btn-success" value="Submit">
-                  </form>
+              <div class="setfont1">
+                <div class="row1">
+                  <div class="setborder">
+                    <form action="addUser.php" method="POST">
+                      <h1 style="font-weight: 800;color: #2B3E54;font-size: 200%;">จัดการบัญชีผู้ใช้</h1>
+                      <div class="showdetail">เพิ่มบัญชีผู้ใช้</div>
+                      <table>
+                        <tr>
+                          <td class="name">ID </td>
+                          <td><input type="text" name="id" placeholder="ID"></td>
+                          <td class="name">Password </td>
+                          <td><input type="text" name="pass" placeholder="Password"></td>
+                        </tr>
+                        <tr>
+                          <td class="name">ชื่อ</td>
+                          <td><input type="text" name="Fname" placeholder="ชื่อจริง"></td>
+                          <td class="name">นามสกุล</td>
+                          <td><input type="text" name="Lname" placeholder="นามสกุล"></td>
+                        </tr>
+                      </table>
+                      <input type="submit" class="btn btn-success" value="Submit">
+                    </form>
+                  </div>
                 </div>
-              </div>
-              <br>
-              <div class="row2">
+                <br>
+                <div class="row2">
 
-               
+
                   <div class="x_panel">
                     <div class="x_title">
                       <h2>บัญชีผู้ใช่ <small>จัดการบัญชีผู้ใช้</small></h2>
@@ -265,13 +266,9 @@
                         </li>
                         <li class="dropdown">
                           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Settings 1</a>
-                            <a class="dropdown-item" href="#">Settings 2</a>
-                          </div>
+
                         </li>
-                        <li><a class="close-link"><i class="fa fa-close"></i></a>
-                        </li>
+
                       </ul>
                       <div class="clearfix"></div>
                     </div>
@@ -297,7 +294,7 @@
                               <?php
                               if ($level[$i] == 1) {
                               ?>
-                                <td><button class="btn btn-round btn-success"><a href="add_admin.php?id=<?php echo $id[$i]; ?>" style="color: white;" >เพิ่มสิทธิ์แอดมิน</a></button></td>
+                                <td><button class="btn btn-round btn-success"><a href="add_admin.php?id=<?php echo $id[$i]; ?>" style="color: white;">เพิ่มสิทธิ์แอดมิน</a></button></td>
                               <?php
                               } else {
                               ?>
@@ -313,9 +310,11 @@
                     </div>
                   </div>
 
-                
-              </div>
 
+                </div>
+
+
+              </div>
 
 
 
