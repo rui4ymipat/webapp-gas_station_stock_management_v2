@@ -11,7 +11,25 @@
     .site_title {
       font-family: 'Prompt', sans-serif;
     }
+    @media only screen and (max-width: 1366px) {
+      .setborder {
+        width: 100%;
+      }
+    }
 
+    @media only screen and (max-width: 1024px) {
+      .setborder {
+        width: 100%;
+      }
+
+    }
+
+    @media only screen and (min-width: 1367px) {
+      .setborder {
+        width: 100%;
+      }
+
+    }
     form .showdetail {
       font-size: 165%;
       color: #2B3E54;
@@ -41,7 +59,7 @@
 
     .setborder {
       width: 100%;
-      border: 0.5px solid rgb(202, 206, 215);
+      border: 1px solid rgb(202, 206, 215);
       padding: 20px 20px 20px 20px;
       border-radius: 5px;
     }
@@ -74,6 +92,7 @@
       padding-right: 20px;
       padding-top: 1%;
     }
+    
   </style>
   <?php
   session_start();
