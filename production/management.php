@@ -253,26 +253,10 @@
                   </form>
                 </div>
               </div>
+              <br>
               <div class="row2">
 
-                <div class="x_panel">
-                  <div class="x_title">
-                    <h2>123 table <small>Stripped table subtitle</small></h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                          <a class="dropdown-item" href="#">Settings 1</a>
-                          <a class="dropdown-item" href="#">Settings 2</a>
-                        </div>
-                      </li>
-                      <li><a class="close-link"><i class="fa fa-close"></i></a>
-                      </li>
-                    </ul>
-                    <div class="clearfix"></div>
-                  </div>
+               
                   <div class="x_panel">
                     <div class="x_title">
                       <h2>บัญชีผู้ใช่ <small>จัดการบัญชีผู้ใช้</small></h2>
@@ -298,7 +282,9 @@
                           <tr>
                             <th>ชื่อ</th>
                             <th>นามสกุล</th>
-                            <th rowspan="3">จัดการบัญชี</th>
+                            <th>ลบบัญชี</th>
+                            <th>แก้ไขบัญชี</th>
+                            <th>จัดการสิทธิ์แอดมิน</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -306,16 +292,16 @@
                             <tr>
                               <td><?php echo $Fname[$i]; ?></td>
                               <td><?php echo $Lname[$i]; ?></td>
-                              <td><button class="btn btn-round btn-danger"><a href="delete_user.php?id=<?php echo $id[$i]; ?>">ลบบัญชี</a></button></td>
-                              <td><button class="btn btn-round btn-info"><a href="change_user.php?id=<?php echo $id[$i]; ?>">แก้ไขบัญชี</a></button></td>
+                              <td><button class="btn btn-round btn-danger"><a href="delete_user.php?id=<?php echo $id[$i]; ?>" style="color: white;">ลบบัญชี</a></button></td>
+                              <td><button class="btn btn-round btn-info"><a href="change_user.php?id=<?php echo $id[$i]; ?>" style="color: white;">แก้ไขบัญชี</a></button></td>
                               <?php
                               if ($level[$i] == 1) {
                               ?>
-                                <td><button class="btn btn-round btn-success"><a href="add_admin.php?id=<?php echo $id[$i]; ?>">เพิ่มสิทธิ์แอดมิน</a></button></td>
+                                <td><button class="btn btn-round btn-success"><a href="add_admin.php?id=<?php echo $id[$i]; ?>" style="color: white;" >เพิ่มสิทธิ์แอดมิน</a></button></td>
                               <?php
                               } else {
                               ?>
-                                <td><button class="btn btn-round btn-success"><a href="drop_admin.php?id=<?php echo $id[$i]; ?>">ลดสิทธิ์แอดมิน</a></button></td>
+                                <td><button class="btn btn-round btn-success"><a href="drop_admin.php?id=<?php echo $id[$i]; ?>" style="color: white;">ลดสิทธิ์แอดมิน</a></button></td>
                               <?php
                               }
                               ?>
@@ -327,7 +313,7 @@
                     </div>
                   </div>
 
-                </div>
+                
               </div>
 
 
