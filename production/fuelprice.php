@@ -12,6 +12,19 @@
       font-family: 'Prompt', sans-serif;
     }
 
+    @media only screen and (min-width: 1200px) {
+      .column1 {
+        width: 55%;
+      }
+    }
+
+    @media only screen and (min-width: 992px) {
+      .column1 {
+        width: 55%;
+      }
+
+    }
+
     form .showdetail {
       font-weight: 600;
       padding-bottom: 5px;
@@ -20,9 +33,12 @@
       font-size: 165%;
       color: #2B3E54;
     }
-    .column1 ,.column2{
+
+    .column1,
+    .column2 {
       display: inline-block;
     }
+
     input[type="text"] {
       border: 1px solid rgb(202, 206, 215);
       margin-right: 15px;
@@ -33,11 +49,13 @@
       margin-top: 4%;
       border-radius: 5px;
     }
-    input[type="submit"]{
+
+    input[type="submit"] {
       margin-left: 44%;
       margin-top: 3.5px;
       border-radius: 5px;
     }
+
     .setborder {
       border: 1px solid rgb(202, 206, 215);
       padding: 20px 20px 20px 20px;
@@ -253,13 +271,13 @@
                           <td><input type="text" name="Ded_a3" placeholder="ส่วนลด" style="margin-left: 15px"></td>
                         </tr>
                       </table>
-                      
+
                       <input type="submit" class="btn btn-success" value="Submit">
                     </form>
                   </div>
                 </div>
                 <div class="column2">
-                  
+
                 </div>
               </div>
 
