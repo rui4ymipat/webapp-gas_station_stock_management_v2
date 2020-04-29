@@ -12,15 +12,15 @@
       font-family: 'Prompt', sans-serif;
     }
 
-    @media only screen and (min-width: 1200px) {
+    @media only screen and (max-width: 1366px) {
       .column1 {
-        width: 33%;
+        width: 55%;
       }
     }
 
-    @media only screen and (min-width: 992px) {
+    @media only screen and (max-width: 1024px) {
       .column1 {
-        width: 55%;
+        width: 86%;
       }
 
     }
