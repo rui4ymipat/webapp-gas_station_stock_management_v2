@@ -20,7 +20,7 @@ if (empty($_POST['id'])) {
     $_SESSION['msg'] = 'การดำเนินการไม่สำเร็จ กรุณาลองใหม่อีกครั้ง';
     header("Location:management.php");
 } else {
-    if ($add) {
+
         $userQuery = "UPDATE user SET username = '$id' , password = '$pass' , Fname = '$Fname' , Lname = '$Lname'";
         $result = mysqli_query($connect, $userQuery);
         if (!$result) {
@@ -30,6 +30,6 @@ if (empty($_POST['id'])) {
             $_SESSION['msg'] = 'การดำเนินการสำเร็จ';
             header("Location:management.php");
         }
-    }
+    
     
 }
