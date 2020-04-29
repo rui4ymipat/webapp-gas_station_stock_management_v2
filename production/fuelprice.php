@@ -66,10 +66,7 @@
       font-size: 60%;
     }
 
-    .column1 {
-      width: 55%;
 
-    }
 
     td.name {
       font-size: 140%;
