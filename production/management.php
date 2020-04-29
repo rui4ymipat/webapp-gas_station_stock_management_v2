@@ -60,7 +60,7 @@
       display: inline-block;
     }
 
-    input[type="text"] {
+    input[type="text"] ,input[type="password"]{
       border: 1px solid rgb(202, 206, 215);
       margin-right: 15px;
       width: 100%;
@@ -93,7 +93,7 @@
       font-size: 140%;
       padding-right: 20px;
       padding-top: 1%;
-
+      font-weight: 450;
     }
   </style>
   <?php
@@ -244,7 +244,7 @@
                         </tr>
                         <tr>
                           <td class="name">Password </td>
-                          <td><input type="text" name="pass" placeholder="Password"></td>
+                          <td><input type="password" name="pass" placeholder="Password"></td>
                         </tr>
                         <tr>
                           <td class="name">ชื่อ</td>
