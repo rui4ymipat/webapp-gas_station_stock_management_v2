@@ -31,20 +31,23 @@ else if(!empty($_POST['Fname']))
     $_SESSION['msg'] = 'การดำเนินการไม่สำเร็จ กรุณาลองใหม่อีกครั้ง';
     header("Location:management.php");
 }
-for ($i = 0; $i < count($username); $i++) {
-    if ($id == $username[$i]) {
-        $_SESSION['msg'] = 'การดำเนินการไม่สำเร็จ ID ถูกใช้ไปแล้ว';
+else
+{
+    for ($i = 0; $i < count($username); $i++) {
+        if ($id == $username[$i]) {
+            $_SESSION['msg'] = 'การดำเนินการไม่สำเร็จ ID ถูกใช้ไปแล้ว';
+            header("Location:management.php");
+        }
+    }
+    
+    
+    $userQuery = "INSERT INTO user(Fname,Lname,username,password) VALUES('$Fname','$Lname','$id','$pass')";
+    $result = mysqli_query($connect, $userQuery);
+    if (!$result) {
+        $_SESSION['msg'] = 'การดำเนินการไม่สำเร็จ กรุณาลองใหม่อีกครั้ง';
+        header("Location:management.php");
+    } else {
+        $_SESSION['msg'] = 'การดำเนินการสำเร็จ';
         header("Location:management.php");
     }
-}
-
-
-$userQuery = "INSERT INTO user(Fname,Lname,username,password) VALUES('$Fname','$Lname','$id','$pass')";
-$result = mysqli_query($connect, $userQuery);
-if (!$result) {
-    $_SESSION['msg'] = 'การดำเนินการไม่สำเร็จ กรุณาลองใหม่อีกครั้ง';
-    header("Location:management.php");
-} else {
-    $_SESSION['msg'] = 'การดำเนินการสำเร็จ';
-    header("Location:management.php");
 }
