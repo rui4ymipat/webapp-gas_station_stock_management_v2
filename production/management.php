@@ -27,21 +27,21 @@
     }
 
     @media only screen and (max-width: 1366px) {
-      .row1 {
-        width: 100%;
+      .setborder {
+        width: 36%;
       }
     }
 
     @media only screen and (max-width: 1024px) {
-      .row1 {
-        width: 100%;
+      .setborder {
+        width: 57%;
       }
 
     }
 
     @media only screen and (min-width: 1367px) {
-      .row1 {
-        width: 100%;
+      .setborder {
+        width: 23%;
       }
 
     }
@@ -265,7 +265,7 @@
 
                   <div class="x_panel">
                     <div class="x_title">
-                      <h2 style="font-weight: 800;color: #2B3E54;font-size: 200%;">บัญชีผู้ใช่ <small style="font-weight: 800;color: #2B3E54;font-size: 100%;">จัดการบัญชีผู้ใช้</small></h2>
+                      <h2 style="font-weight: 800;color: #2B3E54;font-size: 200%;">บัญชีผู้ใช้</h2>
                       <ul class="nav navbar-right panel_toolbox">
                         <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                         </li>
@@ -279,28 +279,28 @@
                       <table class="table table-striped">
                         <thead>
                           <tr>
-                            <th>ชื่อ</th>
-                            <th>นามสกุล</th>
-                            <th>ลบบัญชี</th>
-                            <th>แก้ไขบัญชี</th>
-                            <th>จัดการสิทธิ์แอดมิน</th>
+                            <th style="font-size: 150%;">ชื่อ</th>
+                            <th style="font-size: 150%;">นามสกุล</th>
+                            <th style="font-size: 150%;">ลบบัญชี</th>
+                            <th style="font-size: 150%;">แก้ไขบัญชี</th>
+                            <th style="font-size: 150%;">จัดการสิทธิ์แอดมิน</th>
                           </tr>
                         </thead>
                         <tbody>
                           <?php for ($i = 0; $i < count($id); $i++) { ?>
                             <tr>
-                              <td style="font-weight: 800;color: #2B3E54;font-size: 85%;"><?php echo $Fname[$i]; ?></td>
-                              <td style="font-weight: 800;color: #2B3E54;font-size: 85%;"><?php echo $Lname[$i]; ?></td>
-                              <td style="font-weight: 800;color: #2B3E54;font-size: 85%;"><button class="btn btn-round btn-danger"><a href="delete_user.php?id=<?php echo $id[$i]; ?>" style="color: white;">ลบบัญชี</a></button></td>
-                              <td style="font-weight: 800;color: #2B3E54;font-size: 85%;"><button class="btn btn-round btn-info"><a href="change_user.php?id=<?php echo $id[$i]; ?>" style="color: white;">แก้ไขบัญชี</a></button></td>
+                              <td style="font-size: 158%;"><?php echo $Fname[$i]; ?></td>
+                              <td style="font-size: 159%;"><?php echo $Lname[$i]; ?></td>
+                              <td style="font-size: 159%;"><button class="btn btn-round btn-danger"><a href="delete_user.php?id=<?php echo $id[$i]; ?>" style="color: white;">ลบบัญชี</a></button></td>
+                              <td style="font-size: 159%;"><button class="btn btn-round btn-info"><a href="change_user.php?id=<?php echo $id[$i]; ?>" style="color: white;">แก้ไขบัญชี</a></button></td>
                               <?php
                               if ($level[$i] == 1) {
                               ?>
-                                <td style="font-weight: 800;color: #2B3E54;font-size: 85%;"><button class="btn btn-round btn-success"><a href="add_admin.php?id=<?php echo $id[$i]; ?>" style="color: white;">เพิ่มสิทธิ์แอดมิน</a></button></td>
+                                <td style="font-size: 85%;"><button class="btn btn-round btn-success"><a href="add_admin.php?id=<?php echo $id[$i]; ?>" style="color: white;">เพิ่มสิทธิ์แอดมิน</a></button></td>
                               <?php
                               } else {
                               ?>
-                                <td style="font-weight: 800;color: #2B3E54;font-size: 85%;"><button class="btn btn-round btn-success"><a href="drop_admin.php?id=<?php echo $id[$i]; ?>" style="color: white;">ลดสิทธิ์แอดมิน</a></button></td>
+                                <td style="font-size: 85%;"><button class="btn btn-round btn-success"><a href="drop_admin.php?id=<?php echo $id[$i]; ?>" style="color: white;">ลดสิทธิ์แอดมิน</a></button></td>
                               <?php
                               }
                               ?>
