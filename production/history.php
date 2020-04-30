@@ -77,6 +77,15 @@
       display: block;
       margin-left: 4%;
     }
+    .column2 table tr td {
+      width: 22%;
+    }
+
+    .column2 table {
+      border: 1px solid rgb(202, 206, 215);
+      width: 190%;
+      text-align: center;
+    }
     }
 
     @media only screen and (max-width: 1024px) {
@@ -90,7 +99,6 @@
       display: inline-table;
       margin-left: 4%;
     }
-
     .column2 table tr td {
       width: 22%;
     }
@@ -100,6 +108,7 @@
       width: 190%;
       text-align: center;
     }
+
     }
 
     @media only screen and (min-width: 1367px) {
@@ -112,6 +121,15 @@
     .column2 {
       display: inline-table;
       margin-left: 4%;
+    }
+    .column2 table tr td {
+      width: 22%;
+    }
+
+    .column2 table {
+      border: 1px solid rgb(202, 206, 215);
+      width: 190%;
+      text-align: center;
     }
     }
   </style>
