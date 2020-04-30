@@ -287,8 +287,40 @@
                     </form>
                   </div>
                 </div>
-                <div class="column2">
-
+                <div >
+                        <table>
+                          <tr>
+                            <th rowspan="2">วันที่</th>
+                            <th rowspan="2">รถขนน้ำมัน</th>
+                            <th colspan="3">บัญชี 1 สั่งซื้อรวม ..... ลิตร</th>
+                            <th colspan="3">บัญชี 2 สั่งซื้อรวม ..... ลิตร</th>
+                            <th colspan="3">บัญชี 3 สั่งซื้อรวม ..... ลิตร</th>
+                          </tr>
+                          <tr>
+                            <th>G91</th>
+                            <th>G95</th>
+                            <th>Diesel</th>
+                            <th>G91</th>
+                            <th>G95</th>
+                            <th>Diesel</th>
+                            <th>G91</th>
+                            <th>G95</th>
+                            <th>Diesel</th>
+                          </tr>
+                          <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>7</td>
+                            <td>8</td>
+                            <td>9</td>
+                            <td>10</td>
+                            <td>11</td>
+                          </tr>
+                        </table>
                 </div>
               </div>
 
