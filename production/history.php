@@ -21,13 +21,15 @@
       border-bottom: 0.5px solid rgb(202, 206, 215);
     }
 
-    .column1{
+    .column1 {
       display: inline-table;
     }
+
     .column2 {
       display: inline-table;
       margin-left: 4%;
     }
+
     input[type="text"] {
       border: 1px solid rgb(202, 206, 215);
       margin-right: 15px;
@@ -53,13 +55,10 @@
     .account tr.detail {
       font-size: 60%;
     }
-    .column2 table tr td{
-      width: 22%;
-    }
-    .column2 table {
-      border: 1px solid rgb(202, 206, 215);
-      border-radius: 5px;
-    }
+
+
+
+
 
 
     td.name {
@@ -67,24 +66,53 @@
       padding-right: 20px;
       padding-top: 1%;
     }
+
     @media only screen and (max-width: 1366px) {
       .column1 {
-        width: 56%;
-      }
+      display: block;
+      width: 56%;
+    }
+
+    .column2 {
+      display: block;
+      margin-left: 4%;
+    }
     }
 
     @media only screen and (max-width: 1024px) {
-      .column1 {
-        width: 85%;
-      }
 
+      .column1 {
+      display: inline-table;
+      width: 85%;
+    }
+
+    .column2 {
+      display: inline-table;
+      margin-left: 4%;
+    }
+
+    .column2 table tr td {
+      width: 22%;
+    }
+
+    .column2 table {
+      border: 1px solid rgb(202, 206, 215);
+      width: 190%;
+      text-align: center;
+    }
     }
 
     @media only screen and (min-width: 1367px) {
-      .column1 {
-        width: 33%;
-      }
 
+      .column1 {
+      display: inline-table;
+      width: 33%;
+    }
+
+    .column2 {
+      display: inline-table;
+      margin-left: 4%;
+    }
     }
   </style>
   <?php
@@ -95,8 +123,8 @@
     header("Location:login.php");
   }
   require_once "connect.php";
-  $userQuery="SELECT * from car";
-  $result=mysqli_query($connect, $userQuery);
+  $userQuery = "SELECT * from car";
+  $result = mysqli_query($connect, $userQuery);
   ?>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <!-- Meta, title, CSS, favicons, etc. -->
@@ -212,20 +240,20 @@
 
                 </div>
               </div>
-                  
+
               <div class="setfont1">
                 <div class="column1">
                   <h1 style="font-weight: 800;color: #2B3E54;font-size: 200%;">กรอกข้อมูลประจำวัน</h1>
                   <div class="setborder">
-                  
+
                     <form action="add-pricegas.php">
-                    <div class="showdetail">รถขนน้ำมัน</div>
-                    <select name="cars" style="padding-left: 5%;width: 60%;height: 35px;margin-bottom: 15px;" class="form-control">
-                    <option value="none" selected disabled hidden>เลือกรถ</option>
-                      <?php while( $row=mysqli_fetch_assoc($result)){ ?>
-                        <option value="<?php echo $row['id'] ?>"><?php echo $row['name'] ?></option>
-                      <?php }?>
-                    </select>
+                      <div class="showdetail">รถขนน้ำมัน</div>
+                      <select name="cars" style="padding-left: 5%;width: 60%;height: 35px;margin-bottom: 15px;" class="form-control">
+                        <option value="none" selected disabled hidden>เลือกรถ</option>
+                        <?php while ($row = mysqli_fetch_assoc($result)) { ?>
+                          <option value="<?php echo $row['id'] ?>"><?php echo $row['name'] ?></option>
+                        <?php } ?>
+                      </select>
                       <div class="showdetail">ปริมาณที่สั่งซื้อ บัญชี 1</div>
                       <table class="account">
 
@@ -296,39 +324,41 @@
                   </div>
                 </div>
                 <div class="column2">
-                        <table border="1">
-                          <tr>
-                            <th rowspan="2">วันที่</th>
-                            <th rowspan="2">รถขนน้ำมัน</th>
-                            <th colspan="3">บัญชี 1 สั่งซื้อรวม ..... ลิตร</th>
-                            <th colspan="3">บัญชี 2 สั่งซื้อรวม ..... ลิตร</th>
-                            <th colspan="3">บัญชี 3 สั่งซื้อรวม ..... ลิตร</th>
-                          </tr>
-                          <tr>
-                            <th>G91</th>
-                            <th>G95</th>
-                            <th>Diesel</th>
-                            <th>G91</th>
-                            <th>G95</th>
-                            <th>Diesel</th>
-                            <th>G91</th>
-                            <th>G95</th>
-                            <th>Diesel</th>
-                          </tr>
-                          <tr>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>5</td>
-                            <td>6</td>
-                            <td>7</td>
-                            <td>8</td>
-                            <td>9</td>
-                            <td>10</td>
-                            <td>11</td>
-                          </tr>
-                        </table>
+                  <br>
+                  <br>
+                  <table border="1">
+                    <tr>
+                      <th rowspan="2">วันที่</th>
+                      <th rowspan="2">รถขนน้ำมัน</th>
+                      <th colspan="3">บัญชี 1 สั่งซื้อรวม ..... ลิตร</th>
+                      <th colspan="3">บัญชี 2 สั่งซื้อรวม ..... ลิตร</th>
+                      <th colspan="3">บัญชี 3 สั่งซื้อรวม ..... ลิตร</th>
+                    </tr>
+                    <tr>
+                      <th>G91</th>
+                      <th>G95</th>
+                      <th>Diesel</th>
+                      <th>G91</th>
+                      <th>G95</th>
+                      <th>Diesel</th>
+                      <th>G91</th>
+                      <th>G95</th>
+                      <th>Diesel</th>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>2</td>
+                      <td>3</td>
+                      <td>4</td>
+                      <td>5</td>
+                      <td>6</td>
+                      <td>7</td>
+                      <td>8</td>
+                      <td>9</td>
+                      <td>10</td>
+                      <td>11</td>
+                    </tr>
+                  </table>
                 </div>
               </div>
 
