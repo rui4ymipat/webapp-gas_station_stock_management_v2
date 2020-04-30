@@ -123,7 +123,7 @@
       margin-left: 1%;
     }
     .column2 table tr td {
-      width: 22%;
+      width: 9%;
     }
 
     .column2 table {
