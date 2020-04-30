@@ -21,11 +21,13 @@
       border-bottom: 0.5px solid rgb(202, 206, 215);
     }
 
-    .column1,
-    .column2 {
+    .column1{
       display: inline-table;
     }
-
+    .column2 {
+      display: inline-table;
+      margin-left: 4%;
+    }
     input[type="text"] {
       border: 1px solid rgb(202, 206, 215);
       margin-right: 15px;
@@ -51,7 +53,13 @@
     .account tr.detail {
       font-size: 60%;
     }
-
+    .column2 table tr td{
+      width: 22%;
+    }
+    .column2 table {
+      border: 1px solid rgb(202, 206, 215);
+      border-radius: 5px;
+    }
 
 
     td.name {
