@@ -287,7 +287,7 @@
                     </form>
                   </div>
                 </div>
-                <div >
+                <div class="column2">
                         <table>
                           <tr>
                             <th rowspan="2">วันที่</th>
