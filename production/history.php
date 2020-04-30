@@ -75,7 +75,6 @@
 
     .column2 {
       display: block;
-      margin-left: 4%;
     }
     .column2 table tr td {
       width: 22%;
@@ -85,19 +84,19 @@
       border: 1px solid rgb(202, 206, 215);
       width: 190%;
       text-align: center;
+      font-size: 107%;
     }
     }
 
     @media only screen and (max-width: 1024px) {
 
       .column1 {
-      display: inline-table;
+      display: block;
       width: 85%;
     }
 
     .column2 {
-      display: inline-table;
-      margin-left: 4%;
+      display: block;
     }
     .column2 table tr td {
       width: 22%;
@@ -107,6 +106,7 @@
       border: 1px solid rgb(202, 206, 215);
       width: 190%;
       text-align: center;
+      font-size: 107%;
     }
 
     }
@@ -120,7 +120,7 @@
 
     .column2 {
       display: inline-table;
-      margin-left: 4%;
+      margin-left: 1%;
     }
     .column2 table tr td {
       width: 22%;
@@ -130,6 +130,7 @@
       border: 1px solid rgb(202, 206, 215);
       width: 190%;
       text-align: center;
+      font-size: 107%;
     }
     }
   </style>
