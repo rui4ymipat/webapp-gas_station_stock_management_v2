@@ -23,7 +23,7 @@
 
     .column1,
     .column2 {
-      display: inline-block;
+      display: inline-table;
     }
 
     input[type="text"] {
@@ -288,7 +288,7 @@
                   </div>
                 </div>
                 <div class="column2">
-                        <table>
+                        <table border="1">
                           <tr>
                             <th rowspan="2">วันที่</th>
                             <th rowspan="2">รถขนน้ำมัน</th>
