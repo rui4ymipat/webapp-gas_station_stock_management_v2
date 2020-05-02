@@ -114,8 +114,7 @@
                   <li><a href="stockFuel.php"><i class="fa fa-cube"></i> สต็อกน้ำมัน</a></li>
                   <li><a href="management.php"><i class="fa fa-users"></i> จัดการบัญชีผู้ใช้</a></li>
                   <li><a href="logout.php"><i class="fa fa-sign-out"> </i>Log Out</a></li>
-                <?php }
-                else if ($_SESSION['user_level'] == 3) { ?>
+                <?php } else if ($_SESSION['user_level'] == 3) { ?>
                   <li><a href="fuelprice.php"><i class="fa fa-money"></i> ราคาน้ำมัน</a></li>
                   <li><a href="cost.php"><i class="fa fa-bar-chart"></i> ต้นทุน</a></li>
                   <li><a href="history.php"><i class="fa fa-history"></i> ประวัติการสั่งซื้อ</a></li>
@@ -174,50 +173,155 @@
 
                 function drawChart() {
                   var data = google.visualization.arrayToDataTable([
-                    ['ยอดขาย', 'แก๊สโซฮอล์ 91', 'แก๊สโซฮอล์ 95', 'ดีเซล'],
-                    ['1/04', 100, 400, 200],
-                    ['2/04', 1170, 460, 250],
-                    ['3/04', 660, 1120, 300],
-                    ['4/04', 1030, 540, 350],
-                    ['5/04', 1000, 400, 200],
-                    ['6/04', 1170, 460, 250],
-                    ['7/04', 660, 1120, 300],
-                    ['8/04', 1030, 540, 350],
-                    ['9/04', 1000, 400, 200],
-                    ['10/04', 1170, 460, 250],
-                    ['11/04', 660, 1120, 300],
-                    ['12/04', 1030, 540, 350],
-                    ['13/04', 1000, 400, 200],
-                    ['14/04', 1170, 460, 250],
-                    ['15/04', 1000, 400, 200],
-                    ['16/04', 1170, 460, 250],
-                    ['17/04', 660, 1120, 300],
-                    ['18/04', 1030, 540, 350],
-                    ['19/04', 1000, 400, 200],
-                    ['20/04', 1170, 460, 250],
-                    ['21/04', 660, 1120, 300],
-                    ['22/04', 1030, 540, 350],
-                    ['23/04', 1000, 400, 200],
-                    ['24/04', 1170, 460, 250],
-                    ['25/04', 660, 1120, 300],
-                    ['26/04', 1030, 540, 350],
-                    ['27/04', 1000, 400, 200],
-                    ['28/04', 1170, 460, 250],
-                    ['29/04', 660, 1120, 300],
-                    ['30/04', 1030, 540, 350],
-                    ['31/04', 1030, 540, 350]
+                    ['ยอดขาย', 'แก๊สโซฮอล์ 91'],
+                    ['1/04', 100],
+                    ['2/04', 1170],
+                    ['3/04', 660],
+                    ['4/04', 1030],
+                    ['5/04', 1000],
+                    ['6/04', 1170],
+                    ['7/04', 660],
+                    ['8/04', 1030],
+                    ['9/04', 1000],
+                    ['10/04', 1170],
+                    ['11/04', 660],
+                    ['12/04', 1030],
+                    ['13/04', 1000],
+                    ['14/04', 1170],
+                    ['15/04', 1000],
+                    ['16/04', 1170],
+                    ['17/04', 660],
+                    ['18/04', 1030],
+                    ['19/04', 1000],
+                    ['20/04', 1170],
+                    ['21/04', 660],
+                    ['22/04', 1030],
+                    ['23/04', 1000],
+                    ['24/04', 1170],
+                    ['25/04', 660],
+                    ['26/04', 1030],
+                    ['27/04', 1000],
+                    ['28/04', 1170],
+                    ['29/04', 660],
+                    ['30/04', 1030],
+                    ['31/04', 1030]
                   ]);
 
                   var options = {
                     bars: 'vertical' // Required for Material Bar Charts.
                   };
 
-                  var chart = new google.charts.Bar(document.getElementById('barchart_material'));
+                  var chart = new google.charts.Bar(document.getElementById('G91'));
 
                   chart.draw(data, google.charts.Bar.convertOptions(options));
                 }
               </script>
 
+              <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+              <script type="text/javascript">
+                google.charts.load('current', {
+                  'packages': ['bar']
+                });
+                google.charts.setOnLoadCallback(drawChart);
+
+                function drawChart() {
+                  var data = google.visualization.arrayToDataTable([
+                    ['ยอดขาย', 'แก๊สโซฮอล์ 95'],
+                    ['1/04', 100],
+                    ['2/04', 1170],
+                    ['3/04', 660],
+                    ['4/04', 1030],
+                    ['5/04', 1000],
+                    ['6/04', 1170],
+                    ['7/04', 660],
+                    ['8/04', 1030],
+                    ['9/04', 1000],
+                    ['10/04', 1170],
+                    ['11/04', 660],
+                    ['12/04', 1030],
+                    ['13/04', 1000],
+                    ['14/04', 1170],
+                    ['15/04', 1000],
+                    ['16/04', 1170],
+                    ['17/04', 660],
+                    ['18/04', 1030],
+                    ['19/04', 1000],
+                    ['20/04', 1170],
+                    ['21/04', 660],
+                    ['22/04', 1030],
+                    ['23/04', 1000],
+                    ['24/04', 1170],
+                    ['25/04', 660],
+                    ['26/04', 1030],
+                    ['27/04', 1000],
+                    ['28/04', 1170],
+                    ['29/04', 660],
+                    ['30/04', 1030],
+                    ['31/04', 1030]
+                  ]);
+
+                  var options = {
+                    bars: 'vertical' // Required for Material Bar Charts.
+                  };
+
+                  var chart = new google.charts.Bar(document.getElementById('G95'));
+
+                  chart.draw(data, google.charts.Bar.convertOptions(options));
+                }
+              </script>
+
+              <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+              <script type="text/javascript">
+                google.charts.load('current', {
+                  'packages': ['bar']
+                });
+                google.charts.setOnLoadCallback(drawChart);
+
+                function drawChart() {
+                  var data = google.visualization.arrayToDataTable([
+                    ['ยอดขาย', 'ดีเซล'],
+                    ['1/04', 100],
+                    ['2/04', 1170],
+                    ['3/04', 660],
+                    ['4/04', 1030],
+                    ['5/04', 1000],
+                    ['6/04', 1170],
+                    ['7/04', 660],
+                    ['8/04', 1030],
+                    ['9/04', 1000],
+                    ['10/04', 1170],
+                    ['11/04', 660],
+                    ['12/04', 1030],
+                    ['13/04', 1000],
+                    ['14/04', 1170],
+                    ['15/04', 1000],
+                    ['16/04', 1170],
+                    ['17/04', 660],
+                    ['18/04', 1030],
+                    ['19/04', 1000],
+                    ['20/04', 1170],
+                    ['21/04', 660],
+                    ['22/04', 1030],
+                    ['23/04', 1000],
+                    ['24/04', 1170],
+                    ['25/04', 660],
+                    ['26/04', 1030],
+                    ['27/04', 1000],
+                    ['28/04', 1170],
+                    ['29/04', 660],
+                    ['30/04', 1030],
+                    ['31/04', 1030]
+                  ]);
+
+                  var options = {
+                    bars: 'vertical' // Required for Material Bar Charts.
+                  };
+
+                  var chart = new google.charts.Bar(document.getElementById('De'));
+
+                  chart.draw(data, google.charts.Bar.convertOptions(options));
+                }
+              </script>
               <?php if ($_SESSION['user_level'] == 2) { ?>
 
 
@@ -266,7 +370,12 @@
                   <h1 class="todayprice">ยอดขายประจำเดือน เมษายน</h1>
                 </div>
                 <br>
-                <div id="barchart_material" style="width: 1450px; height: 450px;"></div>
+                <div id="G91" style="width: 1450px; height: 450px;"></div>
+                <br>
+                <div id="G95" style="width: 1450px; height: 450px;"></div>
+                <br>
+                <div id="De" style="width: 1450px; height: 450px;"></div>
+
 
 
               <?php } else { ?>
