@@ -2,7 +2,7 @@
  session_start();
 require_once "connect.php";
 $id = $_GET['id'];
-$userQuery="UPDATE user SET level = 3 WHERE id = $id";
+$userQuery="UPDATE user SET level = 2 WHERE id = $id";
 $result=mysqli_query($connect, $userQuery);
 if(!$result)
 {
