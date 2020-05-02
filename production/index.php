@@ -9,14 +9,14 @@
     table.showgas tr.name td {
       padding-right: 100px;
       padding-top: 7px;
-      font-size: 100%;
+      font-size: 130%;
 
     }
 
     h1.todayprice {
       font-weight: 900;
       color: #2B3E54;
-      font-size: 220%
+      font-size: 180%
     }
 
     .setfont1,
