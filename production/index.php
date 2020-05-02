@@ -69,6 +69,9 @@
   <!-- Custom Theme Style -->
   <link href="../build/css/custom.min.css" rel="stylesheet">
 </head>
+<script src="https://www.koolchart.com/demo/LicenseKey/KoolChartLicense.js"></script>
+<script src="https://www.koolchart.com/demo/KoolChart/JS/KoolChart.js"></script>
+<link rel="stylesheet" href="https://www.koolchart.com/demo/KoolChart/Assets/Css/KoolChart.css" />
 
 <body class="nav-md" style="background-color: white;">
   <div class="container body">
@@ -322,6 +325,73 @@
                   chart.draw(data, google.charts.Bar.convertOptions(options));
                 }
               </script>
+
+              <script>
+                var chartVars = "KoolOnLoadCallFunction=chartReadyHandler";
+
+                KoolChart.create("chart1", "G1", chartVars, "100%", "100%");
+
+                function chartReadyHandler(id) {
+                  document.getElementById(id).setLayout(layoutStr);
+                  document.getElementById(id).setData(chartData);
+                }
+
+                var layoutStr =
+                  '<KoolChart>' +
+                  '<CurrencyFormatter id="cft" currencySymbol="%" alignSymbol="right" precision="0"/>' +
+                  '<LinearGauge direction="horizontal" verticalRatio="0.5" fontSize="20" valueChangeFunction="changeFunction1" formatter="{cft}" foregroundColor="#20cbc2" color="#ffffff" fontWeight="bold" width="1000" height="200">' +
+                  '<backgroundStroke>' +
+                  '<Stroke color="#20cbc2" weight="3"/>' +
+                  '</backgroundStroke>' +
+                  '</LinearGauge>' +
+                  '</KoolChart>';
+
+                var chartData = [80];
+              </script>
+              <script>
+                var chartVars = "KoolOnLoadCallFunction=chartReadyHandler";
+
+                KoolChart.create("chart1", "G2", chartVars, "100%", "100%");
+
+                function chartReadyHandler(id) {
+                  document.getElementById(id).setLayout(layoutStr);
+                  document.getElementById(id).setData(chartData);
+                }
+
+                var layoutStr =
+                  '<KoolChart>' +
+                  '<CurrencyFormatter id="cft" currencySymbol="%" alignSymbol="right" precision="0"/>' +
+                  '<LinearGauge direction="horizontal" verticalRatio="0.5" fontSize="20" valueChangeFunction="changeFunction1" formatter="{cft}" foregroundColor="#20cbc2" color="#ffffff" fontWeight="bold" width="1000" height="200">' +
+                  '<backgroundStroke>' +
+                  '<Stroke color="#20cbc2" weight="3"/>' +
+                  '</backgroundStroke>' +
+                  '</LinearGauge>' +
+                  '</KoolChart>';
+
+                var chartData = [80];
+              </script>
+              <script>
+                var chartVars = "KoolOnLoadCallFunction=chartReadyHandler";
+
+                KoolChart.create("chart1", "G3", chartVars, "100%", "100%");
+
+                function chartReadyHandler(id) {
+                  document.getElementById(id).setLayout(layoutStr);
+                  document.getElementById(id).setData(chartData);
+                }
+
+                var layoutStr =
+                  '<KoolChart>' +
+                  '<CurrencyFormatter id="cft" currencySymbol="%" alignSymbol="right" precision="0"/>' +
+                  '<LinearGauge direction="horizontal" verticalRatio="0.5" fontSize="20" valueChangeFunction="changeFunction1" formatter="{cft}" foregroundColor="#20cbc2" color="#ffffff" fontWeight="bold" width="1000" height="200">' +
+                  '<backgroundStroke>' +
+                  '<Stroke color="#20cbc2" weight="3"/>' +
+                  '</backgroundStroke>' +
+                  '</LinearGauge>' +
+                  '</KoolChart>';
+
+                var chartData = [80];
+              </script>
               <?php if ($_SESSION['user_level'] == 2) { ?>
 
 
@@ -389,13 +459,21 @@
                   <h1 class="todayprice">ยอดขายประจำเดือน เมษายน</h1>
                 </div>
                 <br>
+                <div class="setfont1"><h1 class="todayprice">สต็อกน้ำมัน G95 10 ลิตร</h1></div>
+                <div id="G1" style="width:100%; height:100px;"></div>
+                <br>
+                <div class="setfont1"><h1 class="todayprice">สต็อกน้ำมัน G91 10 ลิตร</h1></div>
+                <div id="G2" style="width:100%; height:100px;"></div>
+                <br>
+                <div class="setfont1"><h1 class="todayprice">สต็อกน้ำมัน Desel 10 ลิตร</h1></div>
+                <div id="G3" style="width:100%; height:100px;"></div>
+                <br>
                 <div id="G91" style="width: 1450px; height: 450px;"></div>
                 <br>
                 <div id="G95" style="width: 1450px; height: 450px;"></div>
                 <br>
                 <div id="De" style="width: 1450px; height: 450px;"></div>
-
-
+                
 
               <?php } else { ?>
                 <div class="setfont1">
