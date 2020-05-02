@@ -293,7 +293,7 @@
                                 <td style="font-size: 85%;">ลูกจ้าง</td>
                               <?php
                               }
-                              if ($level[$i] == 2) {
+                              else if ($level[$i] == 2) {
                               ?>
                                 <td style="font-size: 85%;">
                                   <button class="btn btn-round btn-success"><a href="add_controller.php?id=<?php echo $id[$i]; ?>" style="color: white;">สิทธิ์ผู้ดูแล</a></button>
