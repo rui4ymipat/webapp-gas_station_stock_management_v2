@@ -290,9 +290,7 @@
                                   <button class="btn btn-round btn-success"><a href="add_admin.php?id=<?php echo $id[$i]; ?>" style="color: white;">สิทธิ์แอดมิน</a></button>
                                   <button class="btn btn-round btn-success"><a href="add_controller.php?id=<?php echo $id[$i]; ?>" style="color: white;">สิทธิ์ผู้ดูแล</a></button>
                                 </td>
-                                <td style="font-size: 85%;">
-                                  ลูกจ้าง
-                                </td>
+                                <td style="font-size: 85%;">ลูกจ้าง</td>
                               <?php
                               }
                               if ($level[$i] == 2) {
@@ -301,9 +299,7 @@
                                   <button class="btn btn-round btn-success"><a href="add_controller.php?id=<?php echo $id[$i]; ?>" style="color: white;">สิทธิ์ผู้ดูแล</a></button>
                                   <button class="btn btn-round btn-success"><a href="add_users.php?id=<?php echo $id[$i]; ?>" style="color: white;">สิทธิ์ลูกจ้าง</a></button>
                                 </td>
-                                <td style="font-size: 85%;">
-                                  แอดมิน
-                                </td>
+                                <td style="font-size: 85%;">แอดมิน</td>
                               <?php
                               } else {
                               ?>
@@ -311,9 +307,7 @@
                                   <button class="btn btn-round btn-success"><a href="add_admin.php?id=<?php echo $id[$i]; ?>" style="color: white;">สิทธิ์แอดมิน</a></button>
                                   <button class="btn btn-round btn-success"><a href="add_controller.php?id=<?php echo $id[$i]; ?>" style="color: white;">สิทธิ์ผู้ดูแล</a></button>
                                 </td>
-                                <td style="font-size: 85%;">
-                                  ผู้ดูแล
-                                </td>
+                                <td style="font-size: 85%;">ผู้ดูแล</td>
                               <?php
                               }
                               ?>
