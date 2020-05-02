@@ -108,16 +108,16 @@
                 <li><a href="index.php"><i class="fa fa-home"></i> หน้าแรก</a></li>
                 <?php if ($_SESSION['user_level'] == 2) { ?>
                   <li><a href="fuelprice.php"><i class="fa fa-money"></i> ราคาน้ำมัน</a></li>
-                  <li><a href="cost.php"><i class="fa fa-bar-chart"></i> ต้นทุน</a></li>
                   <li><a href="history.php"><i class="fa fa-history"></i> ประวัติการสั่งซื้อ</a></li>
+                  <li><a href="cost.php"><i class="fa fa-bar-chart"></i> ต้นทุน</a></li>                 
                   <li><a href="informationGasCar.php"><i class="fa fa-truck"></i> ข้อมูลรถน้ำมัน</a></li>
                   <li><a href="stockFuel.php"><i class="fa fa-cube"></i> สต็อกน้ำมัน</a></li>
                   <li><a href="management.php"><i class="fa fa-users"></i> จัดการบัญชีผู้ใช้</a></li>
                   <li><a href="logout.php"><i class="fa fa-sign-out"> </i>Log Out</a></li>
                 <?php } else if ($_SESSION['user_level'] == 3) { ?>
                   <li><a href="fuelprice.php"><i class="fa fa-money"></i> ราคาน้ำมัน</a></li>
-                  <li><a href="cost.php"><i class="fa fa-bar-chart"></i> ต้นทุน</a></li>
                   <li><a href="history.php"><i class="fa fa-history"></i> ประวัติการสั่งซื้อ</a></li>
+                  <li><a href="cost.php"><i class="fa fa-bar-chart"></i> ต้นทุน</a></li>   
                   <li><a href="informationGasCar.php"><i class="fa fa-truck"></i> ข้อมูลรถน้ำมัน</a></li>
                   <li><a href="stockFuel.php"><i class="fa fa-cube"></i> สต็อกน้ำมัน</a></li>
                   <li><a href="logout.php"><i class="fa fa-sign-out"> </i>Log Out</a></li>
@@ -326,7 +326,26 @@
 
 
                 <div class="setfont1">
-                  <h1 class="todayprice">ราคาน้ำมันวันนี้</h1>
+                  <h1 class="todayprice">ราคาน้ำมันหน้าป้าย</h1>
+                  <table class="showgas">
+                    <tr class="name">
+                      <td>Gasohol 91</td>
+                      <td>Gasohol 95</td>
+                      <td>Diesel</td>
+                    </tr>
+                    <tr class="price">
+                      <td>16.68<div style="font-size: 40%;">บาท/ลิตร</div>
+                      </td>
+                      <td>16.95<div style="font-size: 40%;">บาท/ลิตร</div>
+                      </td>
+                      <td>14.72<div style="font-size: 40%;">บาท/ลิตร</div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <br>
+                <div class="setfont1">
+                  <h1 class="todayprice">ราคาน้ำมันต้นทุน</h1>
                   <table class="showgas">
                     <tr class="name">
                       <td>Gasohol 91</td>
