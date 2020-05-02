@@ -68,10 +68,11 @@
 
   <!-- Custom Theme Style -->
   <link href="../build/css/custom.min.css" rel="stylesheet">
+  <script src="https://www.koolchart.com/demo/LicenseKey/KoolChartLicense.js"></script>
+  <script src="https://www.koolchart.com/demo/KoolChart/JS/KoolChart.js"></script>
+  <link rel="stylesheet" href="https://www.koolchart.com/demo/KoolChart/Assets/Css/KoolChart.css" />
 </head>
-<script src="https://www.koolchart.com/demo/LicenseKey/KoolChartLicense.js"></script>
-<script src="https://www.koolchart.com/demo/KoolChart/JS/KoolChart.js"></script>
-<link rel="stylesheet" href="https://www.koolchart.com/demo/KoolChart/Assets/Css/KoolChart.css" />
+
 
 <body class="nav-md" style="background-color: white;">
   <div class="container body">
@@ -459,13 +460,19 @@
                   <h1 class="todayprice">ยอดขายประจำเดือน เมษายน</h1>
                 </div>
                 <br>
-                <div class="setfont1"><h1 class="todayprice">สต็อกน้ำมัน G95 10 ลิตร</h1></div>
+                <div class="setfont1">
+                  <h1 class="todayprice">สต็อกน้ำมัน G95 10 ลิตร</h1>
+                </div>
                 <div id="G1" style="width:100%; height:100px;"></div>
                 <br>
-                <div class="setfont1"><h1 class="todayprice">สต็อกน้ำมัน G91 10 ลิตร</h1></div>
+                <div class="setfont1">
+                  <h1 class="todayprice">สต็อกน้ำมัน G91 10 ลิตร</h1>
+                </div>
                 <div id="G2" style="width:100%; height:100px;"></div>
                 <br>
-                <div class="setfont1"><h1 class="todayprice">สต็อกน้ำมัน Desel 10 ลิตร</h1></div>
+                <div class="setfont1">
+                  <h1 class="todayprice">สต็อกน้ำมัน Desel 10 ลิตร</h1>
+                </div>
                 <div id="G3" style="width:100%; height:100px;"></div>
                 <br>
                 <div id="G91" style="width: 1450px; height: 450px;"></div>
@@ -473,7 +480,7 @@
                 <div id="G95" style="width: 1450px; height: 450px;"></div>
                 <br>
                 <div id="De" style="width: 1450px; height: 450px;"></div>
-                
+
 
               <?php } else { ?>
                 <div class="setfont1">
