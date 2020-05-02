@@ -285,11 +285,18 @@
                               <?php
                               if ($level[$i] == 1) {
                               ?>
-                                <td style="font-size: 85%;"><button class="btn btn-round btn-success"><a href="add_admin.php?id=<?php echo $id[$i]; ?>" style="color: white;">เพิ่มสิทธิ์แอดมิน</a></button></td>
+                                <td style="font-size: 85%;">
+                                <button class="btn btn-round btn-success"><a href="drop_admin.php?id=<?php echo $id[$i]; ?>" style="color: white;">สิทธิ์แอดมิน</a></button>
+                                <button class="btn btn-round btn-success"><a href="drop_admin.php?id=<?php echo $id[$i]; ?>" style="color: white;">สิทธิ์ผู้ดูแล</a></button>
+                                <button class="btn btn-round btn-success"><a href="drop_admin.php?id=<?php echo $id[$i]; ?>" style="color: white;">สิทธิ์ลูกจ้าง</a></button>
+                                </td>
                               <?php
                               } else {
                               ?>
-                                <td style="font-size: 85%;"><button class="btn btn-round btn-success"><a href="drop_admin.php?id=<?php echo $id[$i]; ?>" style="color: white;">ลดสิทธิ์แอดมิน</a></button></td>
+                                <td style="font-size: 85%;">
+                                <button class="btn btn-round btn-success"><a href="drop_admin.php?id=<?php echo $id[$i]; ?>" style="color: white;">สิทธิ์แอดมิน</a></button>
+                                <button class="btn btn-round btn-success"><a href="drop_admin.php?id=<?php echo $id[$i]; ?>" style="color: white;">สิทธิ์ผู้ดูแล</a></button>
+                                <button class="btn btn-round btn-success"><a href="drop_admin.php?id=<?php echo $id[$i]; ?>" style="color: white;">สิทธิ์ลูกจ้าง</a></button></td>
                               <?php
                               }
                               ?>
