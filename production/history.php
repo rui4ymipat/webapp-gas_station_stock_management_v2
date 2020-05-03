@@ -117,12 +117,12 @@
     @media only screen and (min-width: 1367px) {
 
       .column1 {
-        display: inline-table;
+        display: block;
         width: 33%;
       }
 
       .column2 {
-        display: inline-table;
+        display: block;
         margin-left: 1%;
       }
 
