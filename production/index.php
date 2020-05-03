@@ -335,7 +335,7 @@
                 }
               </script>
 
-              <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+              <!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
               <script type="text/javascript">
                 google.charts.load('current', {
                   'packages': ['gauge']
@@ -420,7 +420,7 @@
                   var chart = new google.visualization.Gauge(document.getElementById('GDe'));
                   chart.draw(data, options);
                 }
-              </script>
+              </script> -->
               <?php if ($_SESSION['user_level'] == 2) { ?>
 
 
@@ -504,13 +504,13 @@
                   </tr>
                   <tr>
                     <td>
-                      <div id="GG91" style="width: 400px; height: 120px;"></div>
+                      <div id="GG91" style="width: 500px; height: 120px;"></div>
                     </td>
                     <td>
-                      <div id="GG95" style="width: 400px; height: 120px;"></div>
+                      <div id="GG95" style="width: 500px; height: 120px;"></div>
                     </td>
                     <td>
-                      <div id="GDe" style="width: 400px; height: 120px;"></div>
+                      <div id="GDe" style="width: 500px; height: 120px;"></div>
                     </td>
                   </tr>
                 </table>
