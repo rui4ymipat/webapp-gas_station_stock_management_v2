@@ -49,6 +49,92 @@
   }
 
   ?>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', {
+      'packages': ['gauge']
+    });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+      var data = google.visualization.arrayToDataTable([
+        ['Label', 'Value'],
+        ['G91', 80]
+      ]);
+
+      var options = {
+        width: 400,
+        height: 120,
+        redFrom: 90,
+        redTo: 100,
+        yellowFrom: 75,
+        yellowTo: 90,
+        minorTicks: 5
+      };
+
+      var chart = new google.visualization.Gauge(document.getElementById('GG91'));
+      chart.draw(data, options);
+    }
+  </script>
+
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', {
+      'packages': ['gauge']
+    });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+      var data = google.visualization.arrayToDataTable([
+        ['Label', 'Value'],
+        ['G95', 80]
+      ]);
+
+      var options = {
+        width: 400,
+        height: 120,
+        redFrom: 90,
+        redTo: 100,
+        yellowFrom: 75,
+        yellowTo: 90,
+        minorTicks: 5
+      };
+
+      var chart = new google.visualization.Gauge(document.getElementById('GG95'));
+      chart.draw(data, options);
+    }
+  </script>
+
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', {
+      'packages': ['gauge']
+    });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+      var data = google.visualization.arrayToDataTable([
+        ['Label', 'Value'],
+        ['Desel', 80]
+      ]);
+
+      var options = {
+        width: 400,
+        height: 120,
+        redFrom: 90,
+        redTo: 100,
+        yellowFrom: 75,
+        yellowTo: 90,
+        minorTicks: 5
+      };
+
+      var chart = new google.visualization.Gauge(document.getElementById('GDe'));
+      chart.draw(data, options);
+    }
+  </script>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <!-- Meta, title, CSS, favicons, etc. -->
   <meta charset="utf-8">
@@ -335,92 +421,7 @@
                 }
               </script>
 
-              <!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-              <script type="text/javascript">
-                google.charts.load('current', {
-                  'packages': ['gauge']
-                });
-                google.charts.setOnLoadCallback(drawChart);
 
-                function drawChart() {
-
-                  var data = google.visualization.arrayToDataTable([
-                    ['Label', 'Value'],
-                    ['G91', 80]
-                  ]);
-
-                  var options = {
-                    width: 400,
-                    height: 120,
-                    redFrom: 90,
-                    redTo: 100,
-                    yellowFrom: 75,
-                    yellowTo: 90,
-                    minorTicks: 5
-                  };
-
-                  var chart = new google.visualization.Gauge(document.getElementById('GG91'));
-                  chart.draw(data, options);
-                }
-              </script>
-
-              <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-              <script type="text/javascript">
-                google.charts.load('current', {
-                  'packages': ['gauge']
-                });
-                google.charts.setOnLoadCallback(drawChart);
-
-                function drawChart() {
-
-                  var data = google.visualization.arrayToDataTable([
-                    ['Label', 'Value'],
-                    ['G95', 80]
-                  ]);
-
-                  var options = {
-                    width: 400,
-                    height: 120,
-                    redFrom: 90,
-                    redTo: 100,
-                    yellowFrom: 75,
-                    yellowTo: 90,
-                    minorTicks: 5
-                  };
-
-                  var chart = new google.visualization.Gauge(document.getElementById('GG95'));
-                  chart.draw(data, options);
-                }
-              </script>
-
-              <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-              <script type="text/javascript">
-                google.charts.load('current', {
-                  'packages': ['gauge']
-                });
-                google.charts.setOnLoadCallback(drawChart);
-
-                function drawChart() {
-
-                  var data = google.visualization.arrayToDataTable([
-                    ['Label', 'Value'],
-                    ['Desel', 80]
-                  ]);
-
-                  var options = {
-                    width: 400,
-                    height: 120,
-                    redFrom: 90,
-                    redTo: 100,
-                    yellowFrom: 75,
-                    yellowTo: 90,
-                    minorTicks: 5
-                  };
-
-                  var chart = new google.visualization.Gauge(document.getElementById('GDe'));
-                  chart.draw(data, options);
-                }
-              </script> -->
               <?php if ($_SESSION['user_level'] == 2) { ?>
 
 
