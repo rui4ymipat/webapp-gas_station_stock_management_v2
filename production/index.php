@@ -31,11 +31,12 @@
       font-size: 80%;
       color: #73879C;
     }
-    .stock .setline{
+
+    .stock .setline {
       display: inline-table;
     }
 
-    .stock .setfont1{
+    .stock .setfont1 {
       display: inline-table;
     }
   </style>
@@ -483,26 +484,41 @@
                   </table>
                 </div>
                 <br>
+                <table>
+                  <tr>
+                    <td>
+                      <div class="setfont1">
+                        <h1 class="todayprice">สต็อกน้ำมัน G95 10 ลิตร</h1>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="setfont1">
+                        <h1 class="todayprice">สต็อกน้ำมัน G91 10 ลิตร</h1>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="setfont1">
+                        <h1 class="todayprice">สต็อกน้ำมัน Desel 10 ลิตร</h1>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div id="GG91" style="width: 400px; height: 120px;"></div>
+                    </td>
+                    <td>
+                      <div id="GG95" style="width: 400px; height: 120px;"></div>
+                    </td>
+                    <td>
+                      <div id="GDe" style="width: 400px; height: 120px;"></div>
+                    </td>
+                  </tr>
+                </table>
 
-                <div class="stock">
-                  <div class="setfont1">
-                    <h1 class="todayprice">สต็อกน้ำมัน G95 10 ลิตร</h1>
-                  </div>
-                  <div id="GG91" style="width: 400px; height: 120px;" class="setline"></div>
-                  <div class="setfont1">
-                    <h1 class="todayprice">สต็อกน้ำมัน G91 10 ลิตร</h1>
-                  </div>
-                  <div id="GG95" style="width: 400px; height: 120px;" class="setline"></div>
-                  <div class="setfont1">
-                    <h1 class="todayprice">สต็อกน้ำมัน Desel 10 ลิตร</h1>
-                  </div>
-                  <div id="GDe" style="width: 400px; height: 120px;" class="setline"></div>
-                </div>
                 <br>
                 <div class="setfont1">
                   <h1 class="todayprice">ยอดขายประจำเดือน เมษายน</h1>
                 </div>
-                <div id="chart_div" style="width: 400px; height: 120px;"></div>
                 <br>
                 <div id="G91" style="width: 1450px; height: 450px;"></div>
                 <br>
