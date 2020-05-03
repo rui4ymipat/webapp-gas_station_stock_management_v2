@@ -31,6 +31,13 @@
       font-size: 80%;
       color: #73879C;
     }
+    .stock .setline{
+      display: inline-table;
+    }
+
+    .stock .setfont1{
+      display: inline-table;
+    }
   </style>
   <?php
   session_start();
@@ -327,71 +334,91 @@
                 }
               </script>
 
-              <script>
-                var chartVars = "KoolOnLoadCallFunction=chartReadyHandler";
+              <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+              <script type="text/javascript">
+                google.charts.load('current', {
+                  'packages': ['gauge']
+                });
+                google.charts.setOnLoadCallback(drawChart);
 
-                KoolChart.create("chart1", "G1", chartVars, "100%", "100%");
+                function drawChart() {
 
-                function chartReadyHandler(id) {
-                  document.getElementById(id).setLayout(layoutStr);
-                  document.getElementById(id).setData(chartData);
+                  var data = google.visualization.arrayToDataTable([
+                    ['Label', 'Value'],
+                    ['G91', 80]
+                  ]);
+
+                  var options = {
+                    width: 400,
+                    height: 120,
+                    redFrom: 90,
+                    redTo: 100,
+                    yellowFrom: 75,
+                    yellowTo: 90,
+                    minorTicks: 5
+                  };
+
+                  var chart = new google.visualization.Gauge(document.getElementById('GG91'));
+                  chart.draw(data, options);
                 }
-
-                var layoutStr =
-                  '<KoolChart>' +
-                  '<CurrencyFormatter id="cft" currencySymbol="%" alignSymbol="right" precision="0"/>' +
-                  '<LinearGauge direction="horizontal" verticalRatio="0.5" fontSize="20" valueChangeFunction="changeFunction1" formatter="{cft}" foregroundColor="#20cbc2" color="#ffffff" fontWeight="bold" width="1000" height="200">' +
-                  '<backgroundStroke>' +
-                  '<Stroke color="#20cbc2" weight="3"/>' +
-                  '</backgroundStroke>' +
-                  '</LinearGauge>' +
-                  '</KoolChart>';
-
-                var chartData = [80];
               </script>
-              <script>
-                var chartVars = "KoolOnLoadCallFunction=chartReadyHandler";
 
-                KoolChart.create("chart1", "G2", chartVars, "100%", "100%");
+              <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+              <script type="text/javascript">
+                google.charts.load('current', {
+                  'packages': ['gauge']
+                });
+                google.charts.setOnLoadCallback(drawChart);
 
-                function chartReadyHandler(id) {
-                  document.getElementById(id).setLayout(layoutStr);
-                  document.getElementById(id).setData(chartData);
+                function drawChart() {
+
+                  var data = google.visualization.arrayToDataTable([
+                    ['Label', 'Value'],
+                    ['G95', 80]
+                  ]);
+
+                  var options = {
+                    width: 400,
+                    height: 120,
+                    redFrom: 90,
+                    redTo: 100,
+                    yellowFrom: 75,
+                    yellowTo: 90,
+                    minorTicks: 5
+                  };
+
+                  var chart = new google.visualization.Gauge(document.getElementById('GG95'));
+                  chart.draw(data, options);
                 }
-
-                var layoutStr =
-                  '<KoolChart>' +
-                  '<CurrencyFormatter id="cft" currencySymbol="%" alignSymbol="right" precision="0"/>' +
-                  '<LinearGauge direction="horizontal" verticalRatio="0.5" fontSize="20" valueChangeFunction="changeFunction1" formatter="{cft}" foregroundColor="#20cbc2" color="#ffffff" fontWeight="bold" width="1000" height="200">' +
-                  '<backgroundStroke>' +
-                  '<Stroke color="#20cbc2" weight="3"/>' +
-                  '</backgroundStroke>' +
-                  '</LinearGauge>' +
-                  '</KoolChart>';
-
-                var chartData = [80];
               </script>
-              <script>
-                var chartVars = "KoolOnLoadCallFunction=chartReadyHandler";
 
-                KoolChart.create("chart1", "G3", chartVars, "100%", "100%");
+              <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+              <script type="text/javascript">
+                google.charts.load('current', {
+                  'packages': ['gauge']
+                });
+                google.charts.setOnLoadCallback(drawChart);
 
-                function chartReadyHandler(id) {
-                  document.getElementById(id).setLayout(layoutStr);
-                  document.getElementById(id).setData(chartData);
+                function drawChart() {
+
+                  var data = google.visualization.arrayToDataTable([
+                    ['Label', 'Value'],
+                    ['Desel', 80]
+                  ]);
+
+                  var options = {
+                    width: 400,
+                    height: 120,
+                    redFrom: 90,
+                    redTo: 100,
+                    yellowFrom: 75,
+                    yellowTo: 90,
+                    minorTicks: 5
+                  };
+
+                  var chart = new google.visualization.Gauge(document.getElementById('GDe'));
+                  chart.draw(data, options);
                 }
-
-                var layoutStr =
-                  '<KoolChart>' +
-                  '<CurrencyFormatter id="cft" currencySymbol="%" alignSymbol="right" precision="0"/>' +
-                  '<LinearGauge direction="horizontal" verticalRatio="0.5" fontSize="20" valueChangeFunction="changeFunction1" formatter="{cft}" foregroundColor="#20cbc2" color="#ffffff" fontWeight="bold" width="1000" height="200">' +
-                  '<backgroundStroke>' +
-                  '<Stroke color="#20cbc2" weight="3"/>' +
-                  '</backgroundStroke>' +
-                  '</LinearGauge>' +
-                  '</KoolChart>';
-
-                var chartData = [80];
               </script>
               <?php if ($_SESSION['user_level'] == 2) { ?>
 
@@ -456,24 +483,26 @@
                   </table>
                 </div>
                 <br>
+
+                <div class="stock">
+                  <div class="setfont1">
+                    <h1 class="todayprice">สต็อกน้ำมัน G95 10 ลิตร</h1>
+                  </div>
+                  <div id="GG91" style="width: 400px; height: 120px;" class="setline"></div>
+                  <div class="setfont1">
+                    <h1 class="todayprice">สต็อกน้ำมัน G91 10 ลิตร</h1>
+                  </div>
+                  <div id="GG95" style="width: 400px; height: 120px;" class="setline"></div>
+                  <div class="setfont1">
+                    <h1 class="todayprice">สต็อกน้ำมัน Desel 10 ลิตร</h1>
+                  </div>
+                  <div id="GDe" style="width: 400px; height: 120px;" class="setline"></div>
+                </div>
+                <br>
                 <div class="setfont1">
                   <h1 class="todayprice">ยอดขายประจำเดือน เมษายน</h1>
                 </div>
-                <br>
-                <div class="setfont1">
-                  <h1 class="todayprice">สต็อกน้ำมัน G95 10 ลิตร</h1>
-                </div>
-                <div id="G1" style="width:100%; height:100px;"></div>
-                <br>
-                <div class="setfont1">
-                  <h1 class="todayprice">สต็อกน้ำมัน G91 10 ลิตร</h1>
-                </div>
-                <div id="G2" style="width:100%; height:100px;"></div>
-                <br>
-                <div class="setfont1">
-                  <h1 class="todayprice">สต็อกน้ำมัน Desel 10 ลิตร</h1>
-                </div>
-                <div id="G3" style="width:100%; height:100px;"></div>
+                <div id="chart_div" style="width: 400px; height: 120px;"></div>
                 <br>
                 <div id="G91" style="width: 1450px; height: 450px;"></div>
                 <br>
