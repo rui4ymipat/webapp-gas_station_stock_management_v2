@@ -142,9 +142,9 @@
 
               <div class="setfont1">
                 <h1 style="font-weight: 800;color: #2B3E54;font-size: 200%;">กรอกข้อมูลประจำวัน</h1>
-                <table>
+                <table border="3">
                   <tr>
-                    <th rowspan="2">วันที่</th>
+                    <th rowspan="2" style="height: 65px;">วันที่</th>
                     <th rowspan="2">ชนิด</th>
                     <th colspan="4">ปริมาณ</th>
                     <th colspan="2">น้ำมันเดิม</th>
