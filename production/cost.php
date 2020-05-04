@@ -11,6 +11,9 @@
     .site_title {
       font-family: 'Prompt', sans-serif;
     }
+    table{
+      width: 100%;
+    }
   </style>
   <?php
   session_start();
@@ -89,7 +92,7 @@
                 <?php if ($_SESSION['user_level'] == 2) { ?>
                   <li><a href="fuelprice.php"><i class="fa fa-money"></i> ราคาน้ำมัน</a></li>
                   <li><a href="history.php"><i class="fa fa-history"></i> ประวัติการสั่งซื้อ</a></li>
-                  <li><a href="cost.php"><i class="fa fa-bar-chart"></i> ต้นทุน</a></li>   
+                  <li><a href="cost.php"><i class="fa fa-bar-chart"></i> ต้นทุน</a></li>
                   <li><a href="informationGasCar.php"><i class="fa fa-truck"></i> ข้อมูลรถน้ำมัน</a></li>
                   <li><a href="stockFuel.php"><i class="fa fa-cube"></i> สต็อกน้ำมัน</a></li>
                   <li><a href="stockFuel.php"><i class="fa fa-users"></i> จัดการบัญชีผู้ใช้</a></li>
@@ -137,55 +140,29 @@
               </div>
 
 
-              <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-              <script type="text/javascript">
-                google.charts.load('current', {
-                  'packages': ['bar']
-                });
-                google.charts.setOnLoadCallback(drawChart);
-
-                function drawChart() {
-                  var data = google.visualization.arrayToDataTable([
-                    ['ยอดขาย', 'แก๊สโซฮอล์ 91', 'แก๊สโซฮอล์ 95', 'ดีเซล'],
-                    ['15/04', 1000, 400, 200],
-                    ['16/04', 1170, 460, 250],
-                    ['17/04', 660, 1120, 300],
-                    ['18/04', 1030, 540, 350],
-                    ['19/04', 1000, 400, 200],
-                    ['20/04', 1170, 460, 250],
-                    ['21/04', 660, 1120, 300],
-                    ['22/04', 1030, 540, 350],
-                    ['23/04', 1000, 400, 200],
-                    ['24/04', 1170, 460, 250],
-                    ['25/04', 660, 1120, 300],
-                    ['26/04', 1030, 540, 350],
-                    ['27/04', 1000, 400, 200],
-                    ['28/04', 1170, 460, 250],
-                    ['29/04', 660, 1120, 300],
-                    ['30/04', 1030, 540, 350]
-                  ]);
-
-                  var options = {
-                    chart: {
-                      title: 'ยอดขาย',
-                      subtitle: 'ประจำเดือน เมษายน',
-                    },
-                    bars: 'vertical' // Required for Material Bar Charts.
-                  };
-
-                  var chart = new google.charts.Bar(document.getElementById('barchart_material'));
-
-                  chart.draw(data, google.charts.Bar.convertOptions(options));
-                }
-              </script>
-
-              <?php if ($_SESSION['user_level'] == 2) { ?>
-
-
-
-              <?php } else { ?>
-
-              <?php } ?>
+              <div class="setfont1">
+                <h1 style="font-weight: 800;color: #2B3E54;font-size: 200%;">กรอกข้อมูลประจำวัน</h1>
+                <table>
+                  <tr>
+                    <th rowspan="2">วันที่</th>
+                    <th rowspan="2">ชนิด</th>
+                    <th colspan="4">ปริมาณ</th>
+                    <th colspan="2">น้ำมันเดิม</th>
+                    <th colspan="3">สรุป</th>
+                  </tr>
+                  <tr>
+                    <th>บัญชี 1</th>
+                    <th>บัญชี 2</th>
+                    <th>บัญชี 3</th>
+                    <th>ราคาสุทธิ</th>
+                    <th>ปริมาณเดิม</th>
+                    <th>ราคาเดิม</th>
+                    <th>ปริมาณรวม</th>
+                    <th>มูลค่ารวม</th>
+                    <th>ราคาต้นทุน</th>
+                  </tr>
+                </table>
+              </div>
 
 
               <!-- /page content -->

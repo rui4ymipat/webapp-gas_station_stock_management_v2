@@ -243,7 +243,7 @@
 
               <?php if ($_SESSION['user_level'] == 2) { ?>
                 <div class="setfont1">
-                  <h1 style="font-weight: 800;color: #2B3E54;font-size: 200%;">กรอกข้อมูลประจำวัน</h1>
+                  <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">กรอกข้อมูลประจำวัน</h1>
                   <div class="setborder">
                     <form action="today.php" method="">
 
@@ -301,7 +301,7 @@
                   </div>
                   <br>
                   <div class="show_information">
-                    <h1 style="font-weight: 800;color: #2B3E54;font-size: 200%;">กรอกข้อมูลประจำวัน</h1>
+                    <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">กรอกข้อมูลประจำวัน</h1>
                     <?php for ($i = 0; $i < count($id); $i++) { ?>
                       <br>
                       <table border="1">
