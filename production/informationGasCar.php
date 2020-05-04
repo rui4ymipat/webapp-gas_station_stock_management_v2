@@ -11,6 +11,7 @@
     .site_title {
       font-family: 'Prompt', sans-serif;
     }
+
     @media only screen and (max-width: 1366px) {
       .setborder {
         width: 100%;
@@ -30,6 +31,7 @@
       }
 
     }
+
     form .showdetail {
       font-size: 165%;
       color: #2B3E54;
@@ -92,7 +94,6 @@
       padding-right: 20px;
       padding-top: 1%;
     }
-    
   </style>
   <?php
   session_start();
@@ -174,16 +175,15 @@
                 <?php if ($_SESSION['user_level'] == 2) { ?>
                   <li><a href="fuelprice.php"><i class="fa fa-money"></i> ราคาน้ำมัน</a></li>
                   <li><a href="history.php"><i class="fa fa-history"></i> ประวัติการสั่งซื้อ</a></li>
-                  <li><a href="cost.php"><i class="fa fa-bar-chart"></i> ต้นทุน</a></li>   
+                  <li><a href="cost.php"><i class="fa fa-bar-chart"></i> ต้นทุน</a></li>
                   <li><a href="informationGasCar.php"><i class="fa fa-truck"></i> ข้อมูลรถน้ำมัน</a></li>
                   <li><a href="stockFuel.php"><i class="fa fa-cube"></i> สต็อกน้ำมัน</a></li>
                   <li><a href="management.php"><i class="fa fa-users"></i> จัดการบัญชีผู้ใช้</a></li>
                   <li><a href="logout.php"><i class="fa fa-sign-out"> </i>Log Out</a></li>
-                <?php }
-                else if ($_SESSION['user_level'] == 3) { ?>
+                <?php } else if ($_SESSION['user_level'] == 3) { ?>
                   <li><a href="fuelprice.php"><i class="fa fa-money"></i> ราคาน้ำมัน</a></li>
                   <li><a href="history.php"><i class="fa fa-history"></i> ประวัติการสั่งซื้อ</a></li>
-                  <li><a href="cost.php"><i class="fa fa-bar-chart"></i> ต้นทุน</a></li>   
+                  <li><a href="cost.php"><i class="fa fa-bar-chart"></i> ต้นทุน</a></li>
                   <li><a href="informationGasCar.php"><i class="fa fa-truck"></i> ข้อมูลรถน้ำมัน</a></li>
                   <li><a href="stockFuel.php"><i class="fa fa-cube"></i> สต็อกน้ำมัน</a></li>
                   <li><a href="logout.php"><i class="fa fa-sign-out"> </i>Log Out</a></li>
@@ -231,16 +231,16 @@
 
               <?php if ($_SESSION['user_level'] == 2) { ?>
                 <div class="setfont1">
-                <h1 style="font-weight: 800;color: #2B3E54;font-size: 200%;">กรอกข้อมูลประจำวัน</h1>
+                  <h1 style="font-weight: 800;color: #2B3E54;font-size: 200%;">กรอกข้อมูลประจำวัน</h1>
                   <div class="setborder">
                     <form action="today.php" method="">
-                      
+
                       <div class="column1">
                         <div class="showdetail">รถขนน้ำมัน</div>
                         <select name="cars" style="padding-left: 5%;width: 71%;height: 35px;margin-bottom: 15px;" class="form-control">
-                        <option value="none" selected disabled hidden>เลือกรถ</option>
-                        <?php while ($row = mysqli_fetch_assoc($result)) { ?>
-                            <option value="<?php echo $row['id'] ?>"><?php echo $row['name'] ?></option>
+                          <option value="none" selected disabled hidden>เลือกรถ</option>
+                          <?php while ($row = mysqli_fetch_assoc($result)) { ?>
+                            <option value="<?php echo $id[] = $row['id'] ?>"><?php echo $name[] = $row['name'] ?></option>
                           <?php } ?>
                         </select>
                       </div>
@@ -278,7 +278,7 @@
                             <td class="lit">บาท</td>
                           </tr>
                           <tr>
-                            <td class="name">ค่าเที่ยวต่อรอบ</td>
+                            <td class="name">หมายเหตุ</td>
                             <td><input type="text" name="detail"></td>
                             <td class="lit">บาท</td>
                           </tr>
@@ -287,6 +287,25 @@
                       <input type="submit" class="btn btn-success" value="Submit">
                     </form>
                   </div>
+                  <br>
+                  <h1 style="font-weight: 800;color: #2B3E54;font-size: 200%;">กรอกข้อมูลประจำวัน</h1>
+                  <?php for($i=0;$i<count($id);$i++){ ?>
+                  <br>
+                  <table>
+                    <tr>
+                      <th rowspan="2">วันที่</th>
+                      <th colspan="6">ทะเบียน <?php echo $name[$i] ?></th>
+                    </tr>
+                    <tr>
+                      <th>เลขไมค์</th>
+                      <th>เติมลิตร</th>
+                      <th>ราคา</th>
+                      <th>ค่าน้ำมัน</th>
+                      <th>ค่าเที่ยว</th>
+                      <th>รวมค่าขนส่ง</th>
+                    </tr>
+                  </table>
+                  <?php }?>
                 </div>
 
 
