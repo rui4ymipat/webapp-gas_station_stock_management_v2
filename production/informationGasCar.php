@@ -29,11 +29,20 @@
       .setborder {
         width: 100%;
       }
-      
+
     }
-    .show_information table{
+
+    .show_information table {
       width: 100%;
+      text-align: center;
     }
+
+    .show_information table tr th {
+      FONT-WEIGHT: 800;
+      font-size: 111%;
+      color: #2B3E54;
+    }
+
     form .showdetail {
       font-size: 165%;
       color: #2B3E54;
@@ -95,6 +104,7 @@
       font-size: 131%;
       padding-right: 20px;
       padding-top: 1%;
+      font-weight: 550;
     }
   </style>
   <?php
