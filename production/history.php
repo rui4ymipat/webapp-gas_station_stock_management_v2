@@ -135,6 +135,12 @@
         text-align: center;
         font-size: 107%;
       }
+      .col1{
+        width: 27%;
+      }
+      .col1 , .col2 ,.col3 , .col4{
+      width: 17%;
+    }
     }
   </style>
   <?php
