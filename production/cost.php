@@ -13,6 +13,12 @@
     }
     table{
       width: 100%;
+      text-align: center
+    }
+    th{
+      FONT-WEIGHT: 800;
+      font-size: 111%;
+      color: #2B3E54;
     }
   </style>
   <?php
@@ -142,7 +148,7 @@
 
               <div class="setfont1">
                 <h1 style="font-weight: 800;color: #2B3E54;font-size: 200%;">กรอกข้อมูลประจำวัน</h1>
-                <table border="3">
+                <table border="1">
                   <tr>
                     <th rowspan="2" style="height: 65px;">วันที่</th>
                     <th rowspan="2">ชนิด</th>
