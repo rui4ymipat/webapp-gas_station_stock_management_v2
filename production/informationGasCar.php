@@ -29,9 +29,11 @@
       .setborder {
         width: 100%;
       }
-
+      
     }
-
+    .show_information table{
+      width: 100%;
+    }
     form .showdetail {
       font-size: 165%;
       color: #2B3E54;
@@ -288,24 +290,26 @@
                     </form>
                   </div>
                   <br>
-                  <h1 style="font-weight: 800;color: #2B3E54;font-size: 200%;">กรอกข้อมูลประจำวัน</h1>
-                  <?php for($i=0;$i<count($id);$i++){ ?>
-                  <br>
-                  <table>
-                    <tr>
-                      <th rowspan="2">วันที่</th>
-                      <th colspan="6">ทะเบียน <?php echo $name[$i] ?></th>
-                    </tr>
-                    <tr>
-                      <th>เลขไมค์</th>
-                      <th>เติมลิตร</th>
-                      <th>ราคา</th>
-                      <th>ค่าน้ำมัน</th>
-                      <th>ค่าเที่ยว</th>
-                      <th>รวมค่าขนส่ง</th>
-                    </tr>
-                  </table>
-                  <?php }?>
+                  <div class="show_information">
+                    <h1 style="font-weight: 800;color: #2B3E54;font-size: 200%;">กรอกข้อมูลประจำวัน</h1>
+                    <?php for ($i = 0; $i < count($id); $i++) { ?>
+                      <br>
+                      <table border="1">
+                        <tr>
+                          <th rowspan="2">วันที่</th>
+                          <th colspan="6">ทะเบียน <?php echo $name[$i] ?></th>
+                        </tr>
+                        <tr>
+                          <th>เลขไมค์</th>
+                          <th>เติมลิตร</th>
+                          <th>ราคา</th>
+                          <th>ค่าน้ำมัน</th>
+                          <th>ค่าเที่ยว</th>
+                          <th>รวมค่าขนส่ง</th>
+                        </tr>
+                      </table>
+                    <?php } ?>
+                  </div>
                 </div>
 
 
