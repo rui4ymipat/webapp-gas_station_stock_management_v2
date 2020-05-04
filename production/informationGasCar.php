@@ -241,11 +241,11 @@
                 </div>
               </div>
 
-              <?php if ($_SESSION['user_level'] == 2) { ?>
+              <?php if ($_SESSION['user_level'] != 1) { ?>
                 <div class="setfont1">
                   <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">กรอกข้อมูลประจำวัน</h1>
                   <div class="setborder">
-                    <form action="today.php" method="">
+                    <form action="today.php" method="GET">
 
                       <div class="column1">
                         <div class="showdetail">รถขนน้ำมัน</div>
@@ -324,7 +324,27 @@
 
 
               <?php } else { ?>
-
+                <div class="setfont1">
+                  <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">กรอกข้อมูลประจำวัน</h1>
+                  <div class="setborder">
+                    <div class="showdetail">ข้อมูลราคาบัญชี 1</div>
+                    <form action="" method="get">
+                      <table>
+                        <tr>
+                          <td class="name">ทะเบียน 6134</td>
+                          <td><input type="text" name="" placeholder="เลขไมค์"></td>
+                          <td><input type="text" name="" placeholder="ปริมาณที่เติม"></td>
+                        </tr>
+                        <tr>
+                          <td class="name">ทะเบียน 1815</td>
+                          <td><input type="text" name="" placeholder="เลขไมค์"></td>
+                          <td><input type="text" name="" placeholder="ปริมาณที่เติม"></td>
+                        </tr>
+                      </table>
+                      <input type="submit" class="btn btn-success" value="Submit">
+                    </form>
+                  </div>
+                </div>
               <?php } ?>
 
 
