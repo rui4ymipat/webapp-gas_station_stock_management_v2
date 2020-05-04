@@ -84,7 +84,7 @@
 
       .column2 table {
         border: 1px solid rgb(202, 206, 215);
-        width: 190%;
+        width: 100%;
         text-align: center;
         font-size: 107%;
       }
@@ -107,7 +107,7 @@
 
       .column2 table {
         border: 1px solid rgb(202, 206, 215);
-        width: 190%;
+        width: 100%;
         text-align: center;
         font-size: 107%;
       }
@@ -131,7 +131,7 @@
 
       .column2 table {
         border: 1px solid rgb(202, 206, 215);
-        width: 190%;
+        width: 100%;
         text-align: center;
         font-size: 107%;
       }
