@@ -306,7 +306,7 @@
                       <br>
                       <table border="1">
                         <tr>
-                          <th rowspan="2">วันที่</th>
+                          <th rowspan="2" style="height: 65px;">วันที่</th>
                           <th colspan="6">ทะเบียน <?php echo $name[$i] ?></th>
                         </tr>
                         <tr>
