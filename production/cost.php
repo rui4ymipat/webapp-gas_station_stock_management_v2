@@ -11,11 +11,11 @@
     .site_title {
       font-family: 'Prompt', sans-serif;
     }
-    table{
+    .setfont1 table{
       width: 100%;
       text-align: center
     }
-    th{
+    .setfont1 table tr th{
       FONT-WEIGHT: 800;
       font-size: 111%;
       color: #2B3E54;
