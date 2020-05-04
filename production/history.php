@@ -34,7 +34,7 @@
     input[type="text"] {
       border: 1px solid rgb(202, 206, 215);
       margin-right: 15px;
-      width: 100%;
+      width: 70%;
       height: 35px;
       text-align: center;
       margin-bottom: 10px;
@@ -44,7 +44,7 @@
 
     input[type="submit"] {
       margin-left: 44%;
-      margin-top: 3.5px;
+      margin-top: 10px;
     }
 
     .setborder {
@@ -94,7 +94,7 @@
 
       .column1 {
         display: block;
-        width: 85%;
+        width: 100%;
       }
 
       .column2 {
@@ -118,12 +118,11 @@
 
       .column1 {
         display: block;
-        width: 33%;
+        width: 100%;
       }
 
       .column2 {
         display: block;
-        margin-left: 1%;
       }
 
       .column2 table tr td {
