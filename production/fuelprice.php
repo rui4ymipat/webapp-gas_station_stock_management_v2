@@ -43,7 +43,7 @@
 
     .column1,
     .column2 {
-      display: inline-block;
+      display: block;
     }
     .set_line{
       display: inline-table;
@@ -296,8 +296,10 @@
                     </form>
                   </div>
                 </div>
+                <br>
+                <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">กรอกข้อมูลประจำวัน</h1>
                 <div class="column2">
-
+                
                 </div>
               </div>
 

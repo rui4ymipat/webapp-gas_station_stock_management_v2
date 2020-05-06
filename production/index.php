@@ -516,13 +516,13 @@
                   </tr>
                   <tr>
                     <td>
-                      <div id="GG91" style="width: 500px; height: 120px;"></div>
+                      <div id="GG91" style="width: 300px; height: 120px;"></div>
                     </td>
                     <td>
-                      <div id="GG95" style="width: 500px; height: 120px;"></div>
+                      <div id="GG95" style="width: 300px; height: 120px;"></div>
                     </td>
                     <td>
-                      <div id="GDe" style="width: 500px; height: 120px;"></div>
+                      <div id="GDe" style="width: 300px; height: 120px;"></div>
                     </td>
                   </tr>
                 </table>
