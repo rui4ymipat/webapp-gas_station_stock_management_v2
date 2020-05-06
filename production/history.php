@@ -11,9 +11,14 @@
     .site_title {
       font-family: 'Prompt', sans-serif;
     }
-    .col1 , .col2 ,.col3 , .col4{
+
+    .col1,
+    .col2,
+    .col3,
+    .col4 {
       display: inline-table;
     }
+
     form .showdetail {
       font-size: 130%;
       color: #2B3E54;
@@ -80,6 +85,8 @@
 
       .column2 table tr td {
         width: 22%;
+        font-size: 120%;
+        font-weight: 600;
       }
 
       .column2 table {
@@ -87,6 +94,11 @@
         width: 100%;
         text-align: center;
         font-size: 107%;
+      }
+      th {
+        font-size: 130%;
+        color: #2B3E54;
+        font-weight: 600;
       }
     }
 
@@ -103,6 +115,8 @@
 
       .column2 table tr td {
         width: 22%;
+        font-size: 120%;
+        font-weight: 600;
       }
 
       .column2 table {
@@ -112,6 +126,11 @@
         font-size: 107%;
       }
 
+      th {
+        font-size: 130%;
+        color: #2B3E54;
+        font-weight: 600;
+      }
     }
 
     @media only screen and (min-width: 1367px) {
@@ -127,6 +146,8 @@
 
       .column2 table tr td {
         width: 9%;
+        font-size: 120%;
+        font-weight: 600;
       }
 
       .column2 table {
@@ -135,9 +156,19 @@
         text-align: center;
         font-size: 107%;
       }
-      .col1 , .col2 ,.col3 , .col4{
-      width: 24%;
-    }
+
+      th {
+        font-size: 130%;
+        color: #2B3E54;
+        font-weight: 600;
+      }
+
+      .col1,
+      .col2,
+      .col3,
+      .col4 {
+        width: 24%;
+      }
     }
   </style>
   <?php
