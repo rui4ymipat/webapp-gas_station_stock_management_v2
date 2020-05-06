@@ -58,11 +58,14 @@
       .set_col2 table tr.setheader th {
         width: 10%
       }
+      .set_col1 table tr.setheader th {
+        width: 10%
+      }
     }
 
     .set_col1,
     .set_col2 {
-      display: inline-table;
+      display: inline-block;
     }
 
     form .showdetail {
@@ -336,7 +339,7 @@
                 <div class="column2">
                   <div class="set_col1">
                     <table border="1" style="text-align: center;">
-                      <tr>
+                      <tr class="setheader">
                         <th rowspan="2">ว/ด/ป</th>
                         <th rowspan="2">ชนิด</th>
                         <th colspan="3">กทม.</th>
