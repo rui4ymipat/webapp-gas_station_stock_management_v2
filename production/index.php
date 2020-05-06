@@ -532,11 +532,11 @@
                   <h1 class="todayprice">ยอดขายประจำเดือน เมษายน</h1>
                 </div>
                 <br>
-                <div id="G91" style="width: 1200px; height: 450px;"></div>
+                <div id="G91" style="width: 1000px; height: 450px;"></div>
                 <br>
-                <div id="G95" style="width: 1200px; height: 450px;"></div>
+                <div id="G95" style="width: 1000px; height: 450px;"></div>
                 <br>
-                <div id="De" style="width: 1200px; height: 450px;"></div>
+                <div id="De" style="width: 1000px; height: 450px;"></div>
 
 
               <?php } else { ?>
