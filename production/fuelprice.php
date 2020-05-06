@@ -345,7 +345,7 @@
                   <div class="set_col1">
                     <table border="1" style="text-align: center;">
                       <tr class="setheader">
-                        <th rowspan="2">ว/ด/ป</th>
+                        <th rowspan="2" style="height: 60px;">ว/ด/ป</th>
                         <th rowspan="2">ชนิด</th>
                         <th colspan="3" style="width: 24%;">กทม.</th>
                         <th rowspan="2">ราคาหน้าปั้ม</th>
@@ -355,17 +355,25 @@
                         <th>ปรับราคา</th>
                         <th>เท่ากับ</th>
                       </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                      </tr>
                     </table>
                   </div>
                   <div class="set_col2">
                     <table border="1" style="text-align: center;">
                       <tr class="setheader">
-                        <th colspan="3">บัญชี 1</th>
+                        <th colspan="3" style="height: 30px;">บัญชี 1</th>
                         <th colspan="3">บัญชี 2</th>
                         <th colspan="3">บัญชี 3</th>
                       </tr>
                       <tr>
-                        <th>ราคา</th>
+                        <th style="height: 30px;">ราคา</th>
                         <th>ส่วนลด</th>
                         <th>เท่ากับ</th>
                         <th>ราคา</th>
@@ -374,6 +382,17 @@
                         <th>ราคา</th>
                         <th>ส่วนลด</th>
                         <th>เท่ากับ</th>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
                       </tr>
                     </table>
                   </div>
