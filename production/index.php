@@ -271,23 +271,19 @@
                 function drawChart() {
                   var data = google.visualization.arrayToDataTable([
                     ['ยอดขาย', 'แก๊สโซฮอล์ 91'],
-                    <?php 
-                    for($i=1;$i<=15;$i++)
-                    {
-                      if($i==15)
-                      {
-                        echo "['$i',",rand(1000,2000),"]";
-                      }
-                      else
-                      {
-                        echo "['$i',",rand(1000,2000),"],";
+                    <?php
+                    for ($i = 1; $i <= 15; $i++) {
+                      if ($i == 15) {
+                        echo "['$i',", rand(1000, 2000), "]";
+                      } else {
+                        echo "['$i',", rand(1000, 2000), "],";
                       }
                     }
                     ?>
                   ]);
 
                   var options = {
-                    
+
                     curveType: 'function',
                     legend: {
                       position: 'right'
@@ -300,7 +296,7 @@
                 }
               </script>
 
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+              <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
               <script type="text/javascript">
                 google.charts.load('current', {
                   'packages': ['corechart']
@@ -310,23 +306,19 @@
                 function drawChart() {
                   var data = google.visualization.arrayToDataTable([
                     ['ยอดขาย', 'แก๊สโซฮอล์ 95'],
-                    <?php 
-                    for($i=1;$i<=15;$i++)
-                    {
-                      if($i==15)
-                      {
-                        echo "['$i',",rand(1000,2000),"]";
-                      }
-                      else
-                      {
-                        echo "['$i',",rand(1000,2000),"],";
+                    <?php
+                    for ($i = 1; $i <= 15; $i++) {
+                      if ($i == 15) {
+                        echo "['$i',", rand(1000, 2000), "]";
+                      } else {
+                        echo "['$i',", rand(1000, 2000), "],";
                       }
                     }
                     ?>
                   ]);
 
                   var options = {
-                    
+
                     curveType: 'function',
                     legend: {
                       position: 'right'
@@ -339,7 +331,7 @@
                 }
               </script>
 
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+              <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
               <script type="text/javascript">
                 google.charts.load('current', {
                   'packages': ['corechart']
@@ -349,27 +341,20 @@
                 function drawChart() {
                   var data = google.visualization.arrayToDataTable([
                     ['ยอดขาย', 'ดีเซล'],
-                    <?php 
-                    for($i=1;$i<=15;$i++)
-                    {
-                      if($i==15)
-                      {
-                        echo "['$i',",rand(1000,2000),"]";
-                      }
-                      else
-                      {
-                        echo "['$i',",rand(1000,2000),"],";
+                    <?php
+                    for ($i = 1; $i <= 15; $i++) {
+                      if ($i == 15) {
+                        echo "['$i',", rand(1000, 2000), "]";
+                      } else {
+                        echo "['$i',", rand(1000, 2000), "],";
                       }
                     }
                     ?>
                   ]);
 
                   var options = {
-                    
-                    curveType: 'function',
-                    legend: {
-                      position: 'right'
-                    }
+
+                    curveType: 'function'
                   };
 
                   var chart = new google.visualization.LineChart(document.getElementById('De'));
@@ -442,21 +427,22 @@
                   </table>
                 </div>
                 <br>
+                <h1 class="todayprice">สต็อกน้ำมัน</h1>
                 <table>
                   <tr>
                     <td>
                       <div class="setfont1">
-                        <h1 class="todayprice">สต็อกน้ำมัน G95 10 ลิตร</h1>
+                        <h1 class="todayprice">G95 10 ลิตร(80%)</h1>
                       </div>
                     </td>
                     <td>
                       <div class="setfont1">
-                        <h1 class="todayprice">สต็อกน้ำมัน G91 10 ลิตร</h1>
+                        <h1 class="todayprice">G91 10 ลิตร(80%)</h1>
                       </div>
                     </td>
                     <td>
                       <div class="setfont1">
-                        <h1 class="todayprice">สต็อกน้ำมัน Desel 10 ลิตร</h1>
+                        <h1 class="todayprice">Desel 10 ลิตร(80%)</h1>
                       </div>
                     </td>
                   </tr>
