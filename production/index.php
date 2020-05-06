@@ -286,7 +286,7 @@
 
                     curveType: 'function',
                     legend: {
-                      position: 'right'
+                      position: 'none'
                     }
                   };
 
@@ -319,7 +319,11 @@
 
                   var options = {
 
-                    curveType: 'function'
+                    curveType: 'function',
+
+                    legend: {
+                      position: 'none'
+                    }
                   };
 
                   var chart = new google.visualization.LineChart(document.getElementById('G95'));
