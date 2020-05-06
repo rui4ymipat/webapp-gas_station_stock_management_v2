@@ -55,10 +55,15 @@
         width: 58%;
         margin-left: 5px;
       }
+
       .set_col2 table tr.setheader th {
         width: 10%
       }
+
       .set_col1 table tr.setheader th {
+        width: 10%
+      }
+      .set_col1 table tr.setl th {
         width: 10%
       }
     }
@@ -342,10 +347,10 @@
                       <tr class="setheader">
                         <th rowspan="2">ว/ด/ป</th>
                         <th rowspan="2">ชนิด</th>
-                        <th colspan="3">กทม.</th>
+                        <th colspan="3" style="width: 24%;">กทม.</th>
                         <th rowspan="2">ราคาหน้าปั้ม</th>
                       </tr>
-                      <tr>
+                      <tr class="setl">
                         <th>ราคา</th>
                         <th>ปรับราคา</th>
                         <th>เท่ากับ</th>
