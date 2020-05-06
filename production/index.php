@@ -351,7 +351,11 @@
 
                   var options = {
 
-                    curveType: 'function'
+                    curveType: 'function',
+
+                    legend: {
+                      position: 'none'
+                    }
                   };
 
                   var chart = new google.visualization.LineChart(document.getElementById('De'));
