@@ -14,20 +14,20 @@
 
     @media only screen and (max-width: 1366px) {
       .column1 {
-        width: 55%;
+        width: 100%;
       }
     }
 
     @media only screen and (max-width: 1024px) {
       .column1 {
-        width: 86%;
+        width: 100%;
       }
 
     }
 
     @media only screen and (min-width: 1367px) {
       .column1 {
-        width: 33%;
+        width: 100%;
       }
 
     }
@@ -45,7 +45,10 @@
     .column2 {
       display: inline-block;
     }
-
+    .set_line{
+      display: inline-table;
+      width: 33%;
+    }
     input[type="text"] {
       border: 1px solid rgb(202, 206, 215);
       margin-right: 15px;
@@ -159,16 +162,15 @@
                 <?php if ($_SESSION['user_level'] == 2) { ?>
                   <li><a href="fuelprice.php"><i class="fa fa-money"></i> ราคาน้ำมัน</a></li>
                   <li><a href="history.php"><i class="fa fa-history"></i> ประวัติการสั่งซื้อ</a></li>
-                  <li><a href="cost.php"><i class="fa fa-bar-chart"></i> ต้นทุน</a></li>   
+                  <li><a href="cost.php"><i class="fa fa-bar-chart"></i> ต้นทุน</a></li>
                   <li><a href="informationGasCar.php"><i class="fa fa-truck"></i> ข้อมูลรถน้ำมัน</a></li>
                   <li><a href="stockFuel.php"><i class="fa fa-cube"></i> สต็อกน้ำมัน</a></li>
                   <li><a href="management.php"><i class="fa fa-users"></i> จัดการบัญชีผู้ใช้</a></li>
                   <li><a href="logout.php"><i class="fa fa-sign-out"> </i>Log Out</a></li>
-                <?php }
-                else if ($_SESSION['user_level'] == 3) { ?>
+                <?php } else if ($_SESSION['user_level'] == 3) { ?>
                   <li><a href="fuelprice.php"><i class="fa fa-money"></i> ราคาน้ำมัน</a></li>
                   <li><a href="history.php"><i class="fa fa-history"></i> ประวัติการสั่งซื้อ</a></li>
-                  <li><a href="cost.php"><i class="fa fa-bar-chart"></i> ต้นทุน</a></li>   
+                  <li><a href="cost.php"><i class="fa fa-bar-chart"></i> ต้นทุน</a></li>
                   <li><a href="informationGasCar.php"><i class="fa fa-truck"></i> ข้อมูลรถน้ำมัน</a></li>
                   <li><a href="stockFuel.php"><i class="fa fa-cube"></i> สต็อกน้ำมัน</a></li>
                   <li><a href="logout.php"><i class="fa fa-sign-out"> </i>Log Out</a></li>
@@ -219,70 +221,76 @@
                   <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">กรอกข้อมูลประจำวัน</h1>
                   <div class="setborder">
                     <form action="add-pricegas.php">
-                      <div class="showdetail">ข้อมูลราคา บัญชี 1</div>
-                      <table class="account">
+                      <div class="set_line">
+                        <div class="showdetail">ข้อมูลราคา บัญชี 1</div>
+                        <table class="account">
 
-                        <tr>
-                          <td class="name">G91</td>
-                          <td><input type="text" name="91p_a1" placeholder="ราคา"></td>
-                          <td><input type="text" name="91d_a1" placeholder="ส่วนลด" style="margin-left: 15px"></td>
-                        </tr>
+                          <tr>
+                            <td class="name">G91</td>
+                            <td><input type="text" name="91p_a1" placeholder="ราคา"></td>
+                            <td><input type="text" name="91d_a1" placeholder="ส่วนลด" style="margin-left: 15px"></td>
+                          </tr>
 
-                        <tr>
-                          <td class="name">G95</td>
-                          <td><input type="text" name="95p_a1" placeholder="ราคา"></td>
-                          <td><input type="text" name="95d_a1" placeholder="ส่วนลด" style="margin-left: 15px"></td>
-                        </tr>
+                          <tr>
+                            <td class="name">G95</td>
+                            <td><input type="text" name="95p_a1" placeholder="ราคา"></td>
+                            <td><input type="text" name="95d_a1" placeholder="ส่วนลด" style="margin-left: 15px"></td>
+                          </tr>
 
-                        <tr>
-                          <td class="name">Diesel</td>
-                          <td><input type="text" name="Dep_a1" placeholder="ราคา"></td>
-                          <td><input type="text" name="Ded_a1" placeholder="ส่วนลด" style="margin-left: 15px"></td>
-                        </tr>
-                      </table>
-                      <br>
-                      <div class="showdetail">ข้อมูลราคา บัญชี 2</div>
-                      <table class="account">
+                          <tr>
+                            <td class="name">Diesel</td>
+                            <td><input type="text" name="Dep_a1" placeholder="ราคา"></td>
+                            <td><input type="text" name="Ded_a1" placeholder="ส่วนลด" style="margin-left: 15px"></td>
+                          </tr>
+                        </table>
 
-                        <tr>
-                          <td class="name">G91</td>
-                          <td><input type="text" name="91p_a2" placeholder="ราคา"></td>
-                          <td><input type="text" name="91d_a2" placeholder="ส่วนลด" style="margin-left: 15px"></td>
-                        </tr>
+                      </div>
+                      <div class="set_line">
+                        <div class="showdetail">ข้อมูลราคา บัญชี 2</div>
+                        <table class="account">
 
-                        <tr>
-                          <td class="name">G95</td>
-                          <td><input type="text" name="95p_a2" placeholder="ราคา"></td>
-                          <td><input type="text" name="95d_a2" placeholder="ส่วนลด" style="margin-left: 15px"></td>
-                        </tr>
+                          <tr>
+                            <td class="name">G91</td>
+                            <td><input type="text" name="91p_a2" placeholder="ราคา"></td>
+                            <td><input type="text" name="91d_a2" placeholder="ส่วนลด" style="margin-left: 15px"></td>
+                          </tr>
 
-                        <tr>
-                          <td class="name">Diesel</td>
-                          <td><input type="text" name="Dep_a2" placeholder="ราคา"></td>
-                          <td><input type="text" name="Ded_a2" placeholder="ส่วนลด" style="margin-left: 15px"></td>
-                        </tr>
-                      </table>
-                      <br>
-                      <div class="showdetail">ข้อมูลราคา บัญชี 3</div>
-                      <table class="account">
+                          <tr>
+                            <td class="name">G95</td>
+                            <td><input type="text" name="95p_a2" placeholder="ราคา"></td>
+                            <td><input type="text" name="95d_a2" placeholder="ส่วนลด" style="margin-left: 15px"></td>
+                          </tr>
 
-                        <tr>
-                          <td class="name">G91</td>
-                          <td><input type="text" name="91p_a3" placeholder="ราคา"></td>
-                          <td><input type="text" name="91d_a3" placeholder="ส่วนลด" style="margin-left: 15px"></td>
-                        </tr>
-                        <tr>
-                          <td class="name">G95</td>
-                          <td><input type="text" name="95p_a3" placeholder="ราคา"></td>
-                          <td><input type="text" name="95d_a3" placeholder="ส่วนลด" style="margin-left: 15px"></td>
-                        </tr>
+                          <tr>
+                            <td class="name">Diesel</td>
+                            <td><input type="text" name="Dep_a2" placeholder="ราคา"></td>
+                            <td><input type="text" name="Ded_a2" placeholder="ส่วนลด" style="margin-left: 15px"></td>
+                          </tr>
+                        </table>
 
-                        <tr>
-                          <td class="name">Diesel</td>
-                          <td><input type="text" name="Dep_a3" placeholder="ราคา"></td>
-                          <td><input type="text" name="Ded_a3" placeholder="ส่วนลด" style="margin-left: 15px"></td>
-                        </tr>
-                      </table>
+                      </div>
+                      <div class="set_line">
+                        <div class="showdetail">ข้อมูลราคา บัญชี 3</div>
+                        <table class="account">
+
+                          <tr>
+                            <td class="name">G91</td>
+                            <td><input type="text" name="91p_a3" placeholder="ราคา"></td>
+                            <td><input type="text" name="91d_a3" placeholder="ส่วนลด" style="margin-left: 15px"></td>
+                          </tr>
+                          <tr>
+                            <td class="name">G95</td>
+                            <td><input type="text" name="95p_a3" placeholder="ราคา"></td>
+                            <td><input type="text" name="95d_a3" placeholder="ส่วนลด" style="margin-left: 15px"></td>
+                          </tr>
+
+                          <tr>
+                            <td class="name">Diesel</td>
+                            <td><input type="text" name="Dep_a3" placeholder="ราคา"></td>
+                            <td><input type="text" name="Ded_a3" placeholder="ส่วนลด" style="margin-left: 15px"></td>
+                          </tr>
+                        </table>
+                      </div>
 
                       <input type="submit" class="btn btn-success" value="Submit">
                     </form>
