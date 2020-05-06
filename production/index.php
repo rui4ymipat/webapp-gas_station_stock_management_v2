@@ -270,7 +270,7 @@
 
                 function drawChart() {
                   var data = google.visualization.arrayToDataTable([
-                    ['แก๊สโซฮอล์ 91'],
+                    ['ยอดขาย', 'แก๊สโซฮอล์ 91'],
                     <?php
                     for ($i = 1; $i <= 15; $i++) {
                       if ($i == 15) {
@@ -284,7 +284,10 @@
 
                   var options = {
 
-                    curveType: 'function'
+                    curveType: 'function',
+                    legend: {
+                      position: 'right'
+                    }
                   };
 
                   var chart = new google.visualization.LineChart(document.getElementById('G91'));
@@ -302,7 +305,7 @@
 
                 function drawChart() {
                   var data = google.visualization.arrayToDataTable([
-                    ['แก๊สโซฮอล์ 95'],
+                    ['ยอดขาย', 'แก๊สโซฮอล์ 95'],
                     <?php
                     for ($i = 1; $i <= 15; $i++) {
                       if ($i == 15) {
@@ -334,7 +337,7 @@
 
                 function drawChart() {
                   var data = google.visualization.arrayToDataTable([
-                    [ 'ดีเซล'],
+                    ['ยอดขาย', 'ดีเซล'],
                     <?php
                     for ($i = 1; $i <= 15; $i++) {
                       if ($i == 15) {
