@@ -17,11 +17,11 @@
         width: 100%;
       }
 
-      .set_col1 {
+      .set_col1 table {
         width: 40%;
       }
 
-      .set_col2 {
+      .set_col2 table{
         width: 58%;
         margin-left: 5px;
       }
@@ -32,11 +32,11 @@
         width: 100%;
       }
 
-      .set_col1 {
+      .set_col1 table{
         width: 40%;
       }
 
-      .set_col2 {
+      .set_col2 table {
         width: 58%;
         margin-left: 5px;
       }
@@ -47,11 +47,11 @@
         width: 100%;
       }
 
-      .set_col1 {
+      .set_col1 table{
         width: 40%;
       }
 
-      .set_col2 {
+      .set_col2 table{
         width: 58%;
         margin-left: 5px;
       }
