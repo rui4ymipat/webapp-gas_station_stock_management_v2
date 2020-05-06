@@ -55,6 +55,9 @@
         width: 58%;
         margin-left: 5px;
       }
+      .set_col2 table tr th{
+        width: 10%
+      }
     }
 
     .set_col1,
@@ -77,7 +80,7 @@
     }
 
     .set_line {
-      display: inline-table;
+      display: inline-block;
       width: 33%;
     }
 
