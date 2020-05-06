@@ -318,6 +318,12 @@
                             <option value="<?php echo $row['id'] ?>"><?php echo $row['name'] ?></option>
                           <?php } ?>
                         </select>
+                        <table>
+                          <tr>
+                            <td class="name">ค่าขนส่ง</td>
+                            <td><input type="text" name="a" placeholder="ค่าขนส่ง"></td>
+                          </tr>
+                        </table>
                       </div>
                       <div class="col2">
                         <div class="showdetail">ปริมาณที่สั่งซื้อ บัญชี 1</div>
