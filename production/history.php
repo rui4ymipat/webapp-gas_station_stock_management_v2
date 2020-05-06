@@ -86,7 +86,7 @@
       .column2 table tr td {
         width: 22%;
         font-size: 120%;
-        font-weight: 600;
+        font-weight: 500;
       }
 
       .column2 table {
@@ -116,7 +116,7 @@
       .column2 table tr td {
         width: 22%;
         font-size: 120%;
-        font-weight: 600;
+        font-weight: 500;
       }
 
       .column2 table {
@@ -147,7 +147,7 @@
       .column2 table tr td {
         width: 9%;
         font-size: 120%;
-        font-weight: 600;
+        font-weight: 500;
       }
 
       .column2 table {
