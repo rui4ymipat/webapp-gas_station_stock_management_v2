@@ -66,6 +66,12 @@
       .set_col1 table tr.setl th {
         width: 10%
       }
+      .set_col1 table tr td{
+        height: 20px;
+      }
+      .set_col2 table tr td{
+        height: 20px;
+      }
     }
 
     .set_col1,
