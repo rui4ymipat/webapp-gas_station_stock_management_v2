@@ -261,11 +261,10 @@
                 </div>
               </div>
 
-
               <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
               <script type="text/javascript">
                 google.charts.load('current', {
-                  'packages': ['bar']
+                  'packages': ['corechart']
                 });
                 google.charts.setOnLoadCallback(drawChart);
 
@@ -306,19 +305,23 @@
                   ]);
 
                   var options = {
-                    bars: 'vertical' // Required for Material Bar Charts.
+                    title: 'น้ำมัน แก๊สโซฮอล์ 91',
+                    curveType: 'function',
+                    legend: {
+                      position: 'bottom'
+                    }
                   };
 
-                  var chart = new google.charts.Bar(document.getElementById('G91'));
+                  var chart = new google.visualization.LineChart(document.getElementById('G91'));
 
-                  chart.draw(data, google.charts.Bar.convertOptions(options));
+                  chart.draw(data, options);
                 }
               </script>
 
-              <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
               <script type="text/javascript">
                 google.charts.load('current', {
-                  'packages': ['bar']
+                  'packages': ['corechart']
                 });
                 google.charts.setOnLoadCallback(drawChart);
 
@@ -359,19 +362,23 @@
                   ]);
 
                   var options = {
-                    bars: 'vertical' // Required for Material Bar Charts.
+                    title: 'น้ำมัน แก๊สโซฮอล์ 95',
+                    curveType: 'function',
+                    legend: {
+                      position: 'bottom'
+                    }
                   };
 
-                  var chart = new google.charts.Bar(document.getElementById('G95'));
+                  var chart = new google.visualization.LineChart(document.getElementById('G91'));
 
-                  chart.draw(data, google.charts.Bar.convertOptions(options));
+                  chart.draw(data, options);
                 }
               </script>
 
-              <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
               <script type="text/javascript">
                 google.charts.load('current', {
-                  'packages': ['bar']
+                  'packages': ['corechart']
                 });
                 google.charts.setOnLoadCallback(drawChart);
 
@@ -412,12 +419,16 @@
                   ]);
 
                   var options = {
-                    bars: 'vertical' // Required for Material Bar Charts.
+                    title: 'น้ำมัน ดีเซล',
+                    curveType: 'function',
+                    legend: {
+                      position: 'bottom'
+                    }
                   };
 
-                  var chart = new google.charts.Bar(document.getElementById('De'));
+                  var chart = new google.visualization.LineChart(document.getElementById('G91'));
 
-                  chart.draw(data, google.charts.Bar.convertOptions(options));
+                  chart.draw(data, options);
                 }
               </script>
 
