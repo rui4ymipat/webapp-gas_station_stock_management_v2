@@ -67,10 +67,10 @@
         width: 10%
       }
       .set_col1 table tr td{
-        height: 20px;
+        height: 25px;
       }
       .set_col2 table tr td{
-        height: 20px;
+        height: 25px;
       }
     }
 
