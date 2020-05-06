@@ -270,7 +270,7 @@
 
                 function drawChart() {
                   var data = google.visualization.arrayToDataTable([
-                    ['ยอดขาย', 'แก๊สโซฮอล์ 91'],
+                    ['แก๊สโซฮอล์ 91'],
                     <?php
                     for ($i = 1; $i <= 15; $i++) {
                       if ($i == 15) {
@@ -284,10 +284,7 @@
 
                   var options = {
 
-                    curveType: 'function',
-                    legend: {
-                      position: 'right'
-                    }
+                    curveType: 'function'
                   };
 
                   var chart = new google.visualization.LineChart(document.getElementById('G91'));
@@ -305,7 +302,7 @@
 
                 function drawChart() {
                   var data = google.visualization.arrayToDataTable([
-                    ['ยอดขาย', 'แก๊สโซฮอล์ 95'],
+                    ['แก๊สโซฮอล์ 95'],
                     <?php
                     for ($i = 1; $i <= 15; $i++) {
                       if ($i == 15) {
@@ -319,10 +316,7 @@
 
                   var options = {
 
-                    curveType: 'function',
-                    legend: {
-                      position: 'right'
-                    }
+                    curveType: 'function'
                   };
 
                   var chart = new google.visualization.LineChart(document.getElementById('G95'));
@@ -340,7 +334,7 @@
 
                 function drawChart() {
                   var data = google.visualization.arrayToDataTable([
-                    ['ยอดขาย', 'ดีเซล'],
+                    [ 'ดีเซล'],
                     <?php
                     for ($i = 1; $i <= 15; $i++) {
                       if ($i == 15) {
@@ -432,17 +426,17 @@
                   <tr>
                     <td>
                       <div class="setfont1">
-                        <h1 class="todayprice">G95 10 ลิตร(80%)</h1>
+                        <h1>G95 10 ลิตร(80%)</h1>
                       </div>
                     </td>
                     <td>
                       <div class="setfont1">
-                        <h1 class="todayprice">G91 10 ลิตร(80%)</h1>
+                        <h1>G91 10 ลิตร(80%)</h1>
                       </div>
                     </td>
                     <td>
                       <div class="setfont1">
-                        <h1 class="todayprice">Desel 10 ลิตร(80%)</h1>
+                        <h1>Desel 10 ลิตร(80%)</h1>
                       </div>
                     </td>
                   </tr>
