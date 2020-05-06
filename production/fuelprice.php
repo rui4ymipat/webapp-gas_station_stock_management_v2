@@ -302,7 +302,7 @@
                 <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">ตารางค่ากลาง</h1>
                 <div class="column2">
                 <div class="set_col1">
-                  <table>
+                  <table border="1">
                     <tr>
                       <th rowspan="2">ว/ด/ป</th>
                       <th rowspan="2">ชนิด</th>
@@ -317,7 +317,7 @@
                   </table>
                 </div>
                 <div class="set_col2">
-                  <table>
+                  <table border="1">
                     <tr>
                       <th colspan="3">บัญชี 1</th>
                       <th colspan="3">บัญชี 2</th>
