@@ -351,12 +351,12 @@
                   </div>
                   <div class="set_col2">
                     <table border="1" style="text-align: center;">
-                      <tr>
+                      <tr class="setheader">
                         <th colspan="3">บัญชี 1</th>
                         <th colspan="3">บัญชี 2</th>
                         <th colspan="3">บัญชี 3</th>
                       </tr>
-                      <tr class="setheader">
+                      <tr>
                         <th>ราคา</th>
                         <th>ส่วนลด</th>
                         <th>เท่ากับ</th>
