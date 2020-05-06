@@ -55,7 +55,7 @@
         width: 58%;
         margin-left: 5px;
       }
-      .set_col2 table tr th{
+      .set_col2 table tr.setheader th {
         width: 10%
       }
     }
@@ -356,7 +356,7 @@
                         <th colspan="3">บัญชี 2</th>
                         <th colspan="3">บัญชี 3</th>
                       </tr>
-                      <tr>
+                      <tr class="setheader">
                         <th>ราคา</th>
                         <th>ส่วนลด</th>
                         <th>เท่ากับ</th>
