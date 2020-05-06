@@ -16,6 +16,15 @@
       .column1 {
         width: 100%;
       }
+
+      .set_col1 {
+        width: 40%;
+      }
+
+      .set_col2 {
+        width: 58%;
+        margin-left: 5px;
+      }
     }
 
     @media only screen and (max-width: 1024px) {
@@ -23,6 +32,14 @@
         width: 100%;
       }
 
+      .set_col1 {
+        width: 40%;
+      }
+
+      .set_col2 {
+        width: 58%;
+        margin-left: 5px;
+      }
     }
 
     @media only screen and (min-width: 1367px) {
@@ -30,10 +47,21 @@
         width: 100%;
       }
 
+      .set_col1 {
+        width: 40%;
+      }
+
+      .set_col2 {
+        width: 58%;
+        margin-left: 5px;
+      }
     }
-    .set_col1 , .set_col2{
+
+    .set_col1,
+    .set_col2 {
       display: inline-table;
     }
+
     form .showdetail {
       font-weight: 600;
       padding-bottom: 5px;
@@ -47,10 +75,12 @@
     .column2 {
       display: block;
     }
-    .set_line{
+
+    .set_line {
       display: inline-table;
       width: 33%;
     }
+
     input[type="text"] {
       border: 1px solid rgb(202, 206, 215);
       margin-right: 15px;
@@ -301,41 +331,41 @@
                 <br>
                 <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">ตารางค่ากลาง</h1>
                 <div class="column2">
-                <div class="set_col1">
-                  <table border="1">
-                    <tr>
-                      <th rowspan="2">ว/ด/ป</th>
-                      <th rowspan="2">ชนิด</th>
-                      <th colspan="3">กทม.</th>
-                      <th rowspan="2">ราคาหน้าปั้ม</th>
-                    </tr>
-                    <tr>
-                      <th>ราคา</th>
-                      <th>ปรับราคา</th>
-                      <th>เท่ากับ</th>
-                    </tr>
-                  </table>
-                </div>
-                <div class="set_col2">
-                  <table border="1">
-                    <tr>
-                      <th colspan="3">บัญชี 1</th>
-                      <th colspan="3">บัญชี 2</th>
-                      <th colspan="3">บัญชี 3</th>
-                    </tr>
-                    <tr>
-                      <th>ราคา</th>
-                      <th>ส่วนลด</th>
-                      <th>เท่ากับ</th>
-                      <th>ราคา</th>
-                      <th>ส่วนลด</th>
-                      <th>เท่ากับ</th>
-                      <th>ราคา</th>
-                      <th>ส่วนลด</th>
-                      <th>เท่ากับ</th>
-                    </tr>
-                  </table>
-                </div>
+                  <div class="set_col1">
+                    <table border="1" style="text-align: center;">
+                      <tr>
+                        <th rowspan="2">ว/ด/ป</th>
+                        <th rowspan="2">ชนิด</th>
+                        <th colspan="3">กทม.</th>
+                        <th rowspan="2">ราคาหน้าปั้ม</th>
+                      </tr>
+                      <tr>
+                        <th>ราคา</th>
+                        <th>ปรับราคา</th>
+                        <th>เท่ากับ</th>
+                      </tr>
+                    </table>
+                  </div>
+                  <div class="set_col2">
+                    <table border="1" style="text-align: center;">
+                      <tr>
+                        <th colspan="3">บัญชี 1</th>
+                        <th colspan="3">บัญชี 2</th>
+                        <th colspan="3">บัญชี 3</th>
+                      </tr>
+                      <tr>
+                        <th>ราคา</th>
+                        <th>ส่วนลด</th>
+                        <th>เท่ากับ</th>
+                        <th>ราคา</th>
+                        <th>ส่วนลด</th>
+                        <th>เท่ากับ</th>
+                        <th>ราคา</th>
+                        <th>ส่วนลด</th>
+                        <th>เท่ากับ</th>
+                      </tr>
+                    </table>
+                  </div>
                 </div>
               </div>
 
