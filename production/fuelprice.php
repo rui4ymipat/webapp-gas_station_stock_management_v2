@@ -31,7 +31,9 @@
       }
 
     }
-
+    .set_col1 , .set_col2{
+      display: inline-table;
+    }
     form .showdetail {
       font-weight: 600;
       padding-bottom: 5px;
@@ -297,9 +299,43 @@
                   </div>
                 </div>
                 <br>
-                <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">กรอกข้อมูลประจำวัน</h1>
+                <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">ตารางค่ากลาง</h1>
                 <div class="column2">
-                
+                <div class="set_col1">
+                  <table>
+                    <tr>
+                      <th rowspan="2">ว/ด/ป</th>
+                      <th rowspan="2">ชนิด</th>
+                      <th colspan="3">กทม.</th>
+                      <th rowspan="2">ราคาหน้าปั้ม</th>
+                    </tr>
+                    <tr>
+                      <th>ราคา</th>
+                      <th>ปรับราคา</th>
+                      <th>เท่ากับ</th>
+                    </tr>
+                  </table>
+                </div>
+                <div class="set_col2">
+                  <table>
+                    <tr>
+                      <th colspan="3">บัญชี 1</th>
+                      <th colspan="3">บัญชี 2</th>
+                      <th colspan="3">บัญชี 3</th>
+                    </tr>
+                    <tr>
+                      <th>ราคา</th>
+                      <th>ส่วนลด</th>
+                      <th>เท่ากับ</th>
+                      <th>ราคา</th>
+                      <th>ส่วนลด</th>
+                      <th>เท่ากับ</th>
+                      <th>ราคา</th>
+                      <th>ส่วนลด</th>
+                      <th>เท่ากับ</th>
+                    </tr>
+                  </table>
+                </div>
                 </div>
               </div>
 
