@@ -307,7 +307,7 @@
                       <table border="1">
                         <tr>
                           <th rowspan="2" style="height: 65px;">วันที่</th>
-                          <th colspan="6">ทะเบียน <?php echo $name[$i] ?></th>
+                          <th colspan="7">ทะเบียน <?php echo $name[$i] ?></th>
                         </tr>
                         <tr>
                           <th>เลขไมค์</th>
@@ -315,6 +315,7 @@
                           <th>ราคา</th>
                           <th>ค่าน้ำมัน</th>
                           <th>ค่าเที่ยว</th>
+                          <th>ค่าอื่นๆ</th>
                           <th>รวมค่าขนส่ง</th>
                         </tr>
                       </table>
