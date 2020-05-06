@@ -95,6 +95,7 @@
         text-align: center;
         font-size: 107%;
       }
+
       th {
         font-size: 130%;
         color: #2B3E54;
@@ -320,8 +321,9 @@
                         </select>
                         <table>
                           <tr>
-                            <td class="name">ค่าขนส่ง</td>
                             <td><input type="text" name="a" placeholder="ค่าขนส่ง"></td>
+                            <td class="name">บาท</td>
+
                           </tr>
                         </table>
                       </div>
