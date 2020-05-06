@@ -467,7 +467,7 @@
                 <br>
                 <div class="setfont1">
                   <h1 class="todayprice">ยอดขายย้อนหลัง 15 วัน</h1>
-                </div>
+                
                 <br>
                 <h1 style="font-size: 150%;">แก็สโซฮอล์ 91</h1>
                 <div id="G91" style="width: 1000px; height: 400px;"></div>
@@ -477,7 +477,7 @@
                 <br>
                 <h1 style="font-size: 150%;">ดีเซล</h1>
                 <div id="De" style="width: 1000px; height: 400px;"></div>
-
+                </div>
 
               <?php } else { ?>
                 <div class="setfont1">
