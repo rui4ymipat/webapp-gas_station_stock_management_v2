@@ -429,17 +429,17 @@
                   <tr>
                     <td>
                       <div class="setfont1">
-                        <h1>G95 10 ลิตร(80%)</h1>
+                        <h1 style="font-size: 170%;">G95 10 ลิตร(80%)</h1>
                       </div>
                     </td>
                     <td>
                       <div class="setfont1">
-                        <h1>G91 10 ลิตร(80%)</h1>
+                        <h1 style="font-size: 170%;">G91 10 ลิตร(80%)</h1>
                       </div>
                     </td>
                     <td>
                       <div class="setfont1">
-                        <h1>Desel 10 ลิตร(80%)</h1>
+                        <h1 style="font-size: 170%;">Desel 10 ลิตร(80%)</h1>
                       </div>
                     </td>
                   </tr>
