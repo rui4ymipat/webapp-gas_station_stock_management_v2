@@ -160,7 +160,7 @@
                   <tr>
                     <th rowspan="2" style="height: 65px;">วันที่</th>
                     <th rowspan="2">ชนิด</th>
-                    <th colspan="4">ปริมาณ</th>
+                    <th colspan="5">ปริมาณ</th>
                     <th colspan="2">น้ำมันเดิม</th>
                     <th colspan="3">สรุป</th>
                   </tr>
