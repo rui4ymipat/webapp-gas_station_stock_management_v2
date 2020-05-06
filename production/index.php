@@ -305,10 +305,10 @@
                   ]);
 
                   var options = {
-                    title: 'น้ำมัน แก๊สโซฮอล์ 91',
+                    
                     curveType: 'function',
                     legend: {
-                      position: 'bottom'
+                      position: 'right'
                     }
                   };
 
@@ -362,14 +362,14 @@
                   ]);
 
                   var options = {
-                    title: 'น้ำมัน แก๊สโซฮอล์ 95',
+                    
                     curveType: 'function',
                     legend: {
-                      position: 'bottom'
+                      position: 'right'
                     }
                   };
 
-                  var chart = new google.visualization.LineChart(document.getElementById('G91'));
+                  var chart = new google.visualization.LineChart(document.getElementById('G95'));
 
                   chart.draw(data, options);
                 }
@@ -419,14 +419,14 @@
                   ]);
 
                   var options = {
-                    title: 'น้ำมัน ดีเซล',
+                    
                     curveType: 'function',
                     legend: {
-                      position: 'bottom'
+                      position: 'right'
                     }
                   };
 
-                  var chart = new google.visualization.LineChart(document.getElementById('G91'));
+                  var chart = new google.visualization.LineChart(document.getElementById('De'));
 
                   chart.draw(data, options);
                 }
