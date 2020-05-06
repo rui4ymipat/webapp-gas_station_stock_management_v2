@@ -1,6 +1,6 @@
 <?php
-$server = "34.87.171.41";
-$user = "admin";
+$server = "127.0.0.1";
+$user = "root";
 $password = "1234";
 $dbname = "main";
 $connect = mysqli_connect($server, $user, $password, $dbname);
