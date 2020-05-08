@@ -11,6 +11,20 @@
     .site_title {
       font-family: 'Prompt', sans-serif;
     }
+
+    @media only screen and (max-width: 1366px) {
+
+    }
+
+    @media only screen and (max-width: 1024px) {
+
+    }
+
+    @media only screen and (min-width: 1367px) {
+      .c1 table tr.serheader th{
+        width: 10%;
+      }
+    }
   </style>
   <?php
   session_start();
@@ -199,7 +213,7 @@
                         <th colspan="3">รวม</th>
                         <th colspan="3">รถอีซูซุ</th>
                       </tr>
-                      <tr>
+                      <tr class="setheader">
                         <th>G95</th>
                         <th>G91</th>
                         <th>D</th>
@@ -264,7 +278,7 @@
                         <td>3</td>
                       </tr>
                       <tr>
-                        <td>เช้า</td>
+                        <td>เย็น</td>
                         <td>1</td>
                         <td>2</td>
                         <td>3</td>
