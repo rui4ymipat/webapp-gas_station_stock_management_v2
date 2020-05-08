@@ -263,9 +263,9 @@
                   </div>
                   <div class="c2">
                     <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">ยอดขายประจำวัน</h1>
-                    <table border="1" style="text-align: center; width: 100%;">
+                    <table border="1" style="text-align: center; width: 60%;">
                       <tr>
-                        <th style="width: 23%;">วันที่</th>
+                        <th style="width: 23%;height: 25px;">วันที่</th>
                         <th style="width: 9%;">กะ</th>
                         <th style="width: 20%;">G95</th>
                         <th style="width: 20%;">G91</th>
