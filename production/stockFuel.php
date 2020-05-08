@@ -217,16 +217,16 @@
                       <tr class="setheader">
                         <th>G95</th>
                         <th>G91</th>
-                        <th>D</th>
+                        <th>Desel</th>
                         <th>G95</th>
                         <th>G91</th>
-                        <th>D</th>
+                        <th>Desel</th>
                         <th>G95</th>
                         <th>G91</th>
-                        <th>D</th>
+                        <th>Desel</th>
                         <th>G95</th>
                         <th>G91</th>
-                        <th>D</th>
+                        <th>Desel</th>
                       </tr>
                       <tr>
                         <td rowspan="2" style="height: 50px;"> 1 มีนาคม 2563</td>
@@ -269,7 +269,7 @@
                         <th style="width: 9%;">กะ</th>
                         <th style="width: 20%;">G95</th>
                         <th style="width: 20%;">G91</th>
-                        <th style="width: 20%;">D</th>
+                        <th style="width: 20%;">Desel</th>
                       </tr>
                       <tr>
                         <td rowspan="2" style="height: 50px;">1 มีนาคม 2563</td>
