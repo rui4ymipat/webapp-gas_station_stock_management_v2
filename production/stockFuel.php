@@ -22,7 +22,7 @@
 
     @media only screen and (min-width: 1367px) {
        div.c1 table tr.setheader th{
-        width: 10%;
+        width: 7.5%;
       }
     }
     
@@ -207,8 +207,8 @@
                     <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">ปริมาณน้ำมัน</h1>
                     <table border="1" style="text-align: center; width: 100%;">
                       <tr >
-                        <th rowspan="2">วันที่</th>
-                        <th rowspan="2">กะ</th>
+                        <th rowspan="2" style="height: 50px;">วันที่</th>
+                        <th rowspan="2" style="width: 3%;">กะ</th>
                         <th colspan="3">Tank</th>
                         <th colspan="3">ซื้อมา</th>
                         <th colspan="3">รวม</th>
@@ -229,7 +229,7 @@
                         <th>D</th>
                       </tr>
                       <tr>
-                        <td rowspan="2"> 1 มีนาคม 2563</td>
+                        <td rowspan="2" style="height: 50px;"> 1 มีนาคม 2563</td>
                         <td>เช้า</td>
                         <td>1</td>
                         <td>2</td>
@@ -265,14 +265,14 @@
                     <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">ยอดขายประจำวัน</h1>
                     <table border="1" style="text-align: center; width: 100%;">
                       <tr>
-                        <th>วันที่</th>
-                        <th>กะ</th>
-                        <th>G95</th>
-                        <th>G91</th>
-                        <th>D</th>
+                        <th style="width: 23%;">วันที่</th>
+                        <th style="width: 9%;">กะ</th>
+                        <th style="width: 20%;">G95</th>
+                        <th style="width: 20%;">G91</th>
+                        <th style="width: 20%;">D</th>
                       </tr>
                       <tr>
-                        <td rowspan="2">1 มีนาคม 2563</td>
+                        <td rowspan="2" style="height: 50px;">1 มีนาคม 2563</td>
                         <td>เช้า</td>
                         <td>1</td>
                         <td>2</td>
