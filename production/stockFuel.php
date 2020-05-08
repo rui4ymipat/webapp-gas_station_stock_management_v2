@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<style>
+  <style>
     @import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;1,100;1,200;1,300&display=swap');
 
     .setfont1,
@@ -12,14 +12,13 @@
       font-family: 'Prompt', sans-serif;
     }
   </style>
-  <?php 
+  <?php
   session_start();
-  
-   if(empty($_SESSION['user_level']))
-   {
+
+  if (empty($_SESSION['user_level'])) {
     $_SESSION['error'] = "Username หรือ Password ผิด";
-     header("Location:login.php");
-   }
+    header("Location:login.php");
+  }
 
   ?>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -70,10 +69,10 @@
             <div class="profile_info">
               <span>ยินดีต้อนรับ</span>
               <h2>
-              <?php 
-              session_start();
-              echo $_SESSION['user_name'];
-              ?>
+                <?php
+                session_start();
+                echo $_SESSION['user_name'];
+                ?>
               </h2>
             </div>
           </div>
@@ -90,16 +89,15 @@
                 <?php if ($_SESSION['user_level'] == 2) { ?>
                   <li><a href="fuelprice.php"><i class="fa fa-money"></i> ราคาน้ำมัน</a></li>
                   <li><a href="history.php"><i class="fa fa-history"></i> ประวัติการสั่งซื้อ</a></li>
-                  <li><a href="cost.php"><i class="fa fa-bar-chart"></i> ต้นทุน</a></li>   
+                  <li><a href="cost.php"><i class="fa fa-bar-chart"></i> ต้นทุน</a></li>
                   <li><a href="informationGasCar.php"><i class="fa fa-truck"></i> ข้อมูลรถน้ำมัน</a></li>
                   <li><a href="stockFuel.php"><i class="fa fa-cube"></i> สต็อกน้ำมัน</a></li>
                   <li><a href="management.php"><i class="fa fa-users"></i> จัดการบัญชีผู้ใช้</a></li>
                   <li><a href="logout.php"><i class="fa fa-sign-out"> </i>Log Out</a></li>
-                <?php }
-                else if ($_SESSION['user_level'] == 3) { ?>
+                <?php } else if ($_SESSION['user_level'] == 3) { ?>
                   <li><a href="fuelprice.php"><i class="fa fa-money"></i> ราคาน้ำมัน</a></li>
                   <li><a href="history.php"><i class="fa fa-history"></i> ประวัติการสั่งซื้อ</a></li>
-                  <li><a href="cost.php"><i class="fa fa-bar-chart"></i> ต้นทุน</a></li>   
+                  <li><a href="cost.php"><i class="fa fa-bar-chart"></i> ต้นทุน</a></li>
                   <li><a href="informationGasCar.php"><i class="fa fa-truck"></i> ข้อมูลรถน้ำมัน</a></li>
                   <li><a href="stockFuel.php"><i class="fa fa-cube"></i> สต็อกน้ำมัน</a></li>
                   <li><a href="logout.php"><i class="fa fa-sign-out"> </i>Log Out</a></li>
@@ -114,7 +112,7 @@
 
           </div>
           <!-- /sidebar menu -->
-          
+
 
         </div>
       </div>
@@ -148,7 +146,9 @@
 
               <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
               <script type="text/javascript">
-                google.charts.load('current', { 'packages': ['bar'] });
+                google.charts.load('current', {
+                  'packages': ['bar']
+                });
                 google.charts.setOnLoadCallback(drawChart);
 
                 function drawChart() {
@@ -186,14 +186,97 @@
                 }
               </script>
 
-              <?php if($_SESSION['user_level'] != 1) {?>
+              <?php if ($_SESSION['user_level'] != 1) { ?>
+                <div class="setfont1">
+                  <div class="c1">
+                    <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">ปริมาณน้ำมัน</h1>
+                    <table border="1" style="text-align: center;">
+                      <tr>
+                        <th rowspan="2">วันที่</th>
+                        <th rowspan="2">กะ</th>
+                        <th colspan="3">Tank</th>
+                        <th colspan="3">ซื้อมา</th>
+                        <th colspan="3">รวม</th>
+                        <th colspan="3">รถอีซูซุ</th>
+                      </tr>
+                      <tr>
+                        <th>G95</th>
+                        <th>G91</th>
+                        <th>D</th>
+                        <th>G95</th>
+                        <th>G91</th>
+                        <th>D</th>
+                        <th>G95</th>
+                        <th>G91</th>
+                        <th>D</th>
+                        <th>G95</th>
+                        <th>G91</th>
+                        <th>D</th>
+                      </tr>
+                      <tr>
+                        <td rowspan="2"> 1 มีนาคม 2563</td>
+                        <td>เช้า</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                        <td>12</td>
+                      </tr>
+                      <tr>
+                        <td>เย็น</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                        <td>12</td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div class="c2">
+                    <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">ยอดขายประจำวัน</h1>
+                    <table border="1" style="text-align: center;">
+                      <tr>
+                        <th>วันที่</th>
+                        <th>กะ</th>
+                        <th>G95</th>
+                        <th>G91</th>
+                        <th>D</th>
+                      </tr>
+                      <tr>
+                        <td rowspan="2">1 มีนาคม 2563</td>
+                        <td>เช้า</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                      </tr>
+                      <tr>
+                        <td>เช้า</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
 
-              
 
-              <?php } 
-              else { ?>
+              <?php } else { ?>
 
-             <?php } ?>
+              <?php } ?>
 
 
               <!-- /page content -->

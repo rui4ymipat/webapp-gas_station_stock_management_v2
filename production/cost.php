@@ -155,7 +155,7 @@
 
 
               <div class="setfont1">
-                <h1 style="font-weight: 800;color: #2B3E54;font-size: 200%;">กรอกข้อมูลประจำวัน</h1>
+                <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">กรอกข้อมูลประจำวัน</h1>
                 <table border="1">
                   <tr>
                     <th rowspan="2" style="height: 65px;">วันที่</th>
