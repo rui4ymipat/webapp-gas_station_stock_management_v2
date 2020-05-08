@@ -21,10 +21,11 @@
     }
 
     @media only screen and (min-width: 1367px) {
-      div.c1 table tr.serheader th{
+
+    }
+    div.c1 table tr.serheader th{
         width: 10%;
       }
-    }
   </style>
   <?php
   session_start();
