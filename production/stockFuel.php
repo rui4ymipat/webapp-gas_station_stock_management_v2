@@ -205,8 +205,8 @@
                 <div class="setfont1">
                   <div class="c1">
                     <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">ปริมาณน้ำมัน</h1>
-                    <table border="1" style="text-align: center;">
-                      <tr class="setheader">
+                    <table border="1" style="text-align: center; width: 100%;">
+                      <tr >
                         <th rowspan="2">วันที่</th>
                         <th rowspan="2">กะ</th>
                         <th colspan="3">Tank</th>
@@ -214,7 +214,7 @@
                         <th colspan="3">รวม</th>
                         <th colspan="3">รถอีซูซุ</th>
                       </tr>
-                      <tr>
+                      <tr class="setheader">
                         <th>G95</th>
                         <th>G91</th>
                         <th>D</th>
@@ -263,7 +263,7 @@
                   </div>
                   <div class="c2">
                     <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">ยอดขายประจำวัน</h1>
-                    <table border="1" style="text-align: center;">
+                    <table border="1" style="text-align: center; width: 100%;">
                       <tr>
                         <th>วันที่</th>
                         <th>กะ</th>
