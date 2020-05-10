@@ -22,7 +22,7 @@
     $a3_95_d = $_GET['91d_a3'];
     $a3_de_p = $_GET['Dep_a3'];
     $a3_de_d = $_GET['Ded_a3'];
-    if(!empty($a1_91_p) && !empty($a1_91_d) && !empty($a1_95_p) && !empty($a1_95_d) && !empty($a1_de_p) && !empty($a1_de_d) && !empty($a2_91_p) && !empty($a2_91_d) && !empty($a2_95_p) && !empty($a2_95_d) && !empty($a2_de_p) && !empty($a2_de_d) && !empty($a3_91_p) && !empty($a3_91_d) && !empty($a3_95_p) && !empty($a3_95_d) && !empty($a3_de_p) && !empty($a3_de_d))
+    if(empty($a1_91_p) && empty($a1_91_d) && empty($a1_95_p) && empty($a1_95_d) && empty($a1_de_p) && empty($a1_de_d) && empty($a2_91_p) && empty($a2_91_d) && empty($a2_95_p) && empty($a2_95_d) && empty($a2_de_p) && empty($a2_de_d) && empty($a3_91_p) && empty($a3_91_d) && empty($a3_95_p) && empty($a3_95_d) && empty($a3_de_p) && empty($a3_de_d))
     {
         $_SESSION['error'] = "โปรดกรอกข้อมูลให้ครบ";
         header("Location:history.php"); 
