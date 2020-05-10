@@ -116,6 +116,7 @@
       margin-left: 44%;
       margin-top: 3.5px;
       border-radius: 5px;
+      display: block;
     }
 
     .setborder {
@@ -132,8 +133,9 @@
 
     td.name {
       font-size: 120%;
-      padding-right: 20px;
+      padding-right: 2%;
       padding-top: 1%;
+      padding-left: 10%;
 
     }
   </style>
@@ -283,17 +285,7 @@
                       unset($_SESSION['msg']);
                     }
                     ?>
-                    <?php
-                    if (!empty($_SESSION['msg'])) {
-                      session_start();
-                    ?>
-                      <script type="text/javascript">
-                        alert('<?php echo $_SESSION['msg'] ?>');
-                      </script>
-                    <?php
-                      unset($_SESSION['msg']);
-                    }
-                    ?>
+              
                     <form action="add-pricegas.php">
                       <div class="set_line">
                         <div class="showdetail">ข้อมูลราคา บัญชี 1</div>

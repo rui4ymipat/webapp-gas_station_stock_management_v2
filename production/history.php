@@ -321,7 +321,7 @@
                   <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">กรอกข้อมูลประจำวัน</h1>
                   <div class="setborder">
 
-                    <form action="add-pricegas.php">
+                    <form action="add-history.php">
                       <div class="col1">
                         <div class="showdetail">รถขนน้ำมัน</div>
                         <select name="cars" style="padding-left: 5%;width: 60%;height: 35px;margin-bottom: 15px;" class="form-control">
