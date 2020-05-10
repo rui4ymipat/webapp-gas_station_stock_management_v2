@@ -213,6 +213,7 @@
 </head>
 
 <body class="nav-md">
+
   <div class="container body">
     <div class="main_container">
       <div class="col-md-3 left_col">
@@ -304,7 +305,17 @@
 
                 </div>
               </div>
-
+              <?php
+              if (!empty($_SESSION['msg'])) {
+                session_start();
+              ?>
+                <script type="text/javascript">
+                  alert('<?php echo $_SESSION['msg'] ?>');
+                </script>
+              <?php
+                unset($_SESSION['msg']);
+              }
+              ?>
               <div class="setfont1">
                 <div class="column1">
                   <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">กรอกข้อมูลประจำวัน</h1>
