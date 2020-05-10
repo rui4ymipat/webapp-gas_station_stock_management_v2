@@ -369,7 +369,7 @@
               </script>
 
 
-              <?php if ($_SESSION['user_level'] == 2) { ?>
+              <?php if ($_SESSION['user_level'] == 2 || $_SESSION['user_level'] == 3) { ?>
 
 
                 <div class="setfont1">
