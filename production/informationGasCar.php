@@ -354,9 +354,9 @@
                     </div>
                   </div>
                   <div class="setcol2">
-                  <table border="1" style="text-align: center; width:100%; ">
+                  <table border="1" style="text-align: center; width:100%; " class="table show">
                   <tr>
-                    <th rowspan="2">วันที่</th>
+                    <th rowspan="2" class="date">วันที่</th>
                     <th colspan="4">ทะเบียน 6134</th>
                     <th colspan="4">ทะเบียน 1815</th>
                   </tr>
