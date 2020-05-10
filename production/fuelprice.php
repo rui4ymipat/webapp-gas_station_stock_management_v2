@@ -63,13 +63,16 @@
       .set_col1 table tr.setheader th {
         width: 10%
       }
+
       .set_col1 table tr.setl th {
         width: 10%
       }
-      .set_col1 table tr td{
+
+      .set_col1 table tr td {
         height: 25px;
       }
-      .set_col2 table tr td{
+
+      .set_col2 table tr td {
         height: 25px;
       }
     }
@@ -269,6 +272,18 @@
                 <div class="column1">
                   <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">กรอกข้อมูลประจำวัน</h1>
                   <div class="setborder">
+                    /div>
+                    <?php
+                    if (!empty($_SESSION['msg'])) {
+                      session_start();
+                    ?>
+                      <script type="text/javascript">
+                        alert('<?php echo $_SESSION['msg'] ?>');
+                      </script>
+                    <?php
+                      unset($_SESSION['msg']);
+                    }
+                    ?>
                     <form action="add-pricegas.php">
                       <div class="set_line">
                         <div class="showdetail">ข้อมูลราคา บัญชี 1</div>
