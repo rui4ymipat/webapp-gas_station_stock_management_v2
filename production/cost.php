@@ -11,11 +11,13 @@
     .site_title {
       font-family: 'Prompt', sans-serif;
     }
-    .setfont1 table{
+
+    .setfont1 table {
       width: 100%;
       text-align: center
     }
-    .setfont1 table tr th{
+
+    .setfont1 table tr th {
       FONT-WEIGHT: 800;
       font-size: 111%;
       color: #2B3E54;
@@ -101,17 +103,16 @@
                   <li><a href="cost.php"><i class="fa fa-bar-chart"></i> ต้นทุน</a></li>
                   <li><a href="informationGasCar.php"><i class="fa fa-truck"></i> ข้อมูลรถน้ำมัน</a></li>
                   <li><a href="stockFuel.php"><i class="fa fa-cube"></i> สต็อกน้ำมัน</a></li>
-                  <li><a href="stockFuel.php"><i class="fa fa-users"></i> จัดการบัญชีผู้ใช้</a></li>
+                  <li><a href="management.php"><i class="fa fa-users"></i> จัดการบัญชีผู้ใช้</a></li>
                   <li><a href="logout.php"><i class="fa fa-sign-out"> </i>Log Out</a></li>
-                <?php } else { ?>
-                  <?php if ($_SESSION['user_level'] == 3) { ?>
+                <?php } else if ($_SESSION['user_level'] == 3) { ?>
                   <li><a href="fuelprice.php"><i class="fa fa-money"></i> ราคาน้ำมัน</a></li>
                   <li><a href="history.php"><i class="fa fa-history"></i> ประวัติการสั่งซื้อ</a></li>
                   <li><a href="cost.php"><i class="fa fa-bar-chart"></i> ต้นทุน</a></li>
                   <li><a href="informationGasCar.php"><i class="fa fa-truck"></i> ข้อมูลรถน้ำมัน</a></li>
                   <li><a href="stockFuel.php"><i class="fa fa-cube"></i> สต็อกน้ำมัน</a></li>
                   <li><a href="logout.php"><i class="fa fa-sign-out"> </i>Log Out</a></li>
-                <?php } ?>
+                <?php } else { ?>
                   <li><a href="informationGasCar.php"><i class="fa fa-truck"></i> ข้อมูลรถน้ำมัน</a></li>
                   <li><a href="stockFuel.php"><i class="fa fa-cube"></i> สต็อกน้ำมัน</a></li>
                   <li><a href="logout.php"><i class="fa fa-sign-out"> </i>Log Out</a></li>
