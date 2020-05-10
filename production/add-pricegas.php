@@ -31,7 +31,7 @@
     date_default_timezone_set("Asia/Bangkok");
     $date = date("Y-m-d");
     $time = date("h:i:sa");
-    $name = $_SESSION['username'];
+    $name = $_SESSION['user_name'];
     $Qa1="insert into sell(gas_id,account,price,discount,date,timestamp,name_stamp) values(1,1,$a1_91_p,$a1_91_d,'$date','$time','$name')";
     mysqli_query($connect, $Qa1);
     $Qa1="insert into sell(gas_id,account,price,discount,date,timestamp,name_stamp) values(1,1,$a1_95_p,$a1_95_d,'$date','$time','$name')";
