@@ -25,7 +25,7 @@
     if(empty($a1_91_p) && empty($a1_91_d) && empty($a1_95_p) && empty($a1_95_d) && empty($a1_de_p) && empty($a1_de_d) && empty($a2_91_p) && empty($a2_91_d) && empty($a2_95_p) && empty($a2_95_d) && empty($a2_de_p) && empty($a2_de_d) && empty($a3_91_p) && empty($a3_91_d) && empty($a3_95_p) && empty($a3_95_d) && empty($a3_de_p) && empty($a3_de_d))
     {
         $_SESSION['msg'] = "โปรดกรอกข้อมูลให้ครบ";
-        header("Location:history.php"); 
+        header("Location:fuelprice.php"); 
     }
     else{
     date_default_timezone_set("Asia/Bangkok");
@@ -51,5 +51,5 @@
     $Qa1="insert into sell(gas_id,account,price,discount,date,timestamp,name_stamp) values(1,3,$a3_de_p,$a3_de_d,'$date','$time','$name')";
     mysqli_query($connect, $Qa1);
     $_SESSION['msg'] = "ดำเนินการสำเร็จ";
-        header("Location:history.php"); 
+        header("Location:fuelprice.php"); 
     }
