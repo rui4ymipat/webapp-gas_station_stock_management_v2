@@ -29,7 +29,13 @@
       .setborder {
         width: 100%;
       }
+      .setcol1 {
+        display: inline-table;
 
+      }
+      .setcol2 {
+        display: inline-table;
+      }
     }
 
     .show_information table {
@@ -326,24 +332,56 @@
 
               <?php } else { ?>
                 <div class="setfont1">
-                  <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">กรอกข้อมูลประจำวัน</h1>
-                  <div class="setborder">
-                    <div class="showdetail">ข้อมูลราคาบัญชี 1</div>
-                    <form action="" method="get">
-                      <table>
-                        <tr>
-                          <td class="name">ทะเบียน 6134</td>
-                          <td><input type="text" name="" placeholder="เลขไมค์"></td>
-                          <td><input type="text" name="" placeholder="ปริมาณที่เติม"></td>
-                        </tr>
-                        <tr>
-                          <td class="name">ทะเบียน 1815</td>
-                          <td><input type="text" name="" placeholder="เลขไมค์"></td>
-                          <td><input type="text" name="" placeholder="ปริมาณที่เติม"></td>
-                        </tr>
-                      </table>
-                      <input type="submit" class="btn btn-success" value="Submit">
-                    </form>
+                  <div class="setcol1">
+                    <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">กรอกข้อมูลประจำวัน</h1>
+                    <div class="setborder">
+                      <div class="showdetail">ข้อมูลราคาบัญชี 1</div>
+                      <form action="" method="get">
+                        <table>
+                          <tr>
+                            <td class="name">ทะเบียน 6134</td>
+                            <td><input type="text" name="" placeholder="เลขไมค์"></td>
+                            <td><input type="text" name="" placeholder="ปริมาณที่เติม"></td>
+                          </tr>
+                          <tr>
+                            <td class="name">ทะเบียน 1815</td>
+                            <td><input type="text" name="" placeholder="เลขไมค์"></td>
+                            <td><input type="text" name="" placeholder="ปริมาณที่เติม"></td>
+                          </tr>
+                        </table>
+                        <input type="submit" class="btn btn-success" value="Submit">
+                      </form>
+                    </div>
+                  </div>
+                  <div class="setcol2">
+                  <table border="1" style="text-align: center; width:100%; ">
+                  <tr>
+                    <th rowspan="2">วันที่</th>
+                    <th colspan="4">ทะเบียน 6134</th>
+                    <th colspan="4">ทะเบียน 1815</th>
+                  </tr>
+                  <tr>
+                    <th>เลขไมค์ก่อน</th>
+                    <th>เลขไมค์หลัง</th>
+                    <th>เติม(ลิตร)</th>
+                    <th>ราคา</th>
+                    <th>เลขไมค์ก่อน</th>
+                    <th>เลขไมค์หลัง</th>
+                    <th>เติม(ลิตร)</th>
+                    <th>ราคา</th>
+                  </tr>
+                  <tr>
+                  <td>1</td>
+                  <td>2</td>
+                  <td>3</td>
+                  <td>4</td>
+                  <td>5</td>
+                  <td>6</td>
+                  <td>7</td>
+                  <td>8</td>
+                  <td>9</td>
+                  </tr>
+                  </table>
                   </div>
                 </div>
               <?php } ?>
