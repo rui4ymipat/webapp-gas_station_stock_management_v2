@@ -370,13 +370,12 @@
                       <tr class="setheader">
                         <th rowspan="2" style="height: 60px;">ว/ด/ป</th>
                         <th rowspan="2">ชนิด</th>
-                        <th colspan="3" style="width: 24%;">กทม.</th>
+                        <th colspan="2" style="width: 24%;">กทม.</th>
                         <th rowspan="2">ราคาหน้าปั้ม</th>
                       </tr>
                       <tr class="setl">
                         <th>ราคา</th>
                         <th>ปรับราคา</th>
-                        <th>เท่ากับ</th>
                       </tr>
                       <tr>
                         <td>1</td>
@@ -408,21 +407,24 @@
                       </tr>
                       <?php 
                         require_once "connect.php"; 
-                        $userQuery = "SELECT * from sell where account = 1";
+                        date_default_timezone_set("Asia/Bangkok");
+                        $setDateStart = date("Y-m-01");
+                        $setDateEnd = date("Y-m-31");
+                        $userQuery = "SELECT * from sell where account = 1 and date between '$setDateStart' and '$setDateEnd'";
                         $result = mysqli_query($connect, $userQuery);
                         while ($row = mysqli_fetch_assoc($result)){
                           $a1_price[] = $row['price'];
                           $a1_discount[] = $row['discount'];
                         }
 
-                        $userQuery = "SELECT * from sell where account = 2";
+                        $userQuery = "SELECT * from sell where account = 2 and date between '$setDateStart' and '$setDateEnd'";
                         $result = mysqli_query($connect, $userQuery);
                         while ($row = mysqli_fetch_assoc($result)){
                           $a2_price[] = $row['price'];
                           $a2_discount[] = $row['discount'];
                         }
 
-                        $userQuery = "SELECT * from sell where account = 3";
+                        $userQuery = "SELECT * from sell where account = 3 and date between '$setDateStart' and '$setDateEnd'";
                         $result = mysqli_query($connect, $userQuery);
                         while ($row = mysqli_fetch_assoc($result)){
                           $a3_price[] = $row['price'];
@@ -433,13 +435,13 @@
                       ?>
                       <tr>
                         <td><?php echo $a1_price[$i]; ?></td>
-                        <td><?php echo "-",$a1_discount[$i]; ?></td>
+                        <td><?php echo $a1_discount[$i]*-1; ?></td>
                         <td><?php echo $a1_price[$i] - $a1_discount[$i]; ?></td>
                         <td><?php echo $a2_price[$i]; ?></td>
-                        <td><?php echo "-",$a2_discount[$i]; ?></td>
+                        <td><?php echo $a2_discount[$i]*-1; ?></td>
                         <td><?php echo $a2_price[$i] - $a2_discount[$i]; ?></td>
                         <td><?php echo $a3_price[$i]; ?></td>
-                        <td><?php echo "-",$a3_discount[$i]; ?></td>
+                        <td><?php echo $a3_discount[$i]*-1; ?></td>
                         <td><?php echo $a3_price[$i] - $a3_discount[$i]; ?></td>
                       </tr>
                         <?php }?>
