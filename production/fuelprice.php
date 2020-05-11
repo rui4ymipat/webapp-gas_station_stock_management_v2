@@ -116,7 +116,7 @@
       margin-left: 44%;
       margin-top: 3.5px;
       border-radius: 5px;
-      
+      display: block;
     }
 
     .setborder {
@@ -135,7 +135,7 @@
       font-size: 120%;
       padding-right: 2%;
       padding-top: 1%;
-      padding-left: 10%;
+      /* padding-left: 10%; */
 
     }
   </style>
