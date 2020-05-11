@@ -24,12 +24,6 @@
     $a3_de_v = $_GET['Ded_a3'];
     $car = $_GET['cars'];
     $tran = $_GET['a'];
-    if(empty($a) && empty($a1_91_p) && empty($a1_91_v) && empty($a1_95_p) && empty($a1_95_v) && empty($a1_de_p) && empty($a1_de_v) && empty($a2_91_p)  && empty($a2_91_v) && empty($a2_95_p) && empty($a2_95_v) && empty($a2_de_p)  && empty($a2_de_v) && empty($a3_91_p) && empty($a3_91_v) && empty($a3_91_d) && empty($a3_91_v) && empty($a3_95_p) && empty($a3_95_v) && empty($a3_de_p)&& empty($a3_de_v))
-    {
-        $_SESSION['msg'] = "โปรดกรอกข้อมูลให้ครบ";
-        header("Location:history.php"); 
-    }
-    else{
     date_default_timezone_set("Asia/Bangkok");
     $date = date("Y-m-d");
     $time = date("h:i:sa");
@@ -68,4 +62,3 @@
 
     $_SESSION['msg'] = "ดำเนินการสำเร็จ";
         header("Location:history.php"); 
-    }
