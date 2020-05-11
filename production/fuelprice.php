@@ -433,13 +433,13 @@
                       ?>
                       <tr>
                         <td><?php echo $a1_price[$i]; ?></td>
-                        <td style="<?php if($a3_discount != 0){echo "color: red;";} ?>" ><?php echo "-",$a1_discount[$i]; ?></td>
+                        <td><?php echo "-",$a1_discount[$i]; ?></td>
                         <td><?php echo $a1_price[$i] - $a1_discount[$i]; ?></td>
                         <td><?php echo $a2_price[$i]; ?></td>
-                        <td style="<?php if($a3_discount != 0){echo "color: red;";} ?>" ><?php echo "-",$a2_discount[$i]; ?></td>
+                        <td><?php echo "-",$a2_discount[$i]; ?></td>
                         <td><?php echo $a2_price[$i] - $a2_discount[$i]; ?></td>
                         <td><?php echo $a3_price[$i]; ?></td>
-                        <td style="<?php if($a3_discount != 0){echo "color: red;";} ?>" ><?php echo "-",$a3_discount[$i]; ?></td>
+                        <td><?php echo "-",$a3_discount[$i]; ?></td>
                         <td><?php echo $a3_price[$i] - $a3_discount[$i]; ?></td>
                       </tr>
                         <?php }?>
