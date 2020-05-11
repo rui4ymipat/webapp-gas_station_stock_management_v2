@@ -116,7 +116,7 @@
       margin-left: 44%;
       margin-top: 3.5px;
       border-radius: 5px;
-      display: block;
+      
     }
 
     .setborder {
