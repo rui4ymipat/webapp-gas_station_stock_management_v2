@@ -133,7 +133,7 @@
 
     td.name {
       font-size: 120%;
-      padding-right: 2%;
+      padding-right: 3%;
       padding-top: 1%;
       /* padding-left: 10%; */
 
@@ -406,17 +406,43 @@
                         <th>ส่วนลด</th>
                         <th>เท่ากับ</th>
                       </tr>
+                      <?php 
+                        require_once "connect.php"; 
+                        $userQuery = "SELECT * from sell where account = 1";
+                        $result = mysqli_query($connect, $userQuery);
+                        while ($row = mysqli_fetch_assoc($result)){
+                          $a1_price[] = $row['price'];
+                          $a1_discount[] = $row['discount'];
+                        }
+
+                        $userQuery = "SELECT * from sell where account = 2";
+                        $result = mysqli_query($connect, $userQuery);
+                        while ($row = mysqli_fetch_assoc($result)){
+                          $a2_price[] = $row['price'];
+                          $a2_discount[] = $row['discount'];
+                        }
+
+                        $userQuery = "SELECT * from sell where account = 3";
+                        $result = mysqli_query($connect, $userQuery);
+                        while ($row = mysqli_fetch_assoc($result)){
+                          $a3_price[] = $row['price'];
+                          $a3_discount[] = $row['discount'];
+                        }
+                        for($i=0;$i<count($a1_price);$i++)
+                        {
+                      ?>
                       <tr>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>3</td>
-                        <td>4</td>
-                        <td>5</td>
-                        <td>6</td>
-                        <td>7</td>
-                        <td>8</td>
-                        <td>9</td>
+                        <td><?php echo $a1_price[$i]; ?></td>
+                        <td><?php echo $a1_discount[$i]; ?></td>
+                        <td><?php echo $a1_price[$i] - $a1_discount[$i]; ?></td>
+                        <td><?php echo $a2_price[$i]; ?></td>
+                        <td><?php echo $a2_discount[$i]; ?></td>
+                        <td><?php echo $a2_price[$i] - $a2_discount[$i]; ?></td>
+                        <td><?php echo $a3_price[$i]; ?></td>
+                        <td><?php echo $a3_discount[$i]; ?></td>
+                        <td><?php echo $a3_price[$i] - $a3_discount[$i]; ?></td>
                       </tr>
+                        <?php }?>
                     </table>
                   </div>
                 </div>
