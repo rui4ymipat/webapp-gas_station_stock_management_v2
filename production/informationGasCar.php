@@ -46,7 +46,12 @@
       width: 100%;
       text-align: center;
     }
-
+    .show_information table tr.setwid th {
+      FONT-WEIGHT: 800;
+      font-size: 111%;
+      color: #2B3E54;
+      width: 1%;
+    }
     .show_information table tr th {
       FONT-WEIGHT: 800;
       font-size: 111%;
