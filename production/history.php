@@ -419,17 +419,17 @@
                       <th rowspan="2">วันที่</th>
                       <th rowspan="2">รถขนน้ำมัน</th>
                       <th colspan="3">บัญชี 1 สั่งซื้อรวม <?php $userQuery = "select sum(value) as sum from history where account = 1";
-                                                          $result = mysqli_query($connect, $userQuery); 
+                                                          $result = mysqli_query($connect, $userQuery);
                                                           $row = mysqli_fetch_assoc($result);
-                                                          echo number_format($row['sum'])?> ลิตร</th>
+                                                          echo number_format($row['sum']) ?> ลิตร</th>
                       <th colspan="3">บัญชี 2 สั่งซื้อรวม <?php $userQuery = "select sum(value) as sum from history where account = 2";
-                                                          $result = mysqli_query($connect, $userQuery); 
+                                                          $result = mysqli_query($connect, $userQuery);
                                                           $row = mysqli_fetch_assoc($result);
-                                                          echo number_format($row['sum'])?> ลิตร</th>
+                                                          echo number_format($row['sum']) ?> ลิตร</th>
                       <th colspan="3">บัญชี 3 สั่งซื้อรวม <?php $userQuery = "select sum(value) as sum from history where account = 3";
-                                                          $result = mysqli_query($connect, $userQuery); 
+                                                          $result = mysqli_query($connect, $userQuery);
                                                           $row = mysqli_fetch_assoc($result);
-                                                          echo number_format($row['sum'])?> ลิตร</th>
+                                                          echo number_format($row['sum']) ?> ลิตร</th>
                     </tr>
                     <tr>
                       <th>G91</th>
@@ -443,6 +443,16 @@
                       <th>Diesel</th>
                     </tr>
                     <tr>
+                      <?php
+
+                      $userQuery = "select * from history where account = 3";
+                      $result = mysqli_query($connect, $userQuery);
+                      while($row = mysqli_fetch_assoc($result))
+                      {
+                        $date[] = $row['']
+                      }
+
+                      ?>
                       <td>1</td>
                       <td>2</td>
                       <td>3</td>
