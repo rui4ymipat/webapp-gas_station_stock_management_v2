@@ -50,7 +50,12 @@
       font-size: 111%;
       color: #2B3E54;
     }
-
+    show_information table tr.setwid th{
+      FONT-WEIGHT: 800;
+      font-size: 111%;
+      color: #2B3E54;
+      width: 5%;
+    }
     form .showdetail {
       font-size: 165%;
       color: #2B3E54;
@@ -364,7 +369,7 @@
                           <th colspan="4">ทะเบียน 6134</th>
                           <th colspan="4">ทะเบียน 1815</th>
                         </tr>
-                        <tr>
+                        <tr class="setwid">
                           <th>เลขไมค์ก่อน</th>
                           <th>เลขไมค์หลัง</th>
                           <th>เติม(ลิตร)</th>
