@@ -50,7 +50,7 @@
       FONT-WEIGHT: 800;
       font-size: 111%;
       color: #2B3E54;
-      width: 1%;
+      width: 10%;
     }
     .show_information table tr th {
       FONT-WEIGHT: 800;
@@ -322,6 +322,7 @@
                         <tr>
                           <th rowspan="2" style="height: 65px;">วันที่</th>
                           <th colspan="7">ทะเบียน <?php echo $name[$i] ?></th>
+                          <th colspan="3">ปริมาณที่รับมา</th>
                         </tr>
                         <tr>
                           <th>เลขไมค์</th>
@@ -331,6 +332,9 @@
                           <th>ค่าเที่ยว</th>
                           <th style="width: 20%;">ค่าอื่นๆ</th>
                           <th style="width: 12%;">รวมค่าขนส่ง</th>
+                          <th>G91</th>
+                          <th>G95</th>
+                          <th>Diesel</th>
                         </tr>
                       </table>
                     <?php } ?>
@@ -365,7 +369,7 @@
                   <div class="setcol2" >
                     <div class="show_information">
                       <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">ข้อมูลรถน้ำมัน</h1>
-                      <table border="1" style="text-align: center; width:100%; ">
+                      <table border="1" style="text-align: center; width:120%; ">
                         <tr>
                           <th rowspan="2">วันที่</th>
                           <th colspan="4">ทะเบียน 6134</th>
