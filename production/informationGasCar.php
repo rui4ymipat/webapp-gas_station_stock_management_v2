@@ -37,6 +37,8 @@
 
       .setcol2 {
         display: inline-table;
+        width: 53%;
+        margin-left: 2%;
       }
     }
 
@@ -360,7 +362,7 @@
                       </form>
                     </div>
                   </div>
-                  <div class="setcol2">
+                  <div class="setcol2" >
                     <div class="show_information">
                       <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">ข้อมูลรถน้ำมัน</h1>
                       <table border="1" style="text-align: center; width:100%; ">
