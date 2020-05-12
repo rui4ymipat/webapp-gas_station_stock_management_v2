@@ -330,11 +330,11 @@
                           <th>ราคา</th>
                           <th>ค่าน้ำมัน</th>
                           <th>ค่าเที่ยว</th>
-                          <th style="width: 20%;">ค่าอื่นๆ</th>
-                          <th style="width: 12%;">รวมค่าขนส่ง</th>
-                          <th>G91</th>
-                          <th>G95</th>
-                          <th>Diesel</th>
+                          <th style="width: 13%;">ค่าอื่นๆ</th>
+                          <th style="width: 10%;">รวมค่าขนส่ง</th>
+                          <th style="width: 7%;">G91</th>
+                          <th style="width: 7%;">G95</th>
+                          <th style="width: 7%;">Diesel</th>
                         </tr>
                       </table>
                     <?php } ?>
