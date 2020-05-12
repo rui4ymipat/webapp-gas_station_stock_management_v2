@@ -52,12 +52,6 @@
       font-size: 111%;
       color: #2B3E54;
     }
-    show_information table tr.setwid th{
-      FONT-WEIGHT: 800;
-      font-size: 111%;
-      color: #2B3E54;
-      width: 5%;
-    }
     form .showdetail {
       font-size: 165%;
       color: #2B3E54;
@@ -316,7 +310,7 @@
                   </div>
                   <br>
                   <div class="show_information">
-                    <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">กรอกข้อมูลประจำวัน</h1>
+                    <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">ข้อมูลรถน้ำมัน</h1>
                     <?php for ($i = 0; $i < count($id); $i++) { ?>
                       <br>
                       <table border="1">
