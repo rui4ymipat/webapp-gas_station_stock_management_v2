@@ -443,16 +443,7 @@
                       <th>Diesel</th>
                     </tr>
                     <tr>
-                      <!-- <?php
-
-                      $userQuery = "select * from history where account = 3";
-                      $result = mysqli_query($connect, $userQuery);
-                      while($row = mysqli_fetch_assoc($result))
-                      {
-                        $date[] = $row['']
-                      }
-
-                      ?> -->
+                      
                       <td>1</td>
                       <td>2</td>
                       <td>3</td>
