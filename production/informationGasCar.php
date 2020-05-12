@@ -29,10 +29,12 @@
       .setborder {
         width: 100%;
       }
+
       .setcol1 {
         display: inline-table;
 
       }
+
       .setcol2 {
         display: inline-table;
       }
@@ -251,7 +253,7 @@
                 <div class="setfont1">
                   <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">กรอกข้อมูลประจำวัน</h1>
                   <div class="setborder">
-                    <form action="today.php" method="GET">
+                    <form action="inforCar-pro.php" method="GET">
 
                       <div class="column1">
                         <div class="showdetail">รถขนน้ำมัน</div>
@@ -354,34 +356,37 @@
                     </div>
                   </div>
                   <div class="setcol2">
-                  <table border="1" style="text-align: center; width:100%; " class="table show">
-                  <tr>
-                    <th rowspan="2" class="date">วันที่</th>
-                    <th colspan="4">ทะเบียน 6134</th>
-                    <th colspan="4">ทะเบียน 1815</th>
-                  </tr>
-                  <tr>
-                    <th>เลขไมค์ก่อน</th>
-                    <th>เลขไมค์หลัง</th>
-                    <th>เติม(ลิตร)</th>
-                    <th>ราคา</th>
-                    <th>เลขไมค์ก่อน</th>
-                    <th>เลขไมค์หลัง</th>
-                    <th>เติม(ลิตร)</th>
-                    <th>ราคา</th>
-                  </tr>
-                  <tr>
-                  <td>1</td>
-                  <td>2</td>
-                  <td>3</td>
-                  <td>4</td>
-                  <td>5</td>
-                  <td>6</td>
-                  <td>7</td>
-                  <td>8</td>
-                  <td>9</td>
-                  </tr>
-                  </table>
+                    <div class="show_information">
+                      <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">ข้อมูลรถน้ำมัน</h1>
+                      <table border="1" style="text-align: center; width:100%; ">
+                        <tr>
+                          <th rowspan="2">วันที่</th>
+                          <th colspan="4">ทะเบียน 6134</th>
+                          <th colspan="4">ทะเบียน 1815</th>
+                        </tr>
+                        <tr>
+                          <th>เลขไมค์ก่อน</th>
+                          <th>เลขไมค์หลัง</th>
+                          <th>เติม(ลิตร)</th>
+                          <th>ราคา</th>
+                          <th>เลขไมค์ก่อน</th>
+                          <th>เลขไมค์หลัง</th>
+                          <th>เติม(ลิตร)</th>
+                          <th>ราคา</th>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>2</td>
+                          <td>3</td>
+                          <td>4</td>
+                          <td>5</td>
+                          <td>6</td>
+                          <td>7</td>
+                          <td>8</td>
+                          <td>9</td>
+                        </tr>
+                      </table>
+                    </div>
                   </div>
                 </div>
               <?php } ?>
