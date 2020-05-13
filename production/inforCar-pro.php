@@ -27,11 +27,36 @@ if (empty($car)) {
     $Check_result = mysqli_query($connect , $Q);
     if(mysqli_num_rows($Check_result) == 0)
     {
-        $qu = "insert into $check(other_price,detail,date,name_stamp,timestamp,G91,G95,Desel) values($other_price,'$detail','$date','$name','$time',$g91,$g95,$de)";
+        $qu = "insert into $check(cost,other_price,detail,date,name_stamp,timestamp,G91,G95,Desel) values($tran_price,$other_price,'$detail','$date','$name','$time',$g91,$g95,$de)";
         $result = mysqli_query($connect,$qu);
     }
     else{ 
-        $qu = "update $check set other_price = $other_price , detail = '' ";
+        $row = mysqli_fetch_assoc($Check_result);
+        if(empty($g91))
+        {
+            $g91 = $row['G91'];
+        }
+        if(empty($g95))
+        {
+            $g95 = $row['G95'];
+        }
+        if(empty($de))
+        {
+            $g95 = $row['Desel'];
+        }
+        if(empty($tran_price))
+        {
+            $tran_price = $row['cost'];
+        }
+        if(empty($other_price))
+        {
+            $other_price = $row['other_price'];
+        }
+        if(empty($detail))
+        {
+            $detail = $row['detail'];
+        }
+        $qu = "update $check set cost = $tran_price, other_price = $other_price , detail = '$detail' ,name_stamp = '$name',timestamp = '$time',G91 = $g91 , G95 = $g95 , Desel = $de";
         $result = mysqli_query($connect,$qu);
     }
     
