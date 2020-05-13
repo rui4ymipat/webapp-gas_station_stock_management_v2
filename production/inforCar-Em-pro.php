@@ -56,5 +56,7 @@
             $q1 = "update C1815 set number = $C1815_num , value = $C1815_val";
             $result = mysqli_query($connect,$q1);
         }
+        $_SESSION['msg'] = "ดำเนินการสำเร็จ";
+        header("Location:informationGasCar.php");
     }
 ?>
