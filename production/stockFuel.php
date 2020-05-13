@@ -12,20 +12,65 @@
       font-family: 'Prompt', sans-serif;
     }
 
-    @media only screen and (max-width: 1366px) {
+    @media only screen and (max-width: 1366px) {}
 
-    }
-
-    @media only screen and (max-width: 1024px) {
-
-    }
+    @media only screen and (max-width: 1024px) {}
 
     @media only screen and (min-width: 1367px) {
-       div.c1 table tr.setheader th{
+      div.c1 table tr.setheader th {
         width: 7.5%;
       }
     }
-    
+
+    form .showdetail {
+      font-size: 130%;
+      color: #2B3E54;
+      font-weight: 600;
+      padding-bottom: 5px;
+      margin-bottom: 10px;
+      border-bottom: 0.5px solid rgb(202, 206, 215);
+    }
+
+    input[type="text"] {
+      border: 1px solid rgb(202, 206, 215);
+      margin-right: 15px;
+      width: 70%;
+      height: 35px;
+      text-align: center;
+      margin-bottom: 10px;
+      margin-top: 4%;
+      border-radius: 5px;
+    }
+
+    input[type="submit"] {
+      margin-left: 44%;
+      margin-top: 10px;
+    }
+
+    .setborder {
+      border: 1px solid rgb(202, 206, 215);
+      padding: 20px 20px 20px 20px;
+      border-radius: 5px;
+    }
+
+    .account tr.detail {
+      font-size: 60%;
+    }
+
+    td.name {
+      font-size: 140%;
+      padding-right: 20px;
+      padding-top: 1%;
+    }
+    .col1{
+      display: inline-table;
+    }
+    .col2{
+      display: inline-table;
+    }
+    .col3{
+      display: inline-table;
+    }
   </style>
   <?php
   session_start();
@@ -159,54 +204,14 @@
               </div>
 
 
-              <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-              <script type="text/javascript">
-                google.charts.load('current', {
-                  'packages': ['bar']
-                });
-                google.charts.setOnLoadCallback(drawChart);
 
-                function drawChart() {
-                  var data = google.visualization.arrayToDataTable([
-                    ['ยอดขาย', 'แก๊สโซฮอล์ 91', 'แก๊สโซฮอล์ 95', 'ดีเซล'],
-                    ['15/04', 1000, 400, 200],
-                    ['16/04', 1170, 460, 250],
-                    ['17/04', 660, 1120, 300],
-                    ['18/04', 1030, 540, 350],
-                    ['19/04', 1000, 400, 200],
-                    ['20/04', 1170, 460, 250],
-                    ['21/04', 660, 1120, 300],
-                    ['22/04', 1030, 540, 350],
-                    ['23/04', 1000, 400, 200],
-                    ['24/04', 1170, 460, 250],
-                    ['25/04', 660, 1120, 300],
-                    ['26/04', 1030, 540, 350],
-                    ['27/04', 1000, 400, 200],
-                    ['28/04', 1170, 460, 250],
-                    ['29/04', 660, 1120, 300],
-                    ['30/04', 1030, 540, 350]
-                  ]);
-
-                  var options = {
-                    chart: {
-                      title: 'ยอดขาย',
-                      subtitle: 'ประจำเดือน เมษายน',
-                    },
-                    bars: 'vertical' // Required for Material Bar Charts.
-                  };
-
-                  var chart = new google.charts.Bar(document.getElementById('barchart_material'));
-
-                  chart.draw(data, google.charts.Bar.convertOptions(options));
-                }
-              </script>
 
               <?php if ($_SESSION['user_level'] != 1) { ?>
                 <div class="setfont1">
                   <div class="c1">
                     <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">ปริมาณน้ำมัน</h1>
                     <table border="1" style="text-align: center; width: 100%;">
-                      <tr >
+                      <tr>
                         <th rowspan="2" style="height: 50px;">วันที่</th>
                         <th rowspan="2" style="width: 3%;">กะ</th>
                         <th colspan="3">Tank</th>
@@ -290,7 +295,96 @@
 
 
               <?php } else { ?>
-
+                <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">กรอกข้อมูลน้ำมันในหลุม</h1>
+                <div class="setborder">
+                  <form action="" method="get">
+                    <div class="showdetail">ปริมาณน้ำมันในหลุม</div>
+                    <table class="account">
+                      <tr>
+                        <td class="name">G91</td>
+                        <td><input type="text" name="" placeholder="ปริมาณ"></td>
+                        <td>ลิตร</td>
+                      </tr>
+                      <tr>
+                        <td class="name">G95</td>
+                        <td><input type="text" name="" placeholder="ปริมาณ"></td>
+                        <td>ลิตร</td>
+                      </tr>
+                      <tr>
+                        <td class="name">Desel</td>
+                        <td><input type="text" name="" placeholder="ปริมาณ"></td>
+                        <td>ลิตร</td>
+                      </tr>
+                    </table>
+                    <input style="border-radius: 10px;" type="submit" class="btn btn-success" value="Submit">
+                  </form>
+                </div>
+                <br>
+                <div class="setborder" style="width: 100%;">
+                  <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">กรอกข้อมูลน้ำมันบนรถ</h1>
+                  <form action="" method="get">
+                    <div class="col1">
+                      <div class="showdetail">ปริมาณน้ำมันบนรถทะเบียน 6134</div>
+                      <table class="account">
+                        <tr>
+                          <td class="name">G91</td>
+                          <td><input type="text" name="" placeholder="ปริมาณ"></td>
+                          <td>ลิตร</td>
+                        </tr>
+                        <tr>
+                          <td class="name">G95</td>
+                          <td><input type="text" name="" placeholder="ปริมาณ"></td>
+                          <td>ลิตร</td>
+                        </tr>
+                        <tr>
+                          <td class="name">Desel</td>
+                          <td><input type="text" name="" placeholder="ปริมาณ"></td>
+                          <td>ลิตร</td>
+                        </tr>
+                      </table>
+                    </div>
+                    <div class="col2">
+                      <div class="showdetail">ปริมาณน้ำมันบนรถทะเบียน 1815</div>
+                      <table class="account">
+                        <tr>
+                          <td class="name">G91</td>
+                          <td><input type="text" name="" placeholder="ปริมาณ"></td>
+                          <td>ลิตร</td>
+                        </tr>
+                        <tr>
+                          <td class="name">G95</td>
+                          <td><input type="text" name="" placeholder="ปริมาณ"></td>
+                          <td>ลิตร</td>
+                        </tr>
+                        <tr>
+                          <td class="name">Desel</td>
+                          <td><input type="text" name="" placeholder="ปริมาณ"></td>
+                          <td>ลิตร</td>
+                        </tr>
+                      </table>
+                    </div>
+                    <div class="col3">
+                    <div class="showdetail">ปริมาณน้ำมันบนรถ ISUZU</div>
+                      <table class="account">
+                        <tr>
+                          <td class="name">G91</td>
+                          <td><input type="text" name="" placeholder="ปริมาณ"></td>
+                          <td>ลิตร</td>
+                        </tr>
+                        <tr>
+                          <td class="name">G95</td>
+                          <td><input type="text" name="" placeholder="ปริมาณ"></td>
+                          <td>ลิตร</td>
+                        </tr>
+                        <tr>
+                          <td class="name">Desel</td>
+                          <td><input type="text" name="" placeholder="ปริมาณ"></td>
+                          <td>ลิตร</td>
+                        </tr>
+                      </table>
+                    </div>
+                  </form>
+                </div>
               <?php } ?>
 
 
