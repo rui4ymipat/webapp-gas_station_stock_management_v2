@@ -68,10 +68,12 @@
     }
 
     .col2 {
+      margin-left: 2%;
       display: inline-table;
     }
 
     .col3 {
+      margin-left: 2%;
       display: inline-table;
     }
   </style>
