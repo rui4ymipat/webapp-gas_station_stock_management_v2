@@ -29,6 +29,8 @@ if (empty($car)) {
     {
         $qu = "insert into $check(cost,other_price,detail,date,name_stamp,timestamp,G91,G95,Desel) values($tran_price,$other_price,'$detail','$date','$name','$time',$g91,$g95,$de)";
         $result = mysqli_query($connect,$qu);
+        $_SESSION['msg'] = "ดำเนินการสำเร็จ";
+        header("Location:informationGasCar.php");
     }
     else{ 
         $row = mysqli_fetch_assoc($Check_result);
