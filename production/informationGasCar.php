@@ -328,6 +328,10 @@
                   </div>
                   <br>
                   <div class="show_information">
+                    <?php 
+                    
+                    $table = array('C6134','C1815','ISUZU');
+                    ?>
                     <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">ข้อมูลรถน้ำมัน</h1>
                     <?php for ($i = 0; $i < count($id); $i++) { ?>
                       <br>
@@ -349,6 +353,30 @@
                           <th style="width: 7%;">G95</th>
                           <th style="width: 7%;">Diesel</th>
                         </tr>
+                        <?php 
+                        $month = array('-','มกราคม','กุมภาพันธ์','มีนาคม','เมษายน','พฤษภาคม','มิถุนายน','กรกฎาคม','สิงหาคม','กันยายน','ตุลาคม','พฤศจิกายน','ธันวาคม');
+                        $Q = "Select * from $table[$i]";
+                        $Check_result = mysqli_query($connect , $Q);
+                        while($row = mysqli_fetch_assoc($Check_result))
+                        {
+                          $date = explode("-",$row['date']);
+                          $Sdate = array($date[2],$month[(int)$date[1]],$date[0]+543);
+                          $Tdate = implode(" ",$Sdate);
+                        ?>
+                        <tr>
+                          <td><?php echo $Tdate  ?></td>
+                          <td><?php echo $row['number']; ?></td>
+                          <td><?php echo $row['input']; ?></td>
+                          <td><?php echo "-"; ?></td>
+                          <td><?php echo "-" ?></td>
+                          <td><?php echo $row['cost']; ?></td>
+                          <td><?php echo $row['other_price']; echo "(",$row['detail'],")"; ?></td>
+                          <td><?php echo "sum"; ?></td>
+                          <td><?php echo $row['G91']; ?></td>
+                          <td><?php echo $row['G95']; ?></td>
+                          <td><?php echo $row['Desel']; ?></td>
+                        </tr>
+                        <?php }?>
                       </table>
                     <?php } ?>
                   </div>
