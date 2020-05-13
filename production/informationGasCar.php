@@ -366,12 +366,12 @@
                         <tr>
                           <td style="height: 30px;"><?php echo $Tdate  ?></td>
                           <td><?php echo $row['number']; ?></td>
-                          <td><?php echo $row['input']; ?></td>
                           <td><?php echo $row['value']; ?></td>
+                          <td><?php echo "-"; ?></td>
                           <td><?php echo "-" ?></td>
                           <td><?php echo $row['cost']; ?></td>
                           <td><?php echo $row['other_price']; echo "(",$row['detail'],")"; ?></td>
-                          <td><?php echo "sum"; ?></td>
+                          <td><?php echo $row['cost'] + $row['other_price']; ?></td>
                           <td><?php echo $row['G91']; ?></td>
                           <td><?php echo $row['G95']; ?></td>
                           <td><?php echo $row['Desel']; ?></td>
