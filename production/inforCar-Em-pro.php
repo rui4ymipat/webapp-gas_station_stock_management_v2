@@ -7,7 +7,7 @@
     $C6134_val  = $_GET['6134_value'];
     $C1815_num = $_GET['1815_num'];
     $C1815_val  = $_GET['1815_value'];
-    if(empty($C6134['number']) && empty($C6134['value']) && empty($C1815['number']) && empty($C1815['value']) )
+    if(empty($C6134_num) && empty($C6134_val) && empty($C1815_num) && empty($C1815_val) )
     {
         $_SESSION['msg'] = "โปรดกรอกข้อมูลให้ครบ";
         header("Location:informationGasCar.php");
