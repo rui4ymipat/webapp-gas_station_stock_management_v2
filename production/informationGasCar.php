@@ -367,7 +367,7 @@
                           <td><?php echo $Tdate  ?></td>
                           <td><?php echo $row['number']; ?></td>
                           <td><?php echo $row['input']; ?></td>
-                          <td><?php echo "-"; ?></td>
+                          <td><?php echo $row['value']; ?></td>
                           <td><?php echo "-" ?></td>
                           <td><?php echo $row['cost']; ?></td>
                           <td><?php echo $row['other_price']; echo "(",$row['detail'],")"; ?></td>
