@@ -415,7 +415,7 @@
                   <div class="setcol2">
                     <div class="show_information">
                       <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">ข้อมูลรถน้ำมัน</h1>
-                      <table border="1" style="text-align: center; width:120%; ">
+                      <table border="1" style="text-align: center; width:104%; ">
                         <tr>
                           <th rowspan="2" style="width: 13.2%;">วันที่</th>
                           <th colspan="3">ทะเบียน 6134</th>
