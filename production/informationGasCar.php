@@ -295,7 +295,7 @@
                         <table>
                           <tr>
                             <td class="name">ค่าเที่ยวต่อรอบ</td>
-                            <td><input type="text" name="6134" placeholder="2,800"></td>
+                            <td><input type="text" name="tp" placeholder="2,800"></td>
                             <td class="lit">บาท</td>
                           </tr>
                           <tr>
@@ -310,7 +310,7 @@
                           </tr>
                         </table>
                       </div>
-                      <input type="submit" class="btn btn-success" value="Submit">
+                       <input type="submit" class="btn btn-success" value="Submit">
                     </form>
                   </div>
                   <br>
