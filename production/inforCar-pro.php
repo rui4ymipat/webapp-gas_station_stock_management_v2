@@ -72,7 +72,7 @@ if (empty($car)) {
         }
         if(empty($de))
         {
-            $g95 = $row['Desel'];
+            $de = $row['Desel'];
         }
         if(empty($tran_price))
         {
@@ -86,7 +86,7 @@ if (empty($car)) {
         {
             $detail = $row['detail'];
         }
-        $qu = "update $check set cost = $tran_price, other_price = $other_price , detail = '$detail' ,name_stamp = '$name',timestamp = '$time',G91 = $g91 , G95 = $g95 , Desel = $de";
+        $qu = "update $check set cost = $tran_price, other_price = $other_price , detail = '$detail' ,name_stamp = '$name',timestamp = '$time',G91 =$g91 , G95 =$g95 , Desel =$de";
         $result = mysqli_query($connect,$qu);
         if(!$result)
         {
