@@ -402,6 +402,11 @@
                             <td><input type="text" name="1815_num" placeholder="เลขไมค์"></td>
                             <td><input type="text" name="1815_value" placeholder="ปริมาณที่เติม"></td>
                           </tr>
+                          <tr>
+                            <td class="name">ทะเบียน ISUZU</td>
+                            <td><input type="text" name="IS_num" placeholder="เลขไมค์"></td>
+                            <td><input type="text" name="IS_value" placeholder="ปริมาณที่เติม"></td>
+                          </tr>
                         </table>
                         <input type="submit" class="btn btn-success" value="Submit">
                       </form>

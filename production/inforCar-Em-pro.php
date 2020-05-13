@@ -7,6 +7,8 @@
     $C6134_val  = $_GET['6134_value'];
     $C1815_num = $_GET['1815_num'];
     $C1815_val  = $_GET['1815_value'];
+    $is_num = $_GET['IS_num'];
+    $is_val = $_GET['IS_value'];
     if(empty($C6134_num) && empty($C6134_val) && empty($C1815_num) && empty($C1815_val) )
     {
         $_SESSION['msg'] = "โปรดกรอกข้อมูลให้ครบ";
@@ -56,6 +58,29 @@
             $q1 = "update C1815 set number = $C1815_num , value = $C1815_val";
             $result = mysqli_query($connect,$q1);
         }
+        
+        $Q = "Select * from ISUZU where date = '$date'";
+        $Check_result = mysqli_query($connect , $Q);
+        if(mysqli_num_rows($Check_result) == 0)
+        {
+            $q1 = "insert into ISUZU(number,value) values($is_num,$is_val)";
+            $result = mysqli_query($connect , $q1);
+        }
+        else
+        {
+            $row = mysqli_fetch_assoc($Check_result);
+            if(empty($is_num))
+            {
+                $is_num = $row['number'];
+            }
+            if(empty($is_val))
+            {
+                $is_val = $row['value'];
+            }
+            $q1 = "update ISUZU set number = $is_num , value = $is_val";
+            $result = mysqli_query($connect,$q1);
+        }
+
         $_SESSION['msg'] = "ดำเนินการสำเร็จ";
         header("Location:informationGasCar.php");
     }
