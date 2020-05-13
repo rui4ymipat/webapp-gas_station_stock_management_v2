@@ -65,16 +65,19 @@
 
     .col1 {
       display: inline-table;
+      width: 33.3%;
     }
 
     .col2 {
       margin-left: 2%;
       display: inline-table;
+      width: 33.3%;
     }
 
     .col3 {
       margin-left: 2%;
       display: inline-table;
+      width: 33.3%;
     }
   </style>
   <?php
@@ -326,8 +329,9 @@
                     </form>
                   </div>
                   <br>
+                  <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">กรอกข้อมูลน้ำมันบนรถ</h1>
                   <div class="setborder" style="width: 100%;">
-                    <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">กรอกข้อมูลน้ำมันบนรถ</h1>
+                   
                     <form action="" method="get">
                       <div class="col1">
                         <div class="showdetail">ปริมาณน้ำมันบนรถทะเบียน 6134</div>
