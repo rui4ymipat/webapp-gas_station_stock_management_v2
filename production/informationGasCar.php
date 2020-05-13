@@ -328,9 +328,9 @@
                   </div>
                   <br>
                   <div class="show_information">
-                    <?php 
-                    
-                    $table = array('C6134','C1815','ISUZU');
+                    <?php
+
+                    $table = array('C6134', 'C1815', 'ISUZU');
                     ?>
                     <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">ข้อมูลรถน้ำมัน</h1>
                     <?php for ($i = 0; $i < count($id); $i++) { ?>
@@ -353,30 +353,30 @@
                           <th style="width: 7%;">G95</th>
                           <th style="width: 7%;">Diesel</th>
                         </tr>
-                        <?php 
-                        $month = array('-','มกราคม','กุมภาพันธ์','มีนาคม','เมษายน','พฤษภาคม','มิถุนายน','กรกฎาคม','สิงหาคม','กันยายน','ตุลาคม','พฤศจิกายน','ธันวาคม');
+                        <?php
+                        $month = array('-', 'มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน', 'กรกฎาคม', 'สิงหาคม', 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม');
                         $Q = "Select * from $table[$i]";
-                        $Check_result = mysqli_query($connect , $Q);
-                        while($row = mysqli_fetch_assoc($Check_result))
-                        {
-                          $date = explode("-",$row['date']);
-                          $Sdate = array($date[2],$month[(int)$date[1]],$date[0]+543);
-                          $Tdate = implode(" ",$Sdate);
+                        $Check_result = mysqli_query($connect, $Q);
+                        while ($row = mysqli_fetch_assoc($Check_result)) {
+                          $date = explode("-", $row['date']);
+                          $Sdate = array($date[2], $month[(int) $date[1]], $date[0] + 543);
+                          $Tdate = implode(" ", $Sdate);
                         ?>
-                        <tr>
-                          <td style="height: 30px;"><?php echo $Tdate  ?></td>
-                          <td><?php echo $row['number']; ?></td>
-                          <td><?php echo $row['value']; ?></td>
-                          <td><?php echo "-"; ?></td>
-                          <td><?php echo "-" ?></td>
-                          <td><?php echo $row['cost']; ?></td>
-                          <td><?php echo $row['other_price']; echo "(",$row['detail'],")"; ?></td>
-                          <td><?php echo $row['cost'] + $row['other_price']; ?></td>
-                          <td><?php echo $row['G91']; ?></td>
-                          <td><?php echo $row['G95']; ?></td>
-                          <td><?php echo $row['Desel']; ?></td>
-                        </tr>
-                        <?php }?>
+                          <tr>
+                            <td style="height: 30px;"><?php echo $Tdate  ?></td>
+                            <td><?php echo $row['number']; ?></td>
+                            <td><?php echo $row['value']; ?></td>
+                            <td><?php echo "-"; ?></td>
+                            <td><?php echo "-" ?></td>
+                            <td><?php echo $row['cost']; ?></td>
+                            <td><?php echo $row['other_price'];
+                                echo "(", $row['detail'], ")"; ?></td>
+                            <td><?php echo $row['cost'] + $row['other_price']; ?></td>
+                            <td><?php echo $row['G91']; ?></td>
+                            <td><?php echo $row['G95']; ?></td>
+                            <td><?php echo $row['Desel']; ?></td>
+                          </tr>
+                        <?php } ?>
                       </table>
                     <?php } ?>
                   </div>
@@ -408,7 +408,7 @@
                             <td><input type="text" name="IS_value" placeholder="ปริมาณที่เติม"></td>
                           </tr>
                         </table>
-                        <input type="submit" class="btn btn-success" value="Submit">
+                        <input type="submit" class="btn btn-success" value="Submit" style="margin-left:43%;">
                       </form>
                     </div>
                   </div>
@@ -433,7 +433,47 @@
                           <th>เติม(ลิตร)</th>
                           <th>ราคา</th>
                         </tr>
-                        
+                        <?php
+
+                        $month = array('-', 'มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน', 'กรกฎาคม', 'สิงหาคม', 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม');
+                        $q1 = "select * from C6134";
+                        $result = mysqli_query($connect, $q1);
+                        while ($row = mysqli_fetch_assoc($result)) {
+                          $Tdate = explode("-", $row['date']);
+                          $Sdate = array($Tdate[2], $month[(int) $Tdate[1]], $Tdate[0] + 543);
+                          $date[] = implode(" ", $Sdate);
+                          $num_6134[] = $row['number'];
+                          $val_6134[] = $row['value'];
+                        }
+
+                        $q1 = "select * from C1815";
+                        $result = mysqli_query($connect, $q1);
+                        while ($row = mysqli_fetch_assoc($result)) {
+                          $num_1815[] = $row['number'];
+                          $val_1815[] = $row['value'];
+                        }
+
+                        $q1 = "select * from ISUZU";
+                        $result = mysqli_query($connect, $q1);
+                        while ($row = mysqli_fetch_assoc($result)) {
+                          $num_isuzu[] = $row['number'];
+                          $val_isuzu[] = $row['value'];
+                        }
+                        for ($i = 0; $i < count($date); $i++) {
+                        ?>
+                          <tr>
+                            <td><?php echo $date[$i]; ?></td>
+                            <td><?php echo $num_6134[$i]; ?></td>
+                            <td><?php echo $val_6134[$i]; ?></td>
+                            <td><?php echo " - "; ?></td>
+                            <td><?php echo $num_1815[$i]; ?></td>
+                            <td><?php echo $val_1815[$i]; ?></td>
+                            <td><?php echo " - "; ?></td>
+                            <td><?php echo $num_isuzu[$i]; ?></td>
+                            <td><?php echo $val_isuzu[$i]; ?></td>
+                            <td><?php echo " - "; ?></td>
+                          </tr>
+                        <?php } ?>
                       </table>
                     </div>
                   </div>
