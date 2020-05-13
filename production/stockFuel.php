@@ -65,19 +65,19 @@
 
     .col1 {
       display: inline-table;
-      width: 33.3%;
+      width: 30%;
     }
 
     .col2 {
       margin-left: 2%;
       display: inline-table;
-      width: 33.3%;
+      width: 30%;
     }
 
     .col3 {
       margin-left: 2%;
       display: inline-table;
-      width: 33.3%;
+      width: 30%;
     }
   </style>
   <?php
@@ -305,7 +305,7 @@
               <?php } else { ?>
                 <div class="setfont1">
                   <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">กรอกข้อมูลน้ำมันในหลุม</h1>
-                  <div class="setborder">
+                  <div class="setborder" style="width: 25%">
                     <form action="" method="get">
                       <div class="showdetail">ปริมาณน้ำมันในหลุม</div>
                       <table class="account">
