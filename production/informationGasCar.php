@@ -389,18 +389,18 @@
                     <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">กรอกข้อมูลประจำวัน</h1>
                     <div class="setborder">
 
-                      <form action="" method="get">
+                      <form action="inforCar-Em-pro.php" method="get">
                         <div class="showdetail">ข้อมูลราคาบัญชี 1</div>
                         <table>
                           <tr>
                             <td class="name">ทะเบียน 6134</td>
-                            <td><input type="text" name="" placeholder="เลขไมค์"></td>
-                            <td><input type="text" name="" placeholder="ปริมาณที่เติม"></td>
+                            <td><input type="text" name="6134_num" placeholder="เลขไมค์"></td>
+                            <td><input type="text" name="6134_value" placeholder="ปริมาณที่เติม"></td>
                           </tr>
                           <tr>
                             <td class="name">ทะเบียน 1815</td>
-                            <td><input type="text" name="" placeholder="เลขไมค์"></td>
-                            <td><input type="text" name="" placeholder="ปริมาณที่เติม"></td>
+                            <td><input type="text" name="1815_num" placeholder="เลขไมค์"></td>
+                            <td><input type="text" name="1815_value" placeholder="ปริมาณที่เติม"></td>
                           </tr>
                         </table>
                         <input type="submit" class="btn btn-success" value="Submit">
