@@ -417,7 +417,7 @@
                       <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">ข้อมูลรถน้ำมัน</h1>
                       <table border="1" style="text-align: center; width:120%; ">
                         <tr>
-                          <th rowspan="2">วันที่</th>
+                          <th rowspan="2" style="width: 13.2%;">วันที่</th>
                           <th colspan="3">ทะเบียน 6134</th>
                           <th colspan="3">ทะเบียน 1815</th>
                           <th colspan="3">อีซูซุ</th>
@@ -462,7 +462,7 @@
                         for ($i = 0; $i < count($date); $i++) {
                         ?>
                           <tr>
-                            <td><?php echo $date[$i]; ?></td>
+                            <td style="height: 30px;"><?php echo $date[$i]; ?></td>
                             <td><?php echo $num_6134[$i]; ?></td>
                             <td><?php echo $val_6134[$i]; ?></td>
                             <td><?php echo " - "; ?></td>
