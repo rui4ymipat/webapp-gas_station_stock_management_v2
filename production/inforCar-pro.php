@@ -27,6 +27,30 @@ if (empty($car)) {
     $Check_result = mysqli_query($connect , $Q);
     if(mysqli_num_rows($Check_result) == 0)
     {
+        if(empty($g91))
+        {
+            $g91 = 0;
+        }
+        if(empty($g95))
+        {
+            $g95 = 0;
+        }
+        if(empty($de))
+        {
+            $g95 = 0;
+        }
+        if(empty($tran_price))
+        {
+            $tran_price = 2800;
+        }
+        if(empty($other_price))
+        {
+            $other_price = 0;
+        }
+        if(empty($detail))
+        {
+            $detail = '';
+        }
         $qu = "insert into $check(cost,other_price,detail,date,name_stamp,timestamp,G91,G95,Desel) values($tran_price,$other_price,'$detail','$date','$name','$time',$g91,$g95,$de)";
         $result = mysqli_query($connect,$qu);
         if(!$result)
