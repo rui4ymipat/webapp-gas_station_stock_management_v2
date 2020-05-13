@@ -62,13 +62,16 @@
       padding-right: 20px;
       padding-top: 1%;
     }
-    .col1{
+
+    .col1 {
       display: inline-table;
     }
-    .col2{
+
+    .col2 {
       display: inline-table;
     }
-    .col3{
+
+    .col3 {
       display: inline-table;
     }
   </style>
@@ -295,36 +298,11 @@
 
 
               <?php } else { ?>
-                <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">กรอกข้อมูลน้ำมันในหลุม</h1>
-                <div class="setborder">
-                  <form action="" method="get">
-                    <div class="showdetail">ปริมาณน้ำมันในหลุม</div>
-                    <table class="account">
-                      <tr>
-                        <td class="name">G91</td>
-                        <td><input type="text" name="" placeholder="ปริมาณ"></td>
-                        <td>ลิตร</td>
-                      </tr>
-                      <tr>
-                        <td class="name">G95</td>
-                        <td><input type="text" name="" placeholder="ปริมาณ"></td>
-                        <td>ลิตร</td>
-                      </tr>
-                      <tr>
-                        <td class="name">Desel</td>
-                        <td><input type="text" name="" placeholder="ปริมาณ"></td>
-                        <td>ลิตร</td>
-                      </tr>
-                    </table>
-                    <input style="border-radius: 10px;" type="submit" class="btn btn-success" value="Submit">
-                  </form>
-                </div>
-                <br>
-                <div class="setborder" style="width: 100%;">
-                  <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">กรอกข้อมูลน้ำมันบนรถ</h1>
-                  <form action="" method="get">
-                    <div class="col1">
-                      <div class="showdetail">ปริมาณน้ำมันบนรถทะเบียน 6134</div>
+                <div class="setfont1">
+                  <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">กรอกข้อมูลน้ำมันในหลุม</h1>
+                  <div class="setborder">
+                    <form action="" method="get">
+                      <div class="showdetail">ปริมาณน้ำมันในหลุม</div>
                       <table class="account">
                         <tr>
                           <td class="name">G91</td>
@@ -342,48 +320,75 @@
                           <td>ลิตร</td>
                         </tr>
                       </table>
-                    </div>
-                    <div class="col2">
-                      <div class="showdetail">ปริมาณน้ำมันบนรถทะเบียน 1815</div>
-                      <table class="account">
-                        <tr>
-                          <td class="name">G91</td>
-                          <td><input type="text" name="" placeholder="ปริมาณ"></td>
-                          <td>ลิตร</td>
-                        </tr>
-                        <tr>
-                          <td class="name">G95</td>
-                          <td><input type="text" name="" placeholder="ปริมาณ"></td>
-                          <td>ลิตร</td>
-                        </tr>
-                        <tr>
-                          <td class="name">Desel</td>
-                          <td><input type="text" name="" placeholder="ปริมาณ"></td>
-                          <td>ลิตร</td>
-                        </tr>
-                      </table>
-                    </div>
-                    <div class="col3">
-                    <div class="showdetail">ปริมาณน้ำมันบนรถ ISUZU</div>
-                      <table class="account">
-                        <tr>
-                          <td class="name">G91</td>
-                          <td><input type="text" name="" placeholder="ปริมาณ"></td>
-                          <td>ลิตร</td>
-                        </tr>
-                        <tr>
-                          <td class="name">G95</td>
-                          <td><input type="text" name="" placeholder="ปริมาณ"></td>
-                          <td>ลิตร</td>
-                        </tr>
-                        <tr>
-                          <td class="name">Desel</td>
-                          <td><input type="text" name="" placeholder="ปริมาณ"></td>
-                          <td>ลิตร</td>
-                        </tr>
-                      </table>
-                    </div>
-                  </form>
+                      <input style="border-radius: 10px;" type="submit" class="btn btn-success" value="Submit">
+                    </form>
+                  </div>
+                  <br>
+                  <div class="setborder" style="width: 100%;">
+                    <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">กรอกข้อมูลน้ำมันบนรถ</h1>
+                    <form action="" method="get">
+                      <div class="col1">
+                        <div class="showdetail">ปริมาณน้ำมันบนรถทะเบียน 6134</div>
+                        <table class="account">
+                          <tr>
+                            <td class="name">G91</td>
+                            <td><input type="text" name="" placeholder="ปริมาณ"></td>
+                            <td>ลิตร</td>
+                          </tr>
+                          <tr>
+                            <td class="name">G95</td>
+                            <td><input type="text" name="" placeholder="ปริมาณ"></td>
+                            <td>ลิตร</td>
+                          </tr>
+                          <tr>
+                            <td class="name">Desel</td>
+                            <td><input type="text" name="" placeholder="ปริมาณ"></td>
+                            <td>ลิตร</td>
+                          </tr>
+                        </table>
+                      </div>
+                      <div class="col2">
+                        <div class="showdetail">ปริมาณน้ำมันบนรถทะเบียน 1815</div>
+                        <table class="account">
+                          <tr>
+                            <td class="name">G91</td>
+                            <td><input type="text" name="" placeholder="ปริมาณ"></td>
+                            <td>ลิตร</td>
+                          </tr>
+                          <tr>
+                            <td class="name">G95</td>
+                            <td><input type="text" name="" placeholder="ปริมาณ"></td>
+                            <td>ลิตร</td>
+                          </tr>
+                          <tr>
+                            <td class="name">Desel</td>
+                            <td><input type="text" name="" placeholder="ปริมาณ"></td>
+                            <td>ลิตร</td>
+                          </tr>
+                        </table>
+                      </div>
+                      <div class="col3">
+                        <div class="showdetail">ปริมาณน้ำมันบนรถ ISUZU</div>
+                        <table class="account">
+                          <tr>
+                            <td class="name">G91</td>
+                            <td><input type="text" name="" placeholder="ปริมาณ"></td>
+                            <td>ลิตร</td>
+                          </tr>
+                          <tr>
+                            <td class="name">G95</td>
+                            <td><input type="text" name="" placeholder="ปริมาณ"></td>
+                            <td>ลิตร</td>
+                          </tr>
+                          <tr>
+                            <td class="name">Desel</td>
+                            <td><input type="text" name="" placeholder="ปริมาณ"></td>
+                            <td>ลิตร</td>
+                          </tr>
+                        </table>
+                      </div>
+                    </form>
+                  </div>
                 </div>
               <?php } ?>
 
