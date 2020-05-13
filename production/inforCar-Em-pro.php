@@ -9,12 +9,6 @@
     $C1815_val  = $_GET['1815_value'];
     $is_num = $_GET['IS_num'];
     $is_val = $_GET['IS_value'];
-    if(empty($C6134_num) && empty($C6134_val) && empty($C1815_num) && empty($C1815_val) )
-    {
-        $_SESSION['msg'] = "โปรดกรอกข้อมูลให้ครบ";
-        header("Location:informationGasCar.php");
-    }
-    else{
         $Q = "Select * from C6134 where date = '$date'";
         $Check_result = mysqli_query($connect , $Q);
         if(mysqli_num_rows($Check_result) == 0)
@@ -83,5 +77,3 @@
 
         $_SESSION['msg'] = "ดำเนินการสำเร็จ";
         header("Location:informationGasCar.php");
-    }
-?>
