@@ -397,36 +397,38 @@
                     </form>
                   </div>
                   <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">ปริมาณน้ำมัน</h1>
-                  <table align="center" border="1">
-                    <tr>
-                      <th rowspan="2">วันที่</th>
-                      <th rowspan="2">กะ</th>
-                      <th colspan="3">Tank</th>
-                      <th colspan="3">ซิ้อมา</th>
-                      <th colspan="3">ขาย</th>
-                    </tr>
-                    <tr>
-                      <th>G91</th>
-                      <th>G95</th>
-                      <th>Desel</th>
-                      <th>G91</th>
-                      <th>G95</th>
-                      <th>Desel</th>
-                      <th>G91</th>
-                      <th>G95</th>
-                      <th>Desel</th>
-                    </tr>
-                  </table>
-                  <table align="center" border="1" style="display: inline-table; margin-left:2%;">
-                    <tr>
-                      <th colspan="3">รถอีซูซุ</th>
-                    </tr>
-                    <tr>
-                      <th>G91</th>
-                      <th>G95</th>
-                      <th>Desel</th>
-                    </tr>
-                  </table>
+                  <div class="table_em" style="width: 100%;">
+                    <table align="center" border="1">
+                      <tr>
+                        <th rowspan="2">วันที่</th>
+                        <th rowspan="2">กะ</th>
+                        <th colspan="3">Tank</th>
+                        <th colspan="3">ซิ้อมา</th>
+                        <th colspan="3">ขาย</th>
+                      </tr>
+                      <tr>
+                        <th>G91</th>
+                        <th>G95</th>
+                        <th>Desel</th>
+                        <th>G91</th>
+                        <th>G95</th>
+                        <th>Desel</th>
+                        <th>G91</th>
+                        <th>G95</th>
+                        <th>Desel</th>
+                      </tr>
+                    </table>
+                    <table align="center" border="1" style="display: inline-table; margin-left:2%;">
+                      <tr>
+                        <th colspan="3">รถอีซูซุ</th>
+                      </tr>
+                      <tr>
+                        <th>G91</th>
+                        <th>G95</th>
+                        <th>Desel</th>
+                      </tr>
+                    </table>
+                  </div>
                 </div>
               <?php } ?>
 
