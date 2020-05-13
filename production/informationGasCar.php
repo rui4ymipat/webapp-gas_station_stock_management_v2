@@ -418,30 +418,22 @@
                       <table border="1" style="text-align: center; width:120%; ">
                         <tr>
                           <th rowspan="2">วันที่</th>
-                          <th colspan="4">ทะเบียน 6134</th>
-                          <th colspan="4">ทะเบียน 1815</th>
+                          <th colspan="3">ทะเบียน 6134</th>
+                          <th colspan="3">ทะเบียน 1815</th>
+                          <th colspan="3">อีซูซุ</th>
                         </tr>
                         <tr class="setwid">
                           <th>เลขไมค์ก่อน</th>
-                          <th>เลขไมค์หลัง</th>
                           <th>เติม(ลิตร)</th>
                           <th>ราคา</th>
-                          <th>เลขไมค์ก่อน</th>
-                          <th>เลขไมค์หลัง</th>
+                          <th>เลขไมค์</th>
+                          <th>เติม(ลิตร)</th>
+                          <th>ราคา</th>
+                          <th>เลขไมค์</th>
                           <th>เติม(ลิตร)</th>
                           <th>ราคา</th>
                         </tr>
-                        <tr>
-                          <td>1</td>
-                          <td>2</td>
-                          <td>3</td>
-                          <td>4</td>
-                          <td>5</td>
-                          <td>6</td>
-                          <td>7</td>
-                          <td>8</td>
-                          <td>9</td>
-                        </tr>
+                        
                       </table>
                     </div>
                   </div>
