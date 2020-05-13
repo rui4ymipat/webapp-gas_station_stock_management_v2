@@ -58,6 +58,8 @@ if (empty($car)) {
         }
         $qu = "update $check set cost = $tran_price, other_price = $other_price , detail = '$detail' ,name_stamp = '$name',timestamp = '$time',G91 = $g91 , G95 = $g95 , Desel = $de";
         $result = mysqli_query($connect,$qu);
+        $_SESSION['msg'] = "ดำเนินการสำเร็จ";
+        header("Location:informationGasCar.php");
     }
     
 }

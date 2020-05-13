@@ -46,17 +46,20 @@
       width: 100%;
       text-align: center;
     }
+
     .show_information table tr.setwid th {
       FONT-WEIGHT: 800;
       font-size: 111%;
       color: #2B3E54;
       width: 10%;
     }
+
     .show_information table tr th {
       FONT-WEIGHT: 800;
       font-size: 111%;
       color: #2B3E54;
     }
+
     form .showdetail {
       font-size: 165%;
       color: #2B3E54;
@@ -254,7 +257,17 @@
 
                 </div>
               </div>
-
+              <?php
+              if (!empty($_SESSION['msg'])) {
+                session_start();
+              ?>
+                <script type="text/javascript">
+                  alert('<?php echo $_SESSION['msg'] ?>');
+                </script>
+              <?php
+                unset($_SESSION['msg']);
+              }
+              ?>
               <?php if ($_SESSION['user_level'] != 1) { ?>
                 <div class="setfont1">
                   <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">กรอกข้อมูลประจำวัน</h1>
@@ -310,7 +323,7 @@
                           </tr>
                         </table>
                       </div>
-                       <input type="submit" class="btn btn-success" value="Submit">
+                      <input type="submit" class="btn btn-success" value="Submit">
                     </form>
                   </div>
                   <br>
@@ -347,9 +360,9 @@
                   <div class="setcol1">
                     <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">กรอกข้อมูลประจำวัน</h1>
                     <div class="setborder">
-                      
+
                       <form action="" method="get">
-                      <div class="showdetail">ข้อมูลราคาบัญชี 1</div>
+                        <div class="showdetail">ข้อมูลราคาบัญชี 1</div>
                         <table>
                           <tr>
                             <td class="name">ทะเบียน 6134</td>
@@ -366,7 +379,7 @@
                       </form>
                     </div>
                   </div>
-                  <div class="setcol2" >
+                  <div class="setcol2">
                     <div class="show_information">
                       <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">ข้อมูลรถน้ำมัน</h1>
                       <table border="1" style="text-align: center; width:120%; ">
