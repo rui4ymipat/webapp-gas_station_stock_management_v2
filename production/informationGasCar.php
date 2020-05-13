@@ -364,7 +364,7 @@
                           $Tdate = implode(" ",$Sdate);
                         ?>
                         <tr>
-                          <td><?php echo $Tdate  ?></td>
+                          <td style="height: 30px;"><?php echo $Tdate  ?></td>
                           <td><?php echo $row['number']; ?></td>
                           <td><?php echo $row['input']; ?></td>
                           <td><?php echo $row['value']; ?></td>
