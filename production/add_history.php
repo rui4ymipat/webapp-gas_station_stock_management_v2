@@ -35,33 +35,69 @@ if (empty($car) && empty($a)) {
         //account 1
         $Qa1 = "insert into history(car_id,gas_id,price,value,tran_price,account,date,timestamp,name_stamp) 
     values($car,1,$a1_91_p,$a1_91_v,$tran,1,'$date','$time','$name')";
-        mysqli_query($connect, $Qa1);
+        $result = mysqli_query($connect, $Qa1);
+        if(!$result)
+        {
+            die ("Could not successfully run the query $userQuery ".mysqli_error($connect));
+        }
         $Qa1 = "insert into history(car_id,gas_id,price,value,tran_price,account,date,timestamp,name_stamp) 
     values($car,2,$a1_95_p,$a1_95_v,$tran,1,'$date','$time','$name')";
-        mysqli_query($connect, $Qa1);
+        $result = mysqli_query($connect, $Qa1);
+        if(!$result)
+        {
+            die ("Could not successfully run the query $userQuery ".mysqli_error($connect));
+        }
         $Qa1 = "insert into history(car_id,gas_id,price,value,tran_price,account,date,timestamp,name_stamp) 
     values($car,3,$a1_de_p,$a1_de_v,$tran,1,'$date','$time','$name')";
-        mysqli_query($connect, $Qa1);
+        $result = mysqli_query($connect, $Qa1);
+        if(!$result)
+        {
+            die ("Could not successfully run the query $userQuery ".mysqli_error($connect));
+        }
         //acount 2
         $Qa1 = "insert into history(car_id,gas_id,price,value,tran_price,account,date,timestamp,name_stamp) 
     values($car,1,$a2_91_p,$a2_91_v,$tran,2,'$date','$time','$name')";
-        mysqli_query($connect, $Qa1);
+        $result = mysqli_query($connect, $Qa1);
+        if(!$result)
+        {
+            die ("Could not successfully run the query $userQuery ".mysqli_error($connect));
+        }
         $Qa1 = "insert into history(car_id,gas_id,price,value,tran_price,account,date,timestamp,name_stamp) 
     values($car,2,$a2_95_p,$a2_95_v,$tran,2,'$date','$time','$name')";
-        mysqli_query($connect, $Qa1);
+        $result = mysqli_query($connect, $Qa1);
+        if(!$result)
+        {
+            die ("Could not successfully run the query $userQuery ".mysqli_error($connect));
+        }
         $Qa1 = "insert into history(car_id,gas_id,price,value,tran_price,account,date,timestamp,name_stamp) 
     values($car,3,$a2_de_p,$a2_de_v,$tran,2,'$date','$time','$name')";
-        mysqli_query($connect, $Qa1);
+        $result = mysqli_query($connect, $Qa1);
+        if(!$result)
+        {
+            die ("Could not successfully run the query $userQuery ".mysqli_error($connect));
+        }
         //acount 3
         $Qa1 = "insert into history(car_id,gas_id,price,value,tran_price,account,date,timestamp,name_stamp) 
     values($car,1,$a3_91_p,$a3_91_v,$tran,3,'$date','$time','$name')";
-        mysqli_query($connect, $Qa1);
+        $result = mysqli_query($connect, $Qa1);
+        if(!$result)
+        {
+            die ("Could not successfully run the query $userQuery ".mysqli_error($connect));
+        }
         $Qa1 = "insert into history(car_id,gas_id,price,value,tran_price,account,date,timestamp,name_stamp) 
     values($car,2,$a3_95_p,$a3_95_v,$tran,3,'$date','$time','$name')";
-        mysqli_query($connect, $Qa1);
+        $result = mysqli_query($connect, $Qa1);
+        if(!$result)
+        {
+            die ("Could not successfully run the query $userQuery ".mysqli_error($connect));
+        }
         $Qa1 = "insert into history(car_id,gas_id,price,value,tran_price,account,date,timestamp,name_stamp) 
     values($car,3,$a3_de_p,$a3_de_v,$tran,3,'$date','$time','$name')";
-        mysqli_query($connect, $Qa1);
+        $result = mysqli_query($connect, $Qa1);
+        if(!$result)
+        {
+            die ("Could not successfully run the query $userQuery ".mysqli_error($connect));
+        }
 
         $_SESSION['msg'] = "ดำเนินการสำเร็จ";
         header("Location:history.php");
