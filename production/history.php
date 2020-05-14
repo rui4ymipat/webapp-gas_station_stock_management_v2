@@ -451,12 +451,12 @@
                       $Tdate = explode(" ", $lop['date']);
                       $Sdate = array($Tdate[2], $month[(int) $Tdate[1]], $Tdate[0] + 543);
                       $date  = implode(" ", $Sdate);
-
+                      $d = $lop['date'];
                     ?>
                       <tr>
                         <td><?php echo $date; ?></td>
                         <td><?php
-                            $userQuery = "select (select name from car where id = history.car_id) as car,value from history where date = '$date' and gas_id = 1 and account = 1;";
+                            $userQuery = "select (select name from car where id = history.car_id) as car,value from history where date = '$d' and gas_id = 1 and account = 1;";
                             $result = mysqli_query($connect, $userQuery);
                             $row = mysqli_fetch_assoc($result);
                             echo $row['car'];;
@@ -466,7 +466,7 @@
                             } else {
                               echo $row['value'];
                             } ?></td>
-                        <td><?php $userQuery = "select value from history where date = '$date' and gas_id = 2 and account = 1;";
+                        <td><?php $userQuery = "select value from history where date = '$d' and gas_id = 2 and account = 1;";
                             $result = mysqli_query($connect, $userQuery);
                             $row = mysqli_fetch_assoc($result);
                             if (mysqli_num_rows($result) == 0) {
@@ -474,7 +474,7 @@
                             } else {
                               echo $row['value'];
                             } ?></td>
-                        <td><?php $userQuery = "select value from history where date = '$date' and gas_id = 3 and account = 1;";
+                        <td><?php $userQuery = "select value from history where date = '$d' and gas_id = 3 and account = 1;";
                             $result = mysqli_query($connect, $userQuery);
                             $row = mysqli_fetch_assoc($result);
                             if (mysqli_num_rows($result) == 0) {
@@ -482,7 +482,7 @@
                             } else {
                               echo $row['value'];
                             } ?></td>
-                        <td><?php $userQuery = "select value from history where date = '$date' and gas_id = 1 and account = 2;";
+                        <td><?php $userQuery = "select value from history where date = '$d' and gas_id = 1 and account = 2;";
                             $result = mysqli_query($connect, $userQuery);
                             $row = mysqli_fetch_assoc($result);
                             if (mysqli_num_rows($result) == 0) {
@@ -490,7 +490,7 @@
                             } else {
                               echo $row['value'];
                             } ?></td>
-                        <td><?php $userQuery = "select value from history where date = '$date' and gas_id = 2 and account = 2;";
+                        <td><?php $userQuery = "select value from history where date = '$d' and gas_id = 2 and account = 2;";
                             $result = mysqli_query($connect, $userQuery);
                             $row = mysqli_fetch_assoc($result);
                             if (mysqli_num_rows($result) == 0) {
@@ -498,7 +498,7 @@
                             } else {
                               echo $row['value'];
                             } ?></td>
-                        <td><?php $userQuery = "select value from history where date = '$date' and gas_id = 3 and account = 2;";
+                        <td><?php $userQuery = "select value from history where date = '$d' and gas_id = 3 and account = 2;";
                             $result = mysqli_query($connect, $userQuery);
                             $row = mysqli_fetch_assoc($result);
                             if (mysqli_num_rows($result) == 0) {
@@ -506,7 +506,7 @@
                             } else {
                               echo $row['value'];
                             } ?></td>
-                        <td><?php $userQuery = "select value from history where date = '$date' and gas_id = 1 and account = 3;";
+                        <td><?php $userQuery = "select value from history where date = '$d' and gas_id = 1 and account = 3;";
                             $result = mysqli_query($connect, $userQuery);
                             $row = mysqli_fetch_assoc($result);
                             if (mysqli_num_rows($result) == 0) {
@@ -514,7 +514,7 @@
                             } else {
                               echo $row['value'];
                             } ?></td>
-                        <td><?php $userQuery = "select value from history where date = '$date' and gas_id = 2 and account = 3;";
+                        <td><?php $userQuery = "select value from history where date = '$d' and gas_id = 2 and account = 3;";
                             $result = mysqli_query($connect, $userQuery);
                             $row = mysqli_fetch_assoc($result);
                             if (mysqli_num_rows($result) == 0) {
@@ -522,7 +522,7 @@
                             } else {
                               echo $row['value'];
                             } ?></td>
-                        <td><?php $userQuery = "select value from history where date = '$date' and gas_id = 3 and account = 3;";
+                        <td><?php $userQuery = "select value from history where date = '$d' and gas_id = 3 and account = 3;";
                             $result = mysqli_query($connect, $userQuery);
                             $row = mysqli_fetch_assoc($result);
                             if (mysqli_num_rows($result) == 0) {
