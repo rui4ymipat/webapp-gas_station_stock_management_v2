@@ -80,7 +80,7 @@
       width: 30%;
     }
     tr.w th{
-      width: 3%
+      width: 8%
     }
   </style>
   <?php
@@ -403,7 +403,7 @@
                   <div class="table_em" style="width: 100%;">
                     <table border="1" style="text-align: center; display:inline-block;width:70%;">
                       <tr>
-                        <th rowspan="2">วันที่</th>
+                        <th rowspan="2" style="width: 15%;">วันที่</th>
                         <th rowspan="2">กะ</th>
                         <th colspan="3">Tank</th>
                         <th colspan="3">ซิ้อมา</th>
