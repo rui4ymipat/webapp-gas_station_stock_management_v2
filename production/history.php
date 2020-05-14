@@ -459,7 +459,7 @@
                             $userQuery = "select (select name from car where id = history.car_id) as car,value from history where date = '$d' and gas_id = 1 and account = 1;";
                             $result = mysqli_query($connect, $userQuery);
                             $row = mysqli_fetch_assoc($result);
-                            echo $row['car'];;
+                            echo $row['car'];
                             ?> </td>
                         <td><?php if (mysqli_num_rows($result) == 0) {
                               echo " ";
