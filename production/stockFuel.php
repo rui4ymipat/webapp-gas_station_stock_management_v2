@@ -401,7 +401,7 @@
                   </div>
                   <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">ปริมาณน้ำมัน</h1>
                   <div class="table_em" style="width: 100%;">
-                    <table border="1" style="text-align: center; display:inline-block;width:75%;">
+                    <table border="1" style="text-align: center; display:inline-block;width:70%;">
                       <tr>
                         <th rowspan="2">วันที่</th>
                         <th rowspan="2">กะ</th>
@@ -421,7 +421,7 @@
                         <th>Desel</th>
                       </tr>
                     </table>
-                    <table border="1" style="display: inline-block; margin-left:2%;text-align: center;width:30%;">
+                    <table border="1" style="display: inline-block; margin-left:2%;text-align: center;width:25%;">
                       <tr>
                         <th colspan="3">รถอีซูซุ</th>
                       </tr>
