@@ -454,7 +454,7 @@
                       $d = $lop['date'];
                     ?>
                       <tr>
-                        <td><?php echo $date; ?></td>
+                        <td style="width: 11%; height:30px;"><?php echo $date; ?></td>
                         <td><?php
                             $userQuery = "select (select name from car where id = history.car_id) as car from history where date = '$d' group by car";
                             $result = mysqli_query($connect, $userQuery);
