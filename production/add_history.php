@@ -32,6 +32,13 @@ if (empty($car) && empty($a)) {
     $_SESSION['msg'] = "โปรดกรอกข้อมูลให้ครบ";
     header("Location:history.php");
 } else {
+    $userQuery = "select * from history where date = '$date'";
+    $result = mysqli_query($connect, $userQuery);
+    if($result)
+    {
+        $userQuery = "update history set car_id = $car where date = '$date'";
+        $result = mysqli_query($connect, $userQuery);
+    }
     //account 1
     if (!empty($a1_91_p)) {
         $userQuery = "delete from history where date = '$date' and gas_id = 1 and account = 1";
