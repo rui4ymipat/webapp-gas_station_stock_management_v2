@@ -41,7 +41,7 @@ if (empty($car) && empty($a)) {
     $result = mysqli_query($connect, $Qa1);
     if(!$result)
     {
-        die ("Could not successfully run the query $userQuery ".mysqli_error($connect));
+        die ("Could not successfully run the query $Qa1 ".mysqli_error($connect));
     }
         $Qa1 = "insert into history(car_id,gas_id,price,value,tran_price,account,date,timestamp,name_stamp) 
     values($car,3,$a1_de_p,$a1_de_v,$tran,1,'$date','$time','$name')";
