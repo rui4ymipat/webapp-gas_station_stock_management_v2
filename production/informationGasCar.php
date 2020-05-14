@@ -355,7 +355,7 @@
                         </tr>
                         <?php
                         $month = array('-', 'มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน', 'กรกฎาคม', 'สิงหาคม', 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม');
-                        $Q = "Select * from $table[$i]";
+                        $Q = "Select * from $table[$i] order by date DESC";
                         $Check_result = mysqli_query($connect, $Q);
                         while ($row = mysqli_fetch_assoc($Check_result)) {
                           $date = explode("-", $row['date']);
