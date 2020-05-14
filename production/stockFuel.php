@@ -79,6 +79,9 @@
       display: inline-table;
       width: 30%;
     }
+    tr.w th{
+      width: 3%
+    }
   </style>
   <?php
   session_start();
@@ -406,7 +409,7 @@
                         <th colspan="3">ซิ้อมา</th>
                         <th colspan="3">ขาย</th>
                       </tr>
-                      <tr>
+                      <tr class="w">
                         <th>G91</th>
                         <th>G95</th>
                         <th>Desel</th>
