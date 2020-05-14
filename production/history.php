@@ -448,7 +448,7 @@
                     $userQuery = "select date from history group by date";
                     $result1 = mysqli_query($connect, $userQuery);
                     while ($lop = mysqli_fetch_assoc($result1)) {
-                      $Tdate = explode(" ", $lop['date']);
+                      $Tdate = explode("-", $lop['date']);
                       $Sdate = array($Tdate[2], $month[(int) $Tdate[1]], $Tdate[0] + 543);
                       $date  = implode(" ", $Sdate);
                       $d = $lop['date'];
@@ -456,7 +456,7 @@
                       <tr>
                         <td><?php echo $date; ?></td>
                         <td><?php
-                            $userQuery = "select (select name from car where id = history.car_id) as car,value from history where date = '$d' and gas_id = 1 and account = 1;";
+                            $userQuery = "select (select name from car where id = history.car_id) as car,value from history where date = '$d' and gas_id = 1 and account = 1";
                             $result = mysqli_query($connect, $userQuery);
                             $row = mysqli_fetch_assoc($result);
                             echo $row['car'];
