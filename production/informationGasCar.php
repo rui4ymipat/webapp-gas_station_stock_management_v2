@@ -364,6 +364,9 @@
                           $Tdate = implode(" ", $Sdate);
                           $Q2 = "select current_price from today_price where date = '$d' and gas_id = 3";
                           $re1 = mysqli_query($connect, $Q2);
+                          if (!$re1) {
+                            die("Could not successfully run the query $userQuery " . mysqli_error($connect));
+                          }
                           $Dep = mysqli_fetch_assoc($re1);
                         ?>
                           <tr>
