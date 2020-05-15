@@ -450,6 +450,9 @@
 
                           $q1 = "select * from C1815 where date = '$dt'";
                           $result = mysqli_query($connect, $q1);
+                          if (!$result) {
+                            die ("Could not successfully run the query $userQuery ".mysqli_error($connect));
+                            }
                           $row = mysqli_fetch_assoc($result);
                           $num_6134 = $row['number'];
                           $val_6134 = $row['value'];
@@ -465,6 +468,9 @@
 
                           $q1 = "select * from C1815 where date = '$dt'";
                           $result = mysqli_query($connect, $q1);
+                          if (!$result) {
+                            die ("Could not successfully run the query $userQuery ".mysqli_error($connect));
+                            }
                           $row = mysqli_fetch_assoc($result);
                           $num_1815 = $row['number'];
                           $val_1815 = $row['value'];
@@ -482,6 +488,9 @@
 
                           $q1 = "select * from ISUZU where date = '$dt'";
                           $result = mysqli_query($connect, $q1);
+                          if (!$result) {
+                            die ("Could not successfully run the query $userQuery ".mysqli_error($connect));
+                            }
                           $row = mysqli_fetch_assoc($result);
                           $num_isuzu = $row['number'];
                           $val_isuzu = $row['value'];
@@ -496,7 +505,7 @@
 
                         ?>
                           <tr>
-                            <td style="height: 30px;"><?php echo $date; ?></td>
+                            <td style="height: 35px;"><?php echo $date; ?></td>
                             <td><?php echo $num_6134; ?></td>
                             <td><?php echo $val_6134; ?></td>
                             <td><?php echo " - "; ?></td>
