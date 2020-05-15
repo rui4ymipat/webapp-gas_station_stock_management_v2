@@ -427,7 +427,7 @@
                           <th colspan="3">อีซูซุ</th>
                         </tr>
                         <tr class="setwid">
-                          <th>เลขไมค์ก่อน</th>
+                          <th>เลขไมค์</th>
                           <th>เติม(ลิตร)</th>
                           <th>ราคา</th>
                           <th>เลขไมค์</th>
