@@ -32,24 +32,85 @@
     $date = date("Y-m-d");
     $time = date("h:i:sa");
     $name = $_SESSION['user_name'];
-    $userQuery = "select * from history where date = '$date'";
+
+    $userQuery = "select * from sell where gas_id = 1 and account = 1 and date = '$date'";
     $result = mysqli_query($connect, $userQuery);
+    if($result){
+        $userQuery = "delete from sell where gas_id = 1 and account = 1 and date = '$date'";
+        mysqli_query($connect, $userQuery);
+    }
     $Qa1="insert into sell(gas_id,account,price,discount,date,timestamp,name_stamp) values(1,1,$a1_91_p,$a1_91_d,'$date','$time','$name')";
     mysqli_query($connect, $Qa1);
+
+    $userQuery = "select * from sell where gas_id = 2 and account = 1 and date = '$date'";
+    $result = mysqli_query($connect, $userQuery);
+    if($result){
+        $userQuery = "delete from sell where gas_id = 2 and account = 1 and date = '$date'";
+        mysqli_query($connect, $userQuery);
+    }
     $Qa1="insert into sell(gas_id,account,price,discount,date,timestamp,name_stamp) values(2,1,$a1_95_p,$a1_95_d,'$date','$time','$name')";
     mysqli_query($connect, $Qa1);
+    
+    $userQuery = "select * from sell where gas_id = 3 and account = 1 and date = '$date'";
+    $result = mysqli_query($connect, $userQuery);
+    if($result){
+        $userQuery = "delete from sell where gas_id = 3 and account = 1 and date = '$date'";
+        mysqli_query($connect, $userQuery);
+    }
     $Qa1="insert into sell(gas_id,account,price,discount,date,timestamp,name_stamp) values(3,1,$a1_de_p,$a1_de_d,'$date','$time','$name')";
     mysqli_query($connect, $Qa1);
+
+    $userQuery = "select * from sell where gas_id = 1 and account = 2 and date = '$date'";
+    $result = mysqli_query($connect, $userQuery);
+    if($result){
+        $userQuery = "delete from sell where gas_id = 1 and account = 2 and date = '$date'";
+        mysqli_query($connect, $userQuery);
+    }
     $Qa1="insert into sell(gas_id,account,price,discount,date,timestamp,name_stamp) values(1,2,$a2_91_p,$a2_91_d,'$date','$time','$name')";
     mysqli_query($connect, $Qa1);
+
+    $userQuery = "select * from sell where gas_id = 2 and account = 2 and date = '$date'";
+    $result = mysqli_query($connect, $userQuery);
+    if($result){
+        $userQuery = "delete from sell where gas_id = 2 and account = 2 and date = '$date'";
+        mysqli_query($connect, $userQuery);
+    }
     $Qa1="insert into sell(gas_id,account,price,discount,date,timestamp,name_stamp) values(2,2,$a2_95_p,$a2_95_d,'$date','$time','$name')";
     mysqli_query($connect, $Qa1);
+
+    $userQuery = "select * from sell where gas_id = 3 and account = 2 and date = '$date'";
+    $result = mysqli_query($connect, $userQuery);
+    if($result){
+        $userQuery = "delete from sell where gas_id = 3 and account = 2 and date = '$date'";
+        mysqli_query($connect, $userQuery);
+    }
     $Qa1="insert into sell(gas_id,account,price,discount,date,timestamp,name_stamp) values(3,2,$a2_de_p,$a2_de_d,'$date','$time','$name')";
     mysqli_query($connect, $Qa1);
+
+    $userQuery = "select * from sell where gas_id = 1 and account = 3 and date = '$date'";
+    $result = mysqli_query($connect, $userQuery);
+    if($result){
+        $userQuery = "delete from sell where gas_id = 1 and account = 3 and date = '$date'";
+        mysqli_query($connect, $userQuery);
+    }
     $Qa1="insert into sell(gas_id,account,price,discount,date,timestamp,name_stamp) values(1,3,$a3_91_p,$a3_91_d,'$date','$time','$name')";
     mysqli_query($connect, $Qa1);
+
+    $userQuery = "select * from sell where gas_id = 2 and account = 3 and date = '$date'";
+    $result = mysqli_query($connect, $userQuery);
+    if($result){
+        $userQuery = "delete from sell where gas_id = 2 and account = 3 and date = '$date'";
+        mysqli_query($connect, $userQuery);
+    }
     $Qa1="insert into sell(gas_id,account,price,discount,date,timestamp,name_stamp) values(2,3,$a3_95_p,$a3_95_d,'$date','$time','$name')";
     mysqli_query($connect, $Qa1);
+
+    $userQuery = "select * from sell where gas_id = 3 and account = 3 and date = '$date'";
+    $result = mysqli_query($connect, $userQuery);
+    if($result){
+        $userQuery = "delete from sell where gas_id = 3 and account = 3 and date = '$date'";
+        mysqli_query($connect, $userQuery);
+    }
     $Qa1="insert into sell(gas_id,account,price,discount,date,timestamp,name_stamp) values(3,3,$a3_de_p,$a3_de_d,'$date','$time','$name')";
     mysqli_query($connect, $Qa1);
     $_SESSION['msg'] = "ดำเนินการสำเร็จ";
