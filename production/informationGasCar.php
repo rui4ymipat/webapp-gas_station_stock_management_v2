@@ -365,17 +365,17 @@
                           $Q2 = "select current_price from today_price where date = '$d' and gas_id = 3";
                           $re1 = mysqli_query($connect, $Q2);
                           $Dep = mysqli_fetch_assoc($re1);
-                         ?>
+                        ?>
                           <tr>
                             <td style="height: 30px;"><?php echo $Tdate  ?></td>
                             <td><?php echo $row['number']; ?></td>
-                            <td><?php echo number_format($row['value'],2); ?></td>
-                            <td><?php echo number_format($Dep['current_price'],2); ?></td>
-                            <td><?php echo number_format($Dep['current_price'] * $row['value'],2); ?></td>
-                            <td><?php echo number_format($row['cost'],2); ?></td>
+                            <td><?php echo number_format($row['value'], 2); ?></td>
+                            <td><?php echo number_format($Dep['current_price'], 2); ?></td>
+                            <td><?php echo number_format($Dep['current_price'] * $row['value'], 2); ?></td>
+                            <td><?php echo number_format($row['cost'], 2); ?></td>
                             <td><?php echo number_format($row['other_price']);
                                 echo "(", $row['detail'], ")"; ?></td>
-                            <td><?php echo number_format($row['cost'] + $row['other_price'] + ($Dep['current_price'] * $row['value']),2); ?></td>
+                            <td><?php echo number_format($row['cost'] + $row['other_price'] + ($Dep['current_price'] * $row['value']), 2); ?></td>
                             <td><?php echo $row['G91']; ?></td>
                             <td><?php echo $row['G95']; ?></td>
                             <td><?php echo $row['Desel']; ?></td>
@@ -418,7 +418,7 @@
                   </div>
                   <div class="setcol2">
                     <div class="show_information">
-                      <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">ข้อมูลรถน้ำมัน</h1>
+                      <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">ข้อมูล</h1>
                       <table border="1" style="text-align: center; width:104%; ">
                         <tr>
                           <th rowspan="2" style="width: 13.2%;">วันที่</th>
@@ -438,46 +438,77 @@
                           <th>ราคา</th>
                         </tr>
                         <?php
-
-                        $month = array('-', 'มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน', 'กรกฎาคม', 'สิงหาคม', 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม');
-                        $q1 = "select * from C6134";
-                        $result = mysqli_query($connect, $q1);
-                        while ($row = mysqli_fetch_assoc($result)) {
-                          $Tdate = explode("-", $row['date']);
+                        date_default_timezone_set("Asia/Bangkok");
+                        $day = date("d");
+                        for ($i = $day; $i >= $day - 7; $i--) {
+                          $d = date("Y-m-d");
+                          $month = array('-', 'มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน', 'กรกฎาคม', 'สิงหาคม', 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม');
+                          $Tdate = explode("-", date("Y-m-$i"));
                           $Sdate = array($Tdate[2], $month[(int) $Tdate[1]], $Tdate[0] + 543);
-                          $date[] = implode(" ", $Sdate);
-                          $num_6134[] = $row['number'];
-                          $val_6134[] = $row['value'];
-                        }
+                          $date = implode(" ", $Sdate);
+                          $dt = date("Y-m-$i");
 
-                        $q1 = "select * from C1815";
-                        $result = mysqli_query($connect, $q1);
-                        while ($row = mysqli_fetch_assoc($result)) {
-                          $num_1815[] = $row['number'];
-                          $val_1815[] = $row['value'];
-                        }
+                          $q1 = "select * from C1815 where date = '$dt'";
+                          $result = mysqli_query($connect, $q1);
+                          $row = mysqli_fetch_assoc($result);
+                          $num_6134 = $row['number'];
+                          $val_6134 = $row['value'];
+                          if(empty($num_6134))
+                          {
+                            $num_6134 = 0;
+                          }
+                          if(empty($val_6134))
+                          {
+                            $val_6134 = 0;
+                          }
 
-                        $q1 = "select * from ISUZU";
-                        $result = mysqli_query($connect, $q1);
-                        while ($row = mysqli_fetch_assoc($result)) {
-                          $num_isuzu[] = $row['number'];
-                          $val_isuzu[] = $row['value'];
-                        }
-                        for ($i = 0; $i < count($date); $i++) {
+
+                          $q1 = "select * from C1815 where date = '$dt'";
+                          $result = mysqli_query($connect, $q1);
+                          $row = mysqli_fetch_assoc($result);
+                          $num_1815 = $row['number'];
+                          $val_1815 = $row['value'];
+                          if(empty($num_1815))
+                          {
+                            $num_1815 = 0;
+                          }
+                          if(empty($val_1815))
+                          {
+                            $val_1815 = 0;
+                          }
+                          
+                            
+                          
+
+                          $q1 = "select * from ISUZU where date = '$dt'";
+                          $result = mysqli_query($connect, $q1);
+                          $row = mysqli_fetch_assoc($result);
+                          $num_isuzu = $row['number'];
+                          $val_isuzu = $row['value'];
+                          if(empty($num_isuzu))
+                          {
+                            $num_isuzu = 0;
+                          }
+                          if(empty($val_isuzu))
+                          {
+                            $val_isuzu = 0;
+                          }
+
                         ?>
                           <tr>
-                            <td style="height: 30px;"><?php echo $date[$i]; ?></td>
-                            <td><?php echo $num_6134[$i]; ?></td>
-                            <td><?php echo $val_6134[$i]; ?></td>
+                            <td style="height: 30px;"><?php echo $date; ?></td>
+                            <td><?php echo $num_6134; ?></td>
+                            <td><?php echo $val_6134; ?></td>
                             <td><?php echo " - "; ?></td>
-                            <td><?php echo $num_1815[$i]; ?></td>
-                            <td><?php echo $val_1815[$i]; ?></td>
+                            <td><?php echo $num_1815; ?></td>
+                            <td><?php echo $val_1815; ?></td>
                             <td><?php echo " - "; ?></td>
-                            <td><?php echo $num_isuzu[$i]; ?></td>
-                            <td><?php echo $val_isuzu[$i]; ?></td>
+                            <td><?php echo $num_isuzu; ?></td>
+                            <td><?php echo $val_isuzu; ?></td>
                             <td><?php echo " - "; ?></td>
                           </tr>
-                        <?php } ?>
+                        <?php }
+                        ?>
                       </table>
                     </div>
                   </div>
