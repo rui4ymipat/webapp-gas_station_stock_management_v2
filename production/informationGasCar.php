@@ -358,24 +358,20 @@
                         $Q = "Select * from $table[$i] order by date DESC";
                         $Check_result = mysqli_query($connect, $Q);
                         while ($row = mysqli_fetch_assoc($Check_result)) {
-                          $d = $row['date'];
                           $date = explode("-", $row['date']);
                           $Sdate = array($date[2], $month[(int) $date[1]], $date[0] + 543);
                           $Tdate = implode(" ", $Sdate);
-                          $Q2 = "select current_price from today_price where date = '$d' and gas_id = 3";
-                          $re1 = mysqli_query($connect, $Q2);
-                          $Dep = mysqli_fetch_assoc($re1);
                         ?>
                           <tr>
                             <td style="height: 30px;"><?php echo $Tdate  ?></td>
                             <td><?php echo $row['number']; ?></td>
-                            <td><?php echo number_format($row['value'],2); ?></td>
-                            <td><?php echo number_format($Dep['current_price'],2); ?></td>
-                            <td><?php echo number_format($Dep['current_price'] * $row['value'],2); ?></td>
-                            <td><?php echo number_format($row['cost'],2); ?></td>
-                            <td><?php echo number_format($row['other_price']);
+                            <td><?php echo $row['value']; ?></td>
+                            <td><?php echo "-"; ?></td>
+                            <td><?php echo "-" ?></td>
+                            <td><?php echo $row['cost']; ?></td>
+                            <td><?php echo $row['other_price'];
                                 echo "(", $row['detail'], ")"; ?></td>
-                            <td><?php echo number_format($row['cost'] + $row['other_price'] + (['current_price'] * $row['value']),2); ?></td>
+                            <td><?php echo $row['cost'] + $row['other_price']; ?></td>
                             <td><?php echo $row['G91']; ?></td>
                             <td><?php echo $row['G95']; ?></td>
                             <td><?php echo $row['Desel']; ?></td>
