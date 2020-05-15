@@ -362,8 +362,8 @@
                           $date = explode("-", $row['date']);
                           $Sdate = array($date[2], $month[(int) $date[1]], $date[0] + 543);
                           $Tdate = implode(" ", $Sdate);
-                          $Q = "select current_price from today_price where date = '$d' and gas_id = 3";
-                          $re1 = mysqli_query($connect, $Q);
+                          $Q2 = "select current_price from today_price where date = '$d' and gas_id = 3";
+                          $re1 = mysqli_query($connect, $Q2);
                           $Dep = mysqli_fetch_assoc($re1);
                         ?>
                           <tr>
@@ -375,7 +375,7 @@
                             <td><?php echo number_format($row['cost'],2); ?></td>
                             <td><?php echo number_format($row['other_price']);
                                 echo "(", $row['detail'], ")"; ?></td>
-                            <td><?php echo number_format($row['cost'] + $row['other_price'] + (['current_price'] * $row['value'])); ?></td>
+                            <td><?php echo number_format($row['cost'] + $row['other_price'] + (['current_price'] * $row['value']),2); ?></td>
                             <td><?php echo $row['G91']; ?></td>
                             <td><?php echo $row['G95']; ?></td>
                             <td><?php echo $row['Desel']; ?></td>
