@@ -51,7 +51,7 @@
       FONT-WEIGHT: 800;
       font-size: 111%;
       color: #2B3E54;
-      width: 10%;
+      width: 7%;
     }
 
     .show_information table tr th {
