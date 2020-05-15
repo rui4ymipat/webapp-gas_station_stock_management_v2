@@ -365,7 +365,7 @@
                           $Q2 = "select current_price from today_price where date = '$d' and gas_id = 3";
                           $re1 = mysqli_query($connect, $Q2);
                           $Dep = mysqli_fetch_assoc($re1);
-                        ?>
+                         ?>
                           <tr>
                             <td style="height: 30px;"><?php echo $Tdate  ?></td>
                             <td><?php echo $row['number']; ?></td>
