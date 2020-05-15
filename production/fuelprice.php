@@ -400,10 +400,10 @@
                       ?>
                           <tr>
                             <td style="height: 30px;"><?php echo $date; ?></td>
-                            <td><?php echo $row['gas'] ?></td>
-                            <td><?php echo number_format($row['current_price'],2) ?></td>
-                            <td><?php echo number_format($r['current_price'] - $row['current_price'],2) ?></td>
-                            <td><?php echo number_format($row['sell_price'],2) ?></td>
+                            <td><?php echo $row['gas']; ?></td>
+                            <td><?php echo number_format($row['current_price'],2); ?></td>
+                            <td><?php echo number_format($r['current_price'] - $row['current_price'],2); ?></td>
+                            <td><?php echo number_format($row['sell_price'],2); ?></td>
                           </tr>
                       <?php 
                      $i++; 
