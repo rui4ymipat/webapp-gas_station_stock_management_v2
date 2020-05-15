@@ -393,21 +393,21 @@
                         $userQuery = "select (select name from gas where id = today_price.gas_id) as gas , current_price , sell_price from today_price where date = '$d' order by gas_id";
                         $result = mysqli_query($connect, $userQuery);
                         $i = 1;
-                        while ($row = mysqli_fetch_assoc($result1)) {
-                        $userQuery = "select current_price from today_price where date < '$d' and gas_id = $i";
-                        $result2 = mysqli_query($connect, $userQuery);
-                        $r = mysqli_fetch_assoc($result2);
+                        while ($row = mysqli_fetch_assoc($result)) {
+                          $userQuery = "select current_price from today_price where date < '$d' and gas_id = $i";
+                          $result2 = mysqli_query($connect, $userQuery);
+                          $r = mysqli_fetch_assoc($result2);
                       ?>
                           <tr>
                             <td style="height: 30px;"><?php echo $date; ?></td>
                             <td><?php echo $row['gas']; ?></td>
-                            <td><?php echo number_format($row['current_price'],2); ?></td>
-                            <td><?php echo number_format($r['current_price'] - $row['current_price'],2); ?></td>
-                            <td><?php echo number_format($row['sell_price'],2); ?></td>
+                            <td><?php echo number_format($row['current_price'], 2); ?></td>
+                            <td><?php echo number_format($r['current_price'] - $row['current_price'], 2); ?></td>
+                            <td><?php echo number_format($row['sell_price'], 2); ?></td>
                           </tr>
-                      <?php 
-                     $i++; 
-                    }
+                      <?php
+                          $i++;
+                        }
                       } ?>
                     </table>
                   </div>
