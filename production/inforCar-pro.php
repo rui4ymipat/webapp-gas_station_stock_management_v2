@@ -55,7 +55,7 @@ if (empty($car)) {
         $result = mysqli_query($connect,$qu);
         if(!$result)
         {
-            die ("Could not successfully run the query $userQuery ".mysqli_error($connect));
+            die ("Could not successfully run the query $qu ".mysqli_error($connect));
         }
         $_SESSION['msg'] = "ดำเนินการสำเร็จ";
         header("Location:informationGasCar.php");
