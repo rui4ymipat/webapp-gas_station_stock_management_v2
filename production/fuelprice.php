@@ -399,7 +399,9 @@
                           $r = mysqli_fetch_assoc($result2);
                       ?>
                           <tr>
-                            <td style="height: 30px;"><?php echo $date; ?></td>
+                            <?php if($i == 1){ ?>
+                            <td style="height: 30px;" rowspan="3"><?php echo $date; ?></td>
+                            <?php }?>
                             <td><?php echo $row['gas']; ?></td>
                             <td><?php echo number_format($row['current_price'], 2); ?></td>
                             <td><?php echo number_format($r['current_price'] - $row['current_price'], 2); ?></td>
