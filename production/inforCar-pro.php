@@ -51,7 +51,7 @@ if (empty($car)) {
         {
             $detail = '';
         }
-        $qu = "insert into $check(cost,other_price,detail,date,name_stamp,timestamp,G91,G95,Desel) values($tran_price,$other_price,'$detail','$date','$name','$time',$g91,$g95,$de)";
+        $qu = "insert into $check(cost,other_price,detail,date,name_stamp,time_stamp,G91,G95,Desel) values($tran_price,$other_price,'$detail','$date','$name','$time',$g91,$g95,$de)";
         $result = mysqli_query($connect,$qu);
         if(!$result)
         {
@@ -86,7 +86,7 @@ if (empty($car)) {
         {
             $detail = $row['detail'];
         }
-        $qu = "update $check set cost = $tran_price, other_price = $other_price , detail = '$detail' ,name_stamp = '$name',timestamp = '$time',G91 =$g91 , G95 =$g95 , Desel =$de";
+        $qu = "update $check set cost = $tran_price, other_price = $other_price , detail = '$detail' ,name_stamp = '$name',time_stamp = '$time',G91 =$g91 , G95 =$g95 , Desel =$de";
         $result = mysqli_query($connect,$qu);
         if(!$result)
         {
