@@ -448,7 +448,7 @@
                           $date = implode(" ", $Sdate);
                           $dt = date("Y-m-$i");
 
-                          $q1 = "select number,value from C1815 where date = '$dt'";
+                          $q1 = "select number,value from C6134 where date = '$dt'";
                           $result = mysqli_query($connect, $q1);
                           if (!$result) {
                             die("Could not successfully run the query $userQuery " . mysqli_error($connect));
