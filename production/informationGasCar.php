@@ -456,12 +456,12 @@
                           $row = mysqli_fetch_assoc($result);
                           $num_6134 = $row['number'];
                           $val_6134 = $row['value'];
-                          // if (empty($num_6134)) {
-                          //   $num_6134 = 0;
-                          // }
-                          // if (empty($val_6134)) {
-                          //   $val_6134 = 0;
-                          // }
+                          if (empty($num_6134)) {
+                            $num_6134 = 0;
+                          }
+                          if (empty($val_6134)) {
+                            $val_6134 = 0;
+                          }
 
 
                           $q1 = "select number,value from C1815 where date = '$dt'";
@@ -472,12 +472,12 @@
                           $row = mysqli_fetch_assoc($result);
                           $num_1815 = $row['number'];
                           $val_1815 = $row['value'];
-                          // if (empty($num_1815)) {
-                          //   $num_1815 = 0;
-                          // }
-                          // if (empty($val_1815)) {
-                          //   $val_1815 = 0;
-                          // }
+                          if (empty($num_1815)) {
+                            $num_1815 = 0;
+                          }
+                          if (empty($val_1815)) {
+                            $val_1815 = 0;
+                          }
 
 
 
@@ -490,12 +490,12 @@
                           $row = mysqli_fetch_assoc($result);
                           $num_isuzu = $row['number'];
                           $val_isuzu = $row['value'];
-                          // if (empty($num_isuzu)) {
-                          //   $num_isuzu = 0;
-                          // }
-                          // if (empty($val_isuzu)) {
-                          //   $val_isuzu = 0;
-                          // }
+                          if (empty($num_isuzu)) {
+                            $num_isuzu = 0;
+                          }
+                          if (empty($val_isuzu)) {
+                            $val_isuzu = 0;
+                          }
 
                         ?>
                           <tr>
