@@ -53,6 +53,10 @@ if (empty($car)) {
         }
         $qu = "insert into $check(cost,other_price,detail,date,name_stamp,timestamp,G91,G95,Desel) values($tran_price,$other_price,'$detail','$date','$name','$time',$g91,$g95,$de)";
         $result = mysqli_query($connect,$qu);
+        if(!$result)
+        {
+            die ("Could not successfully run the query $userQuery ".mysqli_error($connect));
+        }
         $_SESSION['msg'] = "ดำเนินการสำเร็จ";
         header("Location:informationGasCar.php");
     }
