@@ -13,7 +13,7 @@
         $Check_result = mysqli_query($connect , $Q);
         if(mysqli_num_rows($Check_result) == 0)
         {
-            $q1 = "insert into C6134(number,value) values($C6134_num,$C6134_val)";
+            $q1 = "insert into C6134(number,value,date) values($C6134_num,$C6134_val,'$date')";
             $result = mysqli_query($connect , $q1);
         }
         else
@@ -27,7 +27,7 @@
             {
                 $C6134_val = $row['value'];
             }
-            $q1 = "update C6134 set number = $C6134_num , value = $C6134_val";
+            $q1 = "update C6134 set number = $C6134_num , value = $C6134_val where date = '$date'";
             $result = mysqli_query($connect,$q1);
         }
 
@@ -35,7 +35,7 @@
         $Check_result = mysqli_query($connect , $Q);
         if(mysqli_num_rows($Check_result) == 0)
         {
-            $q1 = "insert into C1815(number,value) values($C1815_num,$C1815_val)";
+            $q1 = "insert into C1815(number,value,date) values($C1815_num,$C1815_val,'$date')";
             $result = mysqli_query($connect , $q1);
         }
         else
@@ -49,7 +49,7 @@
             {
                 $C1815_val = $row['value'];
             }
-            $q1 = "update C1815 set number = $C1815_num , value = $C1815_val";
+            $q1 = "update C1815 set number = $C1815_num , value = $C1815_val where date = '$date'";
             $result = mysqli_query($connect,$q1);
         }
         
@@ -57,7 +57,7 @@
         $Check_result = mysqli_query($connect , $Q);
         if(mysqli_num_rows($Check_result) == 0)
         {
-            $q1 = "insert into ISUZU(number,value) values($is_num,$is_val)";
+            $q1 = "insert into ISUZU(number,value,date) values($is_num,$is_val,$date)";
             $result = mysqli_query($connect , $q1);
         }
         else
@@ -71,7 +71,7 @@
             {
                 $is_val = $row['value'];
             }
-            $q1 = "update ISUZU set number = $is_num , value = $is_val";
+            $q1 = "update ISUZU set number = $is_num , value = $is_val where date = '$date'" ;
             $result = mysqli_query($connect,$q1);
         }
 
