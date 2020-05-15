@@ -135,7 +135,7 @@
       font-size: 120%;
       padding-right: 3%;
       padding-top: 1%;
-      padding-left: 1%;
+      padding-left: 3px;
 
     }
   </style>
