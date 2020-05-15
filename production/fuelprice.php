@@ -402,7 +402,7 @@
                             <?php if($i == 1){ ?>
                             <td style="height: 30px;" rowspan="3"><?php echo $date; ?></td>
                             <?php }?>
-                            <td><?php echo $row['gas']; ?></td>
+                            <td style="height: 30px"><?php echo $row['gas']; ?></td>
                             <td><?php echo number_format($row['current_price'], 2); ?></td>
                             <td><?php echo number_format($r['current_price'] - $row['current_price'], 2); ?></td>
                             <td><?php echo number_format($row['sell_price'], 2); ?></td>
@@ -459,7 +459,7 @@
                       for ($i = 0; $i < count($a1_price); $i++) {
                       ?>
                         <tr>
-                          <td><?php echo $a1_price[$i]; ?></td>
+                          <td style="height: 30px;"><?php echo $a1_price[$i]; ?></td>
                           <td><?php echo $a1_discount[$i] * -1; ?></td>
                           <td><?php echo $a1_price[$i] - $a1_discount[$i]; ?></td>
                           <td><?php echo $a2_price[$i]; ?></td>
