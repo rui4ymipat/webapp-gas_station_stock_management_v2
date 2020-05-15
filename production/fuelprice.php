@@ -285,7 +285,7 @@
                       unset($_SESSION['msg']);
                     }
                     ?>
-              
+
                     <form action="add-pricegas.php">
                       <div class="set_line">
                         <div class="showdetail">ข้อมูลราคา บัญชี 1</div>
@@ -377,13 +377,38 @@
                         <th>ราคา</th>
                         <th>ปรับราคา</th>
                       </tr>
-                      <tr>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>3</td>
-                        <td>4</td>
-                        <td>5</td>                   
-                      </tr>
+
+                      <?php
+
+                      require_once "connect.php";
+                      date_default_timezone_set("Asia/Bangkok");
+                      $userQuery = "select date from today_price group by date order by date DESC limit 7";
+                      $result1 = mysqli_query($connect, $userQuery);
+                      $month = array('-', 'มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน', 'กรกฎาคม', 'สิงหาคม', 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม');
+                      while ($rows = mysqli_fetch_assoc($result1)) {
+                        $d = $rows['date'];
+                        $Tdate = explode("-", $rows['date']);
+                        $Sdate = array($Tdate[2], $month[(int) $Tdate[1]], $Tdate[0] + 543);
+                        $date  = implode(" ", $Sdate);
+                        $userQuery = "select (select name from gas where id = today_price.gas_id) as gas , current_price , sell_price from today_price where date = '$d' order by gas_id";
+                        $result = mysqli_query($connect, $userQuery);
+                        $i = 1;
+                        while ($row = mysqli_fetch_assoc($result1)) {
+                        $userQuery = "select current_price from today_price where date < '$d' and gas_id = $i";
+                        $result2 = mysqli_query($connect, $userQuery);
+                        $r = mysqli_fetch_assoc($result2);
+                      ?>
+                          <tr>
+                            <td style="height: 30px;"><?php echo $date; ?></td>
+                            <td><?php echo $row['gas'] ?></td>
+                            <td><?php echo number_format($row['current_price'],2) ?></td>
+                            <td><?php echo number_format($r['current_price'] - $row['current_price'],2) ?></td>
+                            <td><?php echo number_format($row['sell_price'],2) ?></td>
+                          </tr>
+                      <?php 
+                     $i++; 
+                    }
+                      } ?>
                     </table>
                   </div>
                   <div class="set_col2">
@@ -404,46 +429,45 @@
                         <th>ส่วนลด</th>
                         <th>เท่ากับ</th>
                       </tr>
-                      <?php 
-                        require_once "connect.php"; 
-                        date_default_timezone_set("Asia/Bangkok");
-                        $setDateStart = date("Y-m-01");
-                        $setDateEnd = date("Y-m-31");
-                        $userQuery = "SELECT * from sell where account = 1 and date between '$setDateStart' and '$setDateEnd'";
-                        $result = mysqli_query($connect, $userQuery);
-                        while ($row = mysqli_fetch_assoc($result)){
-                          $a1_price[] = $row['price'];
-                          $a1_discount[] = $row['discount'];
-                        }
+                      <?php
+                      require_once "connect.php";
+                      date_default_timezone_set("Asia/Bangkok");
+                      $setDateStart = date("Y-m-01");
+                      $setDateEnd = date("Y-m-31");
+                      $userQuery = "SELECT * from sell where account = 1 order by date DESC limit 7";
+                      $result = mysqli_query($connect, $userQuery);
+                      while ($row = mysqli_fetch_assoc($result)) {
+                        $a1_price[] = $row['price'];
+                        $a1_discount[] = $row['discount'];
+                      }
 
-                        $userQuery = "SELECT * from sell where account = 2 and date between '$setDateStart' and '$setDateEnd'";
-                        $result = mysqli_query($connect, $userQuery);
-                        while ($row = mysqli_fetch_assoc($result)){
-                          $a2_price[] = $row['price'];
-                          $a2_discount[] = $row['discount'];
-                        }
+                      $userQuery = "SELECT * from sell where account = 2 order by date DESC limit 7";
+                      $result = mysqli_query($connect, $userQuery);
+                      while ($row = mysqli_fetch_assoc($result)) {
+                        $a2_price[] = $row['price'];
+                        $a2_discount[] = $row['discount'];
+                      }
 
-                        $userQuery = "SELECT * from sell where account = 3 and date between '$setDateStart' and '$setDateEnd'";
-                        $result = mysqli_query($connect, $userQuery);
-                        while ($row = mysqli_fetch_assoc($result)){
-                          $a3_price[] = $row['price'];
-                          $a3_discount[] = $row['discount'];
-                        }
-                        for($i=0;$i<count($a1_price);$i++)
-                        {
+                      $userQuery = "SELECT * from sell where account = 3 order by date DESC limit 7";
+                      $result = mysqli_query($connect, $userQuery);
+                      while ($row = mysqli_fetch_assoc($result)) {
+                        $a3_price[] = $row['price'];
+                        $a3_discount[] = $row['discount'];
+                      }
+                      for ($i = 0; $i < count($a1_price); $i++) {
                       ?>
-                      <tr>
-                        <td><?php echo $a1_price[$i]; ?></td>
-                        <td><?php echo $a1_discount[$i]*-1; ?></td>
-                        <td><?php echo $a1_price[$i] - $a1_discount[$i]; ?></td>
-                        <td><?php echo $a2_price[$i]; ?></td>
-                        <td><?php echo $a2_discount[$i]*-1; ?></td>
-                        <td><?php echo $a2_price[$i] - $a2_discount[$i]; ?></td>
-                        <td><?php echo $a3_price[$i]; ?></td>
-                        <td><?php echo $a3_discount[$i]*-1; ?></td>
-                        <td><?php echo $a3_price[$i] - $a3_discount[$i]; ?></td>
-                      </tr>
-                        <?php }?>
+                        <tr>
+                          <td><?php echo $a1_price[$i]; ?></td>
+                          <td><?php echo $a1_discount[$i] * -1; ?></td>
+                          <td><?php echo $a1_price[$i] - $a1_discount[$i]; ?></td>
+                          <td><?php echo $a2_price[$i]; ?></td>
+                          <td><?php echo $a2_discount[$i] * -1; ?></td>
+                          <td><?php echo $a2_price[$i] - $a2_discount[$i]; ?></td>
+                          <td><?php echo $a3_price[$i]; ?></td>
+                          <td><?php echo $a3_discount[$i] * -1; ?></td>
+                          <td><?php echo $a3_price[$i] - $a3_discount[$i]; ?></td>
+                        </tr>
+                      <?php } ?>
                     </table>
                   </div>
                 </div>
