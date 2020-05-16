@@ -431,19 +431,7 @@
                         <th>G95</th>
                         <th>Desel</th>
                       </tr>
-                      <tr>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>3</td>
-                        <td>4</td>
-                        <td>5</td>
-                        <td>6</td>
-                        <td>7</td>
-                        <td>8</td>
-                        <td>9</td>
-                        <td>10</td>
-                        <td>11</td>
-                      </tr>
+
                       <?php
                       date_default_timezone_set("Asia/Bangkok");
                       $d = date("Y-m-d");
@@ -483,7 +471,7 @@
                             ?>
                             <td><?php echo $row['g91'];  ?></td>
                             <td><?php echo $row['g95'];  ?></td>
-                            <td><?php echo $row['diesel']  ?></td>
+                            <td><?php echo $row['diesel']; ?></td>
 
                             <?php
                             $userQuery = "select * from gas1815 where date = '$da' and substr(timestamp,9) = '$f_time' order by gas_id";
@@ -492,7 +480,7 @@
                             ?>
                             <td><?php echo $row['g91'];  ?></td>
                             <td><?php echo $row['g95'];  ?></td>
-                            <td><?php echo $row['diesel']  ?></td>
+                            <td><?php echo $row['diesel']; ?></td>
 
                             <?php
                             $userQuery = "select * from gasisuzu where date = '$da' and substr(timestamp,9) = '$f_time' order by gas_id";
@@ -501,7 +489,7 @@
                             ?>
                             <td><?php echo $row['g91'];  ?></td>
                             <td><?php echo $row['g95'];  ?></td>
-                            <td><?php echo $row['diesel']  ?></td>
+                            <td><?php echo $row['diesel'];  ?></td>
                           </tr>
                         <?php
 
