@@ -447,7 +447,7 @@
                   </div>
                 </div>
             <?php }
-                    } ?>
+                     ?>
 
 
             <!-- /page content -->
