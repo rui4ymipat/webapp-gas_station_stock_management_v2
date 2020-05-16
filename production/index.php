@@ -376,9 +376,9 @@
                   <h1 class="todayprice">ราคาน้ำมันหน้าป้าย</h1>
                   <table class="showgas">
                     <tr class="name">
-                      <td>Gasohol 91</td>
-                      <td>Gasohol 95</td>
-                      <td>Diesel</td>
+                      <td><img src="https://www.bangchak.co.th/img/logo-oil/logo-gasohol-91.png" alt="g91"></td>
+                      <td><img src="https://www.bangchak.co.th/img/logo-oil/logo-gasohol-95.png" alt="g95"></td>
+                      <td><img src="https://www.bangchak.co.th/img/logo-oil/logo-Hi-diesel.png" alt="desel"></td>
                     </tr>
                     <tr class="price">
                       <td>16.68<div style="font-size: 40%;">บาท/ลิตร</div>
@@ -467,16 +467,16 @@
                 <br>
                 <div class="setfont1">
                   <h1 class="todayprice">ยอดขายย้อนหลัง 15 วัน</h1>
-                
-                <br>
-                <h1 style="font-size: 150%; padding-left: 26%;">แก็สโซฮอล์ 91</h1>
-                <div id="G91" style="width: 1000px; height: 400px;"></div>
-                <br>
-                <h1 style="font-size: 150%;padding-left: 26%;">แก็สโซฮอล์ 95</h1>
-                <div id="G95" style="width: 1000px; height: 400px;"></div>
-                <br>
-                <h1 style="font-size: 150%; padding-left: 29%;">ดีเซล</h1>
-                <div id="De" style="width: 1000px; height: 400px;"></div>
+
+                  <br>
+                  <h1 style="font-size: 150%; padding-left: 26%;">แก็สโซฮอล์ 91</h1>
+                  <div id="G91" style="width: 1000px; height: 400px;"></div>
+                  <br>
+                  <h1 style="font-size: 150%;padding-left: 26%;">แก็สโซฮอล์ 95</h1>
+                  <div id="G95" style="width: 1000px; height: 400px;"></div>
+                  <br>
+                  <h1 style="font-size: 150%; padding-left: 29%;">ดีเซล</h1>
+                  <div id="De" style="width: 1000px; height: 400px;"></div>
                 </div>
 
               <?php } else { ?>
