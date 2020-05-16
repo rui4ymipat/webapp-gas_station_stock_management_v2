@@ -437,15 +437,14 @@
                       date_default_timezone_set("Asia/Bangkok");
                       $d = date("Y-m-d");
                       $month = array('-', 'มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน', 'กรกฎาคม', 'สิงหาคม', 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม');
-                      $userQuery = "select date from gastank group by date order by date DESC limit 7";
-                      $result1 = mysqli_query($connect, $userQuery);
+                      $userQuery2 = "select date from gastank group by date order by date DESC limit 7";
+                      $result1 = mysqli_query($connect, $userQuery2);
                       while($lop = mysqli_fetch_assoc($result1)) {
                         $da = $lop['date'];
                         $Tdate = explode("-", $lop['date']);
                         $Sdate = array($Tdate[2], $month[(int) $Tdate[1]], $Tdate[0] + 543);
                         $date  = implode(" ", $Sdate);
                       ?>
-                     
                           <tr>
                           <script type="text/javascript">console.log("tr1")</script>
                               <td rowspan="2"><?php echo $date; ?></td>
@@ -518,7 +517,6 @@
                         }
                          ?>
                           </tr>
-
                           <tr>
                           <script type="text/javascript">console.log("tr2")</script>
                             <?php
