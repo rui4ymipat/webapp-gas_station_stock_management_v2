@@ -444,55 +444,31 @@
                         $Sdate = array($Tdate[2], $month[(int) $Tdate[1]], $Tdate[0] + 543);
                         $date  = implode(" ", $Sdate);
                       ?>
-                        
+
                         <?php
-                          for ($i = 0; $i < 2; $i++) {
-                            if ($i == 0) {
-                              $f_time = 'am';
-                            } else {
-                              $f_time = 'pm';
-                            } ?>
-                            <tr>
-                              <?php if($i == 0){ ?>
-                          <td rowspan="2"><?php echo $date; ?></td>                          
+                        for ($i = 0; $i < 2; $i++) {
+                          if ($i == 0) {
+                            $f_time = 'am';
+                          } else {
+                            $f_time = 'pm';
+                          } ?>
+                          <tr>
+                            <?php if ($i == 0) { ?>
+                              <td rowspan="2"><?php echo $date; ?></td>
                             <?php
-                              }
+                            }
                             $userQuery = "select * from gastank where date = '$da' and substr(timestamp,9) = '$f_time' order by gas_id";
                             $result = mysqli_query($connect, $userQuery);
                             while ($row = mysqli_fetch_assoc($result)) {
-                          ?>
+                            ?>
                               <td><?php echo number_format($row['value']); ?></td>
-                              <?php
-                              }
-                              $userQuery = "select * from gas where date = '$da' and substr(timestamp,9) = '$f_time' order by gas_id";
-                              $result = mysqli_query($connect, $userQuery);
-                              $row = mysqli_fetch_assoc($result);
-                              ?>
-                              <td><?php echo $row['g91'];  ?></td>
-                              <td><?php echo $row['g95'];  ?></td>
-                              <td><?php echo $row['diesel']  ?></td>
+                            <?php
+                            }
+                            ?>
+                          </tr>
+                        <?php
 
-                              <?php
-                              $userQuery = "select * from gas1815 where date = '$da' and substr(timestamp,9) = '$f_time' order by gas_id";
-                              $result = mysqli_query($connect, $userQuery);
-                              $row = mysqli_fetch_assoc($result);
-                              ?>
-                              <td><?php echo $row['g91'];  ?></td>
-                              <td><?php echo $row['g95'];  ?></td>
-                              <td><?php echo $row['diesel']  ?></td>
-
-                              <?php
-                              $userQuery = "select * from gasisuzu where date = '$da' and substr(timestamp,9) = '$f_time' order by gas_id";
-                              $result = mysqli_query($connect, $userQuery);
-                              $row = mysqli_fetch_assoc($result);
-                              ?>
-                              <td><?php echo $row['g91'];  ?></td>
-                              <td><?php echo $row['g95'];  ?></td>
-                              <td><?php echo $row['diesel']  ?></td>
-                        </tr>
-                    <?php
-                            
-                          } ?>
+                        } ?>
                     </table>
                     <table border="1" style="display: inline-block; margin-left:2%;text-align: center;width:25%;">
                       <tr>
