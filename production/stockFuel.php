@@ -445,8 +445,9 @@
                         $Sdate = array($Tdate[2], $month[(int) $Tdate[1]], $Tdate[0] + 543);
                         $date  = implode(" ", $Sdate);
                       ?>
+                      <script type="text/javascript">console.log("tr1")</script>
                           <tr>
-                          <script type="text/javascript">console.log("tr1")</script>
+                          
                               <td rowspan="2"><?php echo $date; ?></td>
                             <?php
                             
