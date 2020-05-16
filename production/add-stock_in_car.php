@@ -48,13 +48,5 @@ if (mysqli_num_rows($result) == 0) {
     $userQuery = "update gasisuzu set g91 = $g91_is, g95 = $g95_is, diesel = $de_is  , name_stamp = '$name' ,timestamp = '$time' where date = '$date'";
     $result = mysqli_query($connect, $userQuery);
 }
-for($i=1;$i<4;$i++)
-{
-    for($j=1;$j<4;$j++)
-    {
-        $Qa1="insert into sell(gas_id,account,price,discount,date,timestamp,name_stamp) values($j,$i,0,0,'2020-01-01','-','-')";
-        mysqli_query($connect, $Qa1);
-    }
-}
 $_SESSION['msg'] = "ดำเนินการสำเร็จ";
 header("Location:stockFuel.php");
