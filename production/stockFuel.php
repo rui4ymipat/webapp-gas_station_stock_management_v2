@@ -464,13 +464,30 @@
                           }
                             $userQuery = "select * from gastank where date = '$da' and substr(timestamp,9) = '$f_time' order by gas_id";
                             $result = mysqli_query($connect, $userQuery);
+                            if (mysqli_num_rows($result) == 0){
+                              ?>
+                              <td>0</td>
+                              <td>0</td>
+                              <td>0</td>
+                              <?php
+                            }
+                            else{
                             while ($row = mysqli_fetch_assoc($result)) {
                           ?>
                               <td><?php echo number_format($row['value']); ?></td>
                             <?php
                             }
+                          }
                             $userQuery = "select * from gas where date = '$da' and substr(timestamp,9) = '$f_time' order by gas_id";
                             $result = mysqli_query($connect, $userQuery);
+                            if (mysqli_num_rows($result) == 0){
+                              ?>
+                              <td>0</td>
+                              <td>0</td>
+                              <td>0</td>
+                              <?php
+                            }
+                            else{
                             $row = mysqli_fetch_assoc($result);
                             ?>
                             <td><?php echo $row['g91'];  ?></td>
@@ -478,8 +495,17 @@
                             <td><?php echo $row['diesel']; ?></td>
 
                             <?php
+                            }
                             $userQuery = "select * from gas1815 where date = '$da' and substr(timestamp,9) = '$f_time' order by gas_id";
                             $result = mysqli_query($connect, $userQuery);
+                            if (mysqli_num_rows($result) == 0){
+                              ?>
+                              <td>0</td>
+                              <td>0</td>
+                              <td>0</td>
+                              <?php
+                            }
+                            else{
                             $row = mysqli_fetch_assoc($result);
                             ?>
                             <td><?php echo $row['g91'];  ?></td>
@@ -487,6 +513,7 @@
                             <td><?php echo $row['diesel'];  ?></td>
 
                             <?php
+                            }
                             $userQuery = "select * from gasisuzu where date = '$da' and substr(timestamp,9) = '$f_time' order by gas_id";
                             $result = mysqli_query($connect, $userQuery);
                             $row = mysqli_fetch_assoc($result);
