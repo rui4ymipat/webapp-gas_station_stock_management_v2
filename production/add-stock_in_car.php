@@ -1,7 +1,7 @@
 <?php
 require_once "connect.php";
-date_default_timezone_set("Asia/Bangkok");
 session_start();
+date_default_timezone_set("Asia/Bangkok");
 $date = date("Y-m-d");
 $time = date("h:i:sa");
 $f_time = substr($time,8);
