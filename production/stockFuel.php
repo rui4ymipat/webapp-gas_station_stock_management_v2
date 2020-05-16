@@ -345,23 +345,23 @@
                   <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">กรอกข้อมูลน้ำมันบนรถ</h1>
                   <div class="setborder" style="width: 100%;">
 
-                    <form action="" method="get">
+                    <form action="add-stock_in_car.php" method="get">
                       <div class="col1">
                         <div class="showdetail">ปริมาณน้ำมันบนรถทะเบียน 6134</div>
                         <table class="account">
                           <tr>
                             <td class="name">G91</td>
-                            <td><input type="text" name="g91" placeholder="ปริมาณ"></td>
+                            <td><input type="text" name="6134g91" placeholder="ปริมาณ"></td>
                             <td>ลิตร</td>
                           </tr>
                           <tr>
                             <td class="name">G95</td>
-                            <td><input type="text" name="g95" placeholder="ปริมาณ"></td>
+                            <td><input type="text" name="6134g95" placeholder="ปริมาณ"></td>
                             <td>ลิตร</td>
                           </tr>
                           <tr>
                             <td class="name">Desel</td>
-                            <td><input type="text" name="de" placeholder="ปริมาณ"></td>
+                            <td><input type="text" name="6134de" placeholder="ปริมาณ"></td>
                             <td>ลิตร</td>
                           </tr>
                         </table>
@@ -371,17 +371,17 @@
                         <table class="account">
                           <tr>
                             <td class="name">G91</td>
-                            <td><input type="text" name="" placeholder="ปริมาณ"></td>
+                            <td><input type="text" name="1815g91" placeholder="ปริมาณ"></td>
                             <td>ลิตร</td>
                           </tr>
                           <tr>
                             <td class="name">G95</td>
-                            <td><input type="text" name="" placeholder="ปริมาณ"></td>
+                            <td><input type="text" name="1815g95" placeholder="ปริมาณ"></td>
                             <td>ลิตร</td>
                           </tr>
                           <tr>
                             <td class="name">Desel</td>
-                            <td><input type="text" name="" placeholder="ปริมาณ"></td>
+                            <td><input type="text" name="1815de" placeholder="ปริมาณ"></td>
                             <td>ลิตร</td>
                           </tr>
                         </table>
@@ -391,17 +391,17 @@
                         <table class="account">
                           <tr>
                             <td class="name">G91</td>
-                            <td><input type="text" name="" placeholder="ปริมาณ"></td>
+                            <td><input type="text" name="isg91" placeholder="ปริมาณ"></td>
                             <td>ลิตร</td>
                           </tr>
                           <tr>
                             <td class="name">G95</td>
-                            <td><input type="text" name="" placeholder="ปริมาณ"></td>
+                            <td><input type="text" name="isg95" placeholder="ปริมาณ"></td>
                             <td>ลิตร</td>
                           </tr>
                           <tr>
                             <td class="name">Desel</td>
-                            <td><input type="text" name="" placeholder="ปริมาณ"></td>
+                            <td><input type="text" name="isde" placeholder="ปริมาณ"></td>
                             <td>ลิตร</td>
                           </tr>
                         </table>
