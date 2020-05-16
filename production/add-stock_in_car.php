@@ -4,7 +4,7 @@ date_default_timezone_set("Asia/Bangkok");
 session_start();
 $date = date("Y-m-d");
 $time = date("h:i:sa");
-$f_time = substr($time,9);
+$f_time = substr($time,8);
 $name = $_SESSION['user_name'];
 
 $g91_6134 = $_GET['6134g91'];
