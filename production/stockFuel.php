@@ -324,17 +324,17 @@
                       <table class="account">
                         <tr>
                           <td class="name">G91</td>
-                          <td><input type="text" name="" placeholder="ปริมาณ"></td>
+                          <td><input type="text" name="g91" placeholder="ปริมาณ"></td>
                           <td>ลิตร</td>
                         </tr>
                         <tr>
                           <td class="name">G95</td>
-                          <td><input type="text" name="" placeholder="ปริมาณ"></td>
+                          <td><input type="text" name="g95" placeholder="ปริมาณ"></td>
                           <td>ลิตร</td>
                         </tr>
                         <tr>
                           <td class="name">Desel</td>
-                          <td><input type="text" name="" placeholder="ปริมาณ"></td>
+                          <td><input type="text" name="de" placeholder="ปริมาณ"></td>
                           <td>ลิตร</td>
                         </tr>
                       </table>
