@@ -455,7 +455,11 @@
                         <tr>
                           <?php if($i == 0){ ?>
                           <td rowspan="2"><?php echo $date; ?></td>
-                          
+                          <td>ช</td>
+                            <?php
+                          } else{
+                            ?>
+                            <td>ย</td>
                             <?php
                           }
                             $userQuery = "select * from gastank where date = '$da' and substr(timestamp,9) = '$f_time' order by gas_id";
