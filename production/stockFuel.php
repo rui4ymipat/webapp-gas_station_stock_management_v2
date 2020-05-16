@@ -79,7 +79,8 @@
       display: inline-table;
       width: 30%;
     }
-    tr.w th{
+
+    tr.w th {
       width: 8%
     }
   </style>
@@ -213,7 +214,17 @@
 
                 </div>
               </div>
+              <?php
+              session_start();
 
+              if (empty($_SESSION['user_level'])) {
+                $_SESSION['error'] = "Username หรือ Password ผิด";
+                header("Location:login.php");
+              }
+              require_once "connect.php";
+              $userQuery = "SELECT * from car";
+              $result = mysqli_query($connect, $userQuery);
+              ?>
 
 
 
