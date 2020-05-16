@@ -504,7 +504,8 @@
                     </table>
                   </div>
                 </div>
-              <?php } ?>
+              <?php }
+              } ?>
 
 
               <!-- /page content -->
