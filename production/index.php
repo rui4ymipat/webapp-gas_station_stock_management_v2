@@ -395,9 +395,9 @@
                   <h1 class="todayprice">ราคาน้ำมันต้นทุน</h1>
                   <table class="showgas">
                     <tr class="name">
-                      <td>Gasohol 91</td>
-                      <td>Gasohol 95</td>
-                      <td>Diesel</td>
+                      <td><img src="https://www.bangchak.co.th/img/logo-oil/logo-gasohol-91.png" alt="g91"></td>
+                      <td><img src="https://www.bangchak.co.th/img/logo-oil/logo-gasohol-95.png" alt="g95"></td>
+                      <td><img src="https://www.bangchak.co.th/img/logo-oil/logo-Hi-diesel.png" alt="desel"></td>
                     </tr>
                     <tr class="price">
                       <td>16.68<div style="font-size: 40%;">บาท/ลิตร</div>
