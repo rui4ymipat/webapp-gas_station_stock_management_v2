@@ -309,7 +309,7 @@
                 <div class="setfont1">
                   <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">กรอกข้อมูลน้ำมันในหลุม</h1>
                   <div class="setborder" style="width: 25%">
-                    <form action="" method="get">
+                    <form action="add-stock.php" method="get">
                       <div class="showdetail">ปริมาณน้ำมันในหลุม</div>
                       <table class="account">
                         <tr>
@@ -341,17 +341,17 @@
                         <table class="account">
                           <tr>
                             <td class="name">G91</td>
-                            <td><input type="text" name="" placeholder="ปริมาณ"></td>
+                            <td><input type="text" name="g91" placeholder="ปริมาณ"></td>
                             <td>ลิตร</td>
                           </tr>
                           <tr>
                             <td class="name">G95</td>
-                            <td><input type="text" name="" placeholder="ปริมาณ"></td>
+                            <td><input type="text" name="g95" placeholder="ปริมาณ"></td>
                             <td>ลิตร</td>
                           </tr>
                           <tr>
                             <td class="name">Desel</td>
-                            <td><input type="text" name="" placeholder="ปริมาณ"></td>
+                            <td><input type="text" name="de" placeholder="ปริมาณ"></td>
                             <td>ลิตร</td>
                           </tr>
                         </table>
