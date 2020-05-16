@@ -447,13 +447,13 @@
                         
                         <?php
                           for ($i = 0; $i < 2; $i++) {
-                            if ($i = 0) {
+                            if ($i == 0) {
                               $f_time = 'am';
                             } else {
                               $f_time = 'pm';
                             } ?>
                             <tr>
-                              <?php if($i=0){ ?>
+                              <?php if($i == 0){ ?>
                           <td rowspan="2"><?php echo $date; ?></td>                          
                             <?php
                               }
