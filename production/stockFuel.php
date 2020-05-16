@@ -448,22 +448,26 @@
                       $month = array('-', 'มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน', 'กรกฎาคม', 'สิงหาคม', 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม');
                       $userQuery = "select date from gastank group by date order by date DESC limit 7";
                       $result1 = mysqli_query($connect, $userQuery);
-                      $i = 0;
                       while ($lop = mysqli_fetch_assoc($result1)) {
                         $da = $lop['date'];
                         $Tdate = explode("-", $lop['date']);
                         $Sdate = array($Tdate[2], $month[(int) $Tdate[1]], $Tdate[0] + 543);
                         $date  = implode(" ", $Sdate);
                       ?>
-                        <tr>
-                          <td rowspan="2"><?php echo $date; ?></td>
-                          <?php
+                      <?php
                           for ($i = 0; $i < 2; $i++) {
                             if ($i = 0) {
                               $f_time = 'am';
                             } else {
                               $f_time = 'pm';
                             }
+                            ?>
+                        <tr>
+                          <?php if($i == 0){ ?>
+                          <td rowspan="2"><?php echo $date; ?></td>
+                          
+                            <?php
+                          }
                             $userQuery = "select * from gastank where date = '$da' and substr(timestamp,9) = '$f_time' order by gas_id";
                             $result = mysqli_query($connect, $userQuery);
                             while ($row = mysqli_fetch_assoc($result)) {
