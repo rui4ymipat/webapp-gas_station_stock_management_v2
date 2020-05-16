@@ -420,6 +420,7 @@
                         <th colspan="3">ซิ้อมา</th>
                         <th colspan="3">ขาย</th>
                       </tr>
+                      <script type="text/javascript">console.log("Hello World")</script>
                       <tr class="w">
                         <th>G91</th>
                         <th>G95</th>
