@@ -444,7 +444,9 @@
                         $Sdate = array($Tdate[2], $month[(int) $Tdate[1]], $Tdate[0] + 543);
                         $date  = implode(" ", $Sdate);
                       ?>
+                     
                           <tr>
+                          <script type="text/javascript">console.log("Hello World")</script>
                               <td rowspan="2"><?php echo $date; ?></td>
                             <?php
                             
@@ -517,7 +519,7 @@
                           </tr>
 
                           <tr>
-                              
+                          <script type="text/javascript">console.log("Hello World")</script>
                             <?php
                             
                             $userQuery = "select * from gastank where date = '$da' and substr(timestamp,9) = 'pm' order by gas_id";
