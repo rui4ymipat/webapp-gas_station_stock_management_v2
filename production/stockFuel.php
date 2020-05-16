@@ -436,6 +436,7 @@
                       <?php
                       date_default_timezone_set("Asia/Bangkok");
                       $d = date("Y-m-d");
+                      require_once "connect.php";
                       $month = array('-', 'มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน', 'กรกฎาคม', 'สิงหาคม', 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม');
                       $userQuery2 = "select date from gastank group by date order by date DESC limit 7";
                       $result1 = mysqli_query($connect, $userQuery2);
