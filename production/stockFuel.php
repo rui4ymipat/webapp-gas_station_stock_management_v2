@@ -420,7 +420,7 @@
                         <th colspan="3">ซิ้อมา</th>
                         <th colspan="3">ขาย</th>
                       </tr>
-                      <script type="text/javascript">console.log("Hello World")</script>
+                      <script type="text/javascript">console.log("Why not")</script>
                       <tr class="w">
                         <th>G91</th>
                         <th>G95</th>
@@ -447,7 +447,7 @@
                       ?>
                      
                           <tr>
-                          <script type="text/javascript">console.log("Hello World")</script>
+                          <script type="text/javascript">console.log("tr1")</script>
                               <td rowspan="2"><?php echo $date; ?></td>
                             <?php
                             
@@ -520,7 +520,7 @@
                           </tr>
 
                           <tr>
-                          <script type="text/javascript">console.log("Hello World")</script>
+                          <script type="text/javascript">console.log("tr2")</script>
                             <?php
                             
                             $userQuery = "select * from gastank where date = '$da' and substr(timestamp,9) = 'pm' order by gas_id";
