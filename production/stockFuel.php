@@ -418,7 +418,7 @@
                         <th rowspan="2" style="width: 1%;">กะ</th>
                         <th colspan="3">Tank</th>
                         <th colspan="3">ซิ้อมา</th>
-                        <th colspan="3">ขาย</th>
+                        <th colspan="3">รวม</th>
                       </tr>
                       <tr class="w">
                         <th>G91</th>
