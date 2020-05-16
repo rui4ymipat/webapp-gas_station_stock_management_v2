@@ -431,16 +431,6 @@
                         <th>G95</th>
                         <th>Desel</th>
                       </tr>
-                    </table>
-                    <table border="1" style="display: inline-block; margin-left:2%;text-align: center;width:25%;">
-                      <tr>
-                        <th colspan="3">รถอีซูซุ</th>
-                      </tr>
-                      <tr class="w">
-                        <th>G91</th>
-                        <th>G95</th>
-                        <th>Desel</th>
-                      </tr>
                       <?php
                       date_default_timezone_set("Asia/Bangkok");
                       $d = date("Y-m-d");
@@ -501,6 +491,17 @@
                     <?php
                           }
                         } ?>
+                    </table>
+                    <table border="1" style="display: inline-block; margin-left:2%;text-align: center;width:25%;">
+                      <tr>
+                        <th colspan="3">รถอีซูซุ</th>
+                      </tr>
+                      <tr class="w">
+                        <th>G91</th>
+                        <th>G95</th>
+                        <th>Desel</th>
+                      </tr>
+                     
                     </table>
                   </div>
                 </div>
