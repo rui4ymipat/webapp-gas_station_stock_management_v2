@@ -172,17 +172,7 @@
       }
     }
   </style>
-  <?php
-  session_start();
 
-  if (empty($_SESSION['user_level'])) {
-    $_SESSION['error'] = "Username หรือ Password ผิด";
-    header("Location:login.php");
-  }
-  require_once "connect.php";
-  $userQuery = "SELECT * from car";
-  $result = mysqli_query($connect, $userQuery);
-  ?>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <!-- Meta, title, CSS, favicons, etc. -->
   <meta charset="utf-8">
@@ -213,7 +203,17 @@
 </head>
 
 <body class="nav-md">
+  <?php
+  session_start();
 
+  if (empty($_SESSION['user_level'])) {
+    $_SESSION['error'] = "Username หรือ Password ผิด";
+    header("Location:login.php");
+  }
+  require_once "connect.php";
+  $userQuery = "SELECT * from car";
+  $result = mysqli_query($connect, $userQuery);
+  ?>
   <div class="container body">
     <div class="main_container">
       <div class="col-md-3 left_col">
