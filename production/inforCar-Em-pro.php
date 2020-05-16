@@ -57,7 +57,7 @@
         $Check_result = mysqli_query($connect , $Q);
         if(mysqli_num_rows($Check_result) == 0)
         {
-            $q1 = "insert into ISUZU(number,value,date) values($is_num,$is_val,$date)";
+            $q1 = "insert into ISUZU(number,value,date) values($is_num,$is_val,'$date')";
             $result = mysqli_query($connect , $q1);
         }
         else
