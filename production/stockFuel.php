@@ -79,8 +79,7 @@
       display: inline-table;
       width: 30%;
     }
-
-    tr.w th {
+    tr.w th{
       width: 8%
     }
   </style>
@@ -215,15 +214,15 @@
                 </div>
               </div>
               <?php
-              session_start();
-
-              if (empty($_SESSION['user_level'])) {
-                $_SESSION['error'] = "Username หรือ Password ผิด";
-                header("Location:login.php");
+              if (!empty($_SESSION['msg'])) {
+                session_start();
+              ?>
+                <script type="text/javascript">
+                  alert('<?php echo $_SESSION['msg'] ?>');
+                </script>
+              <?php
+                unset($_SESSION['msg']);
               }
-              require_once "connect.php";
-              $userQuery = "SELECT * from car";
-              $result = mysqli_query($connect, $userQuery);
               ?>
 
 
