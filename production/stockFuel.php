@@ -442,6 +442,7 @@
                         <th>Desel</th>
                       </tr>
                       <?php
+                      require_once "connect.php";
                       date_default_timezone_set("Asia/Bangkok");
                       $d = date("Y-m-d");
                       $month = array('-', 'มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน', 'กรกฎาคม', 'สิงหาคม', 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม');
