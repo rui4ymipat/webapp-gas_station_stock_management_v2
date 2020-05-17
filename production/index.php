@@ -471,7 +471,11 @@
                           $row = mysqli_fetch_assoc($result);
                           echo number_format($row['sum']) ?> <div style="font-size: 40%;">ลิตร</div>
                       </td>
-                      <td>23,100 <div style="font-size: 40%;">บาท</div>
+                      <td><?php $userQuery = "select sum(value) as sum from history where account = 2 and date between '$date_start' and '$date_end'";
+                          $result = mysqli_query($connect, $userQuery);
+                          $row = mysqli_fetch_assoc($result); 
+                          if($row['sum'] <= 40000){ echo number_format($row['sum']*1.1,2);}
+                          else{echo number_format($row['sum']*1.3,2);}?> <div style="font-size: 40%;">บาท</div>
                       </td>
                     </tr>
                   </table>
