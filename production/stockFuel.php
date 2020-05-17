@@ -451,11 +451,11 @@
                           <tr>
                             <?php if ($i == 0) { ?>
                               <td rowspan="2"><?php echo $date; ?></td>
-                              <td style="height: 35px;">ช</td>
+                              <td style="height: 35px;">เช้า</td>
                             <?php
                             } else {
                             ?>
-                              <td style="height: 35px;">ย</td>
+                              <td style="height: 35px;">เย็น</td>
                               <?php
                             }
                             if ($i == 0) {
