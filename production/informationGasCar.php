@@ -450,6 +450,10 @@
                           $Sdate = array($Tdate[2], $month[(int) $Tdate[1]], $Tdate[0] + 543);
                           $date = implode(" ", $Sdate);
                           $dt = date("Y-m-$i");
+                          $q1 = "select current_price from today_price where date = '$dt' and gas_id = 3";
+                          $result = mysqli_query($connect, $q1);
+                          $row = mysqli_fetch_assoc($result);
+                          $current_price = $row['current_price'];
 
                           $q1 = "select number,value from C6134 where date = '$dt'";
                           $result = mysqli_query($connect, $q1);
@@ -505,13 +509,13 @@
                             <td style="height: 35px;"><?php echo $date; ?></td>
                             <td><?php echo $num_6134; ?></td>
                             <td><?php echo $val_6134; ?></td>
-                            <td><?php echo " - "; ?></td>
+                            <td><?php echo $current_price; ?></td>
                             <td><?php echo $num_1815; ?></td>
                             <td><?php echo $val_1815; ?></td>
-                            <td><?php echo " - "; ?></td>
+                            <td><?php echo $current_price; ?></td>
                             <td><?php echo $num_isuzu; ?></td>
                             <td><?php echo $val_isuzu; ?></td>
-                            <td><?php echo " - "; ?></td>
+                            <td><?php echo $current_price; ?></td>
                           </tr>
                         <?php }
                         ?>
