@@ -462,7 +462,7 @@
                               <td style="height: 35px;">ย</td>
                             <?php
                             }
-                            $userQuery = "select * from gastank where date = '$da' and substr(timestamp,9) = '$f_time' order by gas_id";
+                            $userQuery = "select value from gastank where date = '$da' and substr(timestamp,9) = '$f_time' order by gas_id";
                             $result = mysqli_query($connect, $userQuery);
                             if (mysqli_num_rows($result) == 0) {
                             ?>
@@ -477,39 +477,39 @@
                               <?php
                               }
                             }
-                            $userQuery = "select * from gas where date = '$da' and substr(timestamp,9) = '$f_time' order by gas_id";
-                            $result = mysqli_query($connect, $userQuery);
-                            if (mysqli_num_rows($result) == 0) {
+                            if ($i == 0) {
+                              $userQuery = "select current_price from today_price where date = '$da'";
+                              $result = mysqli_query($connect, $userQuery);
+                              if (mysqli_num_rows($result) == 0) {
                               ?>
-                              <td>0</td>
-                              <td>0</td>
-                              <td>0</td>
-                            <?php
-                            } else {
-                              $row = mysqli_fetch_assoc($result);
-                            ?>
-                              <td><?php echo $row['g91'];  ?></td>
-                              <td><?php echo $row['g95'];  ?></td>
-                              <td><?php echo $row['diesel']; ?></td>
-
-                            <?php
+                                <td rowspan="2">0</td>
+                                <td rowspan="2">0</td>
+                                <td rowspan="2">0</td>
+                                <?php
+                              } else {
+                                while ($row = mysqli_fetch_assoc($result)) {
+                                ?>
+                                  <td rowspan="2"><?php echo number_format($row['current_price']); ?></td>
+                              <?php
+                                }
+                              }
                             }
-                            $userQuery = "select * from gas1815 where date = '$da' and substr(timestamp,9) = '$f_time' order by gas_id";
-                            $result = mysqli_query($connect, $userQuery);
-                            if (mysqli_num_rows($result) == 0) {
-                            ?>
-                              <td>0</td>
-                              <td>0</td>
-                              <td>0</td>
-                            <?php
-                            } else {
-                              $row = mysqli_fetch_assoc($result);
-                            ?>
-                              <td><?php echo $row['g91'];  ?></td>
-                              <td><?php echo $row['g95'];  ?></td>
-                              <td><?php echo $row['diesel'];  ?></td>
-
-                            <?php
+                            if ($i == 0) {
+                              $userQuery = "select value from gastank where date = '$da' and substr(timestamp,9) = 'pm' order by gas_id";
+                              $result = mysqli_query($connect, $userQuery);
+                              if (mysqli_num_rows($result) == 0) {
+                              ?>
+                                <td rowspan="2">0</td>
+                                <td rowspan="2">0</td>
+                                <td rowspan="2">0</td>
+                                <?php
+                              } else {
+                                while ($row = mysqli_fetch_assoc($result)) {
+                                ?>
+                                  <td rowspan="2"><?php echo number_format($row['value']); ?></td>
+                              <?php
+                                }
+                              }
                             }
                             ?>
                           </tr>
@@ -535,21 +535,21 @@
                         $result = mysqli_query($connect, $userQuery);
                         $row = mysqli_fetch_assoc($result);
                         if (mysqli_num_rows($result) == 0) {
-                          ?>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                          <?php
-                          } else {
                       ?>
-                      
-                        <tr>
-                          <td style="height: 70px;"><?php echo $row['g91'];  ?></td>
-                          <td style="height: 70px;"><?php echo $row['g95'];  ?></td>
-                          <td style="height: 70px;"><?php echo $row['diesel'];  ?></td>
-                        </tr>
-                          <?php }
-                    } ?>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                        <?php
+                        } else {
+                        ?>
+
+                          <tr>
+                            <td style="height: 70px;"><?php echo $row['g91'];  ?></td>
+                            <td style="height: 70px;"><?php echo $row['g95'];  ?></td>
+                            <td style="height: 70px;"><?php echo $row['diesel'];  ?></td>
+                          </tr>
+                      <?php }
+                      } ?>
                     </table>
                   </div>
                 </div>
