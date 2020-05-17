@@ -426,7 +426,7 @@
                                                           $result = mysqli_query($connect, $userQuery);
                                                           $row = mysqli_fetch_assoc($result);
                                                           echo number_format($row['sum']) ?> ลิตร</th>
-                      <th colspan="3">บัญชี 2 สั่งซื้อรวม <?php $userQuery = "select sum(value) as sum from history where account = 2 and date between '$date_start' and '$date_end''";
+                      <th colspan="3">บัญชี 2 สั่งซื้อรวม <?php $userQuery = "select sum(value) as sum from history where account = 2 and date between '$date_start' and '$date_end'";
                                                           $result = mysqli_query($connect, $userQuery);
                                                           $row = mysqli_fetch_assoc($result);
                                                           echo number_format($row['sum']) ?> ลิตร</th>
