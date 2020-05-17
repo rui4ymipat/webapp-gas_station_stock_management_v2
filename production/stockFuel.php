@@ -384,19 +384,102 @@
                         <th style="width: 20%;">G91</th>
                         <th style="width: 20%;">Desel</th>
                       </tr>
-                      <tr>
-                        <td rowspan="2" style="height: 50px;">1 มีนาคม 2563</td>
-                        <td>เช้า</td>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>3</td>
-                      </tr>
-                      <tr>
-                        <td>เย็น</td>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>3</td>
-                      </tr>
+                      <?php
+                      require_once "connect.php";
+                      date_default_timezone_set("Asia/Bangkok");
+                      $d = date("Y-m-d");
+                      $month = array('-', 'มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน', 'กรกฎาคม', 'สิงหาคม', 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม');
+                      $userQuery = "select date from gastank group by date order by date DESC limit 7";
+                      $result1 = mysqli_query($connect, $userQuery);
+                      while ($lop = mysqli_fetch_assoc($result1)) {
+                        $da = $lop['date'];
+                        $Tdate = explode("-", $lop['date']);
+                        $Sdate = array($Tdate[2], $month[(int) $Tdate[1]], $Tdate[0] + 543);
+                        $date  = implode(" ", $Sdate);
+                      ?>
+                        <?php
+                        for ($i = 0; $i < 2; $i++) {
+                        ?>
+                          <tr>
+                            <?php if ($i == 0) { ?>
+                              <td rowspan="2"><?php echo $date; ?></td>
+                              <td style="height: 35px;"> เช้า </td>
+                            <?php
+                            } else {
+                            ?>
+                              <td style="height: 35px;"> เย็น </td>
+                              <?php
+                            }
+                            if ($i == 0) {
+                              ?>
+                              <tr>
+                              <?php
+                              $userQuery = "select (select value from gastank where date < '$d' and substr(timestamp,9)= 'pm' and gas_id = 1 limit 1)-value as dif from gastank where date = '$d' and substr(timestamp,9)= 'am' and gas_id = 1";
+                              $result = mysqli_query($connect, $userQuery);
+                              if (mysqli_num_rows($result) == 0) {
+                              ?>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <?php
+                              } else {
+                                $row = mysqli_fetch_assoc($result);
+                                ?>
+                                  <td><?php echo number_format($row['dif']); ?></td>
+                                <?php
+                                $userQuery = "select (select value from gastank where date < '$d' and substr(timestamp,9)= 'pm' and gas_id = 2 limit 1)-value as dif from gastank where date = '$d' and substr(timestamp,9)= 'am' and gas_id = 2";
+                                $result = mysqli_query($connect, $userQuery);
+                                $row = mysqli_fetch_assoc($result);
+                                ?>
+                                  <td><?php echo number_format($row['dif']); ?></td>
+                                <?php
+                                $userQuery = "select (select value from gastank where date < '$d' and substr(timestamp,9)= 'pm' and gas_id = 3 limit 1)-value as dif from gastank where date = '$d' and substr(timestamp,9)= 'am' and gas_id = 3";
+                                $result = mysqli_query($connect, $userQuery);
+                                $row = mysqli_fetch_assoc($result);
+                                ?>
+                                  <td><?php echo number_format($row['dif']); ?></td>
+                                  </tr>
+                                <?php                                
+                              }
+                            } else {
+                              ?>
+                              <tr>
+                              <?php
+                              $userQuery = "select (select value from gastank where date = '$d' and substr(timestamp,9)= 'am' and gas_id = 1 limit 1)-value as dif from gastank where date = '$d' and substr(timestamp,9)= 'pm' and gas_id = 1";
+                              $result = mysqli_query($connect, $userQuery);
+                              if (mysqli_num_rows($result) == 0) {
+                              ?>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <?php
+                              } else {
+                                $row = mysqli_fetch_assoc($result);
+                                ?>
+                                  <td><?php echo number_format($row['dif']); ?></td>
+                                <?php
+                                $userQuery = "select (select value from gastank where date = '$d' and substr(timestamp,9)= 'am' and gas_id = 2 limit 1)-value as dif from gastank where date = '$d' and substr(timestamp,9)= 'pm' and gas_id = 2";
+                                $result = mysqli_query($connect, $userQuery);
+                                $row = mysqli_fetch_assoc($result);
+                                ?>
+                                  <td><?php echo number_format($row['dif']); ?></td>
+                                <?php
+                                $userQuery = "select (select value from gastank where date = '$d' and substr(timestamp,9)= 'am' and gas_id = 3 limit 1)-value as dif from gastank where date = '$d' and substr(timestamp,9)= 'pm' and gas_id = 3";
+                                $result = mysqli_query($connect, $userQuery);
+                                $row = mysqli_fetch_assoc($result);
+                                ?>
+                                  <td><?php echo number_format($row['dif']); ?></td>
+                                  </tr>
+                                <?php                                
+                              }
+                                
+                               
+                            }                      
+                            ?>
+                          </tr>
+                      <?php
+                        }
+                      } ?>
                     </table>
                   </div>
                 </div>
