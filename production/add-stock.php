@@ -13,33 +13,33 @@ if (empty($g91) && empty($g95) && empty($de)) {
     $_SESSION['msg'] = "กรุณากรอกข้อมูลให้ครบ";
     header("Location:stockFuel.php");
 } else {
-    $userQuery = "select * from gastank where gas_id = 1 and date = '$date' and substr(timestamp,7) = '$t'";
+    $userQuery = "select * from gastank where gas_id = 1 and date = '$date' and substr(timestamp,9) = '$t'";
     $result = mysqli_query($connect, $userQuery);
     if (mysqli_num_rows($result) == 0) {
         $userQuery = "insert into gastank(gas_id,value,date,timestamp,name_stamp) values(1,$g91,'$date','$time','$name')";
         $result = mysqli_query($connect, $userQuery);
     } else {
-        $userQuery = "update gastank set value = $g91 , name_stamp = '$name' ,timestamp = '$time' where gas_id = 1 and date = '$date' and substr(timestamp,7) = '$t'";
+        $userQuery = "update gastank set value = $g91 , name_stamp = '$name' ,timestamp = '$time' where gas_id = 1 and date = '$date' and substr(timestamp,9) = '$t'";
         $result = mysqli_query($connect, $userQuery);
     }
 
-    $userQuery = "select * from gastank where gas_id = 2 and date = '$date' and substr(timestamp,7) = '$t'";
+    $userQuery = "select * from gastank where gas_id = 2 and date = '$date' and substr(timestamp,9) = '$t'";
     $result = mysqli_query($connect, $userQuery);
     if (mysqli_num_rows($result) == 0) {
         $userQuery = "insert into gastank(gas_id,value,date,timestamp,name_stamp) values(2,$g95,'$date','$time','$name')";
         $result = mysqli_query($connect, $userQuery);
     } else {
-        $userQuery = "update gastank set value = $g95 , name_stamp = '$name' ,timestamp = '$time' where gas_id = 2 and date = '$date' and substr(timestamp,7) = '$t'";
+        $userQuery = "update gastank set value = $g95 , name_stamp = '$name' ,timestamp = '$time' where gas_id = 2 and date = '$date' and substr(timestamp,9) = '$t'";
         $result = mysqli_query($connect, $userQuery);
     }
 
-    $userQuery = "select * from gastank where gas_id = 3 and date = '$date' and substr(timestamp,7) = '$t'";
+    $userQuery = "select * from gastank where gas_id = 3 and date = '$date' and substr(timestamp,9) = '$t'";
     $result = mysqli_query($connect, $userQuery);
     if (mysqli_num_rows($result) == 0) {
         $userQuery = "insert into gastank(gas_id,value,date,timestamp,name_stamp) values(3,$de,'$date','$time','$name') ";
         $result = mysqli_query($connect, $userQuery);
     } else {
-        $userQuery = "update gastank set value = $de , name_stamp = '$name' ,timestamp = '$time' where gas_id = 3 and date = '$date' and substr(timestamp,7) = '$t'";
+        $userQuery = "update gastank set value = $de , name_stamp = '$name' ,timestamp = '$time' where gas_id = 3 and date = '$date' and substr(timestamp,9) = '$t'";
         $result = mysqli_query($connect, $userQuery);
     }
     $_SESSION['msg'] = "ดำเนินการสำเร็จ";
