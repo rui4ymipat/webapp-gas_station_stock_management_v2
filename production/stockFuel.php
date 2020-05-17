@@ -504,7 +504,7 @@
                               } else {
                                 while ($row = mysqli_fetch_assoc($result)) {
                                 ?>
-                                  <td rowspan="2"><?php echo number_format($row['current_price']); ?></td>
+                                  <td rowspan="2"><?php echo $row['current_price']; ?></td>
                                 <?php
                                 }
                               }
