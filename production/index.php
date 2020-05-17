@@ -396,11 +396,11 @@
                       <td><img src="https://www.bangchak.co.th/img/logo-oil/logo-Hi-diesel.png" alt="desel"></td>
                     </tr>
                     <tr class="price">
-                      <td><?php echo $data_sell[0]; ?><div style="font-size: 40%;">บาท/ลิตร</div>
+                      <td><?php echo number_format($data_sell[0],2); ?><div style="font-size: 40%;">บาท/ลิตร</div>
                       </td>
-                      <td><?php echo $data_sell[1]; ?><div style="font-size: 40%;">บาท/ลิตร</div>
+                      <td><?php echo number_format($data_sell[1],2); ?><div style="font-size: 40%;">บาท/ลิตร</div>
                       </td>
-                      <td><?php echo $data_sell[2]; ?><div style="font-size: 40%;">บาท/ลิตร</div>
+                      <td><?php echo number_format($data_sell[2],2); ?><div style="font-size: 40%;">บาท/ลิตร</div>
                       </td>
                     </tr>
                   </table>
@@ -431,11 +431,11 @@
                       <td><img src="https://www.bangchak.co.th/img/logo-oil/logo-Hi-diesel.png" alt="desel"></td>
                     </tr>
                     <tr class="price">
-                      <td><?php echo $data_current[0]; ?><div style="font-size: 40%;">บาท/ลิตร</div>
+                      <td><?php echo number_format($data_current[0],2); ?><div style="font-size: 40%;">บาท/ลิตร</div>
                       </td>
-                      <td><?php echo $data_current[1]; ?><div style="font-size: 40%;">บาท/ลิตร</div>
+                      <td><?php echo number_format($data_current[1],2); ?><div style="font-size: 40%;">บาท/ลิตร</div>
                       </td>
-                      <td><?php echo $data_current[2]; ?><div style="font-size: 40%;">บาท/ลิตร</div>
+                      <td><?php echo number_format($data_current[2],2); ?><div style="font-size: 40%;">บาท/ลิตร</div>
                       </td>
                     </tr>
                   </table>
