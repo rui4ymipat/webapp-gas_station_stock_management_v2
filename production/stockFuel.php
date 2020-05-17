@@ -414,7 +414,7 @@
                               ?>
                               
                               <?php
-                              $userQuery = "select (select value from gastank where date < '$d' and substr(timestamp,9)= 'pm' and gas_id = 1 limit 1)-value as dif from gastank where date = '$d' and substr(timestamp,9)= 'am' and gas_id = 1";
+                              $userQuery = "select (select value from gastank where date < '$da' and substr(timestamp,9)= 'pm' and gas_id = 1 limit 1)-value as dif from gastank where date = '$da' and substr(timestamp,9)= 'am' and gas_id = 1";
                               $result = mysqli_query($connect, $userQuery);
                               if (mysqli_num_rows($result) == 0) {
                               ?>
@@ -427,13 +427,13 @@
                                 ?>
                                   <td><?php echo number_format($row['dif']); ?></td>
                                 <?php
-                                $userQuery = "select (select value from gastank where date < '$d' and substr(timestamp,9)= 'pm' and gas_id = 2 limit 1)-value as dif from gastank where date = '$d' and substr(timestamp,9)= 'am' and gas_id = 2";
+                                $userQuery = "select (select value from gastank where date < '$da' and substr(timestamp,9)= 'pm' and gas_id = 2 limit 1)-value as dif from gastank where date = '$da' and substr(timestamp,9)= 'am' and gas_id = 2";
                                 $result = mysqli_query($connect, $userQuery);
                                 $row = mysqli_fetch_assoc($result);
                                 ?>
                                   <td><?php echo number_format($row['dif']); ?></td>
                                 <?php
-                                $userQuery = "select (select value from gastank where date < '$d' and substr(timestamp,9)= 'pm' and gas_id = 3 limit 1)-value as dif from gastank where date = '$d' and substr(timestamp,9)= 'am' and gas_id = 3";
+                                $userQuery = "select (select value from gastank where date < '$da' and substr(timestamp,9)= 'pm' and gas_id = 3 limit 1)-value as dif from gastank where date = '$da' and substr(timestamp,9)= 'am' and gas_id = 3";
                                 $result = mysqli_query($connect, $userQuery);
                                 $row = mysqli_fetch_assoc($result);
                                 ?>
@@ -445,7 +445,7 @@
                               ?>
                               
                               <?php
-                              $userQuery = "select (select value from gastank where date = '$d' and substr(timestamp,9)= 'am' and gas_id = 1 limit 1)-value as dif from gastank where date = '$d' and substr(timestamp,9)= 'pm' and gas_id = 1";
+                              $userQuery = "select (select value from gastank where date = '$da' and substr(timestamp,9)= 'am' and gas_id = 1 limit 1)-value as dif from gastank where date = '$da' and substr(timestamp,9)= 'pm' and gas_id = 1";
                               $result = mysqli_query($connect, $userQuery);
                               if (mysqli_num_rows($result) == 0) {
                               ?>
@@ -458,13 +458,13 @@
                                 ?>
                                   <td><?php echo number_format($row['dif']); ?></td>
                                 <?php
-                                $userQuery = "select (select value from gastank where date = '$d' and substr(timestamp,9)= 'am' and gas_id = 2 limit 1)-value as dif from gastank where date = '$d' and substr(timestamp,9)= 'pm' and gas_id = 2";
+                                $userQuery = "select (select value from gastank where date = '$da' and substr(timestamp,9)= 'am' and gas_id = 2 limit 1)-value as dif from gastank where date = '$da' and substr(timestamp,9)= 'pm' and gas_id = 2";
                                 $result = mysqli_query($connect, $userQuery);
                                 $row = mysqli_fetch_assoc($result);
                                 ?>
                                   <td><?php echo number_format($row['dif']); ?></td>
                                 <?php
-                                $userQuery = "select (select value from gastank where date = '$d' and substr(timestamp,9)= 'am' and gas_id = 3 limit 1)-value as dif from gastank where date = '$d' and substr(timestamp,9)= 'pm' and gas_id = 3";
+                                $userQuery = "select (select value from gastank where date = '$da' and substr(timestamp,9)= 'am' and gas_id = 3 limit 1)-value as dif from gastank where date = '$da' and substr(timestamp,9)= 'pm' and gas_id = 3";
                                 $result = mysqli_query($connect, $userQuery);
                                 $row = mysqli_fetch_assoc($result);
                                 ?>
