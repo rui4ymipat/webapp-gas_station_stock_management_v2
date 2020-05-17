@@ -515,6 +515,7 @@
                   </table>
                   <br>
                   <?php
+                  require_once "connect.php";
                   date_default_timezone_set("Asia/Bangkok");
                   $date = date("Y-m-d");
                   $userQuery = "select * from gas1815 where date = '$date'";
