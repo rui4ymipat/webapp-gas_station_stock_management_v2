@@ -482,6 +482,7 @@
               <?php } else { ?>
                 <div class="setfont1">
                   <?php
+                  require_once "connect.php";
                   date_default_timezone_set("Asia/Bangkok");
                   $date = date("Y-m-d");
                   $userQuery = "select * from gas6134 where date = '$date'";
@@ -514,8 +515,7 @@
                     </tr>
                   </table>
                   <br>
-                  <?php
-                  require_once "connect.php";
+                  <?php                
                   date_default_timezone_set("Asia/Bangkok");
                   $date = date("Y-m-d");
                   $userQuery = "select * from gas1815 where date = '$date'";
