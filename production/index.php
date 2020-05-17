@@ -370,7 +370,22 @@
 
 
               <?php if ($_SESSION['user_level'] == 2 || $_SESSION['user_level'] == 3) { ?>
-
+                <?php
+                require_once "connect.php";
+                date_default_timezone_set("Asia/Bangkok");
+                $date = date("Y-m-d");
+                $userQuery = "select sell_price from today_price where date = '$date' order by gas_id";
+                $result = mysqli_query($connect, $userQuery);
+                if (mysqli_num_rows($result) == 0) {
+                  for ($i = 0; $i < 3; $i++) {
+                    $data_sell[] = 0;
+                  }
+                } else {
+                  while ($row = mysqli_fetch_assoc($result)) {
+                    $data_sell[] = $row['sell_price'];
+                  }
+                }
+                ?>
 
                 <div class="setfont1">
                   <h1 class="todayprice">ราคาน้ำมันหน้าป้าย</h1>
@@ -381,17 +396,33 @@
                       <td><img src="https://www.bangchak.co.th/img/logo-oil/logo-Hi-diesel.png" alt="desel"></td>
                     </tr>
                     <tr class="price">
-                      <td>16.68<div style="font-size: 40%;">บาท/ลิตร</div>
+                      <td><?php echo $data_sell[0]; ?><div style="font-size: 40%;">บาท/ลิตร</div>
                       </td>
-                      <td>16.95<div style="font-size: 40%;">บาท/ลิตร</div>
+                      <td><?php echo $data_sell[1]; ?><div style="font-size: 40%;">บาท/ลิตร</div>
                       </td>
-                      <td>14.72<div style="font-size: 40%;">บาท/ลิตร</div>
+                      <td><?php echo $data_sell[2]; ?><div style="font-size: 40%;">บาท/ลิตร</div>
                       </td>
                     </tr>
                   </table>
                 </div>
                 <br>
                 <div class="setfont1">
+                  <?php
+                  require_once "connect.php";
+                  date_default_timezone_set("Asia/Bangkok");
+                  $date = date("Y-m-d");
+                  $userQuery = "select current_price from today_price where date = '$date' order by gas_id";
+                  $result = mysqli_query($connect, $userQuery);
+                  if (mysqli_num_rows($result) == 0) {
+                    for ($i = 0; $i < 3; $i++) {
+                      $data_current[] = 0;
+                    }
+                  } else {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                      $data_current[] = $row['current_price'];
+                    }
+                  }
+                  ?>
                   <h1 class="todayprice">ราคาน้ำมันต้นทุน</h1>
                   <table class="showgas">
                     <tr class="name">
@@ -400,11 +431,11 @@
                       <td><img src="https://www.bangchak.co.th/img/logo-oil/logo-Hi-diesel.png" alt="desel"></td>
                     </tr>
                     <tr class="price">
-                      <td>16.68<div style="font-size: 40%;">บาท/ลิตร</div>
+                      <td><?php echo $data_current[0]; ?><div style="font-size: 40%;">บาท/ลิตร</div>
                       </td>
-                      <td>16.95<div style="font-size: 40%;">บาท/ลิตร</div>
+                      <td><?php echo $data_current[1]; ?><div style="font-size: 40%;">บาท/ลิตร</div>
                       </td>
-                      <td>14.72<div style="font-size: 40%;">บาท/ลิตร</div>
+                      <td><?php echo $data_current[2]; ?><div style="font-size: 40%;">บาท/ลิตร</div>
                       </td>
                     </tr>
                   </table>
@@ -515,7 +546,7 @@
                     </tr>
                   </table>
                   <br>
-                  <?php                
+                  <?php
                   date_default_timezone_set("Asia/Bangkok");
                   $date = date("Y-m-d");
                   $userQuery = "select * from gas1815 where date = '$date'";
