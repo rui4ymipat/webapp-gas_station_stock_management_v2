@@ -481,53 +481,101 @@
 
               <?php } else { ?>
                 <div class="setfont1">
+                  <?php
+                  date_default_timezone_set("Asia/Bangkok");
+                  $date = date("Y-m-d");
+                  $userQuery = "select * from gas6134 where date = '$date'";
+                  $result = mysqli_query($connect, $userQuery);
+                  if (mysqli_num_rows($result) == 0) {
+                    $g91 = 0;
+                    $g95 = 0;
+                    $die = 0;
+                  } else {
+                    $row = mysqli_fetch_assoc($result);
+                    $g91 = $row['g91'];
+                    $g95 = $row['g95'];
+                    $die = $row['diesel'];
+                  }
+                  ?>
                   <h1 class="todayprice">ปริมาณน้ำมันบนรถทะเบียน 6134</h1>
                   <table class="showgas">
                     <tr class="name">
-                      <td>Gasohol 91</td>
-                      <td>Gasohol 95</td>
-                      <td>Diesel</td>
+                      <td><img src="https://www.bangchak.co.th/img/logo-oil/logo-gasohol-91.png" alt="g91"></td>
+                      <td><img src="https://www.bangchak.co.th/img/logo-oil/logo-gasohol-95.png" alt="g95"></td>
+                      <td><img src="https://www.bangchak.co.th/img/logo-oil/logo-Hi-diesel.png" alt="desel"></td>
                     </tr>
                     <tr class="price">
-                      <td>32,000 <div style="font-size: 40%;">ลิตร</div>
+                      <td><?php echo number_format($g91)  ?> <div style="font-size: 40%;">ลิตร</div>
                       </td>
-                      <td>21,000 <div style="font-size: 40%;">ลิตร</div>
+                      <td><?php echo number_format($g95)  ?> <div style="font-size: 40%;">ลิตร</div>
                       </td>
-                      <td>1,000 <div style="font-size: 40%;">ลิตร</div>
+                      <td><?php echo number_format($die)  ?> <div style="font-size: 40%;">ลิตร</div>
                       </td>
                     </tr>
                   </table>
                   <br>
+                  <?php
+                  date_default_timezone_set("Asia/Bangkok");
+                  $date = date("Y-m-d");
+                  $userQuery = "select * from gas1815 where date = '$date'";
+                  $result = mysqli_query($connect, $userQuery);
+                  if (mysqli_num_rows($result) == 0) {
+                    $g91 = 0;
+                    $g95 = 0;
+                    $die = 0;
+                  } else {
+                    $row = mysqli_fetch_assoc($result);
+                    $g91 = $row['g91'];
+                    $g95 = $row['g95'];
+                    $die = $row['diesel'];
+                  }
+                  ?>
                   <h1 class="todayprice">ปริมาณน้ำมันบนรถทะเบียน 1815</h1>
                   <table class="showgas">
                     <tr class="name">
-                      <td>Gasohol 91</td>
-                      <td>Gasohol 95</td>
-                      <td>Diesel</td>
+                      <td><img src="https://www.bangchak.co.th/img/logo-oil/logo-gasohol-91.png" alt="g91"></td>
+                      <td><img src="https://www.bangchak.co.th/img/logo-oil/logo-gasohol-95.png" alt="g95"></td>
+                      <td><img src="https://www.bangchak.co.th/img/logo-oil/logo-Hi-diesel.png" alt="desel"></td>
                     </tr>
                     <tr class="price">
-                      <td>32,000 <div style="font-size: 40%;">ลิตร</div>
+                      <td><?php echo number_format($g91)  ?> <div style="font-size: 40%;">ลิตร</div>
                       </td>
-                      <td>21,000 <div style="font-size: 40%;">ลิตร</div>
+                      <td><?php echo number_format($g95)  ?> <div style="font-size: 40%;">ลิตร</div>
                       </td>
-                      <td>1,000 <div style="font-size: 40%;">ลิตร</div>
+                      <td><?php echo number_format($die)  ?> <div style="font-size: 40%;">ลิตร</div>
                       </td>
                     </tr>
                   </table>
                   <br>
+                  <?php
+                  date_default_timezone_set("Asia/Bangkok");
+                  $date = date("Y-m-d");
+                  $userQuery = "select * from gasisuzu where date = '$date'";
+                  $result = mysqli_query($connect, $userQuery);
+                  if (mysqli_num_rows($result) == 0) {
+                    $g91 = 0;
+                    $g95 = 0;
+                    $die = 0;
+                  } else {
+                    $row = mysqli_fetch_assoc($result);
+                    $g91 = $row['g91'];
+                    $g95 = $row['g95'];
+                    $die = $row['diesel'];
+                  }
+                  ?>
                   <h1 class="todayprice">ปริมาณน้ำมันบนรถทะเบียน ISUZU</h1>
                   <table class="showgas">
                     <tr class="name">
-                      <td>Gasohol 91</td>
-                      <td>Gasohol 95</td>
-                      <td>Diesel</td>
+                      <td><img src="https://www.bangchak.co.th/img/logo-oil/logo-gasohol-91.png" alt="g91"></td>
+                      <td><img src="https://www.bangchak.co.th/img/logo-oil/logo-gasohol-95.png" alt="g95"></td>
+                      <td><img src="https://www.bangchak.co.th/img/logo-oil/logo-Hi-diesel.png" alt="desel"></td>
                     </tr>
                     <tr class="price">
-                      <td>32,000 <div style="font-size: 40%;">ลิตร</div>
+                      <td><?php echo number_format($g91)  ?> <div style="font-size: 40%;">ลิตร</div>
                       </td>
-                      <td>21,000 <div style="font-size: 40%;">ลิตร</div>
+                      <td><?php echo number_format($g95)  ?> <div style="font-size: 40%;">ลิตร</div>
                       </td>
-                      <td>1,000 <div style="font-size: 40%;">ลิตร</div>
+                      <td><?php echo number_format($die)  ?> <div style="font-size: 40%;">ลิตร</div>
                       </td>
                     </tr>
                   </table>
