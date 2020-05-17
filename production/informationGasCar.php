@@ -377,7 +377,9 @@
                             <td><?php echo number_format($Dep['current_price'] * $row['value'], 2); ?></td>
                             <td><?php echo number_format($row['cost'], 2); ?></td>
                             <td><?php echo number_format($row['other_price']);
-                                echo "(", $row['detail'], ")"; ?></td>
+                                if(!empty($row['detail'])){
+                                  echo "(", $row['detail'], ")";
+                                } ?></td>
                             <td><?php echo number_format($row['cost'] + $row['other_price'] + ($Dep['current_price'] * $row['value']), 2); ?></td>
                             <td><?php echo $row['G91']; ?></td>
                             <td><?php echo $row['G95']; ?></td>
