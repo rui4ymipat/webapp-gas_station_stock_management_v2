@@ -446,11 +446,6 @@
                       ?>
                         <?php
                         for ($i = 0; $i < 2; $i++) {
-                          if ($i == 0) {
-                            $f_time = 'am';
-                          } else {
-                            $f_time == 'pm';
-                          }
                         ?>
                           <tr>
                             <?php if ($i == 0) { ?>
@@ -460,28 +455,47 @@
                             } else {
                             ?>
                               <td style="height: 35px;">ย</td>
-                            <?php
+                              <?php
                             }
-                            $userQuery = "select value from gastank where date = '$da' and substr(timestamp,9) = '$f_time' order by gas_id";
-                            $result = mysqli_query($connect, $userQuery);
-                            if (mysqli_num_rows($result) == 0) {
-                            ?>
-                              <td>0</td>
-                              <td>0</td>
-                              <td>0</td>
-                              <?php
-                            } else {
-                              while ($row = mysqli_fetch_assoc($result)) {
+                            if ($i == 0) {
+                              $userQuery = "select value from gastank where date = '$da' and substr(timestamp,9) = 'am' order by gas_id";
+                              $result = mysqli_query($connect, $userQuery);
+                              if (mysqli_num_rows($result) == 0) {
                               ?>
-                                <td><?php echo number_format($row['value']); ?></td>
-                              <?php
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <?php
+                              } else {
+                                while ($row = mysqli_fetch_assoc($result)) {
+                                ?>
+                                  <td><?php echo number_format($row['value']); ?></td>
+                                <?php
+                                }
+                              }
+                            }
+                            else{
+                              $userQuery = "select value from gastank where date = '$da' and substr(timestamp,9) = 'pm' order by gas_id";
+                              $result = mysqli_query($connect, $userQuery);
+                              if (mysqli_num_rows($result) == 0) {
+                              ?>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <?php
+                              } else {
+                                while ($row = mysqli_fetch_assoc($result)) {
+                                ?>
+                                  <td><?php echo number_format($row['value']); ?></td>
+                                <?php
+                                }
                               }
                             }
                             if ($i == 0) {
                               $userQuery = "select current_price from today_price where date = '$da'";
                               $result = mysqli_query($connect, $userQuery);
                               if (mysqli_num_rows($result) == 0) {
-                              ?>
+                                ?>
                                 <td rowspan="2">0</td>
                                 <td rowspan="2">0</td>
                                 <td rowspan="2">0</td>
@@ -490,7 +504,7 @@
                                 while ($row = mysqli_fetch_assoc($result)) {
                                 ?>
                                   <td rowspan="2"><?php echo number_format($row['current_price']); ?></td>
-                              <?php
+                                <?php
                                 }
                               }
                             }
@@ -498,7 +512,7 @@
                               $userQuery = "select value from gastank where date = '$da' and substr(timestamp,9) = 'pm' order by gas_id";
                               $result = mysqli_query($connect, $userQuery);
                               if (mysqli_num_rows($result) == 0) {
-                              ?>
+                                ?>
                                 <td rowspan="2">0</td>
                                 <td rowspan="2">0</td>
                                 <td rowspan="2">0</td>
@@ -507,7 +521,7 @@
                                 while ($row = mysqli_fetch_assoc($result)) {
                                 ?>
                                   <td rowspan="2"><?php echo number_format($row['value']); ?></td>
-                              <?php
+                            <?php
                                 }
                               }
                             }
