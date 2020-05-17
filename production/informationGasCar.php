@@ -452,8 +452,12 @@
                           $dt = date("Y-m-$i");
                           $q1 = "select current_price from today_price where date = '$dt' and gas_id = 3";
                           $result = mysqli_query($connect, $q1);
-                          $row = mysqli_fetch_assoc($result);
-                          $current_price = $row['current_price'];
+                          if (mysqli_num_rows($result) == 0) {
+                            $current_price = 0;
+                          } else {
+                            $row = mysqli_fetch_assoc($result);
+                            $current_price = $row['current_price'];
+                          }
 
                           $q1 = "select number,value from C6134 where date = '$dt'";
                           $result = mysqli_query($connect, $q1);
