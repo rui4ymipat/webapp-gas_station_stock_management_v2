@@ -81,7 +81,8 @@
     }
 
     tr.w th {
-      width: 8%
+      width: 8%;
+      height: 25px;
     }
   </style>
   <?php
@@ -416,7 +417,7 @@
                       <tr>
                         <th rowspan="2" style="width: 15%;">วันที่</th>
                         <th rowspan="2" style="width: 1%;">กะ</th>
-                        <th colspan="3">Tank</th>
+                        <th colspan="3" style="height: 25px;">Tank</th>
                         <th colspan="3">ซิ้อมา</th>
                         <th colspan="3">รวม</th>
                       </tr>
@@ -533,7 +534,7 @@
                     </table>
                     <table border="1" style="display: inline-block; margin-left:2%;text-align: center;width:25%;">
                       <tr>
-                        <th colspan="3">รถอีซูซุ</th>
+                        <th colspan="3" style="height: 25px;">รถอีซูซุ</th>
                       </tr>
                       <tr class="w">
                         <th>G91</th>
