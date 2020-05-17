@@ -396,11 +396,11 @@
                       <td><img src="https://www.bangchak.co.th/img/logo-oil/logo-Hi-diesel.png" alt="desel"></td>
                     </tr>
                     <tr class="price">
-                      <td><?php echo number_format($data_sell[0],2); ?><div style="font-size: 40%;">บาท/ลิตร</div>
+                      <td><?php echo number_format($data_sell[0], 2); ?><div style="font-size: 40%;">บาท/ลิตร</div>
                       </td>
-                      <td><?php echo number_format($data_sell[1],2); ?><div style="font-size: 40%;">บาท/ลิตร</div>
+                      <td><?php echo number_format($data_sell[1], 2); ?><div style="font-size: 40%;">บาท/ลิตร</div>
                       </td>
-                      <td><?php echo number_format($data_sell[2],2); ?><div style="font-size: 40%;">บาท/ลิตร</div>
+                      <td><?php echo number_format($data_sell[2], 2); ?><div style="font-size: 40%;">บาท/ลิตร</div>
                       </td>
                     </tr>
                   </table>
@@ -431,11 +431,11 @@
                       <td><img src="https://www.bangchak.co.th/img/logo-oil/logo-Hi-diesel.png" alt="desel"></td>
                     </tr>
                     <tr class="price">
-                      <td><?php echo number_format($data_current[0],2); ?><div style="font-size: 40%;">บาท/ลิตร</div>
+                      <td><?php echo number_format($data_current[0], 2); ?><div style="font-size: 40%;">บาท/ลิตร</div>
                       </td>
-                      <td><?php echo number_format($data_current[1],2); ?><div style="font-size: 40%;">บาท/ลิตร</div>
+                      <td><?php echo number_format($data_current[1], 2); ?><div style="font-size: 40%;">บาท/ลิตร</div>
                       </td>
-                      <td><?php echo number_format($data_current[2],2); ?><div style="font-size: 40%;">บาท/ลิตร</div>
+                      <td><?php echo number_format($data_current[2], 2); ?><div style="font-size: 40%;">บาท/ลิตร</div>
                       </td>
                     </tr>
                   </table>
@@ -451,11 +451,24 @@
                       <td>ส่วนลดจากบริษัท</td>
                     </tr>
                     <tr class="price">
-                      <td>32,000 <div style="font-size: 40%;">ลิตร</div>
+                      <td><?php
+                          date_default_timezone_set("Asia/Bangkok");
+                          $date = date("Y-m-d");
+                          $userQuery = "select sum(value) as sum from history where account = 1 and date = '$date'";
+                          $result = mysqli_query($connect, $userQuery);
+                          $row = mysqli_fetch_assoc($result);
+                          echo number_format($row['sum']) ?> <div style="font-size: 40%;">ลิตร</div>
                       </td>
-                      <td>21,000 <div style="font-size: 40%;">ลิตร</div>
+                      <td>
+                        <?php $userQuery = "select sum(value) as sum from history where account = 2 and date = '$date'";
+                        $result = mysqli_query($connect, $userQuery);
+                        $row = mysqli_fetch_assoc($result);
+                        echo number_format($row['sum']) ?> <div style="font-size: 40%;">ลิตร</div>
                       </td>
-                      <td>11,000 <div style="font-size: 40%;">ลิตร</div>
+                      <td><?php $userQuery = "select sum(value) as sum from history where account = 3 and date = '$date'";
+                                $result = mysqli_query($connect, $userQuery);
+                                $row = mysqli_fetch_assoc($result);
+                                echo number_format($row['sum']) ?>  <div style="font-size: 40%;">ลิตร</div>
                       </td>
                       <td>23,100 <div style="font-size: 40%;">บาท</div>
                       </td>
