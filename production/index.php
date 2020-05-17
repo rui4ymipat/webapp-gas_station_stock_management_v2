@@ -453,22 +453,23 @@
                     <tr class="price">
                       <td><?php
                           date_default_timezone_set("Asia/Bangkok");
-                          $date = date("Y-m-d");
-                          $userQuery = "select sum(value) as sum from history where account = 1 and date = '$date'";
+                          $date_start = date("Y-m-01");
+                          $date_end = date("Y-m-31");
+                          $userQuery = "select sum(value) as sum from history where account = 1 and date between '$date_start' and '$date_end'";
                           $result = mysqli_query($connect, $userQuery);
                           $row = mysqli_fetch_assoc($result);
                           echo number_format($row['sum']) ?> <div style="font-size: 40%;">ลิตร</div>
                       </td>
                       <td>
-                        <?php $userQuery = "select sum(value) as sum from history where account = 2 and date = '$date'";
+                        <?php $userQuery = "select sum(value) as sum from history where account = 2 and date between '$date_start' and '$date_end'";
                         $result = mysqli_query($connect, $userQuery);
                         $row = mysqli_fetch_assoc($result);
                         echo number_format($row['sum']) ?> <div style="font-size: 40%;">ลิตร</div>
                       </td>
-                      <td><?php $userQuery = "select sum(value) as sum from history where account = 3 and date = '$date'";
-                                $result = mysqli_query($connect, $userQuery);
-                                $row = mysqli_fetch_assoc($result);
-                                echo number_format($row['sum']) ?>  <div style="font-size: 40%;">ลิตร</div>
+                      <td><?php $userQuery = "select sum(value) as sum from history where account = 3 and date between '$date_start' and '$date_end'";
+                          $result = mysqli_query($connect, $userQuery);
+                          $row = mysqli_fetch_assoc($result);
+                          echo number_format($row['sum']) ?> <div style="font-size: 40%;">ลิตร</div>
                       </td>
                       <td>23,100 <div style="font-size: 40%;">บาท</div>
                       </td>
