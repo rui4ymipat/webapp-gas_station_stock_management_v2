@@ -264,7 +264,7 @@
                   
                     
                     ?>
-                    <textarea name="t" id="" cols="30" rows="10">
+                    <textarea name="t" id="" cols="50" rows="10">
                     <?php foreach($text as $index=>$value){echo $value,"\r\n";} ?>
                     </textarea>
                     <input type="submit" class="btn btn-success" value="Submit">
