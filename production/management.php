@@ -228,12 +228,12 @@
               </div>
               <div class="setfont1">
                 <div class="row1">
-                  <div class="setborder" style="width: 50%;">
+                  <div class="setborder" style="width: 80%;">
                     <div class="column1">
                       <h1 style="font-weight: 800;color: #2B3E54;font-size: 200%;">จัดการบัญชีผู้ใช้</h1>
                       <form action="addUser.php" method="POST">
                         <div class="showdetail">เพิ่มบัญชีผู้ใช้</div>
-                        <table>
+                        <table style="margin-top:20px;"> 
                           <tr>
                             <td class="name">ID </td>
                             <td><input type="text" name="id" placeholder="ID"></td>
@@ -264,10 +264,10 @@
                   
                     
                     ?>
-                    <textarea name="t" id="" cols="50" rows="10">
+                    <textarea name="t" id="" cols="50" rows="11" style="width: 90%;">
                     <?php foreach($text as $index=>$value){echo $value,"\r\n";} ?>
                     </textarea>
-                    <input type="submit" class="btn btn-success" value="Submit">
+                    <input type="submit" class="btn btn-success" value="Submit" style="display: block;">
                     </form>
                     </div>
                   </div>
