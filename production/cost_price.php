@@ -159,9 +159,9 @@
                 <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">กรอกข้อมูลประจำวัน</h1>
                 <table border="1">
                   <tr>
-                    <th rowspan="2" style="height: 65px;">วันที่</th>
+                    <th rowspan="2" style="height: 65px; width:13%;">วันที่</th>
                     <th rowspan="2">ชนิด</th>
-                    <th colspan="5"><a href="cost.php" style="color: #2B3E54;">ราคา/ปริมาณ</a></th>
+                    <th colspan="5"><a href="cost.php" style="color: #2B3E54;">ราคา/ปริมาณ<i class="fa fa-retweet"></i></a></th>
                     <th colspan="2">น้ำมันเดิม</th>
                     <th colspan="3">สรุป</th>
                   </tr>
