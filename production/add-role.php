@@ -2,6 +2,6 @@
  $t = $_GET['t'];
 
  $file = fopen('note.txt','w+');
- fwrite($file,$t);
+ file_put_contents($file,$t);
  $_SESSION['msg'] = "ดำเนินการสำเร็จ";
 header("Location:management.php");
