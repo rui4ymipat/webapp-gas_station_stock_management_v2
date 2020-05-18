@@ -255,16 +255,16 @@
                       </form>
                     </div>
                     <div class="column2" style="display: inline-block; margin-left:50px;">
-                    <h1 style="font-weight: 800;color: #2B3E54;font-size: 200%;">ตารางงานประจำวัน</h1>
+                    <h1 style="font-weight: 800;color: #2B3E54;font-size: 200%; width:50%;">ตารางงานประจำวัน</h1>
                     <form action="add-role.php">
                     <div class="showdetail">เปลี่ยนตารางงานประจำวัน</div>
                     <?php 
                     
-                    $file = fopen('note.txt','w+');
-                    $read = file_get_contents($file);
+                    $text = file('note.txt');
+                  
                     
                     ?>
-                    <input type="text" name="t" placeholder="<?php echo $read; ?>" value="<?php echo $read; ?>">
+                    <input style="height:195px;" type="text" name="t" placeholder="<?php foreach($text as $index=>$value){echo $value,"\n";} ?>" value="<?php  foreach($text as $index=>$value){echo $value,"\n";} ?>">
                     <input type="submit" class="btn btn-success" value="Submit">
                     </form>
                     </div>
