@@ -161,7 +161,7 @@
                   <tr>
                     <th rowspan="2" style="height: 65px;">วันที่</th>
                     <th rowspan="2">ชนิด</th>
-                    <th colspan="5">ปริมาณ <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="" data-original-title="ราคา"><a href="cost_price.php">ราคา</a></button></th>
+                    <th colspan="5">ปริมาณ/<a href="cost_price.php">ราคา</a></th>
                     <th colspan="2">น้ำมันเดิม</th>
                     <th colspan="3">สรุป</th>
                   </tr>
