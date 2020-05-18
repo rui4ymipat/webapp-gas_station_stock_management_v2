@@ -173,16 +173,15 @@
                 <?php if ($_SESSION['user_level'] == 2) { ?>
                   <li><a href="fuelprice.php"><i class="fa fa-money"></i> ราคาน้ำมัน</a></li>
                   <li><a href="history.php"><i class="fa fa-history"></i> ประวัติการสั่งซื้อ</a></li>
-                  <li><a href="cost.php"><i class="fa fa-bar-chart"></i> ต้นทุน</a></li>   
+                  <li><a href="cost.php"><i class="fa fa-bar-chart"></i> ต้นทุน</a></li>
                   <li><a href="informationGasCar.php"><i class="fa fa-truck"></i> ข้อมูลรถน้ำมัน</a></li>
                   <li><a href="stockFuel.php"><i class="fa fa-cube"></i> สต็อกน้ำมัน</a></li>
                   <li><a href="management.php"><i class="fa fa-users"></i> จัดการบัญชีผู้ใช้</a></li>
                   <li><a href="logout.php"><i class="fa fa-sign-out"> </i>Log Out</a></li>
-                <?php }
-                else if ($_SESSION['user_level'] == 3) { ?>
+                <?php } else if ($_SESSION['user_level'] == 3) { ?>
                   <li><a href="fuelprice.php"><i class="fa fa-money"></i> ราคาน้ำมัน</a></li>
                   <li><a href="history.php"><i class="fa fa-history"></i> ประวัติการสั่งซื้อ</a></li>
-                  <li><a href="cost.php"><i class="fa fa-bar-chart"></i> ต้นทุน</a></li>   
+                  <li><a href="cost.php"><i class="fa fa-bar-chart"></i> ต้นทุน</a></li>
                   <li><a href="informationGasCar.php"><i class="fa fa-truck"></i> ข้อมูลรถน้ำมัน</a></li>
                   <li><a href="stockFuel.php"><i class="fa fa-cube"></i> สต็อกน้ำมัน</a></li>
                   <li><a href="logout.php"><i class="fa fa-sign-out"> </i>Log Out</a></li>
@@ -220,7 +219,7 @@
         <div class="row">
           <div class="col-md-12 col-sm-12 ">
             <div class="dashboard_graph">
-                  
+
               <div class="row x_title">
 
                 <div class="col-md-6">
@@ -230,30 +229,44 @@
               <div class="setfont1">
                 <div class="row1">
                   <div class="setborder">
-                    <h1 style="font-weight: 800;color: #2B3E54;font-size: 200%;">จัดการบัญชีผู้ใช้</h1>
-                    <form action="addUser.php" method="POST">
-
-                      <div class="showdetail">เพิ่มบัญชีผู้ใช้</div>
-                      <table>
-                        <tr>
-                          <td class="name">ID </td>
-                          <td><input type="text" name="id" placeholder="ID"></td>
-                        </tr>
-                        <tr>
-                          <td class="name">Password </td>
-                          <td><input type="password" name="pass" placeholder="Password"></td>
-                        </tr>
-                        <tr>
-                          <td class="name">ชื่อ</td>
-                          <td><input type="text" name="Fname" placeholder="ชื่อจริง"></td>
-                        </tr>
-                        <tr>
-                          <td class="name">นามสกุล</td>
-                          <td><input type="text" name="Lname" placeholder="นามสกุล"></td>
-                        </tr>
-                      </table>
-                      <input type="submit" class="btn btn-success" value="Submit">
+                    <div class="column1">
+                      <h1 style="font-weight: 800;color: #2B3E54;font-size: 200%;">จัดการบัญชีผู้ใช้</h1>
+                      <form action="addUser.php" method="POST">
+                        <div class="showdetail">เพิ่มบัญชีผู้ใช้</div>
+                        <table>
+                          <tr>
+                            <td class="name">ID </td>
+                            <td><input type="text" name="id" placeholder="ID"></td>
+                          </tr>
+                          <tr>
+                            <td class="name">Password </td>
+                            <td><input type="password" name="pass" placeholder="Password"></td>
+                          </tr>
+                          <tr>
+                            <td class="name">ชื่อ</td>
+                            <td><input type="text" name="Fname" placeholder="ชื่อจริง"></td>
+                          </tr>
+                          <tr>
+                            <td class="name">นามสกุล</td>
+                            <td><input type="text" name="Lname" placeholder="นามสกุล"></td>
+                          </tr>
+                        </table>
+                        <input type="submit" class="btn btn-success" value="Submit">
+                      </form>
+                    </div>
+                    <div class="column2" style="display: inline-table; margin-left:50px;">
+                    <h1 style="font-weight: 800;color: #2B3E54;font-size: 200%;">ตารางงานประจำวัน</h1>
+                    <form action="add-role.php">
+                    <div class="showdetail">เปลี่ยนตารางงานประจำวัน</div>
+                    <?php 
+                    
+                    $file = fopen('note.txt','w+');
+                    $read = file_get_contents($file);
+                    
+                    ?>
+                    <input type="text" name="t" placeholder="<?php echo $read; ?>" value="<?php echo $read; ?>">
                     </form>
+                    </div>
                   </div>
                 </div>
                 <br>
@@ -300,8 +313,7 @@
                                 </td>
                                 <td style="font-size: 155%; font-weight: 550;">ลูกจ้าง</td>
                               <?php
-                              }
-                              else if ($level[$i] == 2) {
+                              } else if ($level[$i] == 2) {
                               ?>
                                 <td style="font-size: 85%;">
                                   <button class="btn btn-round btn-success"><a href="add_controller.php?id=<?php echo $id[$i]; ?>" style="color: white;">สิทธิ์ผู้ดูแล</a></button>
