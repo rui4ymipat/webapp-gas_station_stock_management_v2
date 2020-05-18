@@ -264,7 +264,9 @@
                   
                     
                     ?>
-                    <input style="height:195px;" type="text" name="t" placeholder="<?php foreach($text as $index=>$value){echo $value,"\r\n";} ?>" value="<?php  foreach($text as $index=>$value){echo $value,"\n";} ?>">
+                    <textarea name="t" id="" cols="30" rows="10">
+                    <?php foreach($text as $index=>$value){echo $value,"\r\n";} ?>
+                    </textarea>
                     <input type="submit" class="btn btn-success" value="Submit">
                     </form>
                     </div>
