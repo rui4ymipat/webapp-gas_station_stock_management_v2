@@ -264,7 +264,7 @@
                   
                     
                     ?>
-                    <input style="height:195px;" type="text" name="t" placeholder="<?php foreach($text as $index=>$value){echo $value,"<br>";} ?>" value="<?php  foreach($text as $index=>$value){echo $value,"\n";} ?>">
+                    <input style="height:195px;" type="text" name="t" placeholder="<?php foreach($text as $index=>$value){echo $value,"\r\n";} ?>" value="<?php  foreach($text as $index=>$value){echo $value,"\n";} ?>">
                     <input type="submit" class="btn btn-success" value="Submit">
                     </form>
                     </div>
