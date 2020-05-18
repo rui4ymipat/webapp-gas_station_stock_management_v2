@@ -265,6 +265,7 @@
                     
                     ?>
                     <input type="text" name="t" placeholder="<?php echo $read; ?>" value="<?php echo $read; ?>">
+                    <input type="submit" class="btn btn-success" value="Submit">
                     </form>
                     </div>
                   </div>
