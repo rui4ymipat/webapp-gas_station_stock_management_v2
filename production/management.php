@@ -228,7 +228,7 @@
               </div>
               <div class="setfont1">
                 <div class="row1">
-                  <div class="setborder">
+                  <div class="setborder" style="width: 50%;">
                     <div class="column1">
                       <h1 style="font-weight: 800;color: #2B3E54;font-size: 200%;">จัดการบัญชีผู้ใช้</h1>
                       <form action="addUser.php" method="POST">
@@ -254,7 +254,7 @@
                         <input type="submit" class="btn btn-success" value="Submit">
                       </form>
                     </div>
-                    <div class="column2" style="display: inline-table; margin-left:50px;">
+                    <div class="column2" style="display: inline-block; margin-left:50px;">
                     <h1 style="font-weight: 800;color: #2B3E54;font-size: 200%;">ตารางงานประจำวัน</h1>
                     <form action="add-role.php">
                     <div class="showdetail">เปลี่ยนตารางงานประจำวัน</div>
@@ -413,4 +413,3 @@
 
 </html>
 
-fff
