@@ -161,7 +161,7 @@
                   <tr>
                     <th rowspan="2" style="height: 65px;width:13%;">วันที่</th>
                     <th rowspan="2">ชนิด</th>
-                    <th colspan="5" ><a href="cost_price.php" style="color: #2B3E54;">ปริมาณ/ราคา<i class="fa fa-retweet"></i></a></th>
+                    <th colspan="5" ><a href="cost_price.php" style="color: #2B3E54;">ปริมาณ/ราคา  <i class="fa fa-retweet"></i></a></th>
                     <th colspan="2">น้ำมันเดิม</th>
                     <th colspan="3">สรุป</th>
                   </tr>
