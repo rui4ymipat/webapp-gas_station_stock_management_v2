@@ -256,12 +256,12 @@
                     </div>
                     <div class="column2" style="display: inline-block; margin-left:50px;">
                     <h1 style="font-weight: 800;color: #2B3E54;font-size: 200%; width:50%;">ตารางงานประจำวัน</h1>
-                    <form action="add-role.php">
+                    <form action="add-role.php" method="GET">
                     <div class="showdetail">เปลี่ยนตารางงานประจำวัน</div>
                     <?php                    
                     $text = file('note.txt');                
                     ?>
-                    <textarea name="t" id="" cols="50" rows="11" style="width: 90%;">
+                    <textarea name="t" id="t" cols="50" rows="11" style="width: 90%;">
                     <?php foreach($text as $index=>$value){echo " ",$value,"\r\n";} ?>
                     </textarea>
                     <input type="submit" class="btn btn-success" value="Submit" style="display: block;">
