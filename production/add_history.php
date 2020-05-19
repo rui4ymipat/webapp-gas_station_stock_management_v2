@@ -146,8 +146,12 @@ if (empty($car) && empty($a)) {
     $old_price = $row['sum'];
 
     $p2 = $old_sum * $old_price;
-    $set = round(($p1 / $p2) / ($old_sum + $s_val),2);
-
+    $set = ($p1 / $p2) / ($old_sum + $s_val);
+    ?>
+    <script type="text/javascript">
+    console.log("<?php echo "$set | $p1 | $p2 | $old_sum | $s_val" ; ?>")
+    </script>
+    <?php
     $userQuery = "select * from cost where date = '$date' and gas_id = 1";
     $result = mysqli_query($connect, $userQuery);
     if (mysqli_num_rows($result) == 0) {
@@ -244,6 +248,6 @@ if (empty($car) && empty($a)) {
 
 
 
-    $_SESSION['msg'] = "ดำเนินการสำเร็จ";
-    header("Location:history.php");
+    // $_SESSION['msg'] = "ดำเนินการสำเร็จ";
+    // header("Location:history.php");
 }
