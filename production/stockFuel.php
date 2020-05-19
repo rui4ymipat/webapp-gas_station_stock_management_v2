@@ -438,19 +438,7 @@
                             <?php
                             }
                             if ($i == 0) {
-                              $userQuery = "select * from buy_gas where date = '$date'";
-                              $result3 = mysqli_query($connect, $userQuery);                             
-                              if (mysqli_num_rows($result3) == 0){
-                                $b91 = 0;
-                                $b95 = 0;
-                                $bdie = 0;
-                              }
-                              else{
-                                $row3 = mysqli_fetch_assoc($result3);
-                                $b91 = $row3['G91'];
-                                $b95 = $row3['G95'];
-                                $bdie = $row3['Desel'];
-                              }
+                              
                             ?>
 
                               <?php
@@ -482,6 +470,19 @@
                               <?php
                               }
                             } else {
+                              $userQuery = "select * from buy_gas where date = '$date'";
+                              $result3 = mysqli_query($connect, $userQuery);                             
+                              if (mysqli_num_rows($result3) == 0){
+                                $b91 = 0;
+                                $b95 = 0;
+                                $bdie = 0;
+                              }
+                              else{
+                                $row3 = mysqli_fetch_assoc($result3);
+                                $b91 = $row3['G91'];
+                                $b95 = $row3['G95'];
+                                $bdie = $row3['Desel'];
+                              }
                               ?>
 
                               <?php
