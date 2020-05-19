@@ -232,25 +232,21 @@
               <?php if ($_SESSION['user_level'] != 1) { ?>
                 <div class="setfont1">
                   <div class="setborder">
-                  <h1 style="font-weight: 800;color: #2B3E54;font-size: 200%;">จัดการบัญชีผู้ใช้</h1>
+                  <h1 style="font-weight: 800;color: #2B3E54;font-size: 200%;">กรอกข้อมูล</h1>
                       <form action="addUser.php" method="POST">
-                        <div class="showdetail">เพิ่มบัญชีผู้ใช้</div>
+                        <div class="showdetail">ปริมาณที่ซื้อมา</div>
                         <table style="margin-top:20px;"> 
                           <tr>
-                            <td class="name">ID </td>
-                            <td><input type="text" name="id" placeholder="ID"></td>
+                            <td class="name">G91</td>
+                            <td><input type="text" name="g95"></td>
                           </tr>
                           <tr>
-                            <td class="name">Password </td>
-                            <td><input type="password" name="pass" placeholder="Password"></td>
+                            <td class="name">G95</td>
+                            <td><input type="text" name="g91"></td>
                           </tr>
                           <tr>
-                            <td class="name">ชื่อ</td>
-                            <td><input type="text" name="Fname" placeholder="ชื่อจริง"></td>
-                          </tr>
-                          <tr>
-                            <td class="name">นามสกุล</td>
-                            <td><input type="text" name="Lname" placeholder="นามสกุล"></td>
+                            <td class="name">Diesel</td>
+                            <td><input type="text" name="die"></td>
                           </tr>
                         </table>
                         <input type="submit" class="btn btn-success" value="Submit">
