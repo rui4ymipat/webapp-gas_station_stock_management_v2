@@ -179,6 +179,7 @@
                   </tr>
                   <?php
                   require_once "connect.php";
+                  $month = array('-', 'มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน', 'กรกฎาคม', 'สิงหาคม', 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม');
                   $userQuery = "select date from C6134 group by date";
                   $result1 = mysqli_query($connect, $userQuery);
                   while ($lop = mysqli_fetch_assoc($result1)) {
