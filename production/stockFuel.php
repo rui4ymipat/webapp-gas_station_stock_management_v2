@@ -699,20 +699,21 @@
                               }
                             }
                             if ($i == 0) {
-                              $userQuery = "select current_price from today_price where date = '$da'";
+                              $userQuery = "select * from buy_gas where date = '$da'";
                               $result = mysqli_query($connect, $userQuery);
                               if (mysqli_num_rows($result) == 0) {
                                 ?>
                                 <td rowspan="2">0</td>
                                 <td rowspan="2">0</td>
                                 <td rowspan="2">0</td>
-                                <?php
+                              <?php
                               } else {
-                                while ($row = mysqli_fetch_assoc($result)) {
-                                ?>
-                                  <td rowspan="2"><?php echo $row['current_price']; ?></td>
-                                <?php
-                                }
+                                $row = mysqli_fetch_assoc($result);
+                              ?>
+                                <td rowspan="2"><?php echo number_format($row['G91']); ?></td>
+                                <td rowspan="2"><?php echo number_format($row['G95']); ?></td>
+                                <td rowspan="2"><?php echo number_format($row['Desel']); ?></td>
+                              <?php
                               }
                             }
                             if ($i == 0) {
