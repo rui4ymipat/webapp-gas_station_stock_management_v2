@@ -197,7 +197,7 @@ if (empty($car) && empty($a)) {
     $userQuery = "select * from cost where date = '$date' and gas_id = 2";
     $result = mysqli_query($connect, $userQuery);
     if (mysqli_num_rows($result) == 0) {
-        $userQuery = "insert into cost(gas_id,value,date) values(1,$set,'$date')";
+        $userQuery = "insert into cost(gas_id,value,date) values(2,$set,'$date')";
         $result = mysqli_query($connect, $userQuery);
     } else {
         $userQuery = "update cost set value = $set where date = '$date' and gas_id = 2";
@@ -239,7 +239,7 @@ if (empty($car) && empty($a)) {
     $userQuery = "select * from cost where date = '$date' and gas_id = 3";
     $result = mysqli_query($connect, $userQuery);
     if (mysqli_num_rows($result) == 0) {
-        $userQuery = "insert into cost(gas_id,value,date) values(1,$set,'$date')";
+        $userQuery = "insert into cost(gas_id,value,date) values(3,$set,'$date')";
         $result = mysqli_query($connect, $userQuery);
     } else {
         $userQuery = "update cost set value = $set where date = '$date' and gas_id = 3";
