@@ -119,16 +119,10 @@ if (empty($car) && empty($a)) {
 
     $userQuery = "select sum(value*price)/sum(value)+tran_price as sum from history where date = '$date' and gas_id = 1";
     $result = mysqli_query($connect, $userQuery);
-    if (!$result) {
-        die ("Could not successfully run the query $userQuery ".mysqli_error($connect));
-        }
     $row = mysqli_fetch_assoc($result);
     $s1 = $row['sum'];
     $userQuery = "select tran_price from history where date = '$date' and gas_id = 1";
     $result = mysqli_query($connect, $userQuery);
-    if (!$result) {
-        die ("Could not successfully run the query $userQuery ".mysqli_error($connect));
-        }
     $row = mysqli_fetch_assoc($result);
     $s2 = $row['tran_price'];
 
@@ -136,9 +130,6 @@ if (empty($car) && empty($a)) {
 
     $userQuery = "select sum(value) as sum from history where date = '$date' and gas_id = 1";
     $result = mysqli_query($connect, $userQuery);
-    if (!$result) {
-        die ("Could not successfully run the query $userQuery ".mysqli_error($connect));
-        }
     $row = mysqli_fetch_assoc($result);
     $s_val = $row['sum'];
 
@@ -146,17 +137,11 @@ if (empty($car) && empty($a)) {
 
     $userQuery = "select sum(value) as sum from history where date = (select date from history where date < '$date' group by date order by date DESC limit 1) and gas_id = 1";
     $result = mysqli_query($connect, $userQuery);
-    if (!$result) {
-        die ("Could not successfully run the query $userQuery ".mysqli_error($connect));
-        }
     $row = mysqli_fetch_assoc($result);
     $old_sum = $row['sum'];
 
     $userQuery = "select value from cost where date < '$date' and gas_id = 1 limit 1";
     $result = mysqli_query($connect, $userQuery);
-    if (!$result) {
-        die ("Could not successfully run the query $userQuery ".mysqli_error($connect));
-        }
     $row = mysqli_fetch_assoc($result);
     $old_price = $row['sum'];
 
@@ -165,21 +150,12 @@ if (empty($car) && empty($a)) {
 
     $userQuery = "select * from cost where date = '$date' and gas_id = 1";
     $result = mysqli_query($connect, $userQuery);
-    if (!$result) {
-        die ("value = $set   || Could not successfully run the query $userQuery ".mysqli_error($connect));
-        }
     if (mysqli_num_rows($result) == 0) {
         $userQuery = "insert into cost(gas_id,value,date) values(1,$set,'$date')";
         $result = mysqli_query($connect, $userQuery);
-        if (!$result) {
-            die ("value = $set   ||Could not successfully run the query $userQuery ".mysqli_error($connect));
-            }
     } else {
         $userQuery = "update cost set value = $set where date = '$date' and gas_id = 1";
         $result = mysqli_query($connect, $userQuery);
-        if (!$result) {
-            die ("value = $set   ||Could not successfully run the query $userQuery ".mysqli_error($connect));
-            }
     }
 
 
