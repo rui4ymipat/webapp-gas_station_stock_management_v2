@@ -12,11 +12,9 @@ $die = $_GET['die'];
 $userQuery = "select * from buy_gas where date = '$date'";
 $result1 = mysqli_query($connect, $userQuery);
 if (mysqli_num_rows($result1) == 0) {
-    $userQuery = "insert into buy_gas(date,name_stamp,timestamp,G91,G95,Desel) values('$date','$name','$time',$g91,$g95,$die)";
+    $userQuery = "insert into buy_gas(date,name_stamp,time_stamp,G91,G95,Desel) values('$date','$name','$time',$g91,$g95,$die)";
     $result = mysqli_query($connect, $userQuery);
-    if (!$result) {
-        die ("Could not successfully run the query $userQuery ".mysqli_error($connect));
-        }
+
         
 }
 else{
@@ -24,25 +22,16 @@ else{
     {
         $userQuery = "update buy_gas set G91 = $g91 ,name_stamp = '$name', timestamp = '$time' where date = '$date'";
         $result = mysqli_query($connect, $userQuery);
-        if (!$result) {
-            die ("Could not successfully run the query $userQuery ".mysqli_error($connect));
-            }
     }
     if(!empty($g95))
     {
         $userQuery = "update buy_gas set G95 = $g95 ,name_stamp = '$name', timestamp = '$time' where date = '$date'";
         $result = mysqli_query($connect, $userQuery);
-        if (!$result) {
-            die ("Could not successfully run the query $userQuery ".mysqli_error($connect));
-            }
     }
     if(!empty($die))
     {
         $userQuery = "update buy_gas set Desel = $die ,name_stamp = '$name', timestamp = '$time' where date = '$date'";
         $result = mysqli_query($connect, $userQuery);
-        if (!$result) {
-            die ("Could not successfully run the query $userQuery ".mysqli_error($connect));
-            }
     }
 }
 $_SESSION['msg'] = "ดำเนินการสำเร็จ";
