@@ -20,17 +20,17 @@ if (mysqli_num_rows($result1) == 0) {
 else{
     if(!empty($g91))
     {
-        $userQuery = "update buy_gas set G91 = $g91 ,name_stamp = '$name', timestamp = '$time' where date = '$date'";
+        $userQuery = "update buy_gas set G91 = $g91 ,name_stamp = '$name', time_stamp = '$time' where date = '$date'";
         $result = mysqli_query($connect, $userQuery);
     }
     if(!empty($g95))
     {
-        $userQuery = "update buy_gas set G95 = $g95 ,name_stamp = '$name', timestamp = '$time' where date = '$date'";
+        $userQuery = "update buy_gas set G95 = $g95 ,name_stamp = '$name', time_stamp = '$time' where date = '$date'";
         $result = mysqli_query($connect, $userQuery);
     }
     if(!empty($die))
     {
-        $userQuery = "update buy_gas set Desel = $die ,name_stamp = '$name', timestamp = '$time' where date = '$date'";
+        $userQuery = "update buy_gas set Desel = $die ,name_stamp = '$name', time_stamp = '$time' where date = '$date'";
         $result = mysqli_query($connect, $userQuery);
     }
 }
