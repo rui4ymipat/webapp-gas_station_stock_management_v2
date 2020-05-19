@@ -143,7 +143,7 @@ if (empty($car) && empty($a)) {
     $userQuery = "select value from cost where date < '$date' and gas_id = 1 limit 1";
     $result = mysqli_query($connect, $userQuery);
     $row = mysqli_fetch_assoc($result);
-    $old_price = $row['sum'];
+    $old_price = $row['value'];
 
     $p2 = $old_sum * $old_price;
     $set = ($p1 / $p2) / ($old_sum + $s_val);
@@ -189,7 +189,7 @@ if (empty($car) && empty($a)) {
     $userQuery = "select value from cost where date < '$date' and gas_id = 2 limit 1";
     $result = mysqli_query($connect, $userQuery);
     $row = mysqli_fetch_assoc($result);
-    $old_price = $row['sum'];
+    $old_price = $row['value'];
 
     $p2 = $old_sum * $old_price;
     $set = ($p1 / $p2) / ($old_sum + $s_val);
@@ -231,7 +231,7 @@ if (empty($car) && empty($a)) {
     $userQuery = "select value from cost where date < '$date' and gas_id = 3 limit 1";
     $result = mysqli_query($connect, $userQuery);
     $row = mysqli_fetch_assoc($result);
-    $old_price = $row['sum'];
+    $old_price = $row['value'];
 
     $p2 = $old_sum * $old_price;
     $set = ($p1 / $p2) / ($old_sum + $s_val);
@@ -248,6 +248,6 @@ if (empty($car) && empty($a)) {
 
 
 
-    // $_SESSION['msg'] = "ดำเนินการสำเร็จ";
-    // header("Location:history.php");
+    $_SESSION['msg'] = "ดำเนินการสำเร็จ";
+    header("Location:history.php");
 }
