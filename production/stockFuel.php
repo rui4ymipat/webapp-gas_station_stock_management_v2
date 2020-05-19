@@ -232,28 +232,28 @@
               <?php if ($_SESSION['user_level'] != 1) { ?>
                 <div class="setfont1">
                   <div class="setborder" style="width: 20%;">
-                  <h1 style="font-weight: 800;color: #2B3E54;font-size: 200%;">กรอกข้อมูล</h1>
-                      <form action="add_buygas.php" method="GET">
-                        <div class="showdetail">ปริมาณที่ซื้อมา</div>
-                        <table style="margin-top:20px;"> 
-                          <tr>
-                            <td class="name">G91</td>
-                            <td><input type="text" name="g95" style="width: 90%;"></td>
-                            <td style="font-size: 100%;">ลิตร</td>
-                          </tr>
-                          <tr>
-                            <td class="name">G95</td>
-                            <td><input type="text" name="g91" style="width: 90%;"></td>
-                            <td style="font-size: 100%;">ลิตร</td>
-                          </tr>
-                          <tr>
-                            <td class="name">Diesel</td>
-                            <td><input type="text" name="die" style="width: 90%;"></td>
-                            <td style="font-size: 100%;">ลิตร</td>
-                          </tr>
-                        </table>
-                        <input type="submit" class="btn btn-success" value="Submit">
-                      </form>
+                    <h1 style="font-weight: 800;color: #2B3E54;font-size: 200%;">กรอกข้อมูล</h1>
+                    <form action="add_buygas.php" method="GET">
+                      <div class="showdetail">ปริมาณที่ซื้อมา</div>
+                      <table style="margin-top:20px;">
+                        <tr>
+                          <td class="name">G91</td>
+                          <td><input type="text" name="g95" style="width: 90%;"></td>
+                          <td style="font-size: 100%;">ลิตร</td>
+                        </tr>
+                        <tr>
+                          <td class="name">G95</td>
+                          <td><input type="text" name="g91" style="width: 90%;"></td>
+                          <td style="font-size: 100%;">ลิตร</td>
+                        </tr>
+                        <tr>
+                          <td class="name">Diesel</td>
+                          <td><input type="text" name="die" style="width: 90%;"></td>
+                          <td style="font-size: 100%;">ลิตร</td>
+                        </tr>
+                      </table>
+                      <input type="submit" class="btn btn-success" value="Submit">
+                    </form>
                   </div>
                   <div class="c1">
                     <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">ปริมาณน้ำมัน</h1>
@@ -269,16 +269,16 @@
                       <tr class="setheader">
                         <th>G95</th>
                         <th>G91</th>
-                        <th>Desel</th>
+                        <th>Diesel</th>
                         <th>G95</th>
                         <th>G91</th>
-                        <th>Desel</th>
+                        <th>Diesel</th>
                         <th>G95</th>
                         <th>G91</th>
-                        <th>Desel</th>
+                        <th>Diesel</th>
                         <th>G95</th>
                         <th>G91</th>
-                        <th>Desel</th>
+                        <th>Diesel</th>
                       </tr>
                       <?php
                       require_once "connect.php";
@@ -351,22 +351,20 @@
                                 <td rowspan="2">0</td>
                                 <td rowspan="2">0</td>
                               <?php
-                              }
-                              else{
+                              } else {
                                 $row = mysqli_fetch_assoc($result);
-                                ?>
+                              ?>
                                 <td rowspan="2"><?php echo number_format($row['G91']); ?></td>
                                 <td rowspan="2"><?php echo number_format($row['G95']); ?></td>
                                 <td rowspan="2"><?php echo number_format($row['Desel']); ?></td>
                               <?php
                               }
-
                             }
                             if ($i == 0) {
                               $userQuery = "select value from gastank where date = '$da' and substr(timestamp,9) = 'pm' order by gas_id";
                               $result = mysqli_query($connect, $userQuery);
                               if (mysqli_num_rows($result) == 0) {
-                                ?>
+                              ?>
                                 <td rowspan="2">0</td>
                                 <td rowspan="2">0</td>
                                 <td rowspan="2">0</td>
@@ -375,12 +373,11 @@
                                 while ($row = mysqli_fetch_assoc($result)) {
                                 ?>
                                   <td rowspan="2"><?php echo number_format($row['value']); ?></td>
-                            <?php
+                                <?php
                                 }
                               }
                             }
-                            if($i == 0)
-                            {
+                            if ($i == 0) {
                               $userQuery = "select value from gastank where date = '$da' and substr(timestamp,9) = 'pm' order by gas_id";
                               $result = mysqli_query($connect, $userQuery);
                               if (mysqli_num_rows($result) == 0) {
@@ -412,7 +409,7 @@
                         <th style="width: 9%;">กะ</th>
                         <th style="width: 20%;">G95</th>
                         <th style="width: 20%;">G91</th>
-                        <th style="width: 20%;">Desel</th>
+                        <th style="width: 20%;">Diesel</th>
                       </tr>
                       <?php
                       require_once "connect.php";
@@ -438,11 +435,24 @@
                             } else {
                             ?>
                               <td style="height: 35px;"> เย็น </td>
-                              <?php
+                            <?php
                             }
                             if ($i == 0) {
-                              ?>
-                              
+                              $userQuery = "select * from buy_gas where date = '$date'";
+                              $result1 = mysqli_query($connect, $userQuery);                             
+                              if (mysqli_num_rows($result1) == 0){
+                                $b91 = 0;
+                                $b95 = 0;
+                                $bdie = 0;
+                              }
+                              else{
+                                $row3 = mysqli_fetch_assoc($result1);
+                                $b91 = $row3['G91'];
+                                $b95 = $row3['G95'];
+                                $bdie = $row3['Desel'];
+                              }
+                            ?>
+
                               <?php
                               $userQuery = "select (select value from gastank where date < '$da' and substr(timestamp,9)= 'pm' and gas_id = 1 limit 1)-value as dif from gastank where date = '$da' and substr(timestamp,9)= 'am' and gas_id = 1";
                               $result = mysqli_query($connect, $userQuery);
@@ -451,29 +461,29 @@
                                 <td>0</td>
                                 <td>0</td>
                                 <td>0</td>
-                                <?php
+                              <?php
                               } else {
                                 $row = mysqli_fetch_assoc($result);
-                                ?>
-                                  <td><?php echo number_format($row['dif']); ?></td>
+                              ?>
+                                <td><?php echo number_format($row['dif'] + $b91); ?></td>
                                 <?php
                                 $userQuery = "select (select value from gastank where date < '$da' and substr(timestamp,9)= 'pm' and gas_id = 2 limit 1)-value as dif from gastank where date = '$da' and substr(timestamp,9)= 'am' and gas_id = 2";
                                 $result = mysqli_query($connect, $userQuery);
                                 $row = mysqli_fetch_assoc($result);
                                 ?>
-                                  <td><?php echo number_format($row['dif']); ?></td>
+                                <td><?php echo number_format($row['dif'] + $b95); ?></td>
                                 <?php
                                 $userQuery = "select (select value from gastank where date < '$da' and substr(timestamp,9)= 'pm' and gas_id = 3 limit 1)-value as dif from gastank where date = '$da' and substr(timestamp,9)= 'am' and gas_id = 3";
                                 $result = mysqli_query($connect, $userQuery);
                                 $row = mysqli_fetch_assoc($result);
                                 ?>
-                                  <td><?php echo number_format($row['dif']); ?></td>
-                                  
-                                <?php                                
+                                <td><?php echo number_format($row['dif'] + $bdie); ?></td>
+
+                              <?php
                               }
                             } else {
                               ?>
-                              
+
                               <?php
                               $userQuery = "select (select value from gastank where date = '$da' and substr(timestamp,9)= 'am' and gas_id = 1 limit 1)-value as dif from gastank where date = '$da' and substr(timestamp,9)= 'pm' and gas_id = 1";
                               $result = mysqli_query($connect, $userQuery);
@@ -482,29 +492,27 @@
                                 <td>0</td>
                                 <td>0</td>
                                 <td>0</td>
-                                <?php
+                              <?php
                               } else {
                                 $row = mysqli_fetch_assoc($result);
-                                ?>
-                                  <td><?php echo number_format($row['dif']); ?></td>
+                              ?>
+                                <td><?php echo number_format($row['dif']); ?></td>
                                 <?php
                                 $userQuery = "select (select value from gastank where date = '$da' and substr(timestamp,9)= 'am' and gas_id = 2 limit 1)-value as dif from gastank where date = '$da' and substr(timestamp,9)= 'pm' and gas_id = 2";
                                 $result = mysqli_query($connect, $userQuery);
                                 $row = mysqli_fetch_assoc($result);
                                 ?>
-                                  <td><?php echo number_format($row['dif']); ?></td>
+                                <td><?php echo number_format($row['dif']); ?></td>
                                 <?php
                                 $userQuery = "select (select value from gastank where date = '$da' and substr(timestamp,9)= 'am' and gas_id = 3 limit 1)-value as dif from gastank where date = '$da' and substr(timestamp,9)= 'pm' and gas_id = 3";
                                 $result = mysqli_query($connect, $userQuery);
                                 $row = mysqli_fetch_assoc($result);
                                 ?>
-                                  <td><?php echo number_format($row['dif']); ?></td>
-                                  
-                                <?php                                
+                                <td><?php echo number_format($row['dif']); ?></td>
+
+                            <?php
                               }
-                                
-                               
-                            }                      
+                            }
                             ?>
                           </tr>
                       <?php
@@ -533,7 +541,7 @@
                           <td>ลิตร</td>
                         </tr>
                         <tr>
-                          <td class="name">Desel</td>
+                          <td class="name">Diesel</td>
                           <td><input type="text" name="de" placeholder="ปริมาณ"></td>
                           <td>ลิตร</td>
                         </tr>
@@ -560,7 +568,7 @@
                             <td>ลิตร</td>
                           </tr>
                           <tr>
-                            <td class="name">Desel</td>
+                            <td class="name">Diesel</td>
                             <td><input type="text" name="6134de" placeholder="ปริมาณ"></td>
                             <td>ลิตร</td>
                           </tr>
@@ -580,7 +588,7 @@
                             <td>ลิตร</td>
                           </tr>
                           <tr>
-                            <td class="name">Desel</td>
+                            <td class="name">Diesel</td>
                             <td><input type="text" name="1815de" placeholder="ปริมาณ"></td>
                             <td>ลิตร</td>
                           </tr>
@@ -600,7 +608,7 @@
                             <td>ลิตร</td>
                           </tr>
                           <tr>
-                            <td class="name">Desel</td>
+                            <td class="name">Diesel</td>
                             <td><input type="text" name="isde" placeholder="ปริมาณ"></td>
                             <td>ลิตร</td>
                           </tr>
@@ -622,13 +630,13 @@
                       <tr class="w">
                         <th>G91</th>
                         <th>G95</th>
-                        <th>Desel</th>
+                        <th>Diesel</th>
                         <th>G91</th>
                         <th>G95</th>
-                        <th>Desel</th>
+                        <th>Diesel</th>
                         <th>G91</th>
                         <th>G95</th>
-                        <th>Desel</th>
+                        <th>Diesel</th>
                       </tr>
                       <?php
                       require_once "connect.php";
@@ -736,7 +744,7 @@
                       <tr class="w">
                         <th>G91</th>
                         <th>G95</th>
-                        <th>Desel</th>
+                        <th>Diesel</th>
                       </tr>
                       <?php
                       $userQuery = "select date from gasisuzu group by date order by date DESC limit 7";
