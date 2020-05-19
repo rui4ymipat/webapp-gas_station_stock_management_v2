@@ -238,17 +238,17 @@
                         <table style="margin-top:20px;"> 
                           <tr>
                             <td class="name">G91</td>
-                            <td><input type="text" name="g95"></td>
+                            <td><input type="text" name="g95" style="width: 90%;"></td>
                             <td style="font-size: 100%;">ลิตร</td>
                           </tr>
                           <tr>
                             <td class="name">G95</td>
-                            <td><input type="text" name="g91"></td>
+                            <td><input type="text" name="g91" style="width: 90%;"></td>
                             <td style="font-size: 100%;">ลิตร</td>
                           </tr>
                           <tr>
                             <td class="name">Diesel</td>
-                            <td><input type="text" name="die"></td>
+                            <td><input type="text" name="die" style="width: 90%;"></td>
                             <td style="font-size: 100%;">ลิตร</td>
                           </tr>
                         </table>
