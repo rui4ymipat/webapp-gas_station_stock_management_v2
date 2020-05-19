@@ -149,7 +149,7 @@ if (empty($car) && empty($a)) {
     $set = ($p1 / $p2) / ($old_sum + $s_val);
     ?>
     <script type="text/javascript">
-    console.log("<?php echo "$set | $p1 | $p2 | $old_sum | $s_val" ; ?>")
+    console.log("<?php echo "$set | $p1 | $p2 | $s_val | $old_sum  | $old_price" ; ?>")
     </script>
     <?php
     $userQuery = "select * from cost where date = '$date' and gas_id = 1";
