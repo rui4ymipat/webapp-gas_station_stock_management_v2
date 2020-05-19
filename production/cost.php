@@ -161,7 +161,7 @@
                   <tr>
                     <th rowspan="2" style="height: 65px;width:13%;">วันที่</th>
                     <th rowspan="2">ชนิด</th>
-                    <th colspan="5" ><a href="cost_price.php" style="color: #2B3E54;">ปริมาณ/ราคา  <i class="fa fa-retweet"></i></a></th>
+                    <th colspan="5"><a href="cost_price.php" style="color: #2B3E54;">ปริมาณ/ราคา <i class="fa fa-retweet"></i></a></th>
                     <th colspan="2">น้ำมันเดิม</th>
                     <th colspan="3">สรุป</th>
                   </tr>
@@ -177,44 +177,49 @@
                     <th>มูลค่ารวม</th>
                     <th>ราคาต้นทุน</th>
                   </tr>
-                  <?php 
+                  <?php
                   require_once "connect.php";
                   $userQuery = "select date from C6134 group by date";
                   $result1 = mysqli_query($connect, $userQuery);
-                  while ($lop = mysqli_fetch_assoc($result1)){
-                   $date[] = $lop['date'];
+                  while ($lop = mysqli_fetch_assoc($result1)) {
+                    $date[] = $lop['date'];
                   }
                   $userQuery = "select date from C6134 group by date";
                   $result1 = mysqli_query($connect, $userQuery);
-                  while ($lop = mysqli_fetch_assoc($result1)){
+                  while ($lop = mysqli_fetch_assoc($result1)) {
                     $check = 0;
-                    for($i=0;$i<count($date);$i++)
-                    {
-                      if($lop['date'] == $date[$i])
-                      {
+                    for ($i = 0; $i < count($date); $i++) {
+                      if ($lop['date'] == $date[$i]) {
                         $check = 1;
-                      }    
+                      }
                     }
-                    if($check == 0)
-                    {
+                    if ($check == 0) {
                       $date[] = $lop['date'];
-                    }            
+                    }
                   }
                   $userQuery = "select date from ISUZU group by date";
                   $result1 = mysqli_query($connect, $userQuery);
-                  while ($lop = mysqli_fetch_assoc($result1)){
+                  while ($lop = mysqli_fetch_assoc($result1)) {
                     $check = 0;
-                    for($i=0;$i<count($date);$i++)
-                    {
-                      if($lop['date'] == $date[$i])
-                      {
+                    for ($i = 0; $i < count($date); $i++) {
+                      if ($lop['date'] == $date[$i]) {
                         $check = 1;
-                      }    
+                      }
                     }
-                    if($check == 0)
-                    {
+                    if ($check == 0) {
                       $date[] = $lop['date'];
-                    }            
+                    }
+                  }
+                  for ($i = 0; $i < count($date); $i++) {
+                    $da = $date[$i];
+                    $Tdate = explode("-", $lop['date']);
+                    $Sdate = array($Tdate[2], $month[(int) $Tdate[1]], $Tdate[0] + 543);
+                    $show_date  = implode(" ", $Sdate);
+                    ?>
+                    <tr>
+                      <td style="height: 30px;"><?php echo $show_date; ?></td>
+                    </tr>
+                    <?php
                   }
                   ?>
                 </table>
