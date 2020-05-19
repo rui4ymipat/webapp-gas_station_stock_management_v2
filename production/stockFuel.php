@@ -343,85 +343,24 @@
                             $sum95 = 0;
                             $sumdie = 0;
                             if ($i == 0) {
-                              $userQuery = "select G91 from C6134 where date = '$da'";
+                              $userQuery = "select * from buy_gas where date = '$da'";
                               $result = mysqli_query($connect, $userQuery);
                               if (mysqli_num_rows($result) == 0) {
-                                $sum91 += 0;
-                              } else {
-                                $row = mysqli_fetch_assoc($result);
-                                $sum91 += $row['G91'];                                                         
-                              }
-                              $userQuery = "select G91 from C1815 where date = '$da'";
-                              $result = mysqli_query($connect, $userQuery);
-                              if (mysqli_num_rows($result) == 0) {
-                                $sum91 += 0;
-                              } else {
-                                $row = mysqli_fetch_assoc($result);
-                                $sum91 += $row['G91'];                                                         
-                              }
-                              $userQuery = "select G91 from ISUZU where date = '$da'";
-                              $result = mysqli_query($connect, $userQuery);
-                              if (mysqli_num_rows($result) == 0) {
-                                $sum91 += 0;
-                              } else {
-                                $row = mysqli_fetch_assoc($result);
-                                $sum91 += $row['G91'];                                                         
-                              }
-
-                              $userQuery = "select G95 from C6134 where date = '$da'";
-                              $result = mysqli_query($connect, $userQuery);
-                              if (mysqli_num_rows($result) == 0) {
-                                $sum95 += 0;
-                              } else {
-                                $row = mysqli_fetch_assoc($result);
-                                $sum95 += $row['G95'];                                                         
-                              }
-                              $userQuery = "select G95 from C1815 where date = '$da'";
-                              $result = mysqli_query($connect, $userQuery);
-                              if (mysqli_num_rows($result) == 0) {
-                                $sum95 += 0;
-                              } else {
-                                $row = mysqli_fetch_assoc($result);
-                                $sum95 += $row['G95'];                                                         
-                              }
-                              $userQuery = "select G95 from ISUZU where date = '$da'";
-                              $result = mysqli_query($connect, $userQuery);
-                              if (mysqli_num_rows($result) == 0) {
-                                $sum95 += 0;
-                              } else {
-                                $row = mysqli_fetch_assoc($result);
-                                $sum95 += $row['G95'];                                                         
-                              }
-
-                              $userQuery = "select Desel from C6134 where date = '$da'";
-                              $result = mysqli_query($connect, $userQuery);
-                              if (mysqli_num_rows($result) == 0) {
-                                $sumdie += 0;
-                              } else {
-                                $row = mysqli_fetch_assoc($result);
-                                $sumdie += $row['Desel'];                                                         
-                              }
-                              $userQuery = "select Desel from C1815 where date = '$da'";
-                              $result = mysqli_query($connect, $userQuery);
-                              if (mysqli_num_rows($result) == 0) {
-                                $sumdie += 0;
-                              } else {
-                                $row = mysqli_fetch_assoc($result);
-                                $sumdie += $row['Desel'];                                                         
-                              }
-                              $userQuery = "select Desel from ISUZU where date = '$da'";
-                              $result = mysqli_query($connect, $userQuery);
-                              if (mysqli_num_rows($result) == 0) {
-                                $sumdie += 0;
-                              } else {
-                                $row = mysqli_fetch_assoc($result);
-                                $sumdie += $row['Desel'];                                                         
-                              }
-                              ?>
-                                <td rowspan="2"><?php echo number_format($sum91); ?></td>
-                                <td rowspan="2"><?php echo number_format($sum95); ?></td>
-                                <td rowspan="2"><?php echo number_format($sumdie); ?></td>
+                                ?>
+                                <td rowspan="2">0</td>
+                                <td rowspan="2">0</td>
+                                <td rowspan="2">0</td>
                               <?php
+                              }
+                              else{
+                                $row = mysqli_fetch_assoc($result);
+                                ?>
+                                <td rowspan="2"><?php echo number_format($row['G91']); ?></td>
+                                <td rowspan="2"><?php echo number_format($row['G95']); ?></td>
+                                <td rowspan="2"><?php echo number_format($row['Desel']); ?></td>
+                              <?php
+                              }
+
                             }
                             if ($i == 0) {
                               $userQuery = "select value from gastank where date = '$da' and substr(timestamp,9) = 'pm' order by gas_id";
