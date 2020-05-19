@@ -113,6 +113,7 @@ if (empty($car) && empty($a)) {
     $Qa1 = "insert into history(car_id,gas_id,price,value,tran_price,account,date,timestamp,name_stamp) 
     values($car,3,$a3_de_p,$a3_de_v,$tran,3,'$date','$time','$name')";
     mysqli_query($connect, $Qa1);
+    require_once "add_costprice.php";
     $_SESSION['msg'] = "ดำเนินการสำเร็จ";
     header("Location:history.php");
 }
