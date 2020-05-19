@@ -180,48 +180,32 @@
                   <?php
                   require_once "connect.php";
                   $month = array('-', 'มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน', 'กรกฎาคม', 'สิงหาคม', 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม');
-                  $userQuery = "select date from C6134 group by date";
+                  $userQuery = "select date from history group by date order by date DESC";
                   $result1 = mysqli_query($connect, $userQuery);
                   while ($lop = mysqli_fetch_assoc($result1)) {
-                    $date[] = $lop['date'];
-                  }
-                  $userQuery = "select date from C6134 group by date";
-                  $result1 = mysqli_query($connect, $userQuery);
-                  while ($lop = mysqli_fetch_assoc($result1)) {
-                    $check = 0;
                     for ($i = 0; $i < count($date); $i++) {
-                      if ($lop['date'] == $date[$i]) {
-                        $check = 1;
-                      }
-                    }
-                    if ($check == 0) {
-                      $date[] = $lop['date'];
-                    }
-                  }
-                  $userQuery = "select date from ISUZU group by date";
-                  $result1 = mysqli_query($connect, $userQuery);
-                  while ($lop = mysqli_fetch_assoc($result1)) {
-                    $check = 0;
-                    for ($i = 0; $i < count($date); $i++) {
-                      if ($lop['date'] == $date[$i]) {
-                        $check = 1;
-                      }
-                    }
-                    if ($check == 0) {
-                      $date[] = $lop['date'];
-                    }
-                  }
-                  for ($i = 0; $i < count($date); $i++) {
-                    $da = $date[$i];
-                    $Tdate = explode("-", $da);
-                    $Sdate = array($Tdate[2], $month[(int) $Tdate[1]], $Tdate[0] + 543);
-                    $show_date  = implode(" ", $Sdate);
+                      $da = $lop['date'];
+                      $Tdate = explode("-", $lop['date']);
+                      $Sdate = array($Tdate[2], $month[(int) $Tdate[1]], $Tdate[0] + 543);
+                      $show_date  = implode(" ", $Sdate);
+                      for ($j = 0; $j < 3; $j++) {
                     ?>
-                    <tr>
-                      <td style="height: 30px;"><?php echo $show_date; ?></td>
-                    </tr>
+                        <tr>
+                          <?php if ($j == 1) { ?>
+                            <td style="height: 30px;" rowspan="3"><?php echo $show_date; ?></td>
+                            
+                          <?php
+                          $userQuery = "select value from gastank where date = '$da' and substr(timestamp,9) = 'pm' order by gas_id";
+                          $result = mysqli_query($connect, $userQuery);
+  
+                          } ?>
+                        </tr>
                     <?php
+  
+                      }
+                    }
                   }
+                  
                   ?>
                 </table>
               </div>
