@@ -231,7 +231,7 @@
 
               <?php if ($_SESSION['user_level'] != 1) { ?>
                 <div class="setfont1">
-                  <div class="setborder">
+                  <div class="setborder" style="width: 20%;">
                   <h1 style="font-weight: 800;color: #2B3E54;font-size: 200%;">กรอกข้อมูล</h1>
                       <form action="addUser.php" method="POST">
                         <div class="showdetail">ปริมาณที่ซื้อมา</div>
@@ -239,14 +239,17 @@
                           <tr>
                             <td class="name">G91</td>
                             <td><input type="text" name="g95"></td>
+                            <td style="font-size: 100%;">ลิตร</td>
                           </tr>
                           <tr>
                             <td class="name">G95</td>
                             <td><input type="text" name="g91"></td>
+                            <td style="font-size: 100%;">ลิตร</td>
                           </tr>
                           <tr>
                             <td class="name">Diesel</td>
                             <td><input type="text" name="die"></td>
+                            <td style="font-size: 100%;">ลิตร</td>
                           </tr>
                         </table>
                         <input type="submit" class="btn btn-success" value="Submit">
