@@ -177,6 +177,46 @@
                     <th>มูลค่ารวม</th>
                     <th>ราคาต้นทุน</th>
                   </tr>
+                  <?php 
+                  require_once "connect.php";
+                  $userQuery = "select date from C6134 group by date";
+                  $result1 = mysqli_query($connect, $userQuery);
+                  while ($lop = mysqli_fetch_assoc($result1)){
+                   $date[] = $lop['date'];
+                  }
+                  $userQuery = "select date from C6134 group by date";
+                  $result1 = mysqli_query($connect, $userQuery);
+                  while ($lop = mysqli_fetch_assoc($result1)){
+                    $check = 0;
+                    for($i=0;$i<count($date);$i++)
+                    {
+                      if($lop['date'] == $date[$i])
+                      {
+                        $check = 1;
+                      }    
+                    }
+                    if($check == 0)
+                    {
+                      $date[] = $lop['date'];
+                    }            
+                  }
+                  $userQuery = "select date from ISUZU group by date";
+                  $result1 = mysqli_query($connect, $userQuery);
+                  while ($lop = mysqli_fetch_assoc($result1)){
+                    $check = 0;
+                    for($i=0;$i<count($date);$i++)
+                    {
+                      if($lop['date'] == $date[$i])
+                      {
+                        $check = 1;
+                      }    
+                    }
+                    if($check == 0)
+                    {
+                      $date[] = $lop['date'];
+                    }            
+                  }
+                  ?>
                 </table>
               </div>
 
