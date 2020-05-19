@@ -161,7 +161,7 @@ if (empty($car) && empty($a)) {
     $old_price = $row['sum'];
 
     $p2 = $old_sum * $old_price;
-    $set = ($p1 / $p2) / ($old_sum + $s_val);
+    $set = round(($p1 / $p2) / ($old_sum + $s_val),2);
 
     $userQuery = "select * from cost where date = '$date' and gas_id = 1";
     $result = mysqli_query($connect, $userQuery);
