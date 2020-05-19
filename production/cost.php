@@ -197,7 +197,7 @@
                         <?php if ($j == 0) { ?>
                           <tr>
                             <td style="height: 30px;" rowspan="3"><?php echo $show_date; ?></td>
-                            <td>G91</td>
+                            <td style="height: 30px;">G91</td>
                             <?php
                             $userQuery = "select price,value from history where date = '$da' and gas_id = 1 and account = 1";
                             $result = mysqli_query($connect, $userQuery);
@@ -285,7 +285,7 @@
                         if ($j == 1) { ?>
                           <tr>
 
-                            <td>G95</td>
+                            <td  style="height: 30px;">G95</td>
                             <?php
                             $userQuery = "select price,value from history where date = '$da' and gas_id = 2 and account = 1";
                             $result = mysqli_query($connect, $userQuery);
@@ -373,7 +373,7 @@
                         if ($j == 2) { ?>
                           <tr>
 
-                            <td>G95</td>
+                            <td  style="height: 30px;">Diesel</td>
                             <?php
                             $userQuery = "select price,value from history where date = '$da' and gas_id = 3 and account = 1";
                             $result = mysqli_query($connect, $userQuery);
