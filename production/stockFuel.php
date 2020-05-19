@@ -749,9 +749,10 @@
                         <th>Diesel</th>
                       </tr>
                       <?php
-                      $userQuery = "select date from gasisuzu group by date order by date DESC limit 7";
+                      $userQuery = "select date from gastank group by date order by date DESC limit 7";
                       $result1 = mysqli_query($connect, $userQuery);
                       while ($lop = mysqli_fetch_assoc($result1)) {
+                        
                         $da = $lop['date'];
                         $userQuery = "select * from gasisuzu where date = '$da' ";
                         $result = mysqli_query($connect, $userQuery);
