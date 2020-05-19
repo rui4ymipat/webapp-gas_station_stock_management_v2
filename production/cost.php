@@ -212,7 +212,7 @@
                   }
                   for ($i = 0; $i < count($date); $i++) {
                     $da = $date[$i];
-                    $Tdate = explode("-", $lop['date']);
+                    $Tdate = explode("-", $da);
                     $Sdate = array($Tdate[2], $month[(int) $Tdate[1]], $Tdate[0] + 543);
                     $show_date  = implode(" ", $Sdate);
                     ?>
