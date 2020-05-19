@@ -233,7 +233,7 @@
                 <div class="setfont1">
                   <div class="setborder" style="width: 20%;">
                   <h1 style="font-weight: 800;color: #2B3E54;font-size: 200%;">กรอกข้อมูล</h1>
-                      <form action="addUser.php" method="POST">
+                      <form action="add_buygas.php" method="GET">
                         <div class="showdetail">ปริมาณที่ซื้อมา</div>
                         <table style="margin-top:20px;"> 
                           <tr>
