@@ -121,7 +121,7 @@ if (empty($car) && empty($a)) {
     $result = mysqli_query($connect, $userQuery);
     $row = mysqli_fetch_assoc($result);
     $s1 = $row['sum'];
-    $userQuery = "select tran_price from history where date = '$date' and gas_id = 1";
+    $userQuery = "select tran_price from history where date = '$date' and gas_id = 1 limit 1";
     $result = mysqli_query($connect, $userQuery);
     $row = mysqli_fetch_assoc($result);
     $s2 = $row['tran_price'];
