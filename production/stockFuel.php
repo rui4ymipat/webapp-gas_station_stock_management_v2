@@ -470,7 +470,7 @@
                               <?php
                               }
                             } else {
-                              $userQuery = "select * from buy_gas where date = '$date'";
+                              $userQuery = "select * from buy_gas where date = '$da'";
                               $result3 = mysqli_query($connect, $userQuery);                             
                               if (mysqli_num_rows($result3) == 0){
                                 $b91 = 0;
@@ -497,19 +497,19 @@
                               } else {
                                 $row = mysqli_fetch_assoc($result);
                               ?>
-                                <td><?php echo number_format($row['dif'] + $b91); ?></td>
+                                <td><?php echo number_format($row['dif']+$b91); ?></td>
                                 <?php
                                 $userQuery = "select (select value from gastank where date = '$da' and substr(timestamp,9)= 'am' and gas_id = 2 limit 1)-value as dif from gastank where date = '$da' and substr(timestamp,9)= 'pm' and gas_id = 2";
                                 $result = mysqli_query($connect, $userQuery);
                                 $row = mysqli_fetch_assoc($result);
                                 ?>
-                                <td><?php echo number_format($row['dif'] + $b95); ?></td>
+                                <td><?php echo number_format($row['dif']+$b95); ?></td>
                                 <?php
                                 $userQuery = "select (select value from gastank where date = '$da' and substr(timestamp,9)= 'am' and gas_id = 3 limit 1)-value as dif from gastank where date = '$da' and substr(timestamp,9)= 'pm' and gas_id = 3";
                                 $result = mysqli_query($connect, $userQuery);
                                 $row = mysqli_fetch_assoc($result);
                                 ?>
-                                <td><?php echo number_format($row['dif'] + $bdie); ?></td>
+                                <td><?php echo number_format($row['dif']+$bdie); ?></td>
 
                             <?php
                               }
