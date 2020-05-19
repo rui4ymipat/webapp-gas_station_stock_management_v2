@@ -760,9 +760,9 @@
                         if (mysqli_num_rows($result) == 0) {
                       ?>
                           <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
+                            <td style="height: 70px;">0</td>
+                            <td style="height: 70px;">0</td>
+                            <td style="height: 70px;">0</td>
                           </tr>
                         <?php
                         } else {
