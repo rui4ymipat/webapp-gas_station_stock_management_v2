@@ -231,6 +231,31 @@
 
               <?php if ($_SESSION['user_level'] != 1) { ?>
                 <div class="setfont1">
+                  <div class="setborder">
+                  <h1 style="font-weight: 800;color: #2B3E54;font-size: 200%;">จัดการบัญชีผู้ใช้</h1>
+                      <form action="addUser.php" method="POST">
+                        <div class="showdetail">เพิ่มบัญชีผู้ใช้</div>
+                        <table style="margin-top:20px;"> 
+                          <tr>
+                            <td class="name">ID </td>
+                            <td><input type="text" name="id" placeholder="ID"></td>
+                          </tr>
+                          <tr>
+                            <td class="name">Password </td>
+                            <td><input type="password" name="pass" placeholder="Password"></td>
+                          </tr>
+                          <tr>
+                            <td class="name">ชื่อ</td>
+                            <td><input type="text" name="Fname" placeholder="ชื่อจริง"></td>
+                          </tr>
+                          <tr>
+                            <td class="name">นามสกุล</td>
+                            <td><input type="text" name="Lname" placeholder="นามสกุล"></td>
+                          </tr>
+                        </table>
+                        <input type="submit" class="btn btn-success" value="Submit">
+                      </form>
+                  </div>
                   <div class="c1">
                     <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">ปริมาณน้ำมัน</h1>
                     <table border="1" style="text-align: center; width: 100%;">
