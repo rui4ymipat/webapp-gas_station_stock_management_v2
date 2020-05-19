@@ -183,7 +183,7 @@
                   $userQuery = "select date from history group by date order by date DESC";
                   $result1 = mysqli_query($connect, $userQuery);
                   while ($lop = mysqli_fetch_assoc($result1)) {
-                    for ($i = 0; $i < count($date); $i++) {
+                    
                       $da = $lop['date'];
                       $Tdate = explode("-", $lop['date']);
                       $Sdate = array($Tdate[2], $month[(int) $Tdate[1]], $Tdate[0] + 543);
@@ -194,7 +194,6 @@
                       $s = 0;
                       for ($j = 0; $j < 3; $j++) {
                   ?>
-
                         <?php if ($j == 0) { ?>
                           <tr>
                             <td style="height: 30px;" rowspan="3"><?php echo $show_date; ?></td>
@@ -460,7 +459,7 @@
                   <?php
                         }
                       }
-                    }
+                    
                   }
 
                   ?>
