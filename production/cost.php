@@ -220,6 +220,7 @@
                           $userQuery = "select price,value from history where date = '$da' and gas_id = 1 and account = 2";
                           $result = mysqli_query($connect, $userQuery);
                           if (mysqli_num_rows($result) == 0) {
+                            
                             $sum_91 += 0;
                             $s += 0;
                           ?>
@@ -237,6 +238,7 @@
                           $userQuery = "select price,value,tran_price from history where date = '$da' and gas_id = 1 and account = 3";
                           $result = mysqli_query($connect, $userQuery);
                           if (mysqli_num_rows($result) == 0) {
+                            $bb = 0;
                             $sum_91 += 0;
                             $s += 0;
                           ?>
@@ -256,6 +258,7 @@
                           $userQuery = "select sum(value) as sum from history where date = (select date from history where date < '$da' group by date order by date DESC limit 1) and gas_id = 1";
                           $result = mysqli_query($connect, $userQuery);
                           if (mysqli_num_rows($result) == 0) {
+                            $aa = 0;
                           ?>
                             <td>0</td>
                           <?php
@@ -269,6 +272,7 @@
                           $result = mysqli_query($connect, $userQuery);
                           $row = mysqli_fetch_assoc($result);
                           if (mysqli_num_rows($result) == 0) {
+                            $cc = 0;
                           ?>
                             <td>0</td>
                           <?php
@@ -337,6 +341,7 @@
                           $userQuery = "select price,value,tran_price from history where date = '$da' and gas_id = 2 and account = 3";
                           $result = mysqli_query($connect, $userQuery);
                           if (mysqli_num_rows($result) == 0) {
+                            $bb =0;
                             $sum_91 += 0;
                             $s += 0;
                           ?>
@@ -356,6 +361,7 @@
                           $userQuery = "select sum(value) as sum from history where date = (select date from history where date < '$da' group by date order by date DESC limit 1) and gas_id = 2";
                           $result = mysqli_query($connect, $userQuery);
                           if (mysqli_num_rows($result) == 0) {
+                            $aa = 0;
                           ?>
                             <td>0</td>
                           <?php
@@ -369,6 +375,7 @@
                           $result = mysqli_query($connect, $userQuery);
                           $row = mysqli_fetch_assoc($result);
                           if (mysqli_num_rows($result) == 0) {
+                            $cc = 0;
                           ?>
                             <td>0</td>
                           <?php
@@ -439,6 +446,7 @@
                           if (mysqli_num_rows($result) == 0) {
                             $sum_91 += 0;
                             $s += 0;
+                            $bb = 0;
                           ?>
                             <td>0</td>
                           <?php
@@ -456,6 +464,7 @@
                           $userQuery = "select sum(value) as sum from history where date = (select date from history where date < '$da' group by date order by date DESC limit 1) and gas_id = 3";
                           $result = mysqli_query($connect, $userQuery);
                           if (mysqli_num_rows($result) == 0) {
+                            $aa = 0;
                           ?>
                             <td>0</td>
                           <?php
@@ -469,6 +478,7 @@
                           $result = mysqli_query($connect, $userQuery);
                           $row = mysqli_fetch_assoc($result);
                           if (mysqli_num_rows($result) == 0) {
+                            $cc = 0;
                           ?>
                             <td>0</td>
                           <?php
