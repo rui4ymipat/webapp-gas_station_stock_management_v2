@@ -277,6 +277,7 @@
                     <textarea name="t" id="t" cols="50" rows="11" style="width: 90%;">
                     <?php echo $row3['text']; ?>
                     </textarea>
+                    <script type="text/javascript">console.log("<?php echo $row3['text']; ?>")</script>
                     <input type="submit" class="btn btn-success" value="Submit" style="display: block;">
                     </form>
                     </div>
