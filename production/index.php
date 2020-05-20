@@ -288,11 +288,43 @@
                   var data = google.visualization.arrayToDataTable([
                     ['ยอดขาย', 'แก๊สโซฮอล์ 91'],
                     <?php
-                    for ($i = 1; $i <= 15; $i++) {
-                      if ($i == 15) {
-                        echo "['$i/04',", rand(1000, 2000), "]";
+                    $userQuery = "select date from gastank group by date order by date ASC limit 15";
+                    $result1 = mysqli_query($connect, $userQuery);
+                    $date = [];
+                    while ($lop = mysqli_fetch_assoc($result1)) {
+                      $date[] = $lop['date'];
+                    }
+                    for ($i = 0; $i < count($date); $i++) {
+                      $da = $date[$i];
+                      $Tdate = explode("-", $date[$i]);
+                      $Sdate = array($Tdate[2], $Tdate[1]);
+                      $date2  = implode("/", $Sdate);
+                      $userQuery = "select (select value from gastank where date < '$da' and substr(timestamp,9)= 'pm' and gas_id = 1 limit 1)-value as dif from gastank where date = '$da' and substr(timestamp,9)= 'am' and gas_id = 1";
+                      $result = mysqli_query($connect, $userQuery);
+                      $row = mysqli_fetch_assoc($result);
+                      $p1 = $row['dif'];
+
+                      $userQuery = "select * from buy_gas where date = '$da'";
+                      $result3 = mysqli_query($connect, $userQuery);
+                      if (mysqli_num_rows($result3) == 0) {
+                        $b91 = 0;
+                        $b95 = 0;
+                        $bdie = 0;
                       } else {
-                        echo "['$i/04',", rand(1000, 2000), "],";
+                        $row3 = mysqli_fetch_assoc($result3);
+                        $b91 = $row3['G91'];
+                        $b95 = $row3['G95'];
+                        $bdie = $row3['Desel'];
+                      }
+
+                      $userQuery = "select (select value from gastank where date = '$da' and substr(timestamp,9)= 'am' and gas_id = 1 limit 1)-value as dif from gastank where date = '$da' and substr(timestamp,9)= 'pm' and gas_id = 1";
+                      $result = mysqli_query($connect, $userQuery);
+                      $row = mysqli_fetch_assoc($result);
+                      $p2 = $row['dif']+$b91;
+                      if ($i == count($date)-1) {
+                        echo "['$date2',",$p1+$p2 , "]";
+                      } else {
+                        echo "['$date2',", $p1+$p2, "],";
                       }
                     }
                     ?>
@@ -323,11 +355,43 @@
                   var data = google.visualization.arrayToDataTable([
                     ['ยอดขาย', 'แก๊สโซฮอล์ 95'],
                     <?php
-                    for ($i = 1; $i <= 15; $i++) {
-                      if ($i == 15) {
-                        echo "['$i/04',", rand(1000, 2000), "]";
+                    $userQuery = "select date from gastank group by date order by date ASC limit 15";
+                    $result1 = mysqli_query($connect, $userQuery);
+                    $date = [];
+                    while ($lop = mysqli_fetch_assoc($result1)) {
+                      $date[] = $lop['date'];
+                    }
+                    for ($i = 0; $i < count($date); $i++) {
+                      $da = $date[$i];
+                      $Tdate = explode("-", $date[$i]);
+                      $Sdate = array($Tdate[2], $Tdate[1]);
+                      $date2  = implode("/", $Sdate);
+                      $userQuery = "select (select value from gastank where date < '$da' and substr(timestamp,9)= 'pm' and gas_id = 2 limit 1)-value as dif from gastank where date = '$da' and substr(timestamp,9)= 'am' and gas_id = 2";
+                      $result = mysqli_query($connect, $userQuery);
+                      $row = mysqli_fetch_assoc($result);
+                      $p1 = $row['dif'];
+
+                      $userQuery = "select * from buy_gas where date = '$da'";
+                      $result3 = mysqli_query($connect, $userQuery);
+                      if (mysqli_num_rows($result3) == 0) {
+                        $b91 = 0;
+                        $b95 = 0;
+                        $bdie = 0;
                       } else {
-                        echo "['$i/04',", rand(1000, 2000), "],";
+                        $row3 = mysqli_fetch_assoc($result3);
+                        $b91 = $row3['G91'];
+                        $b95 = $row3['G95'];
+                        $bdie = $row3['Desel'];
+                      }
+
+                      $userQuery = "select (select value from gastank where date = '$da' and substr(timestamp,9)= 'am' and gas_id = 2 limit 1)-value as dif from gastank where date = '$da' and substr(timestamp,9)= 'pm' and gas_id = 2";
+                      $result = mysqli_query($connect, $userQuery);
+                      $row = mysqli_fetch_assoc($result);
+                      $p2 = $row['dif']+$b91;
+                      if ($i == count($date)-1) {
+                        echo "['$date2',",$p1+$p2 , "]";
+                      } else {
+                        echo "['$date2',", $p1+$p2, "],";
                       }
                     }
                     ?>
@@ -359,11 +423,43 @@
                   var data = google.visualization.arrayToDataTable([
                     ['ยอดขาย', 'ดีเซล'],
                     <?php
-                    for ($i = 1; $i <= 15; $i++) {
-                      if ($i == 15) {
-                        echo "['$i/04',", rand(1000, 2000), "]";
+                    $userQuery = "select date from gastank group by date order by date ASC limit 15";
+                    $result1 = mysqli_query($connect, $userQuery);
+                    $date = [];
+                    while ($lop = mysqli_fetch_assoc($result1)) {
+                      $date[] = $lop['date'];
+                    }
+                    for ($i = 0; $i < count($date); $i++) {
+                      $da = $date[$i];
+                      $Tdate = explode("-", $date[$i]);
+                      $Sdate = array($Tdate[2], $Tdate[1]);
+                      $date2  = implode("/", $Sdate);
+                      $userQuery = "select (select value from gastank where date < '$da' and substr(timestamp,9)= 'pm' and gas_id = 3 limit 1)-value as dif from gastank where date = '$da' and substr(timestamp,9)= 'am' and gas_id = 3";
+                      $result = mysqli_query($connect, $userQuery);
+                      $row = mysqli_fetch_assoc($result);
+                      $p1 = $row['dif'];
+
+                      $userQuery = "select * from buy_gas where date = '$da'";
+                      $result3 = mysqli_query($connect, $userQuery);
+                      if (mysqli_num_rows($result3) == 0) {
+                        $b91 = 0;
+                        $b95 = 0;
+                        $bdie = 0;
                       } else {
-                        echo "['$i/04',", rand(1000, 2000), "],";
+                        $row3 = mysqli_fetch_assoc($result3);
+                        $b91 = $row3['G91'];
+                        $b95 = $row3['G95'];
+                        $bdie = $row3['Desel'];
+                      }
+
+                      $userQuery = "select (select value from gastank where date = '$da' and substr(timestamp,9)= 'am' and gas_id = 3 limit 1)-value as dif from gastank where date = '$da' and substr(timestamp,9)= 'pm' and gas_id = 3";
+                      $result = mysqli_query($connect, $userQuery);
+                      $row = mysqli_fetch_assoc($result);
+                      $p2 = $row['dif']+$b91;
+                      if ($i == count($date)-1) {
+                        echo "['$date2',",$p1+$p2 , "]";
+                      } else {
+                        echo "['$date2',", $p1+$p2, "],";
                       }
                     }
                     ?>
