@@ -47,7 +47,20 @@
     $_SESSION['error'] = "Username หรือ Password ผิด";
     header("Location:login.php");
   }
-
+  require_once "connect.php";
+  $userQuery = "select * from buy_gas where date = '$da'";
+  $result3 = mysqli_query($connect, $userQuery);                             
+  if (mysqli_num_rows($result3) == 0){
+    $b91 = 0;
+    $b95 = 0;
+    $bdie = 0;
+  }
+  else{
+    $row3 = mysqli_fetch_assoc($result3);
+    $b91 = $row3['G91'];
+    $b95 = $row3['G95'];
+    $bdie = $row3['Desel'];
+  }
   ?>
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script type="text/javascript">

@@ -394,7 +394,7 @@
                         $result = mysqli_query($connect, $userQuery);
                         $i = 1;
                         while ($row = mysqli_fetch_assoc($result)) {
-                          $userQuery = "select current_price from today_price where date < '$d' and gas_id = $i";
+                          $userQuery = "select current_price from today_price where date < '$d' and gas_id = $i order by date DESC limit 1";
                           $result2 = mysqli_query($connect, $userQuery);
                           $r = mysqli_fetch_assoc($result2);
                       ?>
