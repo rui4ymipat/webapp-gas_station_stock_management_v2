@@ -294,6 +294,7 @@
                             <td><?php echo number_format($row['value']) ?></td>
                           <?php } ?>
                         </tr>
+                        <script type="text/javascript">console.log("<?php echo "$aa | $bb | $cc | $sum_91  "; ?>")</script>
                       <?php
                       }
 
