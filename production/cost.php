@@ -408,11 +408,13 @@
                             $s += $row['value'] * $row['price'];
                           ?>
                             <td><?php echo number_format($row['value']); ?> </td>
-                            <td><?php echo number_format($row['tran_price'], 2); ?> </td>
-                            <td><?php echo number_format($bb = ($s / $sum_91) + $row['tran_price'], 2); ?> </td>
+
                           <?php
                           }
-
+                          ?>
+                          <td><?php echo number_format($row['tran_price'], 2); ?> </td>
+                          <td><?php echo number_format($bb = ($s / $sum_91) + $row['tran_price'], 2); ?> </td>
+                          <?php
                           $userQuery = "select sum(value) as sum from history where date = (select date from history where date < '$da' group by date order by date DESC limit 1) and gas_id = 2";
                           $result = mysqli_query($connect, $userQuery);
                           if (mysqli_num_rows($result) == 0) {
@@ -511,11 +513,13 @@
                             $s += $row['value'] * $row['price'];
                           ?>
                             <td><?php echo number_format($row['value']); ?> </td>
-                            <td><?php echo number_format($row['tran_price'], 2); ?> </td>
-                            <td><?php echo number_format($bb = ($s / $sum_91) + $row['tran_price'], 2); ?> </td>
+
                           <?php
                           }
-
+                          ?>
+                          <td><?php echo number_format($row['tran_price'], 2); ?> </td>
+                          <td><?php echo number_format($bb = ($s / $sum_91) + $row['tran_price'], 2); ?> </td>
+                          <?php
                           $userQuery = "select sum(value) as sum from history where date = (select date from history where date < '$da' group by date order by date DESC limit 1) and gas_id = 3";
                           $result = mysqli_query($connect, $userQuery);
                           if (mysqli_num_rows($result) == 0) {
