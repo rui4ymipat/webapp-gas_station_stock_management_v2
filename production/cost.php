@@ -272,7 +272,11 @@
 
                           <?php
                           }
+                          $userQuery = "select tran_price from history where date = '$da' group by tran_price";
+                          $result = mysqli_query($connect, $userQuery);
+                          $row = mysqli_fetch_assoc($result);
                           ?>
+                          
                           <td><?php echo number_format($row['tran_price'], 2); ?> </td>
                           <script type="text/javascript">
                             console.log("ค่าขนส่ง = <?php echo $row['tran_price']; ?> ")
@@ -411,7 +415,11 @@
 
                           <?php
                           }
+                          $userQuery = "select tran_price from history where date = '$da' group by tran_price";
+                          $result = mysqli_query($connect, $userQuery);
+                          $row = mysqli_fetch_assoc($result);
                           ?>
+                          
                           <td><?php echo number_format($row['tran_price'], 2); ?> </td>
                           <td><?php echo number_format($bb = ($s / $sum_91) + $row['tran_price'], 2); ?> </td>
                           <?php
@@ -516,6 +524,9 @@
 
                           <?php
                           }
+                          $userQuery = "select tran_price from history where date = '$da' group by tran_price";
+                          $result = mysqli_query($connect, $userQuery);
+                          $row = mysqli_fetch_assoc($result);
                           ?>
                           <td><?php echo number_format($row['tran_price'], 2); ?> </td>
                           <td><?php echo number_format($bb = ($s / $sum_91) + $row['tran_price'], 2); ?> </td>
