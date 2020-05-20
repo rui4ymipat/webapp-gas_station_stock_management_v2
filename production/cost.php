@@ -278,10 +278,8 @@
                           <?php
                           } else {
                           ?>
-                            <td><?php echo number_format($row['value']); ?></td>
-                          <?php 
-                          $cc = $row['value'];  
-                        } 
+                            <td><?php echo number_format($cc = $row['value'], 2); ?></td>
+                          <?php } 
                            
                           ?>
                           <td><?php echo number_format($sum_91 + $aa); ?> </td>
