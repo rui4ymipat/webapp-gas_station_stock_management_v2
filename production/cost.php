@@ -275,9 +275,12 @@
                           $userQuery = "select tran_price from history where date = '$da' group by tran_price";
                           $result = mysqli_query($connect, $userQuery);
                           $row = mysqli_fetch_assoc($result);
+                          if (is_numeric($row['tran_price'])) {
                           ?>
-                          
-                          <td><?php echo number_format($row['tran_price'], 2); ?> </td>
+                            <td><?php echo number_format($row['tran_price'], 2); ?> </td>
+                          <?php } else { ?>
+                            <td>0</td>
+                          <?php } ?>
                           <script type="text/javascript">
                             console.log("ค่าขนส่ง = <?php echo $row['tran_price']; ?> ")
                           </script>
@@ -329,10 +332,18 @@
                           <script type="text/javascript">
                             console.log("ปริมาณรวม = <?php echo number_format($sum_91 + $aa); ?> ")
                           </script>
-                          <td><?php echo number_format(($bb * $sum_91) + ($aa * $cc), 2); ?></td>
-                          <script type="text/javascript">
-                            console.log("มูลค่ารวม = <?php echo number_format(($bb * $sum_91) + ($aa * $cc), 2); ?> ")
-                          </script>
+                          <?php if (is_numeric(($bb * $sum_91) + ($aa * $cc))) { ?>
+                            <td><?php echo number_format(($bb * $sum_91) + ($aa * $cc), 2); ?></td>
+                            <script type="text/javascript">
+                              console.log("มูลค่ารวม = <?php echo number_format(($bb * $sum_91) + ($aa * $cc), 2); ?> ")
+                            </script>
+                          <?php } 
+                          else{ ?>
+                          <td>0</td>
+                          <?php
+                          }
+                          ?>
+
                           <?php
                           $userQuery = "select value from cost where date = '$da' and gas_id = 1 ";
                           $result = mysqli_query($connect, $userQuery);
@@ -418,9 +429,12 @@
                           $userQuery = "select tran_price from history where date = '$da' group by tran_price";
                           $result = mysqli_query($connect, $userQuery);
                           $row = mysqli_fetch_assoc($result);
+                          if (is_numeric($row['tran_price'])) {
                           ?>
-                          
-                          <td><?php echo number_format($row['tran_price'], 2); ?> </td>
+                            <td><?php echo number_format($row['tran_price'], 2); ?> </td>
+                          <?php } else { ?>
+                            <td>0</td>
+                          <?php } ?>
                           <td><?php echo number_format($bb = ($s / $sum_91) + $row['tran_price'], 2); ?> </td>
                           <?php
                           $userQuery = "select sum(value) as sum from history where date = (select date from history where date < '$da' group by date order by date DESC limit 1) and gas_id = 2";
@@ -449,7 +463,17 @@
                             <td><?php echo number_format($cc = $row['value'], 2); ?></td>
                           <?php } ?>
                           <td><?php echo number_format($sum_91 + $aa); ?> </td>
-                          <td><?php echo number_format(($bb * $sum_91) + ($aa * $cc), 2); ?></td>
+                          <?php if (is_numeric(($bb * $sum_91) + ($aa * $cc))) { ?>
+                            <td><?php echo number_format(($bb * $sum_91) + ($aa * $cc), 2); ?></td>
+                            <script type="text/javascript">
+                              console.log("มูลค่ารวม = <?php echo number_format(($bb * $sum_91) + ($aa * $cc), 2); ?> ")
+                            </script>
+                          <?php } 
+                          else{ ?>
+                          <td>0</td>
+                          <?php
+                          }
+                          ?>
 
                           <?php
                           $userQuery = "select value from cost where date = '$da' and gas_id = 2 ";
@@ -527,8 +551,12 @@
                           $userQuery = "select tran_price from history where date = '$da' group by tran_price";
                           $result = mysqli_query($connect, $userQuery);
                           $row = mysqli_fetch_assoc($result);
+                          if (is_numeric($row['tran_price'])) {
                           ?>
-                          <td><?php echo number_format($row['tran_price'], 2); ?> </td>
+                            <td><?php echo number_format($row['tran_price'], 2); ?> </td>
+                          <?php } else { ?>
+                            <td>0</td>
+                          <?php } ?>
                           <td><?php echo number_format($bb = ($s / $sum_91) + $row['tran_price'], 2); ?> </td>
                           <?php
                           $userQuery = "select sum(value) as sum from history where date = (select date from history where date < '$da' group by date order by date DESC limit 1) and gas_id = 3";
@@ -557,7 +585,17 @@
                             <td><?php echo number_format($cc = $row['value'], 2); ?></td>
                           <?php } ?>
                           <td><?php echo number_format($sum_91 + $aa); ?> </td>
-                          <td><?php echo number_format(($bb * $sum_91) + ($aa * $cc), 2); ?></td>
+                          <?php if (is_numeric(($bb * $sum_91) + ($aa * $cc))) { ?>
+                            <td><?php echo number_format(($bb * $sum_91) + ($aa * $cc), 2); ?></td>
+                            <script type="text/javascript">
+                              console.log("มูลค่ารวม = <?php echo number_format(($bb * $sum_91) + ($aa * $cc), 2); ?> ")
+                            </script>
+                          <?php } 
+                          else{ ?>
+                          <td>0</td>
+                          <?php
+                          }
+                          ?>
 
                           <?php
                           $userQuery = "select value from cost where date = '$da' and gas_id = 3 ";
