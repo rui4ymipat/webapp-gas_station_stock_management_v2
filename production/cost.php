@@ -268,7 +268,7 @@
                             <td><?php echo number_format($aa = $row['sum']); ?> </td>
                           <?php
                           }
-                          $userQuery = "select value from cost where date < '$da' gas_id = 1 limit 1";
+                          $userQuery = "select value from cost where date < '$da' and gas_id = 1 limit 1";
                           $result = mysqli_query($connect, $userQuery);
                           $row = mysqli_fetch_assoc($result);
                           if (mysqli_num_rows($result) == 0) {
@@ -390,7 +390,7 @@
                           <td><?php echo number_format(($bb * $sum_91) + ($aa * $cc), 2); ?></td>
 
                           <?php
-                          $userQuery = "select value from cost where date = '$da' gas_id = 2 ";
+                          $userQuery = "select value from cost where date = '$da' and gas_id = 2 ";
                           $result = mysqli_query($connect, $userQuery);
                           $row = mysqli_fetch_assoc($result);
                           if (mysqli_num_rows($result) == 0) {
@@ -493,7 +493,7 @@
                           <td><?php echo number_format(($bb * $sum_91) + ($aa * $cc), 2); ?></td>
 
                           <?php
-                          $userQuery = "select value from cost where date = '$da' gas_id = 3 ";
+                          $userQuery = "select value from cost where date = '$da' and gas_id = 3 ";
                           $result = mysqli_query($connect, $userQuery);
                           $row = mysqli_fetch_assoc($result);
                           if (mysqli_num_rows($result) == 0) {
