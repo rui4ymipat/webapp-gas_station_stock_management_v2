@@ -223,7 +223,17 @@
               <div class="row x_title">
 
                 <div class="col-md-6">
-
+                <?php
+              if (!empty($_SESSION['msg'])) {
+                session_start();
+              ?>
+                <script type="text/javascript">
+                  alert('<?php echo $_SESSION['msg'] ?>');
+                </script>
+              <?php
+                unset($_SESSION['msg']);
+              }
+              ?>
                 </div>
               </div>
               <div class="setfont1">
