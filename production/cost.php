@@ -274,6 +274,7 @@
                           if (mysqli_num_rows($result) == 0) {
                             $cc = 0;
                           ?>
+                          <script type="text/javascript">console.log("0")</script>
                             <td>0</td>
                           <?php
                           } else {
