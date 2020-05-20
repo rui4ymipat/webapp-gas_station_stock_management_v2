@@ -332,7 +332,8 @@
                           </script>
                           <?php if ($sum_91 == 0) {
                             $sum_91=1;
-                            echo "<td><?php echo number_format(($bb * $sum_91) + ($aa * $cc), 2); ?></td>";
+                            ?><td><?php echo number_format(($bb * $sum_91) + ($aa * $cc), 2); ?></td>
+                            <?php
                           } else { ?>
                           <script type="text/javascript">
                               console.log("<?php echo "$bb | $sum_91 | $aa | $cc |",number_format(($bb * $sum_91) + ($aa * $cc), 2); ?>")
@@ -461,7 +462,9 @@
                           <td><?php echo number_format($sum_91 + $aa); ?> </td>
                           <?php if ($sum_91 == 0) {
                             $sum_91=1;
-                            echo "<td><?php echo number_format(($bb * $sum_91) + ($aa * $cc), 2); ?></td>";
+                            ?>
+                            <td><?php echo number_format(($bb * $sum_91) + ($aa * $cc), 2); ?></td>
+                            <?php
                           } else { ?>
                             <td><?php echo number_format(($bb * $sum_91) + ($aa * $cc), 2); ?></td>
                           <?php
@@ -577,7 +580,7 @@
                           <td><?php echo number_format($sum_91 + $aa); ?> </td>
                           <?php if ($sum_91 == 0) {
                             $sum_91=1;
-                            echo "<td><?php echo number_format(($bb * $sum_91) + ($aa * $cc), 2); ?></td>";
+                            ?><td><?php echo number_format(($bb * $sum_91) + ($aa * $cc), 2); ?></td><?php
                           } else { ?>
                             <td><?php echo number_format(($bb * $sum_91) + ($aa * $cc), 2); ?></td>
                           <?php
