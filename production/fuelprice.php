@@ -442,6 +442,15 @@
                         $a1_price[] = $row['price'];
                         $a1_discount[] = $row['discount'];
                       }
+                      if (mysqli_num_rows($result) == 0) {
+                        ?>
+                        <tr>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        </tr>
+                        <?php
+                      }
 
                       $userQuery = "SELECT * from sell where account = 2 order by date DESC limit 21";
                       $result = mysqli_query($connect, $userQuery);
@@ -449,12 +458,30 @@
                         $a2_price[] = $row['price'];
                         $a2_discount[] = $row['discount'];
                       }
+                      if (mysqli_num_rows($result) == 0) {
+                        ?>
+                        
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        
+                        <?php
+                      }
 
                       $userQuery = "SELECT * from sell where account = 3 order by date DESC limit 21";
                       $result = mysqli_query($connect, $userQuery);
                       while ($row = mysqli_fetch_assoc($result)) {
                         $a3_price[] = $row['price'];
                         $a3_discount[] = $row['discount'];
+                      }
+                      if (mysqli_num_rows($result) == 0) {
+                        ?>
+                        
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        </tr>
+                        <?php
                       }
                       for ($i = 0; $i < count($a1_price); $i++) {
                       ?>
