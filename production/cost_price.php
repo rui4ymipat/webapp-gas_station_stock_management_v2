@@ -159,9 +159,9 @@
                 <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">กรอกข้อมูลประจำวัน</h1>
                 <table border="1">
                   <tr>
-                    <th rowspan="2" style="height: 65px; width:13%;">วันที่</th>
+                    <th rowspan="2" style="height: 65px;width:13%;">วันที่</th>
                     <th rowspan="2">ชนิด</th>
-                    <th colspan="5"><a href="cost.php" style="color: #2B3E54;">ราคา/ปริมาณ  <i class="fa fa-retweet"></i></a></th>
+                    <th colspan="5"><a href="cost_price.php" style="color: #2B3E54;">ราคา<i class="fa fa-retweet"></i></a></th>
                     <th colspan="2">น้ำมันเดิม</th>
                     <th colspan="3">สรุป</th>
                   </tr>
@@ -177,6 +177,421 @@
                     <th>มูลค่ารวม</th>
                     <th>ราคาต้นทุน</th>
                   </tr>
+                  <?php
+                  require_once "connect.php";
+                  $month = array('-', 'มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน', 'กรกฎาคม', 'สิงหาคม', 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม');
+                  $userQuery = "select date from history group by date order by date DESC";
+                  $result1 = mysqli_query($connect, $userQuery);
+                  while ($lop = mysqli_fetch_assoc($result1)) {
+
+                    $da = $lop['date'];
+                    $Tdate = explode("-", $lop['date']);
+                    $Sdate = array($Tdate[2], $month[(int) $Tdate[1]], $Tdate[0] + 543);
+                    $show_date  = implode(" ", $Sdate);
+
+                    for ($j = 0; $j < 3; $j++) {
+                      $sum_91 = 0;
+                      $sum_95 = 0;
+                      $sum_die = 0;
+                      $s = 0;
+                  ?>
+                      <?php if ($j == 0) { ?>
+                        <tr>
+                          <td style="height: 30px;" rowspan="3"><?php echo $show_date; ?></td>
+                          <td style="height: 30px;">G91</td>
+                          <?php
+                          $userQuery = "select price,value from history where date = '$da' and gas_id = 1 and account = 1";
+                          $result = mysqli_query($connect, $userQuery);
+                          if (mysqli_num_rows($result) == 0) {
+                            $sum_91 += 0;
+                            $s += 0;
+                          ?>
+                            <td>0</td>
+                            <script type="text/javascript">
+                              console.log("บัญชี1")
+                            </script>
+                          <?php
+                          } else {
+                            $row = mysqli_fetch_assoc($result);
+                            $sum_91 += $row['value'];
+                            $s += $row['value'] * $row['price'];
+                          ?>
+                            <td><?php echo number_format($row['price']); ?> </td>
+                            <script type="text/javascript">
+                              console.log("บัญชี1")
+                            </script>
+                          <?php
+                          }
+
+                          $userQuery = "select price,value from history where date = '$da' and gas_id = 1 and account = 2";
+                          $result = mysqli_query($connect, $userQuery);
+                          if (mysqli_num_rows($result) == 0) {
+
+                            $sum_91 += 0;
+                            $s += 0;
+                          ?>
+                            <td>0</td>
+                            <script type="text/javascript">
+                              console.log("บัญชี2")
+                            </script>
+                          <?php
+                          } else {
+                            $row = mysqli_fetch_assoc($result);
+                            $sum_91 += $row['value'];
+                            $s += $row['value'] * $row['price'];
+                          ?>
+                            <td><?php echo number_format($row['price']); ?> </td>
+                            <script type="text/javascript">
+                              console.log("บัญชี2")
+                            </script>
+                          <?php
+                          }
+
+                          $userQuery = "select price,value,tran_price from history where date = '$da' and gas_id = 1 and account = 3";
+                          $result = mysqli_query($connect, $userQuery);
+                          if (mysqli_num_rows($result) == 0) {
+                            $bb = 0;
+                            $sum_91 += 0;
+                            $s += 0;
+                          ?>
+                            <td>0</td>
+                            <script type="text/javascript">
+                              console.log("บัญชี3")
+                            </script>
+                          <?php
+                          } else {
+                            $row = mysqli_fetch_assoc($result);
+                            $sum_91 += $row['value'];
+                            $s += $row['value'] * $row['price'];
+                          ?>
+                            <td><?php echo number_format($row['price']); ?> </td>
+                            <script type="text/javascript">
+                              console.log("บัญชี3")
+                            </script>
+
+
+                          <?php
+                          }
+                          $userQuery = "select tran_price from history where date = '$da' group by tran_price";
+                          $result = mysqli_query($connect, $userQuery);
+                          $row = mysqli_fetch_assoc($result);
+                          ?>
+
+                          <td><?php echo number_format($row['tran_price'], 2); ?> </td>
+                          <script type="text/javascript">
+                            console.log("ค่าขนส่ง = <?php echo $row['tran_price']; ?> ")
+                          </script>
+                          <?php if ($sum_91 == 0) {
+                            echo "<td>0</td>";
+                          } else { ?>
+                            <td><?php echo number_format($bb = ($s / $sum_91) + $row['tran_price'], 2); ?> </td>
+                          <?php
+                          }
+                          $userQuery = "select sum(value) as sum from history where date = (select date from history where date < '$da' group by date order by date DESC limit 1) and gas_id = 1";
+                          $result = mysqli_query($connect, $userQuery);
+                          if (mysqli_num_rows($result) == 0) {
+                            $aa = 0;
+                          ?>
+                            <script type="text/javascript">
+                              console.log("ปริมาณเดิม")
+                            </script>
+                            <td>0</td>
+                          <?php
+                          } else {
+                            $row = mysqli_fetch_assoc($result);
+                          ?>
+                            <td><?php echo number_format($aa = $row['sum']); ?> </td>
+                            <script type="text/javascript">
+                              console.log("ปริมาณเดิม")
+                            </script>
+                          <?php
+                          }
+                          $userQuery = "select value from cost where date < '$da' and gas_id = 1 limit 1";
+                          $result = mysqli_query($connect, $userQuery);
+                          $row = mysqli_fetch_assoc($result);
+                          if (mysqli_num_rows($result) == 0) {
+                            $cc = 0;
+                          ?>
+                            <script type="text/javascript">
+                              console.log("ราคาเดิม")
+                            </script>
+                            <td>0</td>
+                          <?php
+                          } else {
+                          ?>
+                            <script type="text/javascript">
+                              console.log("ราคาเดิม")
+                            </script>
+                            <td><?php echo number_format($cc = $row['value'], 2); ?></td>
+                          <?php }
+
+                          ?>
+                          <td><?php echo number_format($sum_91 + $aa); ?> </td>
+                          <script type="text/javascript">
+                            console.log("ปริมาณรวม = <?php echo number_format($sum_91 + $aa); ?> ")
+                          </script>
+                          <?php if ($sum_91 == 0) {
+                            echo "<td>0</td>";
+                          } else { ?>
+                            <td><?php echo number_format(($bb * $sum_91) + ($aa * $cc), 2); ?></td>
+                          <?php
+                          }
+                          $userQuery = "select value from cost where date = '$da' and gas_id = 1 ";
+                          $result = mysqli_query($connect, $userQuery);
+                          $row = mysqli_fetch_assoc($result);
+                          if (mysqli_num_rows($result) == 0) {
+                            echo "<td>0</td>";
+                          ?>
+                            <script type="text/javascript">
+                              console.log("ราคาต้นทุน")
+                            </script>
+                          <?php
+                          } else {
+                          ?>
+                            <script type="text/javascript">
+                              console.log("ราคาต้นทุน")
+                            </script>
+                            <td><?php echo number_format($row['value']) ?></td>
+                          <?php } ?>
+                        </tr>
+
+                      <?php
+                      }
+
+
+
+                      if ($j == 1) { ?>
+                        <tr>
+
+                          <td style="height: 30px;">G95</td>
+                          <?php
+                          $userQuery = "select price,value from history where date = '$da' and gas_id = 2 and account = 1";
+                          $result = mysqli_query($connect, $userQuery);
+                          if (mysqli_num_rows($result) == 0) {
+                            $sum_91 += 0;
+                            $s += 0;
+                          ?>
+                            <td>0</td>
+                          <?php
+                          } else {
+                            $row = mysqli_fetch_assoc($result);
+                            $sum_91 += $row['value'];
+                            $s += $row['value'] * $row['price'];
+                          ?>
+                            <td><?php echo number_format($row['price']); ?> </td>
+                          <?php
+                          }
+
+                          $userQuery = "select price,value from history where date = '$da' and gas_id = 2 and account = 2";
+                          $result = mysqli_query($connect, $userQuery);
+                          if (mysqli_num_rows($result) == 0) {
+                            $sum_91 += 0;
+                            $s += 0;
+                          ?>
+                            <td>0</td>
+                          <?php
+                          } else {
+                            $row = mysqli_fetch_assoc($result);
+                            $sum_91 += $row['value'];
+                            $s += $row['value'] * $row['price'];
+                          ?>
+                            <td><?php echo number_format($row['price']); ?> </td>
+                          <?php
+                          }
+
+                          $userQuery = "select price,value,tran_price from history where date = '$da' and gas_id = 2 and account = 3";
+                          $result = mysqli_query($connect, $userQuery);
+                          if (mysqli_num_rows($result) == 0) {
+                            $bb = 0;
+                            $sum_91 += 0;
+                            $s += 0;
+                          ?>
+                            <td>0</td>
+                          <?php
+                          } else {
+                            $row = mysqli_fetch_assoc($result);
+                            $sum_91 += $row['value'];
+                            $s += $row['value'] * $row['price'];
+                          ?>
+                            <td><?php echo number_format($row['price']); ?> </td>
+
+                          <?php
+                          }
+                          $userQuery = "select tran_price from history where date = '$da' group by tran_price";
+                          $result = mysqli_query($connect, $userQuery);
+                          $row = mysqli_fetch_assoc($result);
+                          ?>
+
+                          <td><?php echo number_format($row['tran_price'], 2); ?> </td>
+                          <?php if ($sum_91 == 0) {
+                            echo "<td>0</td>";
+                          } else { ?>
+                            <td><?php echo number_format($bb = ($s / $sum_91) + $row['tran_price'], 2); ?> </td>
+                          <?php
+                          }
+                          $userQuery = "select sum(value) as sum from history where date = (select date from history where date < '$da' group by date order by date DESC limit 1) and gas_id = 2";
+                          $result = mysqli_query($connect, $userQuery);
+                          if (mysqli_num_rows($result) == 0) {
+                            $aa = 0;
+                          ?>
+                            <td>0</td>
+                          <?php
+                          } else {
+                            $row = mysqli_fetch_assoc($result);
+                          ?>
+                            <td><?php echo number_format($aa = $row['sum']); ?> </td>
+                          <?php
+                          }
+                          $userQuery = "select value from cost where date < '$da' and gas_id = 2 limit 1";
+                          $result = mysqli_query($connect, $userQuery);
+                          $row = mysqli_fetch_assoc($result);
+                          if (mysqli_num_rows($result) == 0) {
+                            $cc = 0;
+                          ?>
+                            <td>0</td>
+                          <?php
+                          } else {
+                          ?>
+                            <td><?php echo number_format($cc = $row['value'], 2); ?></td>
+                          <?php } ?>
+                          <td><?php echo number_format($sum_91 + $aa); ?> </td>
+                          <?php if ($sum_91 == 0) {
+                            echo "<td>0</td>";
+                          } else { ?>
+                            <td><?php echo number_format(($bb * $sum_91) + ($aa * $cc), 2); ?></td>
+                          <?php
+                          }
+                          $userQuery = "select value from cost where date = '$da' and gas_id = 2 ";
+                          $result = mysqli_query($connect, $userQuery);
+                          $row = mysqli_fetch_assoc($result);
+                          if (mysqli_num_rows($result) == 0) {
+                            echo "<td>0</td>";
+                          } else {
+                          ?>
+                            <td><?php echo number_format($row['value']) ?></td>
+                          <?php } ?>
+                        </tr>
+                      <?php
+                      }
+
+
+
+                      if ($j == 2) { ?>
+                        <tr>
+
+                          <td style="height: 30px;">Diesel</td>
+                          <?php
+                          $userQuery = "select price,value from history where date = '$da' and gas_id = 3 and account = 1";
+                          $result = mysqli_query($connect, $userQuery);
+                          if (mysqli_num_rows($result) == 0) {
+                            $sum_91 += 0;
+                            $s += 0;
+                          ?>
+                            <td>0</td>
+                          <?php
+                          } else {
+                            $row = mysqli_fetch_assoc($result);
+                            $sum_91 += $row['value'];
+                            $s += $row['value'] * $row['price'];
+                          ?>
+                            <td><?php echo number_format($row['price']); ?> </td>
+                          <?php
+                          }
+
+                          $userQuery = "select price,value from history where date = '$da' and gas_id = 3 and account = 2";
+                          $result = mysqli_query($connect, $userQuery);
+                          if (mysqli_num_rows($result) == 0) {
+                            $sum_91 += 0;
+                            $s += 0;
+                          ?>
+                            <td>0</td>
+                          <?php
+                          } else {
+                            $row = mysqli_fetch_assoc($result);
+                            $sum_91 += $row['value'];
+                            $s += $row['value'] * $row['price'];
+                          ?>
+                            <td><?php echo number_format($row['price']); ?> </td>
+                          <?php
+                          }
+
+                          $userQuery = "select price,value,tran_price from history where date = '$da' and gas_id = 3 and account = 3";
+                          $result = mysqli_query($connect, $userQuery);
+                          if (mysqli_num_rows($result) == 0) {
+                            $sum_91 += 0;
+                            $s += 0;
+                            $bb = 0;
+                          ?>
+                            <td>0</td>
+                          <?php
+                          } else {
+                            $row = mysqli_fetch_assoc($result);
+                            $sum_91 += $row['value'];
+                            $s += $row['value'] * $row['price'];
+                          ?>
+                            <td><?php echo number_format($row['price']); ?> </td>
+
+                          <?php
+                          }
+                          $userQuery = "select tran_price from history where date = '$da' group by tran_price";
+                          $result = mysqli_query($connect, $userQuery);
+                          $row = mysqli_fetch_assoc($result);
+                          ?>
+                          <td><?php echo number_format($row['tran_price'], 2); ?> </td>
+                          <?php if ($sum_91 == 0) {
+                            echo "<td>0</td>";
+                          } else { ?>
+                            <td><?php echo number_format($bb = ($s / $sum_91) + $row['tran_price'], 2); ?> </td>
+                          <?php
+                          }
+                          $userQuery = "select sum(value) as sum from history where date = (select date from history where date < '$da' group by date order by date DESC limit 1) and gas_id = 3";
+                          $result = mysqli_query($connect, $userQuery);
+                          if (mysqli_num_rows($result) == 0) {
+                            $aa = 0;
+                          ?>
+                            <td>0</td>
+                          <?php
+                          } else {
+                            $row = mysqli_fetch_assoc($result);
+                          ?>
+                            <td><?php echo number_format($aa = $row['sum']); ?> </td>
+                          <?php
+                          }
+                          $userQuery = "select value from cost where date < '$da' and gas_id = 3 limit 1";
+                          $result = mysqli_query($connect, $userQuery);
+                          $row = mysqli_fetch_assoc($result);
+                          if (mysqli_num_rows($result) == 0) {
+                            $cc = 0;
+                          ?>
+                            <td>0</td>
+                          <?php
+                          } else {
+                          ?>
+                            <td><?php echo number_format($cc = $row['value'], 2); ?></td>
+                          <?php } ?>
+                          <td><?php echo number_format($sum_91 + $aa); ?> </td>
+                          <?php if ($sum_91 == 0) {
+                            echo "<td>0</td>";
+                          } else { ?>
+                            <td><?php echo number_format(($bb * $sum_91) + ($aa * $cc), 2); ?></td>
+                          <?php
+                          }
+                          $userQuery = "select value from cost where date = '$da' and gas_id = 3 ";
+                          $result = mysqli_query($connect, $userQuery);
+                          $row = mysqli_fetch_assoc($result);
+                          if (mysqli_num_rows($result) == 0) {
+                            echo "<td>0</td>";
+                          } else {
+                          ?>
+                            <td><?php echo number_format($row['value']) ?></td>
+                          <?php } ?>
+                        </tr>
+                  <?php
+                      }
+                    }
+                  }
+
+                  ?>
                 </table>
               </div>
 
