@@ -387,7 +387,7 @@
                       $userQuery = "select (select value from gastank where date = '$da' and substr(timestamp,9)= 'am' and gas_id = 2 limit 1)-value as dif from gastank where date = '$da' and substr(timestamp,9)= 'pm' and gas_id = 2";
                       $result = mysqli_query($connect, $userQuery);
                       $row = mysqli_fetch_assoc($result);
-                      $p2 = $row['dif']+$b91;
+                      $p2 = $row['dif']+$b95;
                       if ($i == count($date)-1) {
                         echo "['$date2',",$p1+$p2 , "]";
                       } else {
@@ -455,7 +455,7 @@
                       $userQuery = "select (select value from gastank where date = '$da' and substr(timestamp,9)= 'am' and gas_id = 3 limit 1)-value as dif from gastank where date = '$da' and substr(timestamp,9)= 'pm' and gas_id = 3";
                       $result = mysqli_query($connect, $userQuery);
                       $row = mysqli_fetch_assoc($result);
-                      $p2 = $row['dif']+$b91;
+                      $p2 = $row['dif']+$bdie;
                       if ($i == count($date)-1) {
                         echo "['$date2',",$p1+$p2 , "]";
                       } else {
