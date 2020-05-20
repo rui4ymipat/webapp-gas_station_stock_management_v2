@@ -266,6 +266,8 @@
                             $row = mysqli_fetch_assoc($result);
                           ?>
                             <td><?php echo number_format($aa = $row['sum']); ?> </td>
+                            <script type="text/javascript">console.log("<?php echo number_format($aa = $row['sum']); ?>")</script>
+
                           <?php
                           }
                           $userQuery = "select value from cost where date < '$da' and gas_id = 1 limit 1";
@@ -286,7 +288,6 @@
                           ?>
                           <td><?php echo number_format($sum_91 + $aa); ?> </td>
                           <td><?php echo number_format(($bb * $sum_91) + ($aa * $cc), 2); ?></td>
-                          <script type="text/javascript">console.log("<?php echo number_format($sum_91 + $aa); ?>")</script>
                           <?php
                           $userQuery = "select value from cost where date = '$da' and gas_id = 1 ";
                           $result = mysqli_query($connect, $userQuery);
