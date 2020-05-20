@@ -180,7 +180,7 @@
                   <?php
                   require_once "connect.php";
                   $month = array('-', 'มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน', 'กรกฎาคม', 'สิงหาคม', 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม');
-                  $userQuery = "select date from history group by date order by date DESC";
+                  $userQuery = "select date from history group by date order by date DESC limit 7";
                   $result1 = mysqli_query($connect, $userQuery);
                   while ($lop = mysqli_fetch_assoc($result1)) {
 
