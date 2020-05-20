@@ -48,19 +48,10 @@
     header("Location:login.php");
   }
   require_once "connect.php";
-  $userQuery = "select * from buy_gas where date = '$da'";
-  $result3 = mysqli_query($connect, $userQuery);                             
-  if (mysqli_num_rows($result3) == 0){
-    $b91 = 0;
-    $b95 = 0;
-    $bdie = 0;
-  }
-  else{
-    $row3 = mysqli_fetch_assoc($result3);
-    $b91 = $row3['G91'];
-    $b95 = $row3['G95'];
-    $bdie = $row3['Desel'];
-  }
+  $userQuery = "select value from gastank where gas_id = 1 order by date DESC limit 1";
+  $result3 = mysqli_query($connect, $userQuery);
+  $row3 = mysqli_fetch_assoc($result3);
+  $s = ($row3['value'] / 20000) * 100;
   ?>
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script type="text/javascript">
@@ -73,7 +64,7 @@
 
       var data = google.visualization.arrayToDataTable([
         ['Label', 'Value'],
-        ['G91', 80]
+        ['G91', <?php echo $s; ?>]
       ]);
 
       var options = {
@@ -90,7 +81,13 @@
       chart.draw(data, options);
     }
   </script>
-
+  <?php
+  require_once "connect.php";
+  $userQuery = "select value from gastank where gas_id = 2 order by date DESC limit 1";
+  $result3 = mysqli_query($connect, $userQuery);
+  $row3 = mysqli_fetch_assoc($result3);
+  $s = ($row3['value'] / 20000) * 100;
+  ?>
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script type="text/javascript">
     google.charts.load('current', {
@@ -102,7 +99,7 @@
 
       var data = google.visualization.arrayToDataTable([
         ['Label', 'Value'],
-        ['G95', 80]
+        ['G95', <?php echo $s; ?>]
       ]);
 
       var options = {
@@ -119,7 +116,13 @@
       chart.draw(data, options);
     }
   </script>
-
+  <?php
+  require_once "connect.php";
+  $userQuery = "select value from gastank where gas_id = 3 order by date DESC limit 1";
+  $result3 = mysqli_query($connect, $userQuery);
+  $row3 = mysqli_fetch_assoc($result3);
+  $s = ($row3['value'] / 20000) * 100;
+  ?>
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script type="text/javascript">
     google.charts.load('current', {
@@ -131,7 +134,7 @@
 
       var data = google.visualization.arrayToDataTable([
         ['Label', 'Value'],
-        ['Desel', 80]
+        ['Desel', <?php echo $s; ?>]
       ]);
 
       var options = {
@@ -486,9 +489,12 @@
                       </td>
                       <td><?php $userQuery = "select sum(value) as sum from history where account = 2 and date between '$date_start' and '$date_end'";
                           $result = mysqli_query($connect, $userQuery);
-                          $row = mysqli_fetch_assoc($result); 
-                          if($row['sum'] <= 40000){ echo number_format($row['sum']*1.1,2);}
-                          else{echo number_format($row['sum']*1.3,2);}?> <div style="font-size: 40%;">บาท</div>
+                          $row = mysqli_fetch_assoc($result);
+                          if ($row['sum'] <= 40000) {
+                            echo number_format($row['sum'] * 1.1, 2);
+                          } else {
+                            echo number_format($row['sum'] * 1.3, 2);
+                          } ?> <div style="font-size: 40%;">บาท</div>
                       </td>
                     </tr>
                   </table>
@@ -499,17 +505,41 @@
                   <tr>
                     <td>
                       <div class="setfont1">
-                        <h1 style="font-size: 170%;">G95 10 ลิตร(80%)</h1>
+                        <?php
+                        require_once "connect.php";
+                        $userQuery = "select value from gastank where gas_id = 1 order by date DESC limit 1";
+                        $result3 = mysqli_query($connect, $userQuery);
+                        $row3 = mysqli_fetch_assoc($result3);
+                        $v = $row3['value'];
+                        $s = ($row3['value'] / 20000) * 100;
+                        ?>
+                        <h1 style="font-size: 170%;"><?php echo "G91 $v ลิตร($s%)";  ?></h1>
                       </div>
                     </td>
                     <td>
+                      <?php
+                      require_once "connect.php";
+                      $userQuery = "select value from gastank where gas_id = 2 order by date DESC limit 1";
+                      $result3 = mysqli_query($connect, $userQuery);
+                      $row3 = mysqli_fetch_assoc($result3);
+                      $v = $row3['value'];
+                      $s = ($row3['value'] / 20000) * 100;
+                      ?>
                       <div class="setfont1">
-                        <h1 style="font-size: 170%;">G91 10 ลิตร(80%)</h1>
+                        <h1 style="font-size: 170%;"><?php echo "G95 $v ลิตร($s%)";  ?></h1>
                       </div>
                     </td>
                     <td>
+                      <?php
+                      require_once "connect.php";
+                      $userQuery = "select value from gastank where gas_id = 3 order by date DESC limit 1";
+                      $result3 = mysqli_query($connect, $userQuery);
+                      $row3 = mysqli_fetch_assoc($result3);
+                      $v = $row3['value'];
+                      $s = ($row3['value'] / 20000) * 100;
+                      ?>
                       <div class="setfont1">
-                        <h1 style="font-size: 170%;">Desel 10 ลิตร(80%)</h1>
+                        <h1 style="font-size: 170%;"><?php echo "Diesel $v ลิตร($s%)";  ?></h1>
                       </div>
                     </td>
                   </tr>
