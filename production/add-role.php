@@ -5,7 +5,7 @@
  fprintf($file,"%s",$text);
  fclose($file);
  $_SESSION['msg'] = "ดำเนินการสำเร็จ";
- // header("Location:management.php");
+ header("Location:management.php");
  ?>
 <script type="text/javascript"> 
     console.log("<?php echo $text; ?>");
