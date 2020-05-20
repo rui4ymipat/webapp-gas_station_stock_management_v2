@@ -275,7 +275,7 @@
                       $row3 = mysqli_fetch_assoc($result3);              
                     ?>
                     <textarea name="t" id="t" cols="50" rows="11" style="width: 90%;">
-                    <?php echo $row['text']; ?>
+                    <?php echo $row3['text']; ?>
                     </textarea>
                     <input type="submit" class="btn btn-success" value="Submit" style="display: block;">
                     </form>
