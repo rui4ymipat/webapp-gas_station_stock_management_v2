@@ -334,7 +334,7 @@
                             echo "<td>0</td>";
                           } else { ?>
                           <script type="text/javascript">
-                              console.log("<?php echo "$bb | $sum_91 | $aa | $cc",number_format(($bb * $sum_91) + ($aa * $cc), 2); ?>")
+                              console.log("<?php echo "$bb | $sum_91 | $aa | $cc |",number_format(($bb * $sum_91) + ($aa * $cc), 2); ?>")
                             </script>
                             <td><?php echo number_format(($bb * $sum_91) + ($aa * $cc), 2); ?></td>
                           <?php
