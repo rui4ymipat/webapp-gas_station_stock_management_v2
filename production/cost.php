@@ -278,6 +278,7 @@
                           <?php
                           } else {
                           ?>
+                          <script type="text/javascript">console.log("<?php echo number_format($cc = $row['value'], 2); ?>")</script>
                             <td><?php echo number_format($cc = $row['value'], 2); ?></td>
                           <?php } 
                            
@@ -296,7 +297,7 @@
                             <td><?php echo number_format($row['value']) ?></td>
                           <?php } ?>
                         </tr>
-                        <script type="text/javascript">console.log("<?php echo "$cc | $sum_91 |$aa  "; ?>")</script>
+                        
                       <?php
                       }
 
