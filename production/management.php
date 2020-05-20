@@ -268,11 +268,14 @@
                     <h1 style="font-weight: 800;color: #2B3E54;font-size: 200%; width:50%;">ตารางงานประจำวัน</h1>
                     <form action="add-role.php" method="GET">
                     <div class="showdetail">เปลี่ยนตารางงานประจำวัน</div>
-                    <?php                    
-                    $text = file('note.txt');                
+                    <?php         
+                      require_once "connect.php";           
+                      $userQuery = "select texe from text where id = 1";
+                      $result3 = mysqli_query($connect, $userQuery);
+                      $row3 = mysqli_fetch_assoc($result3);              
                     ?>
                     <textarea name="t" id="t" cols="50" rows="11" style="width: 90%;">
-                    <?php foreach($text as $index=>$value){echo " ",$value,"\r\n";} ?>
+                    <?php echo $row['text']; ?>
                     </textarea>
                     <input type="submit" class="btn btn-success" value="Submit" style="display: block;">
                     </form>

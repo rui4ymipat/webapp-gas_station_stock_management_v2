@@ -1,9 +1,9 @@
-<?php 
+<?php
 session_start();
- $t = $_GET['t'];
- $file = fopen('note.txt','w');
- $text= str_replace("\n", "<br>\n", $t);
- fwrite($file,$text);
- fclose($file);
- $_SESSION['msg'] = "ดำเนินการสำเร็จ";
- header("Location:management.php");
+$t = $_GET['t'];
+require_once "connect.php";
+$text = str_replace("\n", "<br>\n", $t);
+$userQuery = "update text set text = '$t' where id = 1";
+$result3 = mysqli_query($connect, $userQuery);
+$_SESSION['msg'] = "ดำเนินการสำเร็จ";
+header("Location:management.php");
