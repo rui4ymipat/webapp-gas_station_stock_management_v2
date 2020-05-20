@@ -331,8 +331,8 @@
                             console.log("ปริมาณรวม = <?php echo number_format($sum_91 + $aa); ?> ")
                           </script>
                           <?php if ($sum_91 == 0) {
-                            $sum_91=1;
-                            ?><td><?php echo number_format(($bb * $sum_91) + ($aa * $cc), 2); ?></td>
+                            
+                            ?><td><?php echo number_format(($aa * $cc), 2); ?></td>
                             <?php
                           } else { ?>
                           <script type="text/javascript">
@@ -461,9 +461,9 @@
                           <?php } ?>
                           <td><?php echo number_format($sum_91 + $aa); ?> </td>
                           <?php if ($sum_91 == 0) {
-                            $sum_91=1;
+                            
                             ?>
-                            <td><?php echo number_format(($bb * $sum_91) + ($aa * $cc), 2); ?></td>
+                            <td><?php echo number_format(($aa * $cc), 2); ?></td>
                             <?php
                           } else { ?>
                             <td><?php echo number_format(($bb * $sum_91) + ($aa * $cc), 2); ?></td>
@@ -579,8 +579,8 @@
                           <?php } ?>
                           <td><?php echo number_format($sum_91 + $aa); ?> </td>
                           <?php if ($sum_91 == 0) {
-                            $sum_91=1;
-                            ?><td><?php echo number_format(($bb * $sum_91) + ($aa * $cc), 2); ?></td><?php
+                            
+                            ?><td><?php echo number_format(($aa * $cc), 2); ?></td><?php
                           } else { ?>
                             <td><?php echo number_format(($bb * $sum_91) + ($aa * $cc), 2); ?></td>
                           <?php
