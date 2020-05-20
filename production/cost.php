@@ -206,7 +206,7 @@
                             $sum_91 += 0;
                             $s += 0;
                           ?>
-                            <td> </td>
+                            <td>0</td>
                           <?php
                           } else {
                             $row = mysqli_fetch_assoc($result);
@@ -223,7 +223,7 @@
                             $sum_91 += 0;
                             $s += 0;
                           ?>
-                            <td> </td>
+                            <td>0</td>
                           <?php
                           } else {
                             $row = mysqli_fetch_assoc($result);
@@ -240,7 +240,7 @@
                             $sum_91 += 0;
                             $s += 0;
                           ?>
-                            <td> </td>
+                            <td>0</td>
                           <?php
                           } else {
                             $row = mysqli_fetch_assoc($result);
@@ -257,7 +257,7 @@
                           $result = mysqli_query($connect, $userQuery);
                           if (mysqli_num_rows($result) == 0) {
                           ?>
-                            <td> </td>
+                            <td>0</td>
                           <?php
                           } else {
                             $row = mysqli_fetch_assoc($result);
@@ -270,7 +270,7 @@
                           $row = mysqli_fetch_assoc($result);
                           if (mysqli_num_rows($result) == 0) {
                           ?>
-                            <td> </td>
+                            <td>0</td>
                           <?php
                           } else {
                           ?>
@@ -284,7 +284,7 @@
                           $result = mysqli_query($connect, $userQuery);
                           $row = mysqli_fetch_assoc($result);
                           if (mysqli_num_rows($result) == 0) {
-                            echo "<td> </td>";
+                            echo "<td>0</td>";
                           } else {
                           ?>
                             <td><?php echo number_format($row['value']) ?></td>
@@ -306,7 +306,7 @@
                             $sum_91 += 0;
                             $s += 0;
                           ?>
-                            <td> </td>
+                            <td>0</td>
                           <?php
                           } else {
                             $row = mysqli_fetch_assoc($result);
@@ -323,7 +323,7 @@
                             $sum_91 += 0;
                             $s += 0;
                           ?>
-                            <td> </td>
+                            <td>0</td>
                           <?php
                           } else {
                             $row = mysqli_fetch_assoc($result);
@@ -340,7 +340,7 @@
                             $sum_91 += 0;
                             $s += 0;
                           ?>
-                            <td> </td>
+                            <td>0</td>
                           <?php
                           } else {
                             $row = mysqli_fetch_assoc($result);
@@ -357,7 +357,7 @@
                           $result = mysqli_query($connect, $userQuery);
                           if (mysqli_num_rows($result) == 0) {
                           ?>
-                            <td> </td>
+                            <td>0</td>
                           <?php
                           } else {
                             $row = mysqli_fetch_assoc($result);
@@ -370,7 +370,7 @@
                           $row = mysqli_fetch_assoc($result);
                           if (mysqli_num_rows($result) == 0) {
                           ?>
-                            <td> </td>
+                            <td>0</td>
                           <?php
                           } else {
                           ?>
@@ -384,7 +384,7 @@
                           $result = mysqli_query($connect, $userQuery);
                           $row = mysqli_fetch_assoc($result);
                           if (mysqli_num_rows($result) == 0) {
-                            echo "<td> </td>";
+                            echo "<td>0</td>";
                           } else {
                           ?>
                             <td><?php echo number_format($row['value']) ?></td>
@@ -406,7 +406,7 @@
                             $sum_91 += 0;
                             $s += 0;
                           ?>
-                            <td> </td>
+                            <td>0</td>
                           <?php
                           } else {
                             $row = mysqli_fetch_assoc($result);
@@ -423,7 +423,7 @@
                             $sum_91 += 0;
                             $s += 0;
                           ?>
-                            <td> </td>
+                            <td>0</td>
                           <?php
                           } else {
                             $row = mysqli_fetch_assoc($result);
@@ -440,7 +440,7 @@
                             $sum_91 += 0;
                             $s += 0;
                           ?>
-                            <td> </td>
+                            <td>0</td>
                           <?php
                           } else {
                             $row = mysqli_fetch_assoc($result);
@@ -457,7 +457,7 @@
                           $result = mysqli_query($connect, $userQuery);
                           if (mysqli_num_rows($result) == 0) {
                           ?>
-                            <td> </td>
+                            <td>0</td>
                           <?php
                           } else {
                             $row = mysqli_fetch_assoc($result);
@@ -470,7 +470,7 @@
                           $row = mysqli_fetch_assoc($result);
                           if (mysqli_num_rows($result) == 0) {
                           ?>
-                            <td> </td>
+                            <td>0</td>
                           <?php
                           } else {
                           ?>
@@ -484,7 +484,7 @@
                           $result = mysqli_query($connect, $userQuery);
                           $row = mysqli_fetch_assoc($result);
                           if (mysqli_num_rows($result) == 0) {
-                            echo "<td> </td>";
+                            echo "<td>0</td>";
                           } else {
                           ?>
                             <td><?php echo number_format($row['value']) ?></td>
