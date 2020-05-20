@@ -279,14 +279,14 @@
                           <?php
                           } else {
                           ?>
-                          <script type="text/javascript">console.log("<?php echo number_format($cc = $row['value'], 2); ?>")</script>
+                          
                             <td><?php echo number_format($cc = $row['value'], 2); ?></td>
                           <?php } 
                            
                           ?>
                           <td><?php echo number_format($sum_91 + $aa); ?> </td>
                           <td><?php echo number_format(($bb * $sum_91) + ($aa * $cc), 2); ?></td>
-
+                          <script type="text/javascript">console.log("<?php echo number_format(($bb * $sum_91) + ($aa * $cc), 2); ?>")</script>
                           <?php
                           $userQuery = "select value from cost where date = '$da' and gas_id = 1 ";
                           $result = mysqli_query($connect, $userQuery);
