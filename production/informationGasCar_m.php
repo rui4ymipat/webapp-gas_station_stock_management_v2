@@ -270,63 +270,7 @@
               ?>
               <?php if ($_SESSION['user_level'] != 1) { ?>
                 <div class="setfont1">
-                  <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">กรอกข้อมูลประจำวัน</h1>
-                  <div class="setborder">
-                    <form action="inforCar-pro.php" method="GET">
-
-                      <div class="column1">
-                        <div class="showdetail">รถขนน้ำมัน</div>
-                        <select name="cars" style="padding-left: 5%;width: 71%;height: 35px;margin-bottom: 15px;" class="form-control">
-                          <option value="none" selected disabled hidden>เลือกรถ</option>
-                          <?php while ($row = mysqli_fetch_assoc($result)) { ?>
-                            <option value="<?php echo $id[] = $row['id'] ?>"><?php echo $name[] = $row['name'] ?></option>
-                          <?php } ?>
-                        </select>
-                      </div>
-                      <div class="column2">
-                        <div class="showdetail">ปริมาณที่รับมา</div>
-                        <table>
-                          <tr>
-                            <td class="name">G91</td>
-                            <td><input type="text" name="g91"></td>
-                            <td class="lit">ลิตร</td>
-                          </tr>
-                          <tr>
-                            <td class="name">G95</td>
-                            <td><input type="text" name="g95"></td>
-                            <td class="lit">ลิตร</td>
-                          </tr>
-                          <tr>
-                            <td class="name">Diesel</td>
-                            <td><input type="text" name="de"></td>
-                            <td class="lit">ลิตร</td>
-                          </tr>
-                        </table>
-                      </div>
-                      <div class="column3">
-                        <div class="showdetail">ค่าเที่ยว</div>
-                        <table>
-                          <tr>
-                            <td class="name">ค่าเที่ยวต่อรอบ</td>
-                            <td><input type="text" name="tp" placeholder="2,800"></td>
-                            <td class="lit">บาท</td>
-                          </tr>
-                          <tr>
-                            <td class="name">ค่าอื่นๆ</td>
-                            <td><input type="text" name="other"></td>
-                            <td class="lit">บาท</td>
-                          </tr>
-                          <tr>
-                            <td class="name">หมายเหตุ</td>
-                            <td><input type="text" name="detail"></td>
-                            <td class="lit">บาท</td>
-                          </tr>
-                        </table>
-                      </div>
-                      <input type="submit" class="btn btn-success" value="Submit">
-                    </form>
-                  </div>
-                  <br>
+                
                   <div class="show_information">
                     <?php
 
@@ -358,7 +302,7 @@
                     </div>
                   </form>
                   <br>
-                    <?php for ($i = 0; $i < count($id); $i++) { ?>
+                    <?php for ($i = 0; $i < 3; $i++) { ?>
                       <br>
                       <table border="1">
                         <tr>
@@ -379,8 +323,9 @@
                           <th style="width: 7%;">Diesel</th>
                         </tr>
                         <?php
+                        $ds = $_GET['select_m'];
                         $month = array('-', 'มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน', 'กรกฎาคม', 'สิงหาคม', 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม');
-                        $Q = "Select * from $table[$i] order by date DESC limit 7";
+                        $Q = "Select * from $table[$i] where MONTH(date) = $ds order by date DESC";
                         $Check_result = mysqli_query($connect, $Q);
                         while ($row = mysqli_fetch_assoc($Check_result)) {
                           $d = $row['date'];
