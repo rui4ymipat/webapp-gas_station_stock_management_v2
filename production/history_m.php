@@ -317,107 +317,13 @@
               }
               ?>
               <div class="setfont1">
-                <div class="column1">
-                  <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">กรอกข้อมูลประจำวัน</h1>
-                  <div class="setborder">
-
-                    <form action="add_history.php">
-                      <div class="col1">
-                        <div class="showdetail">รถขนน้ำมัน</div>
-                        <select name="cars" style="padding-left: 5%;width: 60%;height: 35px;margin-bottom: 15px;" class="form-control">
-                          <option value="none" selected disabled hidden>เลือกรถ</option>
-                          <?php while ($row = mysqli_fetch_assoc($result)) { ?>
-                            <option value="<?php echo $row['id'] ?>"><?php echo $row['name'] ?></option>
-                          <?php } ?>
-                        </select>
-                        <table>
-                          <tr>
-                            <td><input type="text" name="a" placeholder="ค่าขนส่ง"></td>
-                            <td class="name">บาท</td>
-
-                          </tr>
-                        </table>
-                      </div>
-                      <div class="col2">
-                        <div class="showdetail">ปริมาณที่สั่งซื้อ บัญชี 1</div>
-                        <table class="account">
-
-                          <tr>
-                            <td class="name">G91</td>
-                            <td><input type="text" name="91p_a1" placeholder="ราคา"></td>
-                            <td><input type="text" name="91d_a1" placeholder="ปริมาณ" style="margin-left: 15px"></td>
-                          </tr>
-
-                          <tr>
-                            <td class="name">G95</td>
-                            <td><input type="text" name="95p_a1" placeholder="ราคา"></td>
-                            <td><input type="text" name="95d_a1" placeholder="ปริมาณ" style="margin-left: 15px"></td>
-                          </tr>
-
-                          <tr>
-                            <td class="name">Diesel</td>
-                            <td><input type="text" name="Dep_a1" placeholder="ราคา"></td>
-                            <td><input type="text" name="Ded_a1" placeholder="ปริมาณ" style="margin-left: 15px"></td>
-                          </tr>
-                        </table>
-                      </div>
-                      <div class="col3">
-                        <div class="showdetail">ปริมาณที่สั่งซื้อ บัญชี 2</div>
-                        <table class="account">
-
-                          <tr>
-                            <td class="name">G91</td>
-                            <td><input type="text" name="91p_a2" placeholder="ราคา"></td>
-                            <td><input type="text" name="91d_a2" placeholder="ปริมาณ" style="margin-left: 15px"></td>
-                          </tr>
-
-                          <tr>
-                            <td class="name">G95</td>
-                            <td><input type="text" name="95p_a2" placeholder="ราคา"></td>
-                            <td><input type="text" name="95d_a2" placeholder="ปริมาณ" style="margin-left: 15px"></td>
-                          </tr>
-
-                          <tr>
-                            <td class="name">Diesel</td>
-                            <td><input type="text" name="Dep_a2" placeholder="ราคา"></td>
-                            <td><input type="text" name="Ded_a2" placeholder="ปริมาณ" style="margin-left: 15px"></td>
-                          </tr>
-                        </table>
-                      </div>
-                      <div class="col4">
-                        <div class="showdetail">ปริมาณที่สั่งซื้อ บัญชี 3</div>
-                        <table class="account">
-
-                          <tr>
-                            <td class="name">G91</td>
-                            <td><input type="text" name="91p_a3" placeholder="ราคา"></td>
-                            <td><input type="text" name="91d_a3" placeholder="ปริมาณ" style="margin-left: 15px"></td>
-                          </tr>
-                          <tr>
-                            <td class="name">G95</td>
-                            <td><input type="text" name="95p_a3" placeholder="ราคา"></td>
-                            <td><input type="text" name="95d_a3" placeholder="ปริมาณ" style="margin-left: 15px"></td>
-                          </tr>
-
-                          <tr>
-                            <td class="name">Diesel</td>
-                            <td><input type="text" name="Dep_a3" placeholder="ราคา"></td>
-                            <td><input type="text" name="Ded_a3" placeholder="ปริมาณ" style="margin-left: 15px"></td>
-                          </tr>
-                        </table>
-                      </div>
-
-                      <input style="border-radius: 10px;" type="submit" class="btn btn-success" value="Submit">
-                    </form>
-                  </div>
-                </div>
+               
                 <div class="column2">
-                  <br>
-                  <br>
+                  
                   <form action="history_m.php" method="GET">
                     <table>
                       <tr>
-                        <td>เลือกเดือน</td>
+                        
                         <td><select name="select_m" class="form-control">
                             <option value="none" selected disabled hidden>เลือกเดือน</option>
                             <option value="01">มกราคม</option>
