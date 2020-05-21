@@ -279,7 +279,7 @@
                   <td>เลือกเดือน</td>
                   <td><select name="select_m" class="form-control" >
                   <option value="none" selected disabled hidden>เลือกเดือน</option>
-                  <option value="1">มกราคม/option>
+                  <option value="1">มกราคม</option>
                   <option value="2">กุมภาพันธ์</option>
                   <option value="3">มีนาคม</option>
                   <option value="4">เมษายน</option>
