@@ -351,8 +351,9 @@
                       <th rowspan="2">รถขนน้ำมัน</th>
                       <th colspan="3">บัญชี 1 สั่งซื้อรวม <?php
                                                           date_default_timezone_set("Asia/Bangkok");
-                                                          $date_start = date("Y-m-01");
-                                                          $date_end = date("Y-m-31");
+                                                          $ds = $_GET['select_m'];
+                                                          $date_start = date("Y-$ds-01");
+                                                          $date_end = date("Y-$ds-31");
                                                           $userQuery = "select sum(value) as sum from history where account = 1 and date between '$date_start' and '$date_end'";
                                                           $result = mysqli_query($connect, $userQuery);
                                                           $row = mysqli_fetch_assoc($result);
@@ -379,8 +380,8 @@
                     </tr>
                     <?php
                     $month = array('-', 'มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน', 'กรกฎาคม', 'สิงหาคม', 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม');
-                    $ds = $_GET['select_m'];
-                    $userQuery = "select date from history where MONTH($date) = $ds group by date order by date DESC ";
+                    
+                    $userQuery = "select date from history where MONTH(date) = $ds group by date order by date DESC ";
                     $result1 = mysqli_query($connect, $userQuery);
                     while ($lop = mysqli_fetch_assoc($result1)) {
                       $Tdate = explode("-", $lop['date']);
