@@ -321,7 +321,7 @@
                 <div class="column2">
                   
                   <form action="history_m.php" method="GET">
-                    <table>
+                    <table class="asdasd">
                       <tr>
                         
                         <td><select name="select_m" class="form-control">
@@ -343,6 +343,7 @@
                       </tr>
                     </table>
                   </form>
+                  <br>
                   <table border="1">
                     <tr>
                       <th rowspan="2">วันที่</th>

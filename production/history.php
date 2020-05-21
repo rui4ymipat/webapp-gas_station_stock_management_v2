@@ -415,9 +415,9 @@
                   <br>
                   <br>
                   <form action="history_m.php" method="GET">
-                    <table>
+                    <table  class="asdasd">
                       <tr>
-                        <td>เลือกเดือน</td>
+                        
                         <td><select name="select_m" class="form-control">
                             <option value="none" selected disabled hidden>เลือกเดือน</option>
                             <option value="01">มกราคม</option>
@@ -437,6 +437,7 @@
                       </tr>
                     </table>
                   </form>
+                  <br>
                   <table border="1">
                     <tr>
                       <th rowspan="2">วันที่</th>
