@@ -334,30 +334,30 @@
                     ?>
                     <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">ข้อมูลรถน้ำมัน</h1>
                     <form action="informationGasCar_m.php" method="GET">
-                  <div class="qwer">
-                    <table  class="asdasd"  style="width: 20%;">
-                      <tr>        
-                        <td><select name="select_m" class="form-control">
-                            <option value="none" selected disabled hidden>เลือกเดือน</option>
-                            <option value="01">มกราคม</option>
-                            <option value="02">กุมภาพันธ์</option>
-                            <option value="03">มีนาคม</option>
-                            <option value="04">เมษายน</option>
-                            <option value="05">พฤษภาคม</option>
-                            <option value="06">มิถุนายน</option>
-                            <option value="07">กรกฎาคม</option>
-                            <option value="08">สิงหาคม</option>
-                            <option value="09">กันยายน</option>
-                            <option value="10">ตุลาคม </option>
-                            <option value="11">พฤศจิกายน</option>
-                            <option value="12">ธันวาคม</option>
-                          </select></td>
-                        <td><input type="submit" class="btn btn-success" value="Submit"></td>
-                      </tr>
-                    </table>
-                    </div>
-                  </form>
-                  <br>
+                      <div class="qwer">
+                        <table class="asdasd" style="width: 20%;">
+                          <tr>
+                            <td><select name="select_m" class="form-control">
+                                <option value="none" selected disabled hidden>เลือกเดือน</option>
+                                <option value="01">มกราคม</option>
+                                <option value="02">กุมภาพันธ์</option>
+                                <option value="03">มีนาคม</option>
+                                <option value="04">เมษายน</option>
+                                <option value="05">พฤษภาคม</option>
+                                <option value="06">มิถุนายน</option>
+                                <option value="07">กรกฎาคม</option>
+                                <option value="08">สิงหาคม</option>
+                                <option value="09">กันยายน</option>
+                                <option value="10">ตุลาคม </option>
+                                <option value="11">พฤศจิกายน</option>
+                                <option value="12">ธันวาคม</option>
+                              </select></td>
+                            <td><input type="submit" class="btn btn-success" value="Submit"></td>
+                          </tr>
+                        </table>
+                      </div>
+                    </form>
+                    <br>
                     <?php for ($i = 0; $i < count($id); $i++) { ?>
                       <br>
                       <table border="1">
@@ -402,7 +402,7 @@
                             <td><?php echo number_format($Dep['current_price'] * $row['value'], 2); ?></td>
                             <td><?php echo number_format($row['cost'], 2); ?></td>
                             <td><?php echo number_format($row['other_price']);
-                                if(!empty($row['detail'])){
+                                if (!empty($row['detail'])) {
                                   echo "(", $row['detail'], ")";
                                 } ?></td>
                             <td><?php echo number_format($row['cost'] + $row['other_price'] + ($Dep['current_price'] * $row['value']), 2); ?></td>

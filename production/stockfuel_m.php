@@ -231,30 +231,7 @@
 
               <?php if ($_SESSION['user_level'] != 1) { ?>
                 <div class="setfont1">
-                  <div class="setborder" style="width: 20%;">
-                    <h1 style="font-weight: 800;color: #2B3E54;font-size: 200%;">กรอกข้อมูล</h1>
-                    <form action="add_buygas.php" method="GET">
-                      <div class="showdetail">ปริมาณที่ซื้อมา</div>
-                      <table style="margin-top:20px;">
-                        <tr>
-                          <td class="name">G91</td>
-                          <td><input type="text" name="g95" style="width: 90%;"></td>
-                          <td style="font-size: 100%;">ลิตร</td>
-                        </tr>
-                        <tr>
-                          <td class="name">G95</td>
-                          <td><input type="text" name="g91" style="width: 90%;"></td>
-                          <td style="font-size: 100%;">ลิตร</td>
-                        </tr>
-                        <tr>
-                          <td class="name">Diesel</td>
-                          <td><input type="text" name="die" style="width: 90%;"></td>
-                          <td style="font-size: 100%;">ลิตร</td>
-                        </tr>
-                      </table>
-                      <input type="submit" class="btn btn-success" value="Submit">
-                    </form>
-                  </div>
+                
                   <form action="stockfuel_m.php" method="GET">
                   <div class="qwer">
                     <table  class="asdasd"  style="width: 20%;">
@@ -308,8 +285,9 @@
                       require_once "connect.php";
                       date_default_timezone_set("Asia/Bangkok");
                       $d = date("Y-m-d");
+                      $ds = $_GET['select_m'];
                       $month = array('-', 'มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน', 'กรกฎาคม', 'สิงหาคม', 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม');
-                      $userQuery = "select date from gastank group by date order by date DESC limit 7";
+                      $userQuery = "select date from gastank where MONTH(date) = $ds group by date order by date DESC ";
                       $result1 = mysqli_query($connect, $userQuery);
                       while ($lop = mysqli_fetch_assoc($result1)) {
                         $da = $lop['date'];
@@ -440,7 +418,7 @@
                       date_default_timezone_set("Asia/Bangkok");
                       $d = date("Y-m-d");
                       $month = array('-', 'มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน', 'กรกฎาคม', 'สิงหาคม', 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม');
-                      $userQuery = "select date from gastank group by date order by date DESC limit 7";
+                      $userQuery = "select date from gastank MONTH(date) = $ds group by date order by date DESC ";
                       $result1 = mysqli_query($connect, $userQuery);
                       while ($lop = mysqli_fetch_assoc($result1)) {
                         $da = $lop['date'];
