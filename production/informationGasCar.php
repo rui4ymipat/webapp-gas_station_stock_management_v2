@@ -335,7 +335,7 @@
                     <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">ข้อมูลรถน้ำมัน</h1>
                     <form action="informationGasCar_m.php" method="GET">
                   <div class="qwer">
-                    <table  class="asdasd">
+                    <table  class="asdasd"  style="width: 20%;">
                       <tr>        
                         <td><select name="select_m" class="form-control">
                             <option value="none" selected disabled hidden>เลือกเดือน</option>
