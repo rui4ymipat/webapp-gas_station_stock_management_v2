@@ -418,7 +418,7 @@
                       date_default_timezone_set("Asia/Bangkok");
                       $d = date("Y-m-d");
                       $month = array('-', 'มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน', 'กรกฎาคม', 'สิงหาคม', 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม');
-                      $userQuery = "select date from gastank MONTH(date) = $ds group by date order by date DESC ";
+                      $userQuery = "select date from gastank where MONTH(date) = $ds group by date order by date DESC ";
                       $result1 = mysqli_query($connect, $userQuery);
                       while ($lop = mysqli_fetch_assoc($result1)) {
                         $da = $lop['date'];
