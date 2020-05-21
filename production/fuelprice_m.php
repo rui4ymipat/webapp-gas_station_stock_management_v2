@@ -271,113 +271,23 @@
               </div>
 
               <div class="setfont1">
-                <div class="column1">
-                  <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">กรอกข้อมูลประจำวัน</h1>
-                  <div class="setborder">
-                    <?php
-                    if (!empty($_SESSION['msg'])) {
-                      session_start();
-                    ?>
-                      <script type="text/javascript">
-                        alert('<?php echo $_SESSION['msg'] ?>');
-                      </script>
-                    <?php
-                      unset($_SESSION['msg']);
-                    }
-                    ?>
-
-                    <form action="add-pricegas.php">
-                      <div class="set_line">
-                        <div class="showdetail">ข้อมูลราคา บัญชี 1</div>
-                        <table class="account">
-
-                          <tr>
-                            <td class="name">G91</td>
-                            <td><input type="text" name="91p_a1" placeholder="ราคา"></td>
-                            <td><input type="text" name="91d_a1" placeholder="ส่วนลด" style="margin-left: 15px"></td>
-                          </tr>
-
-                          <tr>
-                            <td class="name">G95</td>
-                            <td><input type="text" name="95p_a1" placeholder="ราคา"></td>
-                            <td><input type="text" name="95d_a1" placeholder="ส่วนลด" style="margin-left: 15px"></td>
-                          </tr>
-
-                          <tr>
-                            <td class="name">Diesel</td>
-                            <td><input type="text" name="Dep_a1" placeholder="ราคา"></td>
-                            <td><input type="text" name="Ded_a1" placeholder="ส่วนลด" style="margin-left: 15px"></td>
-                          </tr>
-                        </table>
-
-                      </div>
-                      <div class="set_line">
-                        <div class="showdetail">ข้อมูลราคา บัญชี 2</div>
-                        <table class="account">
-
-                          <tr>
-                            <td class="name">G91</td>
-                            <td><input type="text" name="91p_a2" placeholder="ราคา"></td>
-                            <td><input type="text" name="91d_a2" placeholder="ส่วนลด" style="margin-left: 15px"></td>
-                          </tr>
-
-                          <tr>
-                            <td class="name">G95</td>
-                            <td><input type="text" name="95p_a2" placeholder="ราคา"></td>
-                            <td><input type="text" name="95d_a2" placeholder="ส่วนลด" style="margin-left: 15px"></td>
-                          </tr>
-
-                          <tr>
-                            <td class="name">Diesel</td>
-                            <td><input type="text" name="Dep_a2" placeholder="ราคา"></td>
-                            <td><input type="text" name="Ded_a2" placeholder="ส่วนลด" style="margin-left: 15px"></td>
-                          </tr>
-                        </table>
-
-                      </div>
-                      <div class="set_line">
-                        <div class="showdetail">ข้อมูลราคา บัญชี 3</div>
-                        <table class="account">
-
-                          <tr>
-                            <td class="name">G91</td>
-                            <td><input type="text" name="91p_a3" placeholder="ราคา"></td>
-                            <td><input type="text" name="91d_a3" placeholder="ส่วนลด" style="margin-left: 15px"></td>
-                          </tr>
-                          <tr>
-                            <td class="name">G95</td>
-                            <td><input type="text" name="95p_a3" placeholder="ราคา"></td>
-                            <td><input type="text" name="95d_a3" placeholder="ส่วนลด" style="margin-left: 15px"></td>
-                          </tr>
-
-                          <tr>
-                            <td class="name">Diesel</td>
-                            <td><input type="text" name="Dep_a3" placeholder="ราคา"></td>
-                            <td><input type="text" name="Ded_a3" placeholder="ส่วนลด" style="margin-left: 15px"></td>
-                          </tr>
-                        </table>
-                      </div>
-
-                      <input type="submit" class="btn btn-success" value="Submit">
-                    </form>
-                  </div>
-                </div>
-                <br>
+                
+                
                 <form action="fuelprice_m.php" method="GET">
                 <table>
                 <tr>
                   <td>เลือกเดือน</td>
                   <td><select name="select_m" >
                   <option value="none" selected disabled hidden>เลือกเดือน</option>
-                  <option value="01">มกราคม/option>
-                  <option value="02">กุมภาพันธ์</option>
-                  <option value="03">มีนาคม</option>
-                  <option value="04">เมษายน</option>
-                  <option value="05">พฤษภาคม</option>
-                  <option value="06">มิถุนายน</option>
-                  <option value="07">กรกฎาคม</option>
-                  <option value="08">สิงหาคม</option>
-                  <option value="09">กันยายน</option>
+                  <option value="1">มกราคม/option>
+                  <option value="2">กุมภาพันธ์</option>
+                  <option value="3">มีนาคม</option>
+                  <option value="4">เมษายน</option>
+                  <option value="5">พฤษภาคม</option>
+                  <option value="6">มิถุนายน</option>
+                  <option value="7">กรกฎาคม</option>
+                  <option value="8">สิงหาคม</option>
+                  <option value="9">กันยายน</option>
                   <option value="10">ตุลาคม </option>
                   <option value="11">พฤศจิกายน</option>
                   <option value="12">ธันวาคม</option>
@@ -405,7 +315,8 @@
 
                       require_once "connect.php";
                       date_default_timezone_set("Asia/Bangkok");
-                      $userQuery = "select date from today_price group by date order by date DESC limit 7";
+                      $ds = $_GET['select_m'];
+                      $userQuery = "select date from today_price where MONTH(date) = $ds group by date order by date DESC limit 7";
                       $result1 = mysqli_query($connect, $userQuery);
                       $month = array('-', 'มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน', 'กรกฎาคม', 'สิงหาคม', 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม');
                       while ($rows = mysqli_fetch_assoc($result1)) {
@@ -459,7 +370,7 @@
                       date_default_timezone_set("Asia/Bangkok");
                       $setDateStart = date("Y-m-01");
                       $setDateEnd = date("Y-m-31");
-                      $userQuery = "SELECT * from sell where account = 1 order by date DESC limit 21";
+                      $userQuery = "SELECT * from sell where account = 1 and MONTH(date) = $ds order by date DESC ";
                       $result = mysqli_query($connect, $userQuery);
                       while ($row = mysqli_fetch_assoc($result)) {
                         $a1_price[] = $row['price'];
@@ -475,7 +386,7 @@
                         <?php
                       }
 
-                      $userQuery = "SELECT * from sell where account = 2 order by date DESC limit 21";
+                      $userQuery = "SELECT * from sell where account = 2 and MONTH(date) = $ds order by date DESC limit 21";
                       $result = mysqli_query($connect, $userQuery);
                       while ($row = mysqli_fetch_assoc($result)) {
                         $a2_price[] = $row['price'];
@@ -491,7 +402,7 @@
                         <?php
                       }
 
-                      $userQuery = "SELECT * from sell where account = 3 order by date DESC limit 21";
+                      $userQuery = "SELECT * from sell where account = 3 and MONTH(date) = $ds order by date DESC limit 21";
                       $result = mysqli_query($connect, $userQuery);
                       while ($row = mysqli_fetch_assoc($result)) {
                         $a3_price[] = $row['price'];
