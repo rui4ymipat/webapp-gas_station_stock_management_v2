@@ -321,9 +321,9 @@
                 <div class="column2">
                   
                   <form action="history_m.php" method="GET">
-                    <table class="asdasd">
-                      <tr>
-                        
+                  <div class="qwer">
+                    <table  class="asdasd">
+                      <tr>        
                         <td><select name="select_m" class="form-control">
                             <option value="none" selected disabled hidden>เลือกเดือน</option>
                             <option value="01">มกราคม</option>
@@ -342,6 +342,7 @@
                         <td><input type="submit" class="btn btn-success" value="Submit"></td>
                       </tr>
                     </table>
+                    </div>
                   </form>
                   <br>
                   <table border="1">
@@ -378,8 +379,8 @@
                     </tr>
                     <?php
                     $month = array('-', 'มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน', 'กรกฎาคม', 'สิงหาคม', 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม');
-
-                    $userQuery = "select date from history group by date order by date DESC ";
+                    $ds = $_GET['select_m'];
+                    $userQuery = "select date from history where MONTH($date) = $ds group by date order by date DESC ";
                     $result1 = mysqli_query($connect, $userQuery);
                     while ($lop = mysqli_fetch_assoc($result1)) {
                       $Tdate = explode("-", $lop['date']);

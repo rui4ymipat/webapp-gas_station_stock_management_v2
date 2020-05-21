@@ -415,6 +415,7 @@
                   <br>
                   <br>
                   <form action="history_m.php" method="GET">
+                    <div class="qwer">
                     <table  class="asdasd">
                       <tr>
                         
@@ -436,6 +437,7 @@
                         <td><input type="submit" class="btn btn-success" value="Submit"></td>
                       </tr>
                     </table>
+                    </div>
                   </form>
                   <br>
                   <table border="1">
