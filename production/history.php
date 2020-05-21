@@ -83,13 +83,13 @@
         display: block;
       }
 
-      .column2 table tr td {
+      .column2 table.a tr td {
         width: 22%;
         font-size: 120%;
         font-weight: 500;
       }
 
-      .column2 table {
+      .column2 table.a {
         border: 1px solid rgb(202, 206, 215);
         width: 100%;
         text-align: center;
@@ -114,13 +114,13 @@
         display: block;
       }
 
-      .column2 table tr td {
+      .column2 table.a tr td {
         width: 22%;
         font-size: 120%;
         font-weight: 500;
       }
 
-      .column2 table {
+      .column2 table.a{
         border: 1px solid rgb(202, 206, 215);
         width: 100%;
         text-align: center;
@@ -145,13 +145,13 @@
         display: block;
       }
 
-      .column2 table tr td {
+      .column2 table.a tr td {
         width: 9%;
         font-size: 120%;
         font-weight: 500;
       }
 
-      .column2 table {
+      .column2 table.a {
         border: 1px solid rgb(202, 206, 215);
         width: 100%;
         text-align: center;
@@ -440,7 +440,7 @@
                     </div>
                   </form>
                   <br>
-                  <table border="1">
+                  <table border="1" class="a">
                     <tr>
                       <th rowspan="2">วันที่</th>
                       <th rowspan="2">รถขนน้ำมัน</th>
