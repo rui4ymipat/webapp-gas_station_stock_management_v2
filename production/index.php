@@ -770,9 +770,13 @@
                   </table>
                   <br>
                   <h1 class="todayprice">ตารางงานประจำวัน</h1>
+                  <?php require_once "connect.php";           
+                      $userQuery = "select text from text where id = 1";
+                      $result3 = mysqli_query($connect, $userQuery);
+                      $row3 = mysqli_fetch_assoc($result3);    ?>
                   <table class="showgas">
                     <tr class="price">
-                      <td style="font-size: 65%">- กรอกข้อมูลลงตาราง</td>
+                      <td style="font-size: 65%"><?php echo $row3['text']; ?></td>
                     </tr>
                   </table>
 
