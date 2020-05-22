@@ -427,7 +427,7 @@
                             <?php }?>
                             <td style="height: 30px"><?php echo $row['gas']; ?></td>
                             <td><?php echo number_format($row['current_price'], 2); ?></td>
-                            <td><?php echo number_format($row['current_price'] - $r['current_price'] , 2); ?></td>
+                            <td><?php if($row['current_price'] - $r['current_price'] > 0){ echo "+";} echo number_format($row['current_price'] - $r['current_price'] , 2); ?></td>
                             <td><?php echo number_format($row['sell_price'], 2); ?></td>
                           </tr>
                       <?php
