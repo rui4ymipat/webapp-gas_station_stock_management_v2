@@ -2,7 +2,7 @@
 session_start();
 $t = $_GET['t'];
 require_once "connect.php";
-$text = str_replace("\n", "\n", $t);
+$text = str_replace("\n", " p ", $t);
 $userQuery = "update text set text = '$text' where id = 1";
 $result3 = mysqli_query($connect, $userQuery);
 $_SESSION['msg'] = "ดำเนินการสำเร็จ";
