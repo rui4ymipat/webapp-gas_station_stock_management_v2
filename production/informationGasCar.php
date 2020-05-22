@@ -288,17 +288,17 @@
                         <table>
                           <tr>
                             <td class="name">G91</td>
-                            <td><input type="text" name="g91"></td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="g91"></td>
                             <td class="lit">ลิตร</td>
                           </tr>
                           <tr>
                             <td class="name">G95</td>
-                            <td><input type="text" name="g95"></td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="g95"></td>
                             <td class="lit">ลิตร</td>
                           </tr>
                           <tr>
                             <td class="name">Diesel</td>
-                            <td><input type="text" name="de"></td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="de"></td>
                             <td class="lit">ลิตร</td>
                           </tr>
                         </table>
@@ -308,18 +308,18 @@
                         <table>
                           <tr>
                             <td class="name">ค่าเที่ยวต่อรอบ</td>
-                            <td><input type="text" name="tp" placeholder="2,800"></td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="tp" placeholder="2,800"></td>
                             <td class="lit">บาท</td>
                           </tr>
                           <tr>
                             <td class="name">ค่าอื่นๆ</td>
-                            <td><input type="text" name="other"></td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="other"></td>
                             <td class="lit">บาท</td>
                           </tr>
                           <tr>
                             <td class="name">หมายเหตุ</td>
                             <td><input type="text" name="detail"></td>
-                            <td class="lit">บาท</td>
+                            
                           </tr>
                         </table>
                       </div>

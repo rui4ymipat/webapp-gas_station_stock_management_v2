@@ -332,7 +332,7 @@
                         </select>
                         <table>
                           <tr>
-                            <td><input type="text" name="a" placeholder="ค่าขนส่ง"></td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="a" placeholder="ค่าขนส่ง"></td>
                             <td class="name">บาท</td>
 
                           </tr>
@@ -344,20 +344,20 @@
 
                           <tr>
                             <td class="name">G91</td>
-                            <td><input type="text" name="91p_a1" placeholder="ราคา"></td>
-                            <td><input type="text" name="91d_a1" placeholder="ปริมาณ" style="margin-left: 15px"></td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="91p_a1" placeholder="ราคา"></td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="91d_a1" placeholder="ปริมาณ" style="margin-left: 15px"></td>
                           </tr>
 
                           <tr>
                             <td class="name">G95</td>
-                            <td><input type="text" name="95p_a1" placeholder="ราคา"></td>
-                            <td><input type="text" name="95d_a1" placeholder="ปริมาณ" style="margin-left: 15px"></td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="95p_a1" placeholder="ราคา"></td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="95d_a1" placeholder="ปริมาณ" style="margin-left: 15px"></td>
                           </tr>
 
                           <tr>
                             <td class="name">Diesel</td>
-                            <td><input type="text" name="Dep_a1" placeholder="ราคา"></td>
-                            <td><input type="text" name="Ded_a1" placeholder="ปริมาณ" style="margin-left: 15px"></td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="Dep_a1" placeholder="ราคา"></td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="Ded_a1" placeholder="ปริมาณ" style="margin-left: 15px"></td>
                           </tr>
                         </table>
                       </div>
@@ -367,20 +367,20 @@
 
                           <tr>
                             <td class="name">G91</td>
-                            <td><input type="text" name="91p_a2" placeholder="ราคา"></td>
-                            <td><input type="text" name="91d_a2" placeholder="ปริมาณ" style="margin-left: 15px"></td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="91p_a2" placeholder="ราคา"></td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="91d_a2" placeholder="ปริมาณ" style="margin-left: 15px"></td>
                           </tr>
 
                           <tr>
                             <td class="name">G95</td>
-                            <td><input type="text" name="95p_a2" placeholder="ราคา"></td>
-                            <td><input type="text" name="95d_a2" placeholder="ปริมาณ" style="margin-left: 15px"></td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="95p_a2" placeholder="ราคา"></td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="95d_a2" placeholder="ปริมาณ" style="margin-left: 15px"></td>
                           </tr>
 
                           <tr>
                             <td class="name">Diesel</td>
-                            <td><input type="text" name="Dep_a2" placeholder="ราคา"></td>
-                            <td><input type="text" name="Ded_a2" placeholder="ปริมาณ" style="margin-left: 15px"></td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="Dep_a2" placeholder="ราคา"></td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="Ded_a2" placeholder="ปริมาณ" style="margin-left: 15px"></td>
                           </tr>
                         </table>
                       </div>
@@ -390,19 +390,19 @@
 
                           <tr>
                             <td class="name">G91</td>
-                            <td><input type="text" name="91p_a3" placeholder="ราคา"></td>
-                            <td><input type="text" name="91d_a3" placeholder="ปริมาณ" style="margin-left: 15px"></td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="91p_a3" placeholder="ราคา"></td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="91d_a3" placeholder="ปริมาณ" style="margin-left: 15px"></td>
                           </tr>
                           <tr>
                             <td class="name">G95</td>
-                            <td><input type="text" name="95p_a3" placeholder="ราคา"></td>
-                            <td><input type="text" name="95d_a3" placeholder="ปริมาณ" style="margin-left: 15px"></td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="95p_a3" placeholder="ราคา"></td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="95d_a3" placeholder="ปริมาณ" style="margin-left: 15px"></td>
                           </tr>
 
                           <tr>
                             <td class="name">Diesel</td>
-                            <td><input type="text" name="Dep_a3" placeholder="ราคา"></td>
-                            <td><input type="text" name="Ded_a3" placeholder="ปริมาณ" style="margin-left: 15px"></td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="Dep_a3" placeholder="ราคา"></td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="Ded_a3" placeholder="ปริมาณ" style="margin-left: 15px"></td>
                           </tr>
                         </table>
                       </div>
