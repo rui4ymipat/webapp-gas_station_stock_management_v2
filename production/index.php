@@ -776,7 +776,7 @@
                       $row3 = mysqli_fetch_assoc($result3);    ?>
                   <table class="showgas">
                     <tr class="price">
-                      <td style="font-size: 65%"><?php echo $row3['text']; ?></td>
+                      <td style="font-size: 65%"><?php echo nl2br($row3['text']); ?></td>
                     </tr>
                   </table>
 
