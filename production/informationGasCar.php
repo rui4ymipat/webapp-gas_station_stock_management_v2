@@ -428,18 +428,18 @@
                         <table>
                           <tr>
                             <td class="name">ทะเบียน 6134</td>
-                            <td><input type="text" name="6134_num" placeholder="เลขไมค์"></td>
-                            <td><input type="text" name="6134_value" placeholder="ปริมาณที่เติม"></td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="6134_num" placeholder="เลขไมค์"></td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="6134_value" placeholder="ปริมาณที่เติม"></td>
                           </tr>
                           <tr>
                             <td class="name">ทะเบียน 1815</td>
-                            <td><input type="text" name="1815_num" placeholder="เลขไมค์"></td>
-                            <td><input type="text" name="1815_value" placeholder="ปริมาณที่เติม"></td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="1815_num" placeholder="เลขไมค์"></td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="1815_value" placeholder="ปริมาณที่เติม"></td>
                           </tr>
                           <tr>
                             <td class="name">ทะเบียน ISUZU</td>
-                            <td><input type="text" name="IS_num" placeholder="เลขไมค์"></td>
-                            <td><input type="text" name="IS_value" placeholder="ปริมาณที่เติม"></td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="IS_num" placeholder="เลขไมค์"></td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="IS_value" placeholder="ปริมาณที่เติม"></td>
                           </tr>
                         </table>
                         <input type="submit" class="btn btn-success" value="Submit" style="margin-left:43%;">

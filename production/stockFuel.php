@@ -238,17 +238,17 @@
                       <table style="margin-top:20px;">
                         <tr>
                           <td class="name">G91</td>
-                          <td><input type="text" name="g95" style="width: 90%;" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}"></td>
+                          <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="g95" style="width: 90%;" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}"></td>
                           <td style="font-size: 100%;">ลิตร</td>
                         </tr>
                         <tr>
                           <td class="name">G95</td>
-                          <td><input type="text" name="g91" style="width: 90%;" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}"></td>
+                          <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="g91" style="width: 90%;" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}"></td>
                           <td style="font-size: 100%;">ลิตร</td>
                         </tr>
                         <tr>
                           <td class="name">Diesel</td>
-                          <td><input type="text" name="die" style="width: 90%;" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}"></td>
+                          <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="die" style="width: 90%;" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}"></td>
                           <td style="font-size: 100%;">ลิตร</td>
                         </tr>
                       </table>
@@ -559,17 +559,17 @@
                       <table class="account">
                         <tr>
                           <td class="name">G91</td>
-                          <td><input type="text" name="g91" placeholder="ปริมาณ"></td>
+                          <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="g91" placeholder="ปริมาณ"></td>
                           <td>ลิตร</td>
                         </tr>
                         <tr>
                           <td class="name">G95</td>
-                          <td><input type="text" name="g95" placeholder="ปริมาณ"></td>
+                          <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="g95" placeholder="ปริมาณ"></td>
                           <td>ลิตร</td>
                         </tr>
                         <tr>
                           <td class="name">Diesel</td>
-                          <td><input type="text" name="de" placeholder="ปริมาณ"></td>
+                          <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="de" placeholder="ปริมาณ"></td>
                           <td>ลิตร</td>
                         </tr>
                       </table>
@@ -586,17 +586,17 @@
                         <table class="account">
                           <tr>
                             <td class="name">G91</td>
-                            <td><input type="text" name="6134g91" placeholder="ปริมาณ"></td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="6134g91" placeholder="ปริมาณ"></td>
                             <td>ลิตร</td>
                           </tr>
                           <tr>
                             <td class="name">G95</td>
-                            <td><input type="text" name="6134g95" placeholder="ปริมาณ"></td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="6134g95" placeholder="ปริมาณ"></td>
                             <td>ลิตร</td>
                           </tr>
                           <tr>
                             <td class="name">Diesel</td>
-                            <td><input type="text" name="6134de" placeholder="ปริมาณ"></td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="6134de" placeholder="ปริมาณ"></td>
                             <td>ลิตร</td>
                           </tr>
                         </table>
@@ -606,17 +606,17 @@
                         <table class="account">
                           <tr>
                             <td class="name">G91</td>
-                            <td><input type="text" name="1815g91" placeholder="ปริมาณ"></td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="1815g91" placeholder="ปริมาณ"></td>
                             <td>ลิตร</td>
                           </tr>
                           <tr>
                             <td class="name">G95</td>
-                            <td><input type="text" name="1815g95" placeholder="ปริมาณ"></td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="1815g95" placeholder="ปริมาณ"></td>
                             <td>ลิตร</td>
                           </tr>
                           <tr>
                             <td class="name">Diesel</td>
-                            <td><input type="text" name="1815de" placeholder="ปริมาณ"></td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="1815de" placeholder="ปริมาณ"></td>
                             <td>ลิตร</td>
                           </tr>
                         </table>
@@ -626,17 +626,17 @@
                         <table class="account">
                           <tr>
                             <td class="name">G91</td>
-                            <td><input type="text" name="isg91" placeholder="ปริมาณ"></td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="isg91" placeholder="ปริมาณ"></td>
                             <td>ลิตร</td>
                           </tr>
                           <tr>
                             <td class="name">G95</td>
-                            <td><input type="text" name="isg95" placeholder="ปริมาณ"></td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="isg95" placeholder="ปริมาณ"></td>
                             <td>ลิตร</td>
                           </tr>
                           <tr>
                             <td class="name">Diesel</td>
-                            <td><input type="text" name="isde" placeholder="ปริมาณ"></td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="isde" placeholder="ปริมาณ"></td>
                             <td>ลิตร</td>
                           </tr>
                         </table>
