@@ -270,14 +270,14 @@
                     <div class="showdetail">เปลี่ยนตารางงานประจำวัน</div>
                     <?php         
                       require_once "connect.php";           
-                      $userQuery = "select texe from text where id = 1";
+                      $userQuery = "select text from text where id = 1";
                       $result3 = mysqli_query($connect, $userQuery);
                       $row3 = mysqli_fetch_assoc($result3);          
                       
                     ?>
-                    <?php echo $row3['text']; ?>
+                    
                     <textarea name="t" id="t" cols="50" rows="11" style="width: 90%;">
-                    <?php echo nl2br($row3['text']); ?>
+                    <?php echo $row3['text']; ?>
                     </textarea>
                     <script type="text/javascript">console.log("<?php echo $row3['text']; ?>")</script>
                     <input type="submit" class="btn btn-success" value="Submit" style="display: block;">

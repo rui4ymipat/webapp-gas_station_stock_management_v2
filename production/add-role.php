@@ -2,7 +2,8 @@
 session_start();
 $t = $_GET['t'];
 require_once "connect.php";
-$userQuery = "update text set text = '$t' where id = 1";
+$text = str_replace("\n", "\n", $t);
+$userQuery = "update text set text = '$text' where id = 1";
 $result3 = mysqli_query($connect, $userQuery);
 $_SESSION['msg'] = "ดำเนินการสำเร็จ";
 header("Location:management.php");
