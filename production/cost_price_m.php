@@ -156,7 +156,7 @@
 
 
               <div class="setfont1">
-                <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">กรอกข้อมูลประจำวัน</h1>
+                <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">ต้นทุน</h1>
                 <form action="cost_price_m.php" method="GET">
                   <div class="qwer">
                     <table class="asdasd">
