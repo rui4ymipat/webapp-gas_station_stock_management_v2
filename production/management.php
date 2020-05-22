@@ -275,6 +275,7 @@
                       $row3 = mysqli_fetch_assoc($result3);          
                       
                     ?>
+                    <?php echo $row3['text']; ?>
                     <textarea name="t" id="t" cols="50" rows="11" style="width: 90%;">
                     <?php echo nl2br($row3['text']); ?>
                     </textarea>
