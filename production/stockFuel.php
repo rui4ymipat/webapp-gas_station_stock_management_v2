@@ -259,7 +259,8 @@
                   <div class="qwer">
                     <table  class="asdasd"  style="width: 20%;">
                       <tr>        
-                        <td><select name="select_m" class="form-control">
+                        <td>
+                          <select name="select_m" class="form-control">
                             <option value="none" selected disabled hidden>เลือกเดือน</option>
                             <option value="01">มกราคม</option>
                             <option value="02">กุมภาพันธ์</option>
@@ -273,7 +274,8 @@
                             <option value="10">ตุลาคม </option>
                             <option value="11">พฤศจิกายน</option>
                             <option value="12">ธันวาคม</option>
-                          </select></td>
+                          </select>
+                        </td>
                         <td><input type="submit" class="btn btn-success" value="Submit"></td>
                       </tr>
                     </table>
