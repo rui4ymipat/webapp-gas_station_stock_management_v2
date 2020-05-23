@@ -39,6 +39,46 @@
     .stock .setfont1 {
       display: inline-table;
     }
+
+    .outer-wrapper {
+      display: inline-block;
+      margin: 5px 15px;
+      padding: 25px 15px;
+      background: #eee;
+      min-width: 50px;
+    }
+
+    .column-wrapper {
+      height: 200px;
+      width: 20px;
+      background: #CFD8DC;
+      transform: rotate(180deg);
+      margin: 0 auto;
+    }
+
+    .column {
+
+      width: 20px;
+      height: 0%;
+      background: #90A4AE;
+
+    }
+
+    .percentage1,
+    .percentage2,
+    .percentage3 .value {
+      margin-top: 10px;
+      padding: 5px 10px;
+      color: #FFF;
+      background: #263238;
+      position: relative;
+      border-radius: 4px;
+      text-align: center;
+    }
+
+    .value {
+      background: #7986CB;
+    }
   </style>
   <?php
   session_start();
@@ -53,33 +93,36 @@
   $row3 = mysqli_fetch_assoc($result3);
   $s = ($row3['value'] / 20000) * 100;
   ?>
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
   <script type="text/javascript">
-    google.charts.load('current', {
-      'packages': ['gauge']
-    });
-    google.charts.setOnLoadCallback(drawChart);
+    setInterval(function() {
+      var randPercent = Math.floor(<?php echo $s; ?>);
+      //Generic column color
+      var color = '#90A4AE';
 
-    function drawChart() {
+      if (randPercent >= 90) {
+        color = '#00E676';
+      } else if (randPercent < 90 && randPercent >= 60) {
+        color = '#81C784';
+      } else if (randPercent < 60 && randPercent >= 40) {
+        color = '#FFEB3B';
+      } else if (randPercent < 40 && randPercent >= 10) {
+        color = '#FF9800';
+      } else if (randPercent < 10 && randPercent >= 0) {
+        color = '#FF3D00';
+      }
 
-      var data = google.visualization.arrayToDataTable([
-        ['Label', 'Value'],
-        ['G91', <?php echo $s; ?>]
-      ]);
+      $('.column').css({
+        background: color
+      });
 
-      var options = {
-        width: 400,
-        height: 120,
-        redFrom: 90,
-        redTo: 100,
-        yellowFrom: 75,
-        yellowTo: 90,
-        minorTicks: 5
-      };
+      $('.column').animate({
+        height: randPercent + '%',
+      });
 
-      var chart = new google.visualization.Gauge(document.getElementById('GG91'));
-      chart.draw(data, options);
-    }
+      $('.percentage').text(randPercent + '%');
+
+    }, 1000);
   </script>
   <?php
   require_once "connect.php";
@@ -88,33 +131,36 @@
   $row3 = mysqli_fetch_assoc($result3);
   $s = ($row3['value'] / 20000) * 100;
   ?>
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
   <script type="text/javascript">
-    google.charts.load('current', {
-      'packages': ['gauge']
-    });
-    google.charts.setOnLoadCallback(drawChart);
+    setInterval(function() {
+      var randPercent = Math.floor(<?php echo $s; ?>);
+      //Generic column color
+      var color = '#90A4AE';
 
-    function drawChart() {
+      if (randPercent >= 90) {
+        color = '#00E676';
+      } else if (randPercent < 90 && randPercent >= 60) {
+        color = '#81C784';
+      } else if (randPercent < 60 && randPercent >= 40) {
+        color = '#FFEB3B';
+      } else if (randPercent < 40 && randPercent >= 10) {
+        color = '#FF9800';
+      } else if (randPercent < 10 && randPercent >= 0) {
+        color = '#FF3D00';
+      }
 
-      var data = google.visualization.arrayToDataTable([
-        ['Label', 'Value'],
-        ['G95', <?php echo $s; ?>]
-      ]);
+      $('.column').css({
+        background: color
+      });
 
-      var options = {
-        width: 400,
-        height: 120,
-        redFrom: 90,
-        redTo: 100,
-        yellowFrom: 75,
-        yellowTo: 90,
-        minorTicks: 5
-      };
+      $('.column').animate({
+        height: randPercent + '%',
+      });
 
-      var chart = new google.visualization.Gauge(document.getElementById('GG95'));
-      chart.draw(data, options);
-    }
+      $('.percentage').text(randPercent + '%');
+
+    }, 1000);
   </script>
   <?php
   require_once "connect.php";
@@ -123,33 +169,35 @@
   $row3 = mysqli_fetch_assoc($result3);
   $s = ($row3['value'] / 20000) * 100;
   ?>
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script type="text/javascript">
-    google.charts.load('current', {
-      'packages': ['gauge']
-    });
-    google.charts.setOnLoadCallback(drawChart);
+    setInterval(function() {
+      var randPercent = Math.floor(<?php echo $s; ?>);
+      //Generic column color
+      var color = '#90A4AE';
 
-    function drawChart() {
+      if (randPercent >= 90) {
+        color = '#00E676';
+      } else if (randPercent < 90 && randPercent >= 60) {
+        color = '#81C784';
+      } else if (randPercent < 60 && randPercent >= 40) {
+        color = '#FFEB3B';
+      } else if (randPercent < 40 && randPercent >= 10) {
+        color = '#FF9800';
+      } else if (randPercent < 10 && randPercent >= 0) {
+        color = '#FF3D00';
+      }
 
-      var data = google.visualization.arrayToDataTable([
-        ['Label', 'Value'],
-        ['Desel', <?php echo $s; ?>]
-      ]);
+      $('.column').css({
+        background: color
+      });
 
-      var options = {
-        width: 400,
-        height: 120,
-        redFrom: 90,
-        redTo: 100,
-        yellowFrom: 75,
-        yellowTo: 90,
-        minorTicks: 5
-      };
+      $('.column').animate({
+        height: randPercent + '%',
+      });
 
-      var chart = new google.visualization.Gauge(document.getElementById('GDe'));
-      chart.draw(data, options);
-    }
+      $('.percentage').text(randPercent + '%');
+
+    }, 1000);
   </script>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <!-- Meta, title, CSS, favicons, etc. -->
@@ -320,11 +368,11 @@
                       $userQuery = "select (select value from gastank where date = '$da' and substr(timestamp,9)= 'am' and gas_id = 1 limit 1)-value as dif from gastank where date = '$da' and substr(timestamp,9)= 'pm' and gas_id = 1";
                       $result = mysqli_query($connect, $userQuery);
                       $row = mysqli_fetch_assoc($result);
-                      $p2 = $row['dif']+$b91;
-                      if ($i == count($date)-1) {
-                        echo "['$date2',",$p1+$p2 , "]";
+                      $p2 = $row['dif'] + $b91;
+                      if ($i == count($date) - 1) {
+                        echo "['$date2',", $p1 + $p2, "]";
                       } else {
-                        echo "['$date2',", $p1+$p2, "],";
+                        echo "['$date2',", $p1 + $p2, "],";
                       }
                     }
                     ?>
@@ -387,11 +435,11 @@
                       $userQuery = "select (select value from gastank where date = '$da' and substr(timestamp,9)= 'am' and gas_id = 2 limit 1)-value as dif from gastank where date = '$da' and substr(timestamp,9)= 'pm' and gas_id = 2";
                       $result = mysqli_query($connect, $userQuery);
                       $row = mysqli_fetch_assoc($result);
-                      $p2 = $row['dif']+$b95;
-                      if ($i == count($date)-1) {
-                        echo "['$date2',",$p1+$p2 , "]";
+                      $p2 = $row['dif'] + $b95;
+                      if ($i == count($date) - 1) {
+                        echo "['$date2',", $p1 + $p2, "]";
                       } else {
-                        echo "['$date2',", $p1+$p2, "],";
+                        echo "['$date2',", $p1 + $p2, "],";
                       }
                     }
                     ?>
@@ -455,11 +503,11 @@
                       $userQuery = "select (select value from gastank where date = '$da' and substr(timestamp,9)= 'am' and gas_id = 3 limit 1)-value as dif from gastank where date = '$da' and substr(timestamp,9)= 'pm' and gas_id = 3";
                       $result = mysqli_query($connect, $userQuery);
                       $row = mysqli_fetch_assoc($result);
-                      $p2 = $row['dif']+$bdie;
-                      if ($i == count($date)-1) {
-                        echo "['$date2',",$p1+$p2 , "]";
+                      $p2 = $row['dif'] + $bdie;
+                      if ($i == count($date) - 1) {
+                        echo "['$date2',", $p1 + $p2, "]";
                       } else {
-                        echo "['$date2',", $p1+$p2, "],";
+                        echo "['$date2',", $p1 + $p2, "],";
                       }
                     }
                     ?>
@@ -641,13 +689,28 @@
                   </tr>
                   <tr>
                     <td>
-                      <div id="GG91" style="width: 300px; height: 120px;"></div>
+                      <div class="outer-wrapper">
+                        <div class="column-wrapper">
+                          <div class="column"></div>
+                        </div>
+                        <div class="percentage1">--</div>
+                      </div>
                     </td>
                     <td>
-                      <div id="GG95" style="width: 300px; height: 120px;"></div>
+                      <div class="outer-wrapper">
+                        <div class="column-wrapper">
+                          <div class="column"></div>
+                        </div>
+                        <div class="percentage2">--</div>
+                      </div>
                     </td>
                     <td>
-                      <div id="GDe" style="width: 300px; height: 120px;"></div>
+                      <div class="outer-wrapper">
+                        <div class="column-wrapper">
+                          <div class="column"></div>
+                        </div>
+                        <div class="percentage3">--</div>
+                      </div>
                     </td>
                   </tr>
                 </table>
@@ -770,10 +833,10 @@
                   </table>
                   <br>
                   <h1 class="todayprice">ตารางงานประจำวัน</h1>
-                  <?php require_once "connect.php";           
-                      $userQuery = "select text from text where id = 1";
-                      $result3 = mysqli_query($connect, $userQuery);
-                      $row3 = mysqli_fetch_assoc($result3);    ?>
+                  <?php require_once "connect.php";
+                  $userQuery = "select text from text where id = 1";
+                  $result3 = mysqli_query($connect, $userQuery);
+                  $row3 = mysqli_fetch_assoc($result3);    ?>
                   <table class="showgas">
                     <tr class="price">
                       <td style="font-size: 65%"><?php echo nl2br($row3['text']); ?></td>
