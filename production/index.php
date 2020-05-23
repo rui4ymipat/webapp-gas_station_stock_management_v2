@@ -66,7 +66,7 @@
 
     .percentage1,
     .percentage2,
-    .percentage3 .value {
+    .percentage3, .value {
       margin-top: 10px;
       padding: 5px 10px;
       color: #FFF;
@@ -120,7 +120,7 @@
         height: randPercent + '%',
       });
 
-      $('.percentage').text(randPercent + '%');
+      $('.percentage1').text(randPercent + '%');
 
     }, 1000);
   </script>
@@ -158,7 +158,7 @@
         height: randPercent + '%',
       });
 
-      $('.percentage').text(randPercent + '%');
+      $('.percentage3').text(randPercent + '%');
 
     }, 1000);
   </script>
@@ -195,7 +195,7 @@
         height: randPercent + '%',
       });
 
-      $('.percentage').text(randPercent + '%');
+      $('.percentage2').text(randPercent + '%');
 
     }, 1000);
   </script>
