@@ -96,7 +96,7 @@
 
   <script type="text/javascript">
     setInterval(function() {
-      var randPercent = <?php echo "80"; ?>;
+      var randPercent = <?php echo $s; ?>;
       //Generic column color
       var color = '#90A4AE';
 
@@ -660,7 +660,7 @@
                         <h1 style="font-size: 170%;"><?php echo "G91 $v ลิตร($s%)";  ?></h1>
                       </div>
                     </td>
-                    <td>
+                    <td style="padding-left: 100px;">
                       <?php
                       require_once "connect.php";
                       $userQuery = "select value from gastank where gas_id = 2 order by date DESC limit 1";
@@ -673,7 +673,7 @@
                         <h1 style="font-size: 170%;"><?php echo "G95 $v ลิตร($s%)";  ?></h1>
                       </div>
                     </td>
-                    <td>
+                    <td style="padding-left: 100px;">
                       <?php
                       require_once "connect.php";
                       $userQuery = "select value from gastank where gas_id = 3 order by date DESC limit 1";
@@ -696,7 +696,7 @@
                         <div class="percentage1">--</div>
                       </div>
                     </td>
-                    <td>
+                    <td style="padding-left: 100px;">
                       <div class="outer-wrapper">
                         <div class="column-wrapper">
                           <div class="column2"></div>
@@ -704,7 +704,7 @@
                         <div class="percentage2">--</div>
                       </div>
                     </td>
-                    <td>
+                    <td style="padding-left: 100px;">
                       <div class="outer-wrapper">
                         <div class="column-wrapper">
                           <div class="column3"></div>
