@@ -134,19 +134,19 @@
 
   <script type="text/javascript">
     setInterval(function() {
-      var randPercent = Math.floor(<?php echo $s; ?>);
+      var randPercent2 = Math.floor(<?php echo $s; ?>);
       //Generic column color
       var color = '#90A4AE';
 
-      if (randPercent >= 90) {
+      if (randPercent2 >= 90) {
         color = '#00E676';
-      } else if (randPercent < 90 && randPercent >= 60) {
+      } else if (randPercent2 < 90 && randPercent2 >= 60) {
         color = '#81C784';
-      } else if (randPercent < 60 && randPercent >= 40) {
+      } else if (randPercent2 < 60 && randPercent2 >= 40) {
         color = '#FFEB3B';
-      } else if (randPercent < 40 && randPercent >= 10) {
+      } else if (randPercent2 < 40 && randPercent2 >= 10) {
         color = '#FF9800';
-      } else if (randPercent < 10 && randPercent >= 0) {
+      } else if (randPercent2 < 10 && randPercent2 >= 0) {
         color = '#FF3D00';
       }
 
@@ -155,12 +155,12 @@
       });
 
       $('.column').animate({
-        height: randPercent + '%',
+        height: randPercent2 + '%',
       });
 
-      $('.percentage3').text(randPercent + '%');
+      $('.percentage2').text(randPercent2 + '%');
 
-    }, 1000);
+    };
   </script>
   <?php
   require_once "connect.php";
@@ -171,19 +171,19 @@
   ?>
   <script type="text/javascript">
     setInterval(function() {
-      var randPercent = Math.floor(<?php echo $s; ?>);
+      var randPercent3 = Math.floor(<?php echo $s; ?>);
       //Generic column color
       var color = '#90A4AE';
 
-      if (randPercent >= 90) {
+      if (randPercent3 >= 90) {
         color = '#00E676';
-      } else if (randPercent < 90 && randPercent >= 60) {
+      } else if (randPercent3 < 90 && randPercent3 >= 60) {
         color = '#81C784';
-      } else if (randPercent < 60 && randPercent >= 40) {
+      } else if (randPercent3 < 60 && randPercent3 >= 40) {
         color = '#FFEB3B';
-      } else if (randPercent < 40 && randPercent >= 10) {
+      } else if (randPercent3 < 40 && randPercent3 >= 10) {
         color = '#FF9800';
-      } else if (randPercent < 10 && randPercent >= 0) {
+      } else if (randPercent3 < 10 && randPercent3 >= 0) {
         color = '#FF3D00';
       }
 
@@ -192,12 +192,12 @@
       });
 
       $('.column').animate({
-        height: randPercent + '%',
+        height: randPercent3 + '%',
       });
 
-      $('.percentage2').text(randPercent + '%');
+      $('.percentage3').text(randPercent3 + '%');
 
-    }, 1000);
+    });
   </script>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <!-- Meta, title, CSS, favicons, etc. -->
