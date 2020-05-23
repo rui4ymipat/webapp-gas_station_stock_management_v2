@@ -96,7 +96,7 @@
 
   <script type="text/javascript">
     setInterval(function() {
-      var randPercent = Math.floor(<?php echo $s; ?>);
+      var randPercent = Math.floor(<?php echo "80"; ?>);
       //Generic column color
       var color = '#90A4AE';
 
