@@ -56,7 +56,7 @@
       margin: 0 auto;
     }
 
-    .column {
+    .column , .column2 , .column3 {
 
       width: 20px;
       height: 0%;
@@ -134,7 +134,7 @@
 
   <script type="text/javascript">
     setInterval(function() {
-      var randPercent2 = Math.floor(<?php echo $s; ?>);
+      var randPercent2 = <?php echo $s; ?>;
       //Generic column color
       var color = '#90A4AE';
 
@@ -150,11 +150,11 @@
         color = '#FF3D00';
       }
 
-      $('.column').css({
+      $('.column2').css({
         background: color
       });
 
-      $('.column').animate({
+      $('.column2').animate({
         height: randPercent2 + '%',
       });
 
@@ -171,7 +171,7 @@
   ?>
   <script type="text/javascript">
     setInterval(function() {
-      var randPercent3 = Math.floor(<?php echo $s; ?>);
+      var randPercent3 = <?php echo $s; ?>;
       //Generic column color
       var color = '#90A4AE';
 
@@ -187,11 +187,11 @@
         color = '#FF3D00';
       }
 
-      $('.column').css({
+      $('.column3').css({
         background: color
       });
 
-      $('.column').animate({
+      $('.column3').animate({
         height: randPercent3 + '%',
       });
 
@@ -699,7 +699,7 @@
                     <td>
                       <div class="outer-wrapper">
                         <div class="column-wrapper">
-                          <div class="column"></div>
+                          <div class="column2"></div>
                         </div>
                         <div class="percentage2">--</div>
                       </div>
@@ -707,7 +707,7 @@
                     <td>
                       <div class="outer-wrapper">
                         <div class="column-wrapper">
-                          <div class="column"></div>
+                          <div class="column3"></div>
                         </div>
                         <div class="percentage3">--</div>
                       </div>
