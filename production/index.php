@@ -160,7 +160,7 @@
 
       $('.percentage2').text(randPercent2 + '%');
 
-    };
+    });
   </script>
   <?php
   require_once "connect.php";
