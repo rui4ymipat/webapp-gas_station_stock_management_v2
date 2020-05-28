@@ -12,9 +12,23 @@
       font-family: 'Prompt', sans-serif;
     }
 
-    @media only screen and (max-width: 1366px) {}
+    @media only screen and (max-width: 1366px) {
+      .setborder{
+        width: 55%;
+      }
+      .form-control{
+        width: 130px;
+      }
+    }
 
-    @media only screen and (max-width: 1024px) {}
+    @media only screen and (max-width: 1024px) {
+      .setborder{
+        width: 55%;
+      }
+      .form-control{
+        width: 130px;
+      }
+    }
 
     @media only screen and (min-width: 1367px) {
       div.c1 table tr.setheader th {

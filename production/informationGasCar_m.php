@@ -16,13 +16,18 @@
       .setborder {
         width: 100%;
       }
+      .form-control{
+        width: 130px;
+      }
     }
 
     @media only screen and (max-width: 1024px) {
       .setborder {
         width: 100%;
       }
-
+      .form-control{
+        width: 130px;
+      }
     }
 
     @media only screen and (min-width: 1367px) {
