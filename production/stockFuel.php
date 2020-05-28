@@ -277,7 +277,7 @@
                     <table  class="asdasd"  style="width: 20%;">
                       <tr>        
                         <td>
-                          <select name="select_m" class="form-control">
+                          <select name="select_m" class="form-control" style="width: 130px;">
                             <option value="none" selected disabled hidden>เลือกเดือน</option>
                             <option value="01">มกราคม</option>
                             <option value="02">กุมภาพันธ์</option>
