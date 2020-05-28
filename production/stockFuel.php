@@ -421,7 +421,7 @@
                               }
                             }
                             if ($i == 0) {
-                              $userQuery = "select value from gastank where date = '$da' and substr(timestamp,9) = 'pm' order by gas_id";
+                              $userQuery = "select value from gasisuzu where date = '$da' and substr(timestamp,9) = 'pm' order by gas_id";
                               $result = mysqli_query($connect, $userQuery);
                               if (mysqli_num_rows($result) == 0) {
                                 ?>
