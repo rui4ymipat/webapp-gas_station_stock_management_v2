@@ -16,7 +16,7 @@
       .setborder {
         width: 100%;
       }
-      select{
+      select.from-control{
         width: 130px;
       }
     }
@@ -25,7 +25,7 @@
       .setborder {
         width: 100%;
       }
-      select{
+      select.from-control{
         width: 130px;
       }
     }
