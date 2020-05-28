@@ -421,7 +421,7 @@
                               }
                             }
                             if ($i == 0) {
-                              $userQuery = "select value from gasisuzu where date = '$da' ";
+                              $userQuery = "select * from gasisuzu where date = '$da' ";
                               $result = mysqli_query($connect, $userQuery);
                               if (mysqli_num_rows($result) == 0) {
                                 ?>
@@ -430,11 +430,13 @@
                                 <td rowspan="2">0</td>
                                 <?php
                               } else {
-                                while ($row = mysqli_fetch_assoc($result)) {
+                                $row = mysqli_fetch_assoc($result);
                                 ?>
-                                  <td rowspan="2"><?php echo number_format($row['value']); ?></td>
+                                  <td rowspan="2"><?php echo number_format($row['g91']); ?></td>
+                                  <td rowspan="2"><?php echo number_format($row['g95']); ?></td>
+                                  <td rowspan="2"><?php echo number_format($row['diesel']); ?></td>
                             <?php
-                                }
+                                
                               }
                             }
                             ?>
