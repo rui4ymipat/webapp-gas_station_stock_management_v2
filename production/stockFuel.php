@@ -16,7 +16,7 @@
       .setborder{
         width: 55%;
       }
-      .form-control{
+      select{
         width: 130px;
       }
     }
@@ -25,7 +25,7 @@
       .setborder{
         width: 55%;
       }
-      .form-control{
+      select{
         width: 130px;
       }
     }
@@ -33,6 +33,9 @@
     @media only screen and (min-width: 1367px) {
       div.c1 table tr.setheader th {
         width: 7.5%;
+      }
+      .setborder{
+        width: 20%;
       }
     }
 
@@ -245,7 +248,7 @@
 
               <?php if ($_SESSION['user_level'] != 1) { ?>
                 <div class="setfont1">
-                  <div class="setborder" style="width: 20%;">
+                  <div class="setborder" >
                     <h1 style="font-weight: 800;color: #2B3E54;font-size: 200%;">กรอกข้อมูล</h1>
                     <form action="add_buygas.php" method="GET">
                       <div class="showdetail">ปริมาณที่ซื้อมา</div>

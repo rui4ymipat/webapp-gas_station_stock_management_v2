@@ -16,7 +16,7 @@
       .setborder {
         width: 100%;
       }
-      .form-control{
+      select{
         width: 130px;
       }
     }
@@ -25,7 +25,7 @@
       .setborder {
         width: 100%;
       }
-      .form-control{
+      select{
         width: 130px;
       }
     }
