@@ -9,9 +9,20 @@ $de = $_GET['de'];
 $time = date("h:i:sa");
 $t = substr($time,8);
 if($t == 'pm'){
-    $st = explode(":",$time);
-    $time_set = array($st[0]+12,$st[1],$st[2]);
-    $time = implode(":",$time_set);
+    if((int)substr($time,0,2) != 12)
+    {
+        $st = explode(":",$time);
+        $time_set = array($st[0]+12,$st[1],$st[2]);
+        $time = implode(":",$time_set);
+    }  
+}
+else if($t == 'am'){
+    if((int)substr($time,0,2) == 12)
+    {
+        $st = explode(":",$time);
+        $time_set = array($st[0]+12,$st[1],$st[2]);
+        $time = implode(":",$time_set);
+    }
 }
 $name = $_SESSION['user_name'];
 if (empty($g91) && empty($g95) && empty($de)) {
