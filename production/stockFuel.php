@@ -350,7 +350,7 @@
                               <?php
                             }
                             if ($i == 0) {
-                              $userQuery = "select value from gastank where date = '$da' and substr(timestamp,9) = 'am' order by gas_id";
+                              $userQuery = "select value from gastank where date = '$da' and substr(timestamp,1,2) in (11,12,13,14,15,16,17,18) order by gas_id";
                               $result = mysqli_query($connect, $userQuery);
                               if (mysqli_num_rows($result) == 0) {
                               ?>
@@ -366,7 +366,7 @@
                                 }
                               }
                             } else {
-                              $userQuery = "select value from gastank where date = '$da' and substr(timestamp,9) = 'pm' order by gas_id";
+                              $userQuery = "select value from gastank where date = '$da' and substr(timestamp,1,2) in (19,20,21,22,23,24,1,2,3,4,5,6,7,8,9,10) order by gas_id";
                               $result = mysqli_query($connect, $userQuery);
                               if (mysqli_num_rows($result) == 0) {
                                 ?>
@@ -404,7 +404,7 @@
                               }
                             }
                             if ($i == 0) {
-                              $userQuery = "select value from gastank where date = '$da' and substr(timestamp,9) = 'pm' order by gas_id";
+                              $userQuery = "select value from gastank where date = '$da' and substr(timestamp,1,2) in (19,20,21,22,23,24,1,2,3,4,5,6,7,8,9,10) order by gas_id";
                               $result = mysqli_query($connect, $userQuery);
                               if (mysqli_num_rows($result) == 0) {
                               ?>
@@ -487,7 +487,7 @@
                             ?>
 
                               <?php
-                              $userQuery = "select (select value from gastank where date < '$da' and substr(timestamp,1,2) in (07,08,09,10) and gas_id = 1 limit 1)-value as dif from gastank where date = '$da' and substr(timestamp,9)= 'am' and gas_id = 1";
+                              $userQuery = "select (select value from gastank where date < '$da' and substr(timestamp,1,2) in (19,20,21,22,23,24,1,2,3,4,5,6,7,8,9,10) and gas_id = 1 limit 1)-value as dif from gastank where date = '$da' and substr(timestamp,1,2) in (11,12,13,14,15,16,17,18) and gas_id = 1";
                               $result = mysqli_query($connect, $userQuery);
                               if (mysqli_num_rows($result) == 0) {
                               ?>
@@ -500,13 +500,13 @@
                               ?>
                                 <td><?php echo number_format($row['dif'] ); ?></td>
                                 <?php
-                                $userQuery = "select (select value from gastank where date < '$da' and substr(timestamp,9)= 'pm' and gas_id = 2 limit 1)-value as dif from gastank where date = '$da' and substr(timestamp,9)= 'am' and gas_id = 2";
+                                $userQuery = "select (select value from gastank where date < '$da' and substr(timestamp,1,2) in (19,20,21,22,23,24,1,2,3,4,5,6,7,8,9,10) and gas_id = 2 limit 1)-value as dif from gastank where date = '$da' and substr(timestamp,1,2) in (11,12,13,14,15,16,17,18) and gas_id = 2";
                                 $result = mysqli_query($connect, $userQuery);
                                 $row = mysqli_fetch_assoc($result);
                                 ?>
                                 <td><?php echo number_format($row['dif'] ); ?></td>
                                 <?php
-                                $userQuery = "select (select value from gastank where date < '$da' and substr(timestamp,9)= 'pm' and gas_id = 3 limit 1)-value as dif from gastank where date = '$da' and substr(timestamp,9)= 'am' and gas_id = 3";
+                                $userQuery = "select (select value from gastank where date < '$da' and substr(timestamp,1,2) in (19,20,21,22,23,24,1,2,3,4,5,6,7,8,9,10) and gas_id = 3 limit 1)-value as dif from gastank where date = '$da' and substr(timestamp,1,2) in (11,12,13,14,15,16,17,18) and gas_id = 3";
                                 $result = mysqli_query($connect, $userQuery);
                                 $row = mysqli_fetch_assoc($result);
                                 ?>
@@ -531,7 +531,7 @@
                               ?>
 
                               <?php
-                              $userQuery = "select (select value from gastank where date = '$da' and substr(timestamp,9)= 'am' and gas_id = 1 limit 1)-value as dif from gastank where date = '$da' and substr(timestamp,9)= 'pm' and gas_id = 1";
+                              $userQuery = "select (select value from gastank where date = '$da' and substr(timestamp,1,2) in (11,12,13,14,15,16,17,18) and gas_id = 1 limit 1)-value as dif from gastank where date = '$da' and substr(timestamp,1,2) in (19,20,21,22,23,24,1,2,3,4,5,6,7,8,9,10) and gas_id = 1";
                               $result = mysqli_query($connect, $userQuery);
                               if (mysqli_num_rows($result) == 0) {
                               ?>
@@ -544,13 +544,13 @@
                               ?>
                                 <td><?php echo number_format($row['dif']+$b91); ?></td>
                                 <?php
-                                $userQuery = "select (select value from gastank where date = '$da' and substr(timestamp,9)= 'am' and gas_id = 2 limit 1)-value as dif from gastank where date = '$da' and substr(timestamp,9)= 'pm' and gas_id = 2";
+                                $userQuery = "select (select value from gastank where date = '$da' and substr(timestamp,1,2) in (11,12,13,14,15,16,17,18) and gas_id = 2 limit 1)-value as dif from gastank where date = '$da' and substr(timestamp,1,2) in (19,20,21,22,23,24,1,2,3,4,5,6,7,8,9,10) and gas_id = 2";
                                 $result = mysqli_query($connect, $userQuery);
                                 $row = mysqli_fetch_assoc($result);
                                 ?>
                                 <td><?php echo number_format($row['dif']+$b95); ?></td>
                                 <?php
-                                $userQuery = "select (select value from gastank where date = '$da' and substr(timestamp,9)= 'am' and gas_id = 3 limit 1)-value as dif from gastank where date = '$da' and substr(timestamp,9)= 'pm' and gas_id = 3";
+                                $userQuery = "select (select value from gastank where date = '$da' and substr(timestamp,1,2) in (11,12,13,14,15,16,17,18) and gas_id = 3 limit 1)-value as dif from gastank where date = '$da' and substr(timestamp,1,2) in (19,20,21,22,23,24,1,2,3,4,5,6,7,8,9,10) and gas_id = 3";
                                 $result = mysqli_query($connect, $userQuery);
                                 $row = mysqli_fetch_assoc($result);
                                 ?>
@@ -711,7 +711,7 @@
                               <?php
                             }
                             if ($i == 0) {
-                              $userQuery = "select value from gastank where date = '$da' and substr(timestamp,9) = 'am' order by gas_id";
+                              $userQuery = "select value from gastank where date = '$da' and substr(timestamp,1,2) in (11,12,13,14,15,16,17,18) order by gas_id";
                               $result = mysqli_query($connect, $userQuery);
                               if (mysqli_num_rows($result) == 0) {
                               ?>
@@ -727,7 +727,7 @@
                                 }
                               }
                             } else {
-                              $userQuery = "select value from gastank where date = '$da' and substr(timestamp,9) = 'pm' order by gas_id";
+                              $userQuery = "select value from gastank where date = '$da' and substr(timestamp,1,2) in (19,20,21,22,23,24,1,2,3,4,5,6,7,8,9,10) order by gas_id";
                               $result = mysqli_query($connect, $userQuery);
                               if (mysqli_num_rows($result) == 0) {
                                 ?>
@@ -762,7 +762,7 @@
                               }
                             }
                             if ($i == 0) {
-                              $userQuery = "select value from gastank where date = '$da' and substr(timestamp,9) = 'pm' order by gas_id";
+                              $userQuery = "select value from gastank where date = '$da' and substr(timestamp,1,2) in (19,20,21,22,23,24,1,2,3,4,5,6,7,8,9,10) order by gas_id";
                               $result = mysqli_query($connect, $userQuery);
                               if (mysqli_num_rows($result) == 0) {
                                 ?>
