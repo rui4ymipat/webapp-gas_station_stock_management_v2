@@ -8,6 +8,11 @@ $g95 = $_GET['g95'];
 $de = $_GET['de'];
 $time = date("h:i:sa");
 $t = substr($time,8);
+if($t == 'pm'){
+    $st = explode(":",$time);
+    $time_set = array($st[0]+12,$st[1],$st[2]);
+    $time = implode(":",$time_set);
+}
 $name = $_SESSION['user_name'];
 if (empty($g91) && empty($g95) && empty($de)) {
     $_SESSION['msg'] = "กรุณากรอกข้อมูลให้ครบ";

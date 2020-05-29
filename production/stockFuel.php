@@ -487,7 +487,7 @@
                             ?>
 
                               <?php
-                              $userQuery = "select (select value from gastank where date < '$da' and substr(timestamp,9)= 'pm' and gas_id = 1 limit 1)-value as dif from gastank where date = '$da' and substr(timestamp,9)= 'am' and gas_id = 1";
+                              $userQuery = "select (select value from gastank where date < '$da' and substr(timestamp,1,2) in (07,08,09,10) and gas_id = 1 limit 1)-value as dif from gastank where date = '$da' and substr(timestamp,9)= 'am' and gas_id = 1";
                               $result = mysqli_query($connect, $userQuery);
                               if (mysqli_num_rows($result) == 0) {
                               ?>
