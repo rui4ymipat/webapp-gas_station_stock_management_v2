@@ -637,7 +637,7 @@
                           if ($row['sum'] <= 40000) {
                             echo number_format($row['sum'] * 0.7, 2);
                           } else {
-                            echo number_format($row['sum'] * 1, 2);
+                            echo number_format(28000 + ($row['sum']-40000), 2);
                           } ?> <div style="font-size: 40%;">บาท</div>
                       </td>
                     </tr>
