@@ -264,7 +264,7 @@
                             $sum_91 += $row['value'];
                             $s += $row['value'] * $row['price'];
                           ?>
-                            <td><?php echo number_format($row['price']); ?> </td>
+                            <td><?php echo number_format($row['price'],2); ?> </td>
                             <script type="text/javascript">
                               console.log("บัญชี2")
                             </script>
@@ -288,7 +288,7 @@
                             $sum_91 += $row['value'];
                             $s += $row['value'] * $row['price'];
                           ?>
-                            <td><?php echo number_format($row['price']); ?> </td>
+                            <td><?php echo number_format($row['price'],2); ?> </td>
                             <script type="text/javascript">
                               console.log("บัญชี3")
                             </script>
@@ -402,7 +402,7 @@
                             $sum_91 += $row['value'];
                             $s += $row['value'] * $row['price'];
                           ?>
-                            <td><?php echo number_format($row['price']); ?> </td>
+                            <td><?php echo number_format($row['price'],2); ?> </td>
                           <?php
                           }
 
@@ -419,7 +419,7 @@
                             $sum_91 += $row['value'];
                             $s += $row['value'] * $row['price'];
                           ?>
-                            <td><?php echo number_format($row['price']); ?> </td>
+                            <td><?php echo number_format($row['price'],2); ?> </td>
                           <?php
                           }
 
@@ -437,7 +437,7 @@
                             $sum_91 += $row['value'];
                             $s += $row['value'] * $row['price'];
                           ?>
-                            <td><?php echo number_format($row['price']); ?> </td>
+                            <td><?php echo number_format($row['price'],2); ?> </td>
 
                           <?php
                           }
@@ -518,7 +518,7 @@
                             $sum_91 += $row['value'];
                             $s += $row['value'] * $row['price'];
                           ?>
-                            <td><?php echo number_format($row['price']); ?> </td>
+                            <td><?php echo number_format($row['price'],2); ?> </td>
                           <?php
                           }
 
@@ -535,7 +535,7 @@
                             $sum_91 += $row['value'];
                             $s += $row['value'] * $row['price'];
                           ?>
-                            <td><?php echo number_format($row['price']); ?> </td>
+                            <td><?php echo number_format($row['price'],2); ?> </td>
                           <?php
                           }
 
@@ -553,7 +553,7 @@
                             $sum_91 += $row['value'];
                             $s += $row['value'] * $row['price'];
                           ?>
-                            <td><?php echo number_format($row['price']); ?> </td>
+                            <td><?php echo number_format($row['price'],2); ?> </td>
 
                           <?php
                           }
