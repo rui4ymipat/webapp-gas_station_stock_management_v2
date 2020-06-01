@@ -392,7 +392,7 @@
                           $date = explode("-", $row['date']);
                           $Sdate = array($date[2], $month[(int) $date[1]], $date[0] + 543);
                           $Tdate = implode(" ", $Sdate);
-                          $Q2 = "select current_price from today_price where date = '$d' and gas_id = 3";
+                          $Q2 = "select sell_price from today_price where date = '$d' and gas_id = 3";
                           $re1 = mysqli_query($connect, $Q2);
                           if (!$re1) {
                             die("Could not successfully run the query $userQuery " . mysqli_error($connect));
@@ -403,8 +403,8 @@
                             <td style="height: 30px;"><?php echo $Tdate  ?></td>
                             <td><?php echo $row['number']; ?></td>
                             <td><?php echo number_format($row['value'], 2); ?></td>
-                            <td><?php echo number_format($Dep['current_price'], 2); ?></td>
-                            <td><?php echo number_format($Dep['current_price'] * $row['value'], 2); ?></td>
+                            <td><?php echo number_format($Dep['sell_price'], 2); ?></td>
+                            <td><?php echo number_format($Dep['sell_price'] * $row['value'], 2); ?></td>
                             <td><?php echo number_format($row['cost'], 2); ?></td>
                             <td><?php echo number_format($row['other_price']);
                                 if (!empty($row['detail'])) {

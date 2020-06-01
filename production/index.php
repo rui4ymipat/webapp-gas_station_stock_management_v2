@@ -635,9 +635,9 @@
                           $result = mysqli_query($connect, $userQuery);
                           $row = mysqli_fetch_assoc($result);
                           if ($row['sum'] <= 40000) {
-                            echo number_format($row['sum'] * 1.1, 2);
+                            echo number_format($row['sum'] * 0.7, 2);
                           } else {
-                            echo number_format($row['sum'] * 1.3, 2);
+                            echo number_format($row['sum'] * 1, 2);
                           } ?> <div style="font-size: 40%;">บาท</div>
                       </td>
                     </tr>
