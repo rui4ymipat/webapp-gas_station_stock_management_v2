@@ -67,7 +67,7 @@ if (empty($g91) && empty($g95) && empty($de)) {
     } else {
 
         
-            $userQuery = "select * from gastank where gas_id = 1 and date = '$date' and substr(timestamp,1,2) in  substr(timestamp,1,2) in (11,12,13,14,15,16,17,18)";
+            $userQuery = "select * from gastank where gas_id = 1 and date = '$date' and substr(timestamp,1,2) in (11,12,13,14,15,16,17,18)";
             $result = mysqli_query($connect, $userQuery);
             if (mysqli_num_rows($result) == 0) {
                 $userQuery = "insert into gastank(gas_id,value,date,timestamp,name_stamp) values(1,$g91,'$date','$time','$name')";
@@ -77,7 +77,7 @@ if (empty($g91) && empty($g95) && empty($de)) {
                 $result = mysqli_query($connect, $userQuery);
             }
 
-            $userQuery = "select * from gastank where gas_id = 2 and date = '$date' and substr(timestamp,1,2) in  substr(timestamp,1,2) in (11,12,13,14,15,16,17,18)";
+            $userQuery = "select * from gastank where gas_id = 2 and date = '$date' and substr(timestamp,1,2) in (11,12,13,14,15,16,17,18)";
             $result = mysqli_query($connect, $userQuery);
             if (mysqli_num_rows($result) == 0) {
                 $userQuery = "insert into gastank(gas_id,value,date,timestamp,name_stamp) values(2,$g91,'$date','$time','$name')";
@@ -87,7 +87,7 @@ if (empty($g91) && empty($g95) && empty($de)) {
                 $result = mysqli_query($connect, $userQuery);
             }
 
-            $userQuery = "select * from gastank where gas_id = 3 and date = '$date' and substr(timestamp,1,2) in  substr(timestamp,1,2) in (11,12,13,14,15,16,17,18)";
+            $userQuery = "select * from gastank where gas_id = 3 and date = '$date' and substr(timestamp,1,2) in (11,12,13,14,15,16,17,18)";
             $result = mysqli_query($connect, $userQuery);
             if (mysqli_num_rows($result) == 0) {
                 $userQuery = "insert into gastank(gas_id,value,date,timestamp,name_stamp) values(3,$g91,'$date','$time','$name')";
