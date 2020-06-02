@@ -13,7 +13,7 @@ if ($t == 'pm') {
     if ((int) substr($time, 0, 2) != 12) {
         $st = explode(":", $time);
         $time_set = array($st[0] + 12, $st[1], $st[2]);
-        $check_time = $st[0] + 12;
+        $check_time = (int)$st[0] + 12;
         $time = implode(":", $time_set);
     }
 } else if ($t == 'am') {
@@ -24,7 +24,7 @@ if ($t == 'pm') {
         $time = implode(":", $time_set);
     } else {
         $st = explode(":", $time);
-        $check_time = $st[0];
+        $check_time = (int)$st[0];
     }
 }
 $name = $_SESSION['user_name'];
