@@ -548,7 +548,7 @@
                 ?>
 
                 <div class="setfont1">
-                  <h1 class="todayprice">ราคาน้ำมันหน้าป้าย</h1>
+                  <h1 class="todayprice">ราคาน้ำมันหน้าปั้ม</h1>
                   <table class="showgas">
                     <tr class="name">
                       <td><img src="https://www.bangchak.co.th/img/logo-oil/logo-gasohol-91.png" alt="g91"></td>
@@ -583,7 +583,7 @@
                     }
                   }
                   ?>
-                  <h1 class="todayprice">ราคาน้ำมันต้นทุน</h1>
+                  <h1 class="todayprice">ราคาน้ำมันกทม.</h1>
                   <table class="showgas">
                     <tr class="name">
                       <td><img src="https://www.bangchak.co.th/img/logo-oil/logo-gasohol-91.png" alt="g91"></td>
