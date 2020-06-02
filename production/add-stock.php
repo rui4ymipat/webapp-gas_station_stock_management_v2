@@ -64,7 +64,7 @@ if (empty($g91) && empty($g95) && empty($de)) {
             $result = mysqli_query($connect, $userQuery);
         }
     }
-    if ($check_time >= 1 && $check_time <= 10) {
+    else if ($check_time >= 1 && $check_time <= 10) {
         $g91 = 2;
         $userQuery = "select * from gastank where gas_id = 1 and date = '$yes_date' and substr(timestamp,1,2) in (19,20,21,22,23,24,1,2,3,4,5,6,7,8,9,10)";
         $result = mysqli_query($connect, $userQuery);
