@@ -251,7 +251,7 @@
                   <div class="setborder" >
                     <h1 style="font-weight: 800;color: #2B3E54;font-size: 200%;">กรอกข้อมูล</h1>
                     <form action="add_buygas.php" method="GET">
-                      <div class="showdetail">ปริมาณที่ซื้อมา</div>
+                      <div class="showdetail">ปริมาณที่ลง Tank</div>
                       <table style="margin-top:20px;">
                         <tr>
                           <td class="name">G91</td>
@@ -305,7 +305,7 @@
                         <th rowspan="2" style="height: 50px;">วันที่</th>
                         <th rowspan="2" style="width: 3%;">กะ</th>
                         <th colspan="3">Tank</th>
-                        <th colspan="3">ซื้อมา</th>
+                        <th colspan="3">ลง Tank</th>
                         <th colspan="3">รวม</th>
                         <th colspan="3">รถอีซูซุ</th>
                       </tr>

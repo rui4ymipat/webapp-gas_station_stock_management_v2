@@ -280,7 +280,7 @@
                         <th rowspan="2" style="height: 50px;">วันที่</th>
                         <th rowspan="2" style="width: 3%;">กะ</th>
                         <th colspan="3">Tank</th>
-                        <th colspan="3">ซื้อมา</th>
+                        <th colspan="3">ลง Tank</th>
                         <th colspan="3">รวม</th>
                         <th colspan="3">รถอีซูซุ</th>
                       </tr>
