@@ -32,7 +32,39 @@ if (empty($g91) && empty($g95) && empty($de)) {
     $_SESSION['-msg'] = "กรุณากรอกข้อมูลให้ครบ";
     header("Location:stockFuel.php");
 } else {
-    if (($check_time <= 24 && $check_time >= 19) || ($check_time >= 1 && $check_time <= 10)) {
+    if ($check_time <= 24 && $check_time >= 19)
+    {
+        $userQuery = "select * from gastank where gas_id = 1 and date = '$date' and substr(timestamp,1,2) in (19,20,21,22,23,24,1,2,3,4,5,6,7,8,9,10)";
+            $result = mysqli_query($connect, $userQuery);
+            if (mysqli_num_rows($result) == 0) {
+                $userQuery = "insert into gastank(gas_id,value,date,timestamp,name_stamp) values(1,$g91,'$date','$time','$name')";
+                $result = mysqli_query($connect, $userQuery);
+            } else {
+                $userQuery = "update gastank set value = $g91 , name_stamp = '$name' ,timestamp = '$time' where gas_id = 1 and date = '$date' and substr(timestamp,1,2) in (19,20,21,22,23,24,1,2,3,4,5,6,7,8,9,10)";
+                $result = mysqli_query($connect, $userQuery);
+            }
+
+            $userQuery = "select * from gastank where gas_id = 2 and date = '$date' and substr(timestamp,1,2) in (19,20,21,22,23,24,1,2,3,4,5,6,7,8,9,10)";
+            $result = mysqli_query($connect, $userQuery);
+            if (mysqli_num_rows($result) == 0) {
+                $userQuery = "insert into gastank(gas_id,value,date,timestamp,name_stamp) values(2,$g95,'$date','$time','$name')";
+                $result = mysqli_query($connect, $userQuery);
+            } else {
+                $userQuery = "update gastank set value = $g95 , name_stamp = '$name' ,timestamp = '$time' where gas_id = 2 and date = '$date' and substr(timestamp,1,2) in (19,20,21,22,23,24,1,2,3,4,5,6,7,8,9,10)";
+                $result = mysqli_query($connect, $userQuery);
+            }
+
+            $userQuery = "select * from gastank where gas_id = 3 and date = '$date' and substr(timestamp,1,2) in (19,20,21,22,23,24,1,2,3,4,5,6,7,8,9,10)";
+            $result = mysqli_query($connect, $userQuery);
+            if (mysqli_num_rows($result) == 0) {
+                $userQuery = "insert into gastank(gas_id,value,date,timestamp,name_stamp) values(3,$de,'$date','$time','$name')";
+                $result = mysqli_query($connect, $userQuery);
+            } else {
+                $userQuery = "update gastank set value = $de , name_stamp = '$name' ,timestamp = '$time' where gas_id = 3 and date = '$date' and substr(timestamp,1,2) in (19,20,21,22,23,24,1,2,3,4,5,6,7,8,9,10)";
+                $result = mysqli_query($connect, $userQuery);
+            }
+    }
+    if ( $check_time >= 1 && $check_time <= 10) {
         
             $userQuery = "select * from gastank where gas_id = 1 and date = '$yes_date' and substr(timestamp,1,2) in (19,20,21,22,23,24,1,2,3,4,5,6,7,8,9,10)";
             $result = mysqli_query($connect, $userQuery);
@@ -47,20 +79,20 @@ if (empty($g91) && empty($g95) && empty($de)) {
             $userQuery = "select * from gastank where gas_id = 2 and date = '$yes_date' and substr(timestamp,1,2) in (19,20,21,22,23,24,1,2,3,4,5,6,7,8,9,10)";
             $result = mysqli_query($connect, $userQuery);
             if (mysqli_num_rows($result) == 0) {
-                $userQuery = "insert into gastank(gas_id,value,date,timestamp,name_stamp) values(2,$g91,'$date','$time','$name')";
+                $userQuery = "insert into gastank(gas_id,value,date,timestamp,name_stamp) values(2,$g95,'$date','$time','$name')";
                 $result = mysqli_query($connect, $userQuery);
             } else {
-                $userQuery = "update gastank set value = $g91 , name_stamp = '$name' ,timestamp = '$time' where gas_id = 2 and date = '$yes_date' and substr(timestamp,1,2) in (19,20,21,22,23,24,1,2,3,4,5,6,7,8,9,10)";
+                $userQuery = "update gastank set value = $g95 , name_stamp = '$name' ,timestamp = '$time' where gas_id = 2 and date = '$yes_date' and substr(timestamp,1,2) in (19,20,21,22,23,24,1,2,3,4,5,6,7,8,9,10)";
                 $result = mysqli_query($connect, $userQuery);
             }
 
             $userQuery = "select * from gastank where gas_id = 3 and date = '$yes_date' and substr(timestamp,1,2) in (19,20,21,22,23,24,1,2,3,4,5,6,7,8,9,10)";
             $result = mysqli_query($connect, $userQuery);
             if (mysqli_num_rows($result) == 0) {
-                $userQuery = "insert into gastank(gas_id,value,date,timestamp,name_stamp) values(3,$g91,'$date','$time','$name')";
+                $userQuery = "insert into gastank(gas_id,value,date,timestamp,name_stamp) values(3,$de,'$date','$time','$name')";
                 $result = mysqli_query($connect, $userQuery);
             } else {
-                $userQuery = "update gastank set value = $g91 , name_stamp = '$name' ,timestamp = '$time' where gas_id = 3 and date = '$yes_date' and substr(timestamp,1,2) in (19,20,21,22,23,24,1,2,3,4,5,6,7,8,9,10)";
+                $userQuery = "update gastank set value = $de , name_stamp = '$name' ,timestamp = '$time' where gas_id = 3 and date = '$yes_date' and substr(timestamp,1,2) in (19,20,21,22,23,24,1,2,3,4,5,6,7,8,9,10)";
                 $result = mysqli_query($connect, $userQuery);
             }
         
@@ -80,20 +112,20 @@ if (empty($g91) && empty($g95) && empty($de)) {
             $userQuery = "select * from gastank where gas_id = 2 and date = '$date' and substr(timestamp,1,2) in (11,12,13,14,15,16,17,18)";
             $result = mysqli_query($connect, $userQuery);
             if (mysqli_num_rows($result) == 0) {
-                $userQuery = "insert into gastank(gas_id,value,date,timestamp,name_stamp) values(2,$g91,'$date','$time','$name')";
+                $userQuery = "insert into gastank(gas_id,value,date,timestamp,name_stamp) values(2,$g95,'$date','$time','$name')";
                 $result = mysqli_query($connect, $userQuery);
             } else {
-                $userQuery = "update gastank set value = $g91 , name_stamp = '$name' ,timestamp = '$time' where gas_id = 2 and date = '$date' and substr(timestamp,1,2) in (11,12,13,14,15,16,17,18)";
+                $userQuery = "update gastank set value = $g95 , name_stamp = '$name' ,timestamp = '$time' where gas_id = 2 and date = '$date' and substr(timestamp,1,2) in (11,12,13,14,15,16,17,18)";
                 $result = mysqli_query($connect, $userQuery);
             }
 
             $userQuery = "select * from gastank where gas_id = 3 and date = '$date' and substr(timestamp,1,2) in (11,12,13,14,15,16,17,18)";
             $result = mysqli_query($connect, $userQuery);
             if (mysqli_num_rows($result) == 0) {
-                $userQuery = "insert into gastank(gas_id,value,date,timestamp,name_stamp) values(3,$g91,'$date','$time','$name')";
+                $userQuery = "insert into gastank(gas_id,value,date,timestamp,name_stamp) values(3,$de,'$date','$time','$name')";
                 $result = mysqli_query($connect, $userQuery);
             } else {
-                $userQuery = "update gastank set value = $g91 , name_stamp = '$name' ,timestamp = '$time' where gas_id = 3 and date = '$date' and substr(timestamp,1,2) in (11,12,13,14,15,16,17,18)";
+                $userQuery = "update gastank set value = $de , name_stamp = '$name' ,timestamp = '$time' where gas_id = 3 and date = '$date' and substr(timestamp,1,2) in (11,12,13,14,15,16,17,18)";
                 $result = mysqli_query($connect, $userQuery);
             }
         
