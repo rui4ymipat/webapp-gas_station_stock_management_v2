@@ -34,10 +34,18 @@ if (mysqli_num_rows($Check_result) == 0) {
     $result = mysqli_query($connect, $q1);
 } else {
     $row = mysqli_fetch_assoc($Check_result);
-    if (empty($C6134_num)) {
-        $C6134_num = $row['number'];
+    if($C6134_num >= 0)
+    {
+        
     }
-    if (empty($C6134_val)) {
+    else if (empty($C6134_num)) {
+        $C6134_num = $row['number'];
+    } 
+    if($C6134_val)   
+    {
+
+    }
+    else if (empty($C6134_val)) {
         $C6134_val = $row['value'];
     }
     $q1 = "update C6134 set number = $C6134_num , value = $C6134_val where date = '$date'";
@@ -51,10 +59,18 @@ if (mysqli_num_rows($Check_result) == 0) {
     $result = mysqli_query($connect, $q1);
 } else {
     $row = mysqli_fetch_assoc($Check_result);
-    if (empty($C1815_num)) {
+    if($C1815_num >= 0)
+    {
+
+    }
+    else if (empty($C1815_num)) {
         $C1815_num = $row['number'];
     }
-    if (empty($C1815_val)) {
+    if($C1815_val >= 0)
+    {
+
+    }
+    else if(empty($C1815_val)) {
         $C1815_val = $row['value'];
     }
     $q1 = "update C1815 set number = $C1815_num , value = $C1815_val where date = '$date'";
@@ -68,10 +84,18 @@ if (mysqli_num_rows($Check_result) == 0) {
     $result = mysqli_query($connect, $q1);
 } else {
     $row = mysqli_fetch_assoc($Check_result);
-    if (empty($is_num)) {
+    if($is_num >= 0)
+    {
+
+    }
+    else if (empty($is_num)) {
         $is_num = $row['number'];
     }
-    if (empty($is_val)) {
+    if($is_val >= 0)
+    {
+        
+    }
+    else if (empty($is_val)) {
         $is_val = $row['value'];
     }
     $q1 = "update ISUZU set number = $is_num , value = $is_val where date = '$date'";
