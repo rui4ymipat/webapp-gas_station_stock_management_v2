@@ -2,84 +2,100 @@
 
 require_once "connect.php";
 session_start();
+$c = 0;
 $a1_91_p = $_GET['91p_a1'];
 if (empty($a1_91_d)) {
     $a1_91_d = 0;
+    $c = 1;
 }
 $a1_91_d = $_GET['91d_a1'];
 if (empty($a1_91_p)) {
     $a1_91_p = 0;
+    $c = 1;
 }
 $a1_95_p = $_GET['95p_a1'];
-if (empty($a1_95_p)){
+if (empty($a1_95_p)) {
     $a1_95_p = 0;
-} 
+    $c = 1;
+}
 $a1_95_d = $_GET['95d_a1'];
-if (empty($a1_95_d))
-{
+if (empty($a1_95_d)) {
     $a1_95_d = 0;
-} 
+    $c = 1;
+}
 $a1_de_p = $_GET['Dep_a1'];
-if (empty($a1_de_p)){
+if (empty($a1_de_p)) {
     $a1_de_p = 0;
-} 
+    $c = 1;
+}
 $a1_de_d = $_GET['Ded_a1'];
-if (empty($a1_de_d)){
+if (empty($a1_de_d)) {
     $a1_de_d = 0;
-} 
+    $c = 1;
+}
 
 $a2_91_p = $_GET['91p_a2'];
 if (empty($a2_91_d)) {
     $a2_91_d = 0;
+    $c = 1;
 }
 $a2_91_d = $_GET['91d_a2'];
 if (empty($a2_91_p)) {
     $a2_91_p = 0;
+    $c = 1;
 }
 $a2_95_p = $_GET['95p_a2'];
-if (empty($a2_95_p)){
+if (empty($a2_95_p)) {
     $a2_95_p = 0;
-} 
+    $c = 1;
+}
 $a2_95_d = $_GET['95d_a2'];
-if (empty($a2_95_d))
-{
+if (empty($a2_95_d)) {
     $a2_95_d = 0;
-} 
+    $c = 1;
+}
 $a2_de_p = $_GET['Dep_a2'];
-if (empty($a2_de_p)){
+if (empty($a2_de_p)) {
     $a2_de_p = 0;
-} 
+    $c = 1;
+}
 $a2_de_d = $_GET['Ded_a2'];
-if (empty($a2_de_d)){
+if (empty($a2_de_d)) {
     $a2_de_d = 0;
-} 
+    $c = 1;
+}
 
 $a3_91_p = $_GET['91p_a3'];
 if (empty($a3_91_d)) {
     $a3_91_d = 0;
+    $c = 1;
 }
 $a3_91_d = $_GET['91d_a3'];
 if (empty($a3_91_p)) {
     $a3_91_p = 0;
+    $c = 1;
 }
 $a3_95_p = $_GET['95p_a3'];
-if (empty($a3_95_p)){
+if (empty($a3_95_p)) {
     $a3_95_p = 0;
-} 
+    $c = 1;
+}
 $a3_95_d = $_GET['95d_a3'];
-if (empty($a3_95_d))
-{
+if (empty($a3_95_d)) {
     $a3_95_d = 0;
-} 
+    $c = 1;
+}
 $a3_de_p = $_GET['Dep_a3'];
-if (empty($a3_de_p)){
+if (empty($a3_de_p)) {
     $a3_de_p = 0;
-} 
+    $c = 1;
+}
 $a3_de_d = $_GET['Ded_a3'];
-if (empty($a3_de_d)){
+if (empty($a3_de_d)) {
     $a3_de_d = 0;
-} 
-if (empty($a1_91_p) && empty($a1_95_p) && empty($a1_de_p) && empty($a2_91_p) && empty($a2_95_p) && empty($a2_de_p) && empty($a3_91_p) && empty($a3_91_d) && empty($a3_95_p) && empty($a3_de_p)) {
+    $c = 1;
+}
+if ($c != 1 && empty($a1_91_p) && empty($a1_95_p) && empty($a1_de_p) && empty($a2_91_p) && empty($a2_95_p) && empty($a2_de_p) && empty($a3_91_p) && empty($a3_91_d) && empty($a3_95_p) && empty($a3_de_p)) {
     $_SESSION['msg'] = "โปรดกรอกข้อมูลให้ครบ";
     header("Location:fuelprice.php");
 } else {
