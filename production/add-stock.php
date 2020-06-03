@@ -28,7 +28,12 @@ if ($t == 'pm') {
     }
 }
 $name = $_SESSION['user_name'];
-if (is_null($g91) && is_null($g95) && is_null($de)) {
+$che = 0;
+if($g91 >= 0 || $g95 >= 0 || $de >= 0)
+{
+    $che = 1;
+}
+if (empty($g91) && empty($g95) && empty($de) && $che == 0) {
     $_SESSION['msg'] = "กรุณากรอกข้อมูลให้ครบ";
     header("Location:stockFuel.php");
 } else {
