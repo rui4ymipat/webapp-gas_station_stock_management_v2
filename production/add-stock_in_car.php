@@ -21,6 +21,9 @@ $de_is = $_GET['isde'];
 
 $userQuery = "select * from gas6134 where date = '$date'";
 $result = mysqli_query($connect, $userQuery);
+if (!$result) {
+    die ("Could not successfully run the query $userQuery ".mysqli_error($connect));
+    }
 if (mysqli_num_rows($result) == 0) {
     $userQuery = "insert into gas6134(g91,g95,diesel,date,timestamp,name_stamp) values($g91_6134,$g95_6134,$de_6134,'$date','$time','$name')";
     $result = mysqli_query($connect, $userQuery);
@@ -31,6 +34,9 @@ if (mysqli_num_rows($result) == 0) {
 
 $userQuery = "select * from gas1815 where date = '$date'";
 $result = mysqli_query($connect, $userQuery);
+if (!$result) {
+    die ("Could not successfully run the query $userQuery ".mysqli_error($connect));
+    }
 if (mysqli_num_rows($result) == 0) {
     $userQuery = "insert into gas1815(g91,g95,diesel,date,timestamp,name_stamp) values($g91_1815,$g95_1815,$de_1815,'$date','$time','$name')";
     $result = mysqli_query($connect, $userQuery);
@@ -41,6 +47,9 @@ if (mysqli_num_rows($result) == 0) {
 
 $userQuery = "select * from gasisuzu where date = '$date'";
 $result = mysqli_query($connect, $userQuery);
+if (!$result) {
+    die ("Could not successfully run the query $userQuery ".mysqli_error($connect));
+    }
 if (mysqli_num_rows($result) == 0) {
     $userQuery = "insert into gasisuzu(g91,g95,diesel,date,timestamp,name_stamp) values($g91_is,$g95_is,$de_is,'$date','$time','$name')";
     $result = mysqli_query($connect, $userQuery);
