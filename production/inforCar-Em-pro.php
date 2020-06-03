@@ -4,7 +4,7 @@
     date_default_timezone_set("Asia/Bangkok");
     function check($a){
         if(empty($a)){
-            return (int)0;
+            return "0";
         }
         else{
             return $a;
