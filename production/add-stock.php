@@ -28,7 +28,7 @@ if ($t == 'pm') {
     }
 }
 $name = $_SESSION['user_name'];
-if (isset($g91) && isset($g95) && isset($de)) {
+if (is_null($g91) && is_null($g95) && is_null($de)) {
     $_SESSION['msg'] = "กรุณากรอกข้อมูลให้ครบ";
     header("Location:stockFuel.php");
 } else {
