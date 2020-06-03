@@ -41,7 +41,7 @@ if (mysqli_num_rows($Check_result) == 0) {
     else if (empty($C6134_num)) {
         $C6134_num = $row['number'];
     } 
-    if($C6134_val)   
+    if($C6134_val >= 0)   
     {
 
     }
@@ -93,7 +93,7 @@ if (mysqli_num_rows($Check_result) == 0) {
     }
     if($is_val >= 0)
     {
-        
+
     }
     else if (empty($is_val)) {
         $is_val = $row['value'];
