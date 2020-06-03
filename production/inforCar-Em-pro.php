@@ -2,13 +2,21 @@
     require_once "connect.php";
     session_start();
     date_default_timezone_set("Asia/Bangkok");
+    function check($a){
+        if(empty($a)){
+            return 0;
+        }
+        else{
+            return $a;
+        }
+    }
     $date = date("Y-m-d");
-    $C6134_num = $_GET['6134_num'];
-    $C6134_val  = $_GET['6134_value'];
-    $C1815_num = $_GET['1815_num'];
-    $C1815_val  = $_GET['1815_value'];
-    $is_num = $_GET['IS_num'];
-    $is_val = $_GET['IS_value'];
+    $C6134_num = check($_GET['6134_num']);
+    $C6134_val  = check($_GET['6134_value']);
+    $C1815_num = check($_GET['1815_num']);
+    $C1815_val  = check($_GET['1815_value']);
+    $is_num = check($_GET['IS_num']);
+    $is_val = check($_GET['IS_value']);
         $Q = "Select * from C6134 where date = '$date'";
         $Check_result = mysqli_query($connect , $Q);
         if(mysqli_num_rows($Check_result) == 0)
