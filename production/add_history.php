@@ -2,35 +2,28 @@
 
 require_once "connect.php";
 session_start();
-function check($a)
-{
-    if ($a == 0) {
-        return 0;
-    } else {
-        return $a;
-    }
-}
 
-$a1_91_p = check($_GET['91p_a1']);
-$a1_91_v = check($_GET['91d_a1']);
-$a1_95_p = check($_GET['95p_a1']);
-$a1_95_v = check($_GET['95d_a1']);
-$a1_de_p = check($_GET['Dep_a1']);
-$a1_de_v = check($_GET['Ded_a1']);
 
-$a2_91_p = check($_GET['91p_a2']);
-$a2_91_v = check($_GET['91d_a2']);
-$a2_95_p = check($_GET['95p_a2']);
-$a2_95_v = check($_GET['95d_a2']);
-$a2_de_p = check($_GET['Dep_a2']);
-$a2_de_v = check($_GET['Ded_a2']);
+$a1_91_p = $_GET['91p_a1'];
+$a1_91_v = $_GET['91d_a1'];
+$a1_95_p = $_GET['95p_a1'];
+$a1_95_v = $_GET['95d_a1'];
+$a1_de_p = $_GET['Dep_a1'];
+$a1_de_v = $_GET['Ded_a1'];
 
-$a3_91_p = check($_GET['91p_a3']);
-$a3_91_v = check($_GET['91d_a3']);
-$a3_95_p = check($_GET['95p_a3']);
-$a3_95_v = check($_GET['95d_a3']);
-$a3_de_p = check($_GET['Dep_a3']);
-$a3_de_v = check($_GET['Ded_a3']);
+$a2_91_p = $_GET['91p_a2'];
+$a2_91_v = $_GET['91d_a2'];
+$a2_95_p = $_GET['95p_a2'];
+$a2_95_v = $_GET['95d_a2'];
+$a2_de_p = $_GET['Dep_a2'];
+$a2_de_v = $_GET['Ded_a2'];
+
+$a3_91_p = $_GET['91p_a3'];
+$a3_91_v = $_GET['91d_a3'];
+$a3_95_p = $_GET['95p_a3'];
+$a3_95_v = $_GET['95d_a3'];
+$a3_de_p = $_GET['Dep_a3'];
+$a3_de_v = $_GET['Ded_a3'];
 $car = $_GET['cars'];
 $tran = $_GET['a'];
 date_default_timezone_set("Asia/Bangkok");
