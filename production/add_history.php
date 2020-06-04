@@ -82,28 +82,28 @@ if (empty($car) && empty($a)) {
         $userQuery = "update history set car_id = $car where date = '$date'";
         $result = mysqli_query($connect, $userQuery);
         //account 1
-        $userQuery = "update history set price = $a1_91_p , values = $a1_91_v , timestamp = '$time' , name_stamp = '$name' where date = '$date' and gas_id = 1 and account = 1";
+        $userQuery = "update history set price = $a1_91_p , value = $a1_91_v , timestamp = '$time' , name_stamp = '$name' where date = '$date' and gas_id = 1 and account = 1";
         $result = mysqli_query($connect, $userQuery);
-        $userQuery = "update history set price = $a1_95_p , values = $a1_95_v  , timestamp = '$time' , name_stamp = '$name' where date = '$date' and gas_id = 2 and account = 1";
+        $userQuery = "update history set price = $a1_95_p , value = $a1_95_v  , timestamp = '$time' , name_stamp = '$name' where date = '$date' and gas_id = 2 and account = 1";
         $result = mysqli_query($connect, $userQuery);
-        $userQuery = "update history set price = $a1_de_p , values = $a1_de_v  , timestamp = '$time' , name_stamp = '$name' where date = '$date' and gas_id = 3 and account = 1";
+        $userQuery = "update history set price = $a1_de_p , value = $a1_de_v  , timestamp = '$time' , name_stamp = '$name' where date = '$date' and gas_id = 3 and account = 1";
         $result = mysqli_query($connect, $userQuery);
         //account2
-        $userQuery = "update history set price = $a2_91_p , values = $a2_91_v  , timestamp = '$time' , name_stamp = '$name' where date = '$date' and gas_id = 1 and account = 2";
+        $userQuery = "update history set price = $a2_91_p , value = $a2_91_v  , timestamp = '$time' , name_stamp = '$name' where date = '$date' and gas_id = 1 and account = 2";
         $result = mysqli_query($connect, $userQuery);
-        $userQuery = "update history set price = $a2_95_p , values = $a2_95_v  , timestamp = '$time' , name_stamp = '$name' where date = '$date' and gas_id = 2 and account = 2";
+        $userQuery = "update history set price = $a2_95_p , value = $a2_95_v  , timestamp = '$time' , name_stamp = '$name' where date = '$date' and gas_id = 2 and account = 2";
         $result = mysqli_query($connect, $userQuery);
-        $userQuery = "update history set price = $a2_de_p , values = $a2_de_v  , timestamp = '$time' , name_stamp = '$name' where date = '$date' and gas_id = 3 and account = 2";
+        $userQuery = "update history set price = $a2_de_p , value = $a2_de_v  , timestamp = '$time' , name_stamp = '$name' where date = '$date' and gas_id = 3 and account = 2";
         $result = mysqli_query($connect, $userQuery);
         if (!$result) {
             die ("Could not successfully run the query $userQuery ".mysqli_error($connect));
             }
 
-        $userQuery = "update history set price = $a3_91_p , values = $a3_91_v  , timestamp = '$time' , name_stamp = '$name' where date = '$date' and gas_id = 1 and account = 3";
+        $userQuery = "update history set price = $a3_91_p , value = $a3_91_v  , timestamp = '$time' , name_stamp = '$name' where date = '$date' and gas_id = 1 and account = 3";
         $result = mysqli_query($connect, $userQuery);
-        $userQuery = "update history set price = $a3_95_p , values = $a3_95_v  , timestamp = '$time' , name_stamp = '$name' where date = '$date' and gas_id = 2 and account = 3";
+        $userQuery = "update history set price = $a3_95_p , value = $a3_95_v  , timestamp = '$time' , name_stamp = '$name' where date = '$date' and gas_id = 2 and account = 3";
         $result = mysqli_query($connect, $userQuery);
-        $userQuery = "update history set price = $a3_de_p , values = $a3_de_v  , timestamp = '$time' , name_stamp = '$name' where date = '$date' and gas_id = 3 and account = 3";
+        $userQuery = "update history set price = $a3_de_p , value = $a3_de_v  , timestamp = '$time' , name_stamp = '$name' where date = '$date' and gas_id = 3 and account = 3";
         $result = mysqli_query($connect, $userQuery);
         if (!$result) {
             die ("Could not successfully run the query $userQuery ".mysqli_error($connect));
