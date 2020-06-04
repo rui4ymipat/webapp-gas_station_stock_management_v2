@@ -69,6 +69,9 @@ if (empty($car) && empty($a)) {
         $Qa1 = "insert into history(car_id,gas_id,price,value,tran_price,account,date,timestamp,name_stamp) 
     values($car,3,$a2_de_p,$a2_de_v,$tran,2,'$date','$time','$name')";
         mysqli_query($connect, $Qa1);
+        if (!$result) {
+            die ("Could not successfully run the query $userQuery ".mysqli_error($connect));
+            }
 
         $Qa1 = "insert into history(car_id,gas_id,price,value,tran_price,account,date,timestamp,name_stamp) 
     values($car,1,$a3_91_p,$a3_91_v,$tran,3,'$date','$time','$name')";
@@ -81,6 +84,9 @@ if (empty($car) && empty($a)) {
         $Qa1 = "insert into history(car_id,gas_id,price,value,tran_price,account,date,timestamp,name_stamp) 
     values($car,3,$a3_de_p,$a3_de_v,$tran,3,'$date','$time','$name')";
         mysqli_query($connect, $Qa1);
+        if (!$result) {
+            die ("Could not successfully run the query $userQuery ".mysqli_error($connect));
+            }
     } else {
         $userQuery = "update history set car_id = $car where date = '$date'";
         $result = mysqli_query($connect, $userQuery);
@@ -98,6 +104,9 @@ if (empty($car) && empty($a)) {
         $result = mysqli_query($connect, $userQuery);
         $userQuery = "update history set price = $a2_de_p , values = $a2_de_v  , timestamp = $time , name_stamp = $name where date = '$date' and gas_id = 3 and account = 2";
         $result = mysqli_query($connect, $userQuery);
+        if (!$result) {
+            die ("Could not successfully run the query $userQuery ".mysqli_error($connect));
+            }
 
         $userQuery = "update history set price = $a3_91_p , values = $a3_91_v  , timestamp = $time , name_stamp = $name where date = '$date' and gas_id = 1 and account = 3";
         $result = mysqli_query($connect, $userQuery);
@@ -105,6 +114,9 @@ if (empty($car) && empty($a)) {
         $result = mysqli_query($connect, $userQuery);
         $userQuery = "update history set price = $a3_de_p , values = $a3_de_v  , timestamp = $time , name_stamp = $name where date = '$date' and gas_id = 3 and account = 3";
         $result = mysqli_query($connect, $userQuery);
+        if (!$result) {
+            die ("Could not successfully run the query $userQuery ".mysqli_error($connect));
+            }
     }
 
     date_default_timezone_set("Asia/Bangkok");
