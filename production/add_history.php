@@ -2,15 +2,15 @@
 
 require_once "connect.php";
 session_start();
-function check($a){
-    if($a == 0)
-    {
+function check($a)
+{
+    if ($a == 0) {
         return 0;
-    }
-    else {
+    } else {
         return $a;
     }
 }
+
 $a1_91_p = check($_GET['91p_a1']);
 $a1_91_v = check($_GET['91d_a1']);
 $a1_95_p = check($_GET['95p_a1']);
@@ -43,85 +43,69 @@ if (empty($car) && empty($a)) {
 } else {
     $userQuery = "select * from history where date = '$date'";
     $result = mysqli_query($connect, $userQuery);
-    if ($result) {
+    if (mysqli_num_rows($result) == 0) {
+
+
+        $Qa1 = "insert into history(car_id,gas_id,price,value,tran_price,account,date,timestamp,name_stamp) 
+        values($car,1,$a1_91_p,$a1_91_v,$tran,1,'$date','$time','$name')";
+        mysqli_query($connect, $Qa1);
+
+        $Qa1 = "insert into history(car_id,gas_id,price,value,tran_price,account,date,timestamp,name_stamp) 
+        values($car,2,$a1_95_p,$a1_95_v,$tran,1,'$date','$time','$name')";
+        mysqli_query($connect, $Qa1);
+
+        $Qa1 = "insert into history(car_id,gas_id,price,value,tran_price,account,date,timestamp,name_stamp) 
+    values($car,3,$a1_de_p,$a1_de_v,$tran,1,'$date','$time','$name')";
+        mysqli_query($connect, $Qa1);
+
+        $Qa1 = "insert into history(car_id,gas_id,price,value,tran_price,account,date,timestamp,name_stamp) 
+    values($car,1,$a2_91_p,$a2_91_v,$tran,2,'$date','$time','$name')";
+        mysqli_query($connect, $Qa1);
+
+        $Qa1 = "insert into history(car_id,gas_id,price,value,tran_price,account,date,timestamp,name_stamp) 
+    values($car,2,$a2_95_p,$a2_95_v,$tran,2,'$date','$time','$name')";
+        mysqli_query($connect, $Qa1);
+
+        $Qa1 = "insert into history(car_id,gas_id,price,value,tran_price,account,date,timestamp,name_stamp) 
+    values($car,3,$a2_de_p,$a2_de_v,$tran,2,'$date','$time','$name')";
+        mysqli_query($connect, $Qa1);
+
+        $Qa1 = "insert into history(car_id,gas_id,price,value,tran_price,account,date,timestamp,name_stamp) 
+    values($car,1,$a3_91_p,$a3_91_v,$tran,3,'$date','$time','$name')";
+        mysqli_query($connect, $Qa1);
+
+        $Qa1 = "insert into history(car_id,gas_id,price,value,tran_price,account,date,timestamp,name_stamp) 
+    values($car,2,$a3_95_p,$a3_95_v,$tran,3,'$date','$time','$name')";
+        mysqli_query($connect, $Qa1);
+
+        $Qa1 = "insert into history(car_id,gas_id,price,value,tran_price,account,date,timestamp,name_stamp) 
+    values($car,3,$a3_de_p,$a3_de_v,$tran,3,'$date','$time','$name')";
+        mysqli_query($connect, $Qa1);
+    } else {
         $userQuery = "update history set car_id = $car where date = '$date'";
         $result = mysqli_query($connect, $userQuery);
-    }
-    //account 1
-    if (!empty($a1_91_p)) {
-        $userQuery = "delete from history where date = '$date' and gas_id = 1 and account = 1";
+        //account 1
+        $userQuery = "update history set price = $a1_91_p , values = $a1_91_v , timestamp = $time , name_stamp = $name where date = '$date' and gas_id = 1 and account = 1";
+        $result = mysqli_query($connect, $userQuery);
+        $userQuery = "update history set price = $a1_95_p , values = $a1_95_v  , timestamp = $time , name_stamp = $name where date = '$date' and gas_id = 2 and account = 1";
+        $result = mysqli_query($connect, $userQuery);
+        $userQuery = "update history set price = $a1_de_p , values = $a1_de_v  , timestamp = $time , name_stamp = $name where date = '$date' and gas_id = 3 and account = 1";
+        $result = mysqli_query($connect, $userQuery);
+        //account2
+        $userQuery = "update history set price = $a2_91_p , values = $a2_91_v  , timestamp = $time , name_stamp = $name where date = '$date' and gas_id = 1 and account = 2";
+        $result = mysqli_query($connect, $userQuery);
+        $userQuery = "update history set price = $a2_95_p , values = $a2_95_v  , timestamp = $time , name_stamp = $name where date = '$date' and gas_id = 2 and account = 2";
+        $result = mysqli_query($connect, $userQuery);
+        $userQuery = "update history set price = $a2_de_p , values = $a2_de_v  , timestamp = $time , name_stamp = $name where date = '$date' and gas_id = 3 and account = 2";
+        $result = mysqli_query($connect, $userQuery);
+
+        $userQuery = "update history set price = $a3_91_p , values = $a3_91_v  , timestamp = $time , name_stamp = $name where date = '$date' and gas_id = 1 and account = 3";
+        $result = mysqli_query($connect, $userQuery);
+        $userQuery = "update history set price = $a3_95_p , values = $a3_95_v  , timestamp = $time , name_stamp = $name where date = '$date' and gas_id = 2 and account = 3";
+        $result = mysqli_query($connect, $userQuery);
+        $userQuery = "update history set price = $a3_de_p , values = $a3_de_v  , timestamp = $time , name_stamp = $name where date = '$date' and gas_id = 3 and account = 3";
         $result = mysqli_query($connect, $userQuery);
     }
-
-    $Qa1 = "insert into history(car_id,gas_id,price,value,tran_price,account,date,timestamp,name_stamp) 
-    values($car,1,$a1_91_p,$a1_91_v,$tran,1,'$date','$time','$name')";
-    mysqli_query($connect, $Qa1);
-
-    if (!empty($a1_95_p)) {
-        $userQuery = "delete from history where date = '$date' and gas_id = 2 and account = 1";
-        $result = mysqli_query($connect, $userQuery);
-    }
-    $Qa1 = "insert into history(car_id,gas_id,price,value,tran_price,account,date,timestamp,name_stamp) 
-    values($car,2,$a1_95_p,$a1_95_v,$tran,1,'$date','$time','$name')";
-    mysqli_query($connect, $Qa1);
-
-    if (!empty($a1_de_p)) {
-        $userQuery = "delete from history where date = '$date' and gas_id = 3 and account = 1";
-        $result = mysqli_query($connect, $userQuery);
-    }
-    $Qa1 = "insert into history(car_id,gas_id,price,value,tran_price,account,date,timestamp,name_stamp) 
-    values($car,3,$a1_de_p,$a1_de_v,$tran,1,'$date','$time','$name')";
-    mysqli_query($connect, $Qa1);
-
-    //acount 2
-    if (!empty($a2_91_p)) {
-        $userQuery = "delete from history where date = '$date' and gas_id = 1 and account = 2";
-        $result = mysqli_query($connect, $userQuery);
-    }
-    $Qa1 = "insert into history(car_id,gas_id,price,value,tran_price,account,date,timestamp,name_stamp) 
-    values($car,1,$a2_91_p,$a2_91_v,$tran,2,'$date','$time','$name')";
-    mysqli_query($connect, $Qa1);
-
-    if (!empty($a2_95_p)) {
-        $userQuery = "delete from history where date = '$date' and gas_id = 2 and account = 2";
-        $result = mysqli_query($connect, $userQuery);
-    }
-    $Qa1 = "insert into history(car_id,gas_id,price,value,tran_price,account,date,timestamp,name_stamp) 
-    values($car,2,$a2_95_p,$a2_95_v,$tran,2,'$date','$time','$name')";
-    mysqli_query($connect, $Qa1);
-
-    if (!empty($a2_de_p)) {
-        $userQuery = "delete from history where date = '$date' and gas_id = 3 and account = 2";
-        $result = mysqli_query($connect, $userQuery);
-    }
-    $Qa1 = "insert into history(car_id,gas_id,price,value,tran_price,account,date,timestamp,name_stamp) 
-    values($car,3,$a2_de_p,$a2_de_v,$tran,2,'$date','$time','$name')";
-    mysqli_query($connect, $Qa1);
-    //acount 3
-    if (!empty($a3_91_p)) {
-        $userQuery = "delete from history where date = '$date' and gas_id = 1 and account = 3";
-        $result = mysqli_query($connect, $userQuery);
-    }
-    $Qa1 = "insert into history(car_id,gas_id,price,value,tran_price,account,date,timestamp,name_stamp) 
-    values($car,1,$a3_91_p,$a3_91_v,$tran,3,'$date','$time','$name')";
-    mysqli_query($connect, $Qa1);
-
-    if (!empty($a3_95_p)) {
-        $userQuery = "delete from history where date = '$date' and gas_id = 2 and account = 3";
-        $result = mysqli_query($connect, $userQuery);
-    }
-    $Qa1 = "insert into history(car_id,gas_id,price,value,tran_price,account,date,timestamp,name_stamp) 
-    values($car,2,$a3_95_p,$a3_95_v,$tran,3,'$date','$time','$name')";
-    mysqli_query($connect, $Qa1);
-
-    if (!empty($a3_de_p)) {
-        $userQuery = "delete from history where date = '$date' and gas_id = 3 and account = 3";
-        $result = mysqli_query($connect, $userQuery);
-    }
-    $Qa1 = "insert into history(car_id,gas_id,price,value,tran_price,account,date,timestamp,name_stamp) 
-    values($car,3,$a3_de_p,$a3_de_v,$tran,3,'$date','$time','$name')";
-    mysqli_query($connect, $Qa1);
-
 
     date_default_timezone_set("Asia/Bangkok");
     $date = date("Y-m-d");
@@ -156,11 +140,11 @@ if (empty($car) && empty($a)) {
 
     $p2 = $old_sum * $old_price;
     $set = ($p1 / $p2) / ($old_sum + $s_val);
-    ?>
+?>
     <script type="text/javascript">
-    console.log("<?php echo "$set | $p1 | $p2 | $s_val | $old_sum  | $old_price" ; ?>")
+        console.log("<?php echo "$set | $p1 | $p2 | $s_val | $old_sum  | $old_price"; ?>")
     </script>
-    <?php
+<?php
     $userQuery = "select * from cost where date = '$date' and gas_id = 1";
     $result = mysqli_query($connect, $userQuery);
     if (mysqli_num_rows($result) == 0) {
