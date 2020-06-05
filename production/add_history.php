@@ -86,8 +86,8 @@ if (empty($car) && empty($a)) {
         $userQuery = "update history set price = $a1_de_p , value = $a1_de_v  , timestamp = '$time' , name_stamp = '$name' where date = '$date' and gas_id = 3 and account = 1";
         $result = mysqli_query($connect, $userQuery);
         if (!$result) {
-            die ("Could not successfully run the query $userQuery ".mysqli_error($connect));
-            }
+die ("Could not successfully run the query $userQuery ".mysqli_error($connect));
+}
         //account2
         $userQuery = "update history set price = $a2_91_p , value = $a2_91_v  , timestamp = '$time' , name_stamp = '$name' where date = '$date' and gas_id = 1 and account = 2";
         $result = mysqli_query($connect, $userQuery);
