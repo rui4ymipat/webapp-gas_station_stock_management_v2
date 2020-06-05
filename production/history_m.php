@@ -401,7 +401,7 @@
                             $result = mysqli_query($connect, $userQuery);
                             $row = mysqli_fetch_assoc($result);
                             if (mysqli_num_rows($result) == 0) {
-                              echo " ";
+                              echo "0";
                             } else {
                               echo number_format($row['value']);
                             } ?></td>
@@ -409,7 +409,7 @@
                             $result = mysqli_query($connect, $userQuery);
                             $row = mysqli_fetch_assoc($result);
                             if (mysqli_num_rows($result) == 0) {
-                              echo " ";
+                              echo "0";
                             } else {
                               echo number_format($row['value']);
                             } ?></td>
@@ -417,7 +417,7 @@
                             $result = mysqli_query($connect, $userQuery);
                             $row = mysqli_fetch_assoc($result);
                             if (mysqli_num_rows($result) == 0) {
-                              echo " ";
+                              echo "0";
                             } else {
                               echo number_format($row['value']);
                             } ?></td>
@@ -425,7 +425,7 @@
                             $result = mysqli_query($connect, $userQuery);
                             $row = mysqli_fetch_assoc($result);
                             if (mysqli_num_rows($result) == 0) {
-                              echo " ";
+                              echo "0";
                             } else {
                               echo number_format($row['value']);
                             } ?></td>
@@ -433,7 +433,7 @@
                             $result = mysqli_query($connect, $userQuery);
                             $row = mysqli_fetch_assoc($result);
                             if (mysqli_num_rows($result) == 0) {
-                              echo " ";
+                              echo "0";
                             } else {
                               echo number_format($row['value']);
                             } ?></td>
@@ -441,7 +441,7 @@
                             $result = mysqli_query($connect, $userQuery);
                             $row = mysqli_fetch_assoc($result);
                             if (mysqli_num_rows($result) == 0) {
-                              echo " ";
+                              echo "0";
                             } else {
                               echo number_format($row['value']);
                             } ?></td>
@@ -449,7 +449,7 @@
                             $result = mysqli_query($connect, $userQuery);
                             $row = mysqli_fetch_assoc($result);
                             if (mysqli_num_rows($result) == 0) {
-                              echo " ";
+                              echo "0";
                             } else {
                               echo number_format($row['value']);
                             } ?></td>
@@ -457,7 +457,7 @@
                             $result = mysqli_query($connect, $userQuery);
                             $row = mysqli_fetch_assoc($result);
                             if (mysqli_num_rows($result) == 0) {
-                              echo " ";
+                              echo "0";
                             } else {
                               echo number_format($row['value']);
                             } ?></td>
@@ -465,7 +465,7 @@
                             $result = mysqli_query($connect, $userQuery);
                             $row = mysqli_fetch_assoc($result);
                             if (mysqli_num_rows($result) == 0) {
-                              echo " ";
+                              echo "0";
                             } else {
                               echo number_format($row['value']);
                             } ?></td>
