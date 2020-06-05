@@ -141,9 +141,15 @@ if (empty($car) && empty($a)) {
     if (mysqli_num_rows($result) == 0) {
         $userQuery = "insert into cost(gas_id,value,date) values(1,$set,'$date')";
         $result = mysqli_query($connect, $userQuery);
+        if (!$result) {
+            die ("Could not successfully run the query $userQuery ".mysqli_error($connect));
+            }
     } else {
         $userQuery = "update cost set value = $set where date = '$date' and gas_id = 1";
         $result = mysqli_query($connect, $userQuery);
+        if (!$result) {
+            die ("Could not successfully run the query $userQuery ".mysqli_error($connect));
+            }
     }
 
 
@@ -183,9 +189,15 @@ if (empty($car) && empty($a)) {
     if (mysqli_num_rows($result) == 0) {
         $userQuery = "insert into cost(gas_id,value,date) values(2,$set,'$date')";
         $result = mysqli_query($connect, $userQuery);
+        if (!$result) {
+            die ("Could not successfully run the query $userQuery ".mysqli_error($connect));
+            }
     } else {
         $userQuery = "update cost set value = $set where date = '$date' and gas_id = 2";
         $result = mysqli_query($connect, $userQuery);
+        if (!$result) {
+            die ("Could not successfully run the query $userQuery ".mysqli_error($connect));
+            }
     }
 
 
@@ -225,9 +237,15 @@ if (empty($car) && empty($a)) {
     if (mysqli_num_rows($result) == 0) {
         $userQuery = "insert into cost(gas_id,value,date) values(3,$set,'$date')";
         $result = mysqli_query($connect, $userQuery);
+        if (!$result) {
+            die ("Could not successfully run the query $userQuery ".mysqli_error($connect));
+            }
     } else {
         $userQuery = "update cost set value = $set where date = '$date' and gas_id = 3";
         $result = mysqli_query($connect, $userQuery);
+        if (!$result) {
+            die ("Could not successfully run the query $userQuery ".mysqli_error($connect));
+            }
     }
 
 
