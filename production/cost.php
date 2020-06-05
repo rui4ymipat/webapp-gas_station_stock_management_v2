@@ -324,7 +324,7 @@
                           } else {
                             $row = mysqli_fetch_assoc($result);
                           ?>
-                            <td><?php echo number_format($aa = $row['sum']); ?> </td>
+                            <td><?php echo number_format($aa = $row['value']); ?> </td>
                             <script type="text/javascript">
                               console.log("ปริมาณเดิม")
                             </script>
@@ -468,7 +468,7 @@
                           } else {
                             $row = mysqli_fetch_assoc($result);
                           ?>
-                            <td><?php echo number_format($aa = $row['sum']); ?> </td>
+                            <td><?php echo number_format($aa = $row['value']); ?> </td>
                           <?php
                           }
                           $userQuery = "select value from cost where date < '$da' and gas_id = 2 limit 1";
@@ -586,7 +586,7 @@
                           } else {
                             $row = mysqli_fetch_assoc($result);
                           ?>
-                            <td><?php echo number_format($aa = $row['sum']); ?> </td>
+                            <td><?php echo number_format($aa = $row['value']); ?> </td>
                           <?php
                           }
                           $userQuery = "select value from cost where date < '$da' and gas_id = 3 limit 1";
