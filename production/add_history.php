@@ -145,7 +145,7 @@ if (empty($car) && empty($a)) {
 
     $p1 = $s_val * $rp;
 
-    $userQuery = "select sum(value) as sum from history where date = (select date from history where date < '$date' group by date order by date DESC limit 1) and gas_id = 1";
+    $userQuery = "select value from gastank where date = '$date' and substr(timestamp,1,2) in (11,12,13,14,15,16,17,18) and gas_id =  1";
     $result = mysqli_query($connect, $userQuery);
     $row = mysqli_fetch_assoc($result);
     $old_sum = $row['sum'];
@@ -197,7 +197,7 @@ if (empty($car) && empty($a)) {
 
     $p1 = $s_val * $rp;
 
-    $userQuery = "select sum(value) as sum from history where date = (select date from history where date < '$date' group by date order by date DESC limit 1) and gas_id = 2";
+    $userQuery = "select value from gastank where date = '$date' and substr(timestamp,1,2) in (11,12,13,14,15,16,17,18) and gas_id =  2";
     $result = mysqli_query($connect, $userQuery);
     $row = mysqli_fetch_assoc($result);
     $old_sum = $row['sum'];
@@ -245,7 +245,7 @@ if (empty($car) && empty($a)) {
 
     $p1 = $s_val * $rp;
 
-    $userQuery = "select sum(value) as sum from history where date = (select date from history where date < '$date' group by date order by date DESC limit 1) and gas_id = 3";
+    $userQuery = "select value from gastank where date = '$date' and substr(timestamp,1,2) in (11,12,13,14,15,16,17,18) and gas_id =  3";
     $result = mysqli_query($connect, $userQuery);
     $row = mysqli_fetch_assoc($result);
     $old_sum = $row['sum'];
