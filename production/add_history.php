@@ -101,6 +101,8 @@ if (empty($car) && empty($a)) {
     } else {
         $userQuery = "update history set car_id = $car where date = '$date'";
         $result = mysqli_query($connect, $userQuery);
+        $userQuery = "update history set tran_price = $tran where date = '$date'";
+        $result = mysqli_query($connect, $userQuery);
         //account 1
         $userQuery = "update history set price = $a1_91_p , value = $a1_91_v , timestamp = '$time' , name_stamp = '$name' where date = '$date' and gas_id = 1 and account = 1";
         $result = mysqli_query($connect, $userQuery);
