@@ -381,7 +381,7 @@
                             <script type="text/javascript">
                               console.log("ราคาต้นทุน")
                             </script>
-                            <td><?php echo number_format($row['value']) ?></td>
+                            <td><?php echo number_format($row['value'],2) ?></td>
                           <?php } ?>
                         </tr>
 
@@ -587,7 +587,7 @@
                           } else {
                             $row = mysqli_fetch_assoc($result);
                           ?>
-                            <td><?php echo number_format($aa = $row['value']); ?> </td>
+                            <td><?php echo number_format($aa = $row['value'],2); ?> </td>
                           <?php
                           }
                           $userQuery = "select value from cost where date < '$da' and gas_id = 3 limit 1";
@@ -617,7 +617,7 @@
                                                                                     echo "<td>0</td>";
                                                                                   } else {
                           ?>
-                            <td><?php echo number_format($row['value']) ?></td>
+                            <td><?php echo number_format($row['value'],2) ?></td>
                           <?php } ?>
                         </tr>
                   <?php
