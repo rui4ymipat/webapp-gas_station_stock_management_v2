@@ -129,6 +129,7 @@ if (empty($car) && empty($a)) {
     date_default_timezone_set("Asia/Bangkok");
     $date = date("Y-m-d");
     $sum_91 = 0;
+    $s = 0;
     $userQuery = "select price,value from history where date = '$date' and gas_id = 1 and account = 1";
     $result = mysqli_query($connect, $userQuery);
     if (mysqli_num_rows($result) == 0) {
@@ -219,6 +220,7 @@ if (empty($car) && empty($a)) {
 
 
     $sum_91 = 0;
+    $s = 0;
     $userQuery = "select price,value from history where date = '$date' and gas_id = 2 and account = 1";
     $result = mysqli_query($connect, $userQuery);
     if (mysqli_num_rows($result) == 0) {
@@ -310,6 +312,7 @@ if (empty($car) && empty($a)) {
 
 
     $sum_91 = 0;
+    $s = 0;
     $userQuery = "select price,value from history where date = '$date' and gas_id = 3 and account = 1";
     $result = mysqli_query($connect, $userQuery);
     if (mysqli_num_rows($result) == 0) {
