@@ -126,156 +126,279 @@ if (empty($car) && empty($a)) {
 
     date_default_timezone_set("Asia/Bangkok");
     $date = date("Y-m-d");
+    $sum_91 = 0;
+    $userQuery = "select price,value from history where date = '$date' and gas_id = 1 and account = 1";
+    $result = mysqli_query($connect, $userQuery);
+    if (mysqli_num_rows($result) == 0) {
+        $sum_91 += 0;
+        $s += 0;
+    } else {
+        $row = mysqli_fetch_assoc($result);
+        $sum_91 += $row['value'];
+        $s += $row['value'] * $row['price'];
+    }
 
-    $userQuery = "select sum(value*price)/sum(value)+tran_price as sum from history where date = '$date' and gas_id = 1";
+    $userQuery = "select price,value from history where date = '$date' and gas_id = 1 and account = 2";
+    $result = mysqli_query($connect, $userQuery);
+    if (mysqli_num_rows($result) == 0) {
+
+        $sum_91 += 0;
+        $s += 0;
+    } else {
+        $row = mysqli_fetch_assoc($result);
+        $sum_91 += $row['value'];
+        $s += $row['value'] * $row['price'];
+    }
+    $userQuery = "select price,value,tran_price from history where date = '$date' and gas_id = 1 and account = 3";
+    $result = mysqli_query($connect, $userQuery);
+    if (mysqli_num_rows($result) == 0) {
+        $bb = 0;
+        $sum_91 += 0;
+        $s += 0;
+    } else {
+        $row = mysqli_fetch_assoc($result);
+        $sum_91 += $row['value'];
+        $s += $row['value'] * $row['price'];
+    }
+    $userQuery = "select tran_price from history where date = '$date' group by tran_price";
     $result = mysqli_query($connect, $userQuery);
     $row = mysqli_fetch_assoc($result);
-    $s1 = $row['sum'];
-    $userQuery = "select tran_price from history where date = '$date' and gas_id = 1 limit 1";
+    if ($sum_91 == 0) {
+        echo "<td>0</td>";
+    } else { ?>
+        <td><?php echo number_format($bb = ($s / $sum_91) + $row['tran_price'], 2); ?> </td>
+    <?php
+    }
+    $userQuery = "select value from gastank where date = '$date' and substr(timestamp,1,2) in (11,12,13,14,15,16,17,18) and gas_id = 1";
     $result = mysqli_query($connect, $userQuery);
-    $row = mysqli_fetch_assoc($result);
-    $s2 = $row['tran_price'];
-
-    $rp = $s1 + $s2;
-
-    $userQuery = "select sum(value) as sum from history where date = '$date' and gas_id = 1";
-    $result = mysqli_query($connect, $userQuery);
-    $row = mysqli_fetch_assoc($result);
-    $s_val = $row['sum'];
-
-    $p1 = $s_val * $rp;
-
-    $userQuery = "select value from gastank where date = '$date' and substr(timestamp,1,2) in (11,12,13,14,15,16,17,18) and gas_id =  1";
-    $result = mysqli_query($connect, $userQuery);
-    $row = mysqli_fetch_assoc($result);
-    $old_sum = $row['value'];
-
+    if (mysqli_num_rows($result) == 0) {
+        $aa = 0;
+    } else {
+        $row = mysqli_fetch_assoc($result);
+    ?>
+        <td><?php echo number_format($aa = $row['value']); ?> </td>
+    <?php
+    }
     $userQuery = "select value from cost where date < '$date' and gas_id = 1 limit 1";
     $result = mysqli_query($connect, $userQuery);
     $row = mysqli_fetch_assoc($result);
-    $old_price = $row['value'];
+    if (mysqli_num_rows($result) == 0) {
+        $cc = 0;
+    } else {
+    ?>
+        <td><?php echo number_format($cc = $row['value'], 2); ?></td>
+    <?php }
 
-    $p2 = $old_sum * $old_price;
-    $set = ($p1 / $p2) / ($old_sum + $s_val);
-?>
-    <script type="text/javascript">
-        console.log("<?php echo "$set | $p1 | $p2 | $s_val | $old_sum  | $old_price"; ?>")
-    </script>
-<?php
+    ?>
+    <td><?php echo number_format($as1 = $sum_91 + $aa); ?> </td>
+    <?php if ($sum_91 == 0) {
+
+    ?><td><?php echo number_format(($as2 = $aa * $cc), 2); ?></td>
+    <?php
+    } else { ?>
+        <td><?php echo number_format(($as2 = $bb * $sum_91) + ($aa * $cc), 2); ?></td>
+<?php }
+    $set = $as2 / $as1;
     $userQuery = "select * from cost where date = '$date' and gas_id = 1";
     $result = mysqli_query($connect, $userQuery);
     if (mysqli_num_rows($result) == 0) {
         $userQuery = "insert into cost(gas_id,value,date) values(1,$set,'$date')";
         $result = mysqli_query($connect, $userQuery);
-        // if (!$result) {
-        //     die("Could not successfully run the query $userQuery " . mysqli_error($connect));
-        // }
+        if (!$result) {
+            die("Could not successfully run the query $userQuery " . mysqli_error($connect));
+        }
     } else {
         $userQuery = "update cost set value = $set where date = '$date' and gas_id = 1";
         $result = mysqli_query($connect, $userQuery);
-        // if (!$result) {
-        //     die("Could not successfully run the query $userQuery " . mysqli_error($connect));
-        // }
+        if (!$result) {
+            die("Could not successfully run the query $userQuery " . mysqli_error($connect));
+        }
     }
 
 
-    $userQuery = "select sum(value*price)/sum(value)+tran_price as sum from history where date = '$date' and gas_id = 2";
+    $sum_91 = 0;
+    $userQuery = "select price,value from history where date = '$date' and gas_id = 2 and account = 1";
+    $result = mysqli_query($connect, $userQuery);
+    if (mysqli_num_rows($result) == 0) {
+        $sum_91 += 0;
+        $s += 0;
+    } else {
+        $row = mysqli_fetch_assoc($result);
+        $sum_91 += $row['value'];
+        $s += $row['value'] * $row['price'];
+    }
+
+    $userQuery = "select price,value from history where date = '$date' and gas_id = 2 and account = 2";
+    $result = mysqli_query($connect, $userQuery);
+    if (mysqli_num_rows($result) == 0) {
+
+        $sum_91 += 0;
+        $s += 0;
+    } else {
+        $row = mysqli_fetch_assoc($result);
+        $sum_91 += $row['value'];
+        $s += $row['value'] * $row['price'];
+    }
+    $userQuery = "select price,value,tran_price from history where date = '$date' and gas_id = 2 and account = 3";
+    $result = mysqli_query($connect, $userQuery);
+    if (mysqli_num_rows($result) == 0) {
+        $bb = 0;
+        $sum_91 += 0;
+        $s += 0;
+    } else {
+        $row = mysqli_fetch_assoc($result);
+        $sum_91 += $row['value'];
+        $s += $row['value'] * $row['price'];
+    }
+    $userQuery = "select tran_price from history where date = '$date' group by tran_price";
     $result = mysqli_query($connect, $userQuery);
     $row = mysqli_fetch_assoc($result);
-    $s1 = $row['sum'];
-    $userQuery = "select tran_price from history where date = '$date' and gas_id = 2";
+    if ($sum_91 == 0) {
+        echo "<td>0</td>";
+    } else { ?>
+        <td><?php echo number_format($bb = ($s / $sum_91) + $row['tran_price'], 2); ?> </td>
+    <?php
+    }
+    $userQuery = "select value from gastank where date = '$date' and substr(timestamp,1,2) in (11,12,13,14,15,16,17,18) and gas_id = 2";
     $result = mysqli_query($connect, $userQuery);
-    $row = mysqli_fetch_assoc($result);
-    $s2 = $row['tran_price'];
-
-    $rp = $s1 + $s2;
-
-    $userQuery = "select sum(value) as sum from history where date = '$date' and gas_id = 2";
-    $result = mysqli_query($connect, $userQuery);
-    $row = mysqli_fetch_assoc($result);
-    $s_val = $row['sum'];
-
-    $p1 = $s_val * $rp;
-
-    $userQuery = "select value from gastank where date = '$date' and substr(timestamp,1,2) in (11,12,13,14,15,16,17,18) and gas_id =  2";
-    $result = mysqli_query($connect, $userQuery);
-    $row = mysqli_fetch_assoc($result);
-    $old_sum = $row['sum'];
-
+    if (mysqli_num_rows($result) == 0) {
+        $aa = 0;
+    } else {
+        $row = mysqli_fetch_assoc($result);
+    ?>
+        <td><?php echo number_format($aa = $row['value']); ?> </td>
+    <?php
+    }
     $userQuery = "select value from cost where date < '$date' and gas_id = 2 limit 1";
     $result = mysqli_query($connect, $userQuery);
     $row = mysqli_fetch_assoc($result);
-    $old_price = $row['value'];
+    if (mysqli_num_rows($result) == 0) {
+        $cc = 0;
+    } else {
+    ?>
+        <td><?php echo number_format($cc = $row['value'], 2); ?></td>
+    <?php }
 
-    $p2 = $old_sum * $old_price;
-    $set = ($p1 / $p2) / ($old_sum + $s_val);
+    ?>
+    <td><?php echo number_format($as1 = $sum_91 + $aa); ?> </td>
+    <?php if ($sum_91 == 0) {
+
+    ?><td><?php echo number_format(($as2 = $aa * $cc), 2); ?></td>
+    <?php
+    } else { ?>
+        <td><?php echo number_format(($as2 = $bb * $sum_91) + ($aa * $cc), 2); ?></td>
+<?php }
+    $set = $as2 / $as1;
 
     $userQuery = "select * from cost where date = '$date' and gas_id = 2";
     $result = mysqli_query($connect, $userQuery);
     if (mysqli_num_rows($result) == 0) {
         $userQuery = "insert into cost(gas_id,value,date) values(2,$set,'$date')";
         $result = mysqli_query($connect, $userQuery);
-        // if (!$result) {
-        //     die("Could not successfully run the query $userQuery " . mysqli_error($connect));
-        // }
+        if (!$result) {
+            die("Could not successfully run the query $userQuery " . mysqli_error($connect));
+        }
     } else {
         $userQuery = "update cost set value = $set where date = '$date' and gas_id = 2";
         $result = mysqli_query($connect, $userQuery);
-        // if (!$result) {
-        //     die("Could not successfully run the query $userQuery " . mysqli_error($connect));
-        // }
+        if (!$result) {
+            die("Could not successfully run the query $userQuery " . mysqli_error($connect));
+        }
     }
 
 
-    $userQuery = "select sum(value*price)/sum(value)+tran_price as sum from history where date = '$date' and gas_id = 3";
+    $sum_91 = 0;
+    $userQuery = "select price,value from history where date = '$date' and gas_id = 3 and account = 1";
+    $result = mysqli_query($connect, $userQuery);
+    if (mysqli_num_rows($result) == 0) {
+        $sum_91 += 0;
+        $s += 0;
+    } else {
+        $row = mysqli_fetch_assoc($result);
+        $sum_91 += $row['value'];
+        $s += $row['value'] * $row['price'];
+    }
+
+    $userQuery = "select price,value from history where date = '$date' and gas_id = 3 and account = 2";
+    $result = mysqli_query($connect, $userQuery);
+    if (mysqli_num_rows($result) == 0) {
+
+        $sum_91 += 0;
+        $s += 0;
+    } else {
+        $row = mysqli_fetch_assoc($result);
+        $sum_91 += $row['value'];
+        $s += $row['value'] * $row['price'];
+    }
+    $userQuery = "select price,value,tran_price from history where date = '$date' and gas_id = 3 and account = 3";
+    $result = mysqli_query($connect, $userQuery);
+    if (mysqli_num_rows($result) == 0) {
+        $bb = 0;
+        $sum_91 += 0;
+        $s += 0;
+    } else {
+        $row = mysqli_fetch_assoc($result);
+        $sum_91 += $row['value'];
+        $s += $row['value'] * $row['price'];
+    }
+    $userQuery = "select tran_price from history where date = '$date' group by tran_price";
     $result = mysqli_query($connect, $userQuery);
     $row = mysqli_fetch_assoc($result);
-    $s1 = $row['sum'];
-    $userQuery = "select tran_price from history where date = '$date' and gas_id = 3";
+    if ($sum_91 == 0) {
+        echo "<td>0</td>";
+    } else { ?>
+        <td><?php echo number_format($bb = ($s / $sum_91) + $row['tran_price'], 2); ?> </td>
+    <?php
+    }
+    $userQuery = "select value from gastank where date = '$date' and substr(timestamp,1,2) in (11,12,13,14,15,16,17,18) and gas_id = 3";
+    $result = mysqli_query($connect, $userQuery);
+    if (mysqli_num_rows($result) == 0) {
+        $aa = 0;
+    } else {
+        $row = mysqli_fetch_assoc($result);
+    ?>
+        <td><?php echo number_format($aa = $row['value']); ?> </td>
+    <?php
+    }
+    $userQuery = "select value from cost where date < '$date' and gas_id = 2 limit 1";
     $result = mysqli_query($connect, $userQuery);
     $row = mysqli_fetch_assoc($result);
-    $s2 = $row['tran_price'];
+    if (mysqli_num_rows($result) == 0) {
+        $cc = 0;
+    } else {
+    ?>
+        <td><?php echo number_format($cc = $row['value'], 2); ?></td>
+    <?php }
 
-    $rp = $s1 + $s2;
+    ?>
+    <td><?php echo number_format($as1 = $sum_91 + $aa); ?> </td>
+    <?php if ($sum_91 == 0) {
 
-    $userQuery = "select sum(value) as sum from history where date = '$date' and gas_id = 3";
-    $result = mysqli_query($connect, $userQuery);
-    $row = mysqli_fetch_assoc($result);
-    $s_val = $row['sum'];
-
-    $p1 = $s_val * $rp;
-
-    $userQuery = "select value from gastank where date = '$date' and substr(timestamp,1,2) in (11,12,13,14,15,16,17,18) and gas_id =  3";
-    $result = mysqli_query($connect, $userQuery);
-    $row = mysqli_fetch_assoc($result);
-    $old_sum = $row['sum'];
-
-    $userQuery = "select value from cost where date < '$date' and gas_id = 3 limit 1";
-    $result = mysqli_query($connect, $userQuery);
-    $row = mysqli_fetch_assoc($result);
-    $old_price = $row['value'];
-
-    $p2 = $old_sum * $old_price;
-    $set = ($p1 / $p2) / ($old_sum + $s_val);
+    ?><td><?php echo number_format(($as2 = $aa * $cc), 2); ?></td>
+    <?php
+    } else { ?>
+        <td><?php echo number_format(($as2 = $bb * $sum_91) + ($aa * $cc), 2); ?></td>
+<?php }
+    $set = $as2 / $as1;
 
     $userQuery = "select * from cost where date = '$date' and gas_id = 3";
     $result = mysqli_query($connect, $userQuery);
     if (mysqli_num_rows($result) == 0) {
         $userQuery = "insert into cost(gas_id,value,date) values(3,$set,'$date')";
         $result = mysqli_query($connect, $userQuery);
-        // if (!$result) {
-        //     die("Could not successfully run the query $userQuery " . mysqli_error($connect));
-        // }
+        if (!$result) {
+            die("Could not successfully run the query $userQuery " . mysqli_error($connect));
+        }
     } else {
         $userQuery = "update cost set value = $set where date = '$date' and gas_id = 3";
         $result = mysqli_query($connect, $userQuery);
-        // if (!$result) {
-        //     die("Could not successfully run the query $userQuery " . mysqli_error($connect));
-        // }
+        if (!$result) {
+            die("Could not successfully run the query $userQuery " . mysqli_error($connect));
+        }
     }
 
 
 
-    // $_SESSION['msg'] = "ดำเนินการสำเร็จ";
-    // header("Location:history.php");
+    $_SESSION['msg'] = "ดำเนินการสำเร็จ";
+    header("Location:history.php");
 }
