@@ -199,7 +199,7 @@ if (empty($car) && empty($a)) {
     ?><td><?php echo number_format(($as2 = $aa * $cc), 2); ?></td>
     <?php
     } else { ?>
-        <td><?php echo number_format(($as2 = $bb * $sum_91) + ($aa * $cc), 2); ?></td>
+        <td><?php echo number_format($as2 = ($bb * $sum_91) + ($aa * $cc), 2); ?></td>
 <?php }
     $set = $as2 / $as1;
     $userQuery = "select * from cost where date = '$date' and gas_id = 1";
@@ -290,7 +290,7 @@ if (empty($car) && empty($a)) {
     ?><td><?php echo number_format(($as2 = $aa * $cc), 2); ?></td>
     <?php
     } else { ?>
-        <td><?php echo number_format(($as2 = $bb * $sum_91) + ($aa * $cc), 2); ?></td>
+        <td><?php echo number_format($as2 = ($bb * $sum_91) + ($aa * $cc), 2); ?></td>
 <?php }
     $set = $as2 / $as1;
 
@@ -382,7 +382,7 @@ if (empty($car) && empty($a)) {
     ?><td><?php echo number_format(($as2 = $aa * $cc), 2); ?></td>
     <?php
     } else { ?>
-        <td><?php echo number_format(($as2 = $bb * $sum_91) + ($aa * $cc), 2); ?></td>
+        <td><?php echo number_format($as2 = ($bb * $sum_91) + ($aa * $cc), 2); ?></td>
 <?php }
     $set = $as2 / $as1;
 
