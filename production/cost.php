@@ -380,7 +380,7 @@
                             <script type="text/javascript">
                               console.log("ราคาต้นทุน")
                             </script>
-                            <td><?php echo number_format($row['value']) ?></td>
+                            <td><?php echo number_format($row['value'],2) ?></td>
                           <?php } ?>
                         </tr>
 
@@ -500,7 +500,7 @@
                             echo "<td>0</td>";
                           } else {
                           ?>
-                            <td><?php echo number_format($row['value']) ?></td>
+                            <td><?php echo number_format($row['value'],2) ?></td>
                           <?php } ?>
                         </tr>
                       <?php
@@ -616,7 +616,7 @@
                                                                                     echo "<td>0</td>";
                                                                                   } else {
                           ?>
-                            <td><?php echo number_format($row['value']) ?></td>
+                            <td><?php echo number_format($row['value'],2) ?></td>
                           <?php } ?>
                         </tr>
                   <?php
