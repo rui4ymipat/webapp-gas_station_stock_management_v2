@@ -148,7 +148,7 @@ if (empty($car) && empty($a)) {
     $userQuery = "select value from gastank where date = '$date' and substr(timestamp,1,2) in (11,12,13,14,15,16,17,18) and gas_id =  1";
     $result = mysqli_query($connect, $userQuery);
     $row = mysqli_fetch_assoc($result);
-    $old_sum = $row['sum'];
+    $old_sum = $row['value'];
 
     $userQuery = "select value from cost where date < '$date' and gas_id = 1 limit 1";
     $result = mysqli_query($connect, $userQuery);
