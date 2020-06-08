@@ -330,7 +330,7 @@
                             </script>
                           <?php
                           }
-                          $userQuery = "select value from cost where date < '$da' and gas_id = 1 limit 1";
+                          $userQuery = "select value from cost where date < '$da' order by date DESC and gas_id = 1 limit 1";
                           $result = mysqli_query($connect, $userQuery);
                           $row = mysqli_fetch_assoc($result);
                           if (mysqli_num_rows($result) == 0) {
@@ -471,7 +471,7 @@
                             <td><?php echo number_format($aa = $row['value']); ?> </td>
                           <?php
                           }
-                          $userQuery = "select value from cost where date < '$da' and gas_id = 2 limit 1";
+                          $userQuery = "select value from cost where date < '$da' order by date DESC and gas_id = 2 limit 1";
                           $result = mysqli_query($connect, $userQuery);
                           $row = mysqli_fetch_assoc($result);
                           if (mysqli_num_rows($result) == 0) {
@@ -589,7 +589,7 @@
                             <td><?php echo number_format($aa = $row['value']); ?> </td>
                           <?php
                           }
-                          $userQuery = "select value from cost where date < '$da' and gas_id = 3 limit 1";
+                          $userQuery = "select value from cost where date < '$da' order by date DESC and gas_id = 3 limit 1";
                           $result = mysqli_query($connect, $userQuery);
                           $row = mysqli_fetch_assoc($result);
                           if (mysqli_num_rows($result) == 0) {
