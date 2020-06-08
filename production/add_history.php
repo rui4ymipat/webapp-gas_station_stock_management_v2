@@ -182,7 +182,7 @@ if (empty($car) && empty($a)) {
         <td><?php echo number_format($aa = $row['value']); ?> </td>
     <?php
     }
-    $userQuery = "select value from cost where date < '$date' and gas_id = 1 limit 1";
+    $userQuery = "select value from cost where date < '$date' and gas_id = 1 order by date DESC limit 1";
     $result = mysqli_query($connect, $userQuery);
     $row = mysqli_fetch_assoc($result);
     if (mysqli_num_rows($result) == 0) {
@@ -273,7 +273,7 @@ if (empty($car) && empty($a)) {
         <td><?php echo number_format($aa = $row['value']); ?> </td>
     <?php
     }
-    $userQuery = "select value from cost where date < '$date' and gas_id = 2 limit 1";
+    $userQuery = "select value from cost where date < '$date' and gas_id = 2  order by date DESC limit 1";
     $result = mysqli_query($connect, $userQuery);
     $row = mysqli_fetch_assoc($result);
     if (mysqli_num_rows($result) == 0) {
@@ -365,7 +365,7 @@ if (empty($car) && empty($a)) {
         <td><?php echo number_format($aa = $row['value']); ?> </td>
     <?php
     }
-    $userQuery = "select value from cost where date < '$date' and gas_id = 2 limit 1";
+    $userQuery = "select value from cost where date < '$date' and gas_id = 2  order by date DESC limit 1";
     $result = mysqli_query($connect, $userQuery);
     $row = mysqli_fetch_assoc($result);
     if (mysqli_num_rows($result) == 0) {
