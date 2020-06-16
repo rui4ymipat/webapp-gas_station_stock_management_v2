@@ -370,7 +370,7 @@
                       date_default_timezone_set("Asia/Bangkok");
                       $setDateStart = date("Y-m-01");
                       $setDateEnd = date("Y-m-31");
-                      $userQuery = "SELECT * from sell where account = 1 and MONTH(date) = $ds order by date DESC ";
+                      $userQuery = "SELECT * from sell where account = 1 and MONTH(date) = $ds order by date DESC ,account ,gas_id ";
                       $result = mysqli_query($connect, $userQuery);
                       while ($row = mysqli_fetch_assoc($result)) {
                         $a1_price[] = $row['price'];
@@ -386,7 +386,7 @@
                         <?php
                       }
 
-                      $userQuery = "SELECT * from sell where account = 2 and MONTH(date) = $ds order by date DESC limit 21";
+                      $userQuery = "SELECT * from sell where account = 2 and MONTH(date) = $ds order by date DESC ,account ,gas_id";
                       $result = mysqli_query($connect, $userQuery);
                       while ($row = mysqli_fetch_assoc($result)) {
                         $a2_price[] = $row['price'];
@@ -402,7 +402,7 @@
                         <?php
                       }
 
-                      $userQuery = "SELECT * from sell where account = 3 and MONTH(date) = $ds order by date DESC limit 21";
+                      $userQuery = "SELECT * from sell where account = 3 and MONTH(date) = $ds order by date DESC ,account ,gas_id";
                       $result = mysqli_query($connect, $userQuery);
                       while ($row = mysqli_fetch_assoc($result)) {
                         $a3_price[] = $row['price'];
