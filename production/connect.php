@@ -1,8 +1,8 @@
 <?php
 $server = "127.0.0.1";
-$user = "root";
-$password = "1234";
-$dbname = "main";
+$user = "u781076994_root";
+$password = "12345";
+$dbname = "u781076994_main";
 $connect = mysqli_connect($server, $user, $password, $dbname);
 
 if (!$connect)
