@@ -201,7 +201,7 @@ if (empty($car) && empty($a)) {
     } else { ?>
         <td><?php echo number_format($as2 = ($bb * $sum_91) + ($aa * $cc), 2); ?></td>
 <?php }
-    $set = $as2 / $as1;
+    $set = round($as2 / $as1,2);
     $userQuery = "select * from cost where date = '$date' and gas_id = 1";
     $result = mysqli_query($connect, $userQuery);
     if (mysqli_num_rows($result) == 0) {
@@ -288,7 +288,7 @@ if (empty($car) && empty($a)) {
     } else { ?>
         <td><?php echo number_format($as2 = ($bb * $sum_91) + ($aa * $cc), 2); ?></td>
 <?php }
-    $set = $as2 / $as1;
+    $set = round($as2 / $as1,2);
 
     $userQuery = "select * from cost where date = '$date' and gas_id = 2";
     $result = mysqli_query($connect, $userQuery);
@@ -376,7 +376,7 @@ if (empty($car) && empty($a)) {
     } else { ?>
         <td><?php echo number_format($as2 = ($bb * $sum_91) + ($aa * $cc), 2); ?></td>
 <?php }
-    $set = $as2 / $as1;
+    $set = round($as2 / $as1,2);
 
     $userQuery = "select * from cost where date = '$date' and gas_id = 3";
     $result = mysqli_query($connect, $userQuery);

@@ -356,13 +356,13 @@
                           </script>
                           <?php if ($sum_91 == 0) {
 
-                          ?><td><?php echo number_format(($aa * $cc), 2); ?></td>
+                          ?><td><?php echo number_format((round($aa,2) * $cc), 2); ?></td>
                           <?php
                           } else { ?>
                             <script type="text/javascript">
-                              console.log("<?php echo "$bb | $sum_91 | $aa | $cc |", number_format(($bb * $sum_91) + ($aa * $cc), 2); ?>")
+                              console.log("<?php echo "$bb | $sum_91 | $aa | $cc |", number_format(($bb * $sum_91) + (round($aa,2) * $cc), 2); ?>")
                             </script>
-                            <td><?php echo number_format(($bb * $sum_91) + ($aa * $cc), 2); ?></td>
+                            <td><?php echo number_format(($bb * $sum_91) + (round($aa,2) * $cc), 2); ?></td>
                           <?php
                           }
                           $userQuery = "select value from cost where date = '$da' and gas_id = 1 ";
@@ -487,10 +487,10 @@
                           <?php if ($sum_91 == 0) {
 
                           ?>
-                            <td><?php echo number_format(($aa * $cc), 2); ?></td>
+                            <td><?php echo number_format((round($aa,2) * $cc), 2); ?></td>
                           <?php
                           } else { ?>
-                            <td><?php echo number_format(($bb * $sum_91) + ($aa * $cc), 2); ?></td>
+                            <td><?php echo number_format(($bb * $sum_91) + (round($aa,2) * $cc), 2); ?></td>
                           <?php
                           }
                           $userQuery = "select value from cost where date = '$da' and gas_id = 2 ";
@@ -604,9 +604,10 @@
                           <td><?php echo number_format($sum_91 + $aa); ?> </td>
                           <?php if ($sum_91 == 0) {
 
-                          ?><td><?php echo number_format(($aa * $cc), 2); ?></td><?php
+                          ?><td><?php echo number_format((round($aa,2) * $cc), 2); ?></td><?php
                                                                                   } else { ?>
-                            <td><?php echo number_format(($bb * $sum_91) + ($aa * $cc), 2); ?></td>
+                            <td><?php echo number_format(($bb * $sum_91) + (round($aa,2) * $cc), 2); ?></td>
+                            <script type="text/javascript">console.log("<?php echo "$bb | $sum_91 | $aa | $cc | $da"; ?>")</script>
                           <?php
                                                                                   }
                                                                                   $userQuery = "select value from cost where date = '$da' and gas_id = 3 ";

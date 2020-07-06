@@ -204,7 +204,7 @@
                   <?php
                   require_once "connect.php";
                   $month = array('-', 'มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน', 'กรกฎาคม', 'สิงหาคม', 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม');
-                  $userQuery = "select date from history group by date order by date DESC limit 7";
+                  $userQuery = "select date from history group by date order by date DESC";
                   $result1 = mysqli_query($connect, $userQuery);
                   while ($lop = mysqli_fetch_assoc($result1)) {
 
@@ -311,7 +311,7 @@
                             <td><?php echo number_format($bb = ($s / $sum_91) + $row['tran_price'], 2); ?> </td>
                           <?php
                           }
-                          $userQuery = "select sum(value) as sum from history where date = (select date from history where date < '$da' group by date order by date DESC limit 1) and gas_id = 1";
+                          $userQuery = "select value from gastank where date = '$da' and substr(timestamp,1,2) in (11,12,13,14,15,16,17,18) and gas_id = 1";
                           $result = mysqli_query($connect, $userQuery);
                           if (mysqli_num_rows($result) == 0) {
                             $aa = 0;
@@ -324,13 +324,13 @@
                           } else {
                             $row = mysqli_fetch_assoc($result);
                           ?>
-                            <td><?php echo number_format($aa = $row['sum']); ?> </td>
+                            <td><?php echo number_format($aa = $row['value']); ?> </td>
                             <script type="text/javascript">
                               console.log("ปริมาณเดิม")
                             </script>
                           <?php
                           }
-                          $userQuery = "select value from cost where date < '$da' and gas_id = 1 limit 1";
+                          $userQuery = "select value from cost where date < '$da' and gas_id = 1 order by date DESC  limit 1";
                           $result = mysqli_query($connect, $userQuery);
                           $row = mysqli_fetch_assoc($result);
                           if (mysqli_num_rows($result) == 0) {
@@ -355,9 +355,14 @@
                             console.log("ปริมาณรวม = <?php echo number_format($sum_91 + $aa); ?> ")
                           </script>
                           <?php if ($sum_91 == 0) {
-                            echo "<td>0</td>";
+
+                          ?><td><?php echo number_format((round($aa,2) * $cc), 2); ?></td>
+                          <?php
                           } else { ?>
-                            <td><?php echo number_format(($bb * $sum_91) + ($aa * $cc), 2); ?></td>
+                            <script type="text/javascript">
+                              console.log("<?php echo "$bb | $sum_91 | $aa | $cc |", number_format(($bb * $sum_91) + (round($aa,2) * $cc), 2); ?>")
+                            </script>
+                            <td><?php echo number_format(($bb * $sum_91) + (round($aa,2) * $cc), 2); ?></td>
                           <?php
                           }
                           $userQuery = "select value from cost where date = '$da' and gas_id = 1 ";
@@ -375,7 +380,7 @@
                             <script type="text/javascript">
                               console.log("ราคาต้นทุน")
                             </script>
-                            <td><?php echo number_format($row['value']) ?></td>
+                            <td><?php echo number_format($row['value'],2) ?></td>
                           <?php } ?>
                         </tr>
 
@@ -453,7 +458,7 @@
                             <td><?php echo number_format($bb = ($s / $sum_91) + $row['tran_price'], 2); ?> </td>
                           <?php
                           }
-                          $userQuery = "select sum(value) as sum from history where date = (select date from history where date < '$da' group by date order by date DESC limit 1) and gas_id = 2";
+                          $userQuery = "select value from gastank where date = '$da' and substr(timestamp,1,2) in (11,12,13,14,15,16,17,18) and gas_id = 2";
                           $result = mysqli_query($connect, $userQuery);
                           if (mysqli_num_rows($result) == 0) {
                             $aa = 0;
@@ -463,10 +468,10 @@
                           } else {
                             $row = mysqli_fetch_assoc($result);
                           ?>
-                            <td><?php echo number_format($aa = $row['sum']); ?> </td>
+                            <td><?php echo number_format($aa = $row['value']); ?> </td>
                           <?php
                           }
-                          $userQuery = "select value from cost where date < '$da' and gas_id = 2 limit 1";
+                          $userQuery = "select value from cost where date < '$da' and gas_id = 2 order by date DESC  limit 1";
                           $result = mysqli_query($connect, $userQuery);
                           $row = mysqli_fetch_assoc($result);
                           if (mysqli_num_rows($result) == 0) {
@@ -480,9 +485,12 @@
                           <?php } ?>
                           <td><?php echo number_format($sum_91 + $aa); ?> </td>
                           <?php if ($sum_91 == 0) {
-                            echo "<td>0</td>";
+
+                          ?>
+                            <td><?php echo number_format((round($aa,2) * $cc), 2); ?></td>
+                          <?php
                           } else { ?>
-                            <td><?php echo number_format(($bb * $sum_91) + ($aa * $cc), 2); ?></td>
+                            <td><?php echo number_format(($bb * $sum_91) + (round($aa,2) * $cc), 2); ?></td>
                           <?php
                           }
                           $userQuery = "select value from cost where date = '$da' and gas_id = 2 ";
@@ -492,7 +500,7 @@
                             echo "<td>0</td>";
                           } else {
                           ?>
-                            <td><?php echo number_format($row['value']) ?></td>
+                            <td><?php echo number_format($row['value'],2) ?></td>
                           <?php } ?>
                         </tr>
                       <?php
@@ -568,7 +576,7 @@
                             <td><?php echo number_format($bb = ($s / $sum_91) + $row['tran_price'], 2); ?> </td>
                           <?php
                           }
-                          $userQuery = "select sum(value) as sum from history where date = (select date from history where date < '$da' group by date order by date DESC limit 1) and gas_id = 3";
+                          $userQuery = "select value from gastank where date = '$da' and substr(timestamp,1,2) in (11,12,13,14,15,16,17,18) and gas_id = 3";
                           $result = mysqli_query($connect, $userQuery);
                           if (mysqli_num_rows($result) == 0) {
                             $aa = 0;
@@ -578,10 +586,10 @@
                           } else {
                             $row = mysqli_fetch_assoc($result);
                           ?>
-                            <td><?php echo number_format($aa = $row['sum']); ?> </td>
+                            <td><?php echo number_format($aa = $row['value']); ?> </td>
                           <?php
                           }
-                          $userQuery = "select value from cost where date < '$da' and gas_id = 3 limit 1";
+                          $userQuery = "select value from cost where date < '$da'  and gas_id = 3 order by date DESC limit 1";
                           $result = mysqli_query($connect, $userQuery);
                           $row = mysqli_fetch_assoc($result);
                           if (mysqli_num_rows($result) == 0) {
@@ -595,19 +603,20 @@
                           <?php } ?>
                           <td><?php echo number_format($sum_91 + $aa); ?> </td>
                           <?php if ($sum_91 == 0) {
-                            echo "<td>0</td>";
-                          } else { ?>
-                            <td><?php echo number_format(($bb * $sum_91) + ($aa * $cc), 2); ?></td>
+
+                          ?><td><?php echo number_format((round($aa,2) * $cc), 2); ?></td><?php
+                                                                                  } else { ?>
+                            <td><?php echo number_format(($bb * $sum_91) + (round($aa,2) * $cc), 2); ?></td>
                           <?php
-                          }
-                          $userQuery = "select value from cost where date = '$da' and gas_id = 3 ";
-                          $result = mysqli_query($connect, $userQuery);
-                          $row = mysqli_fetch_assoc($result);
-                          if (mysqli_num_rows($result) == 0) {
-                            echo "<td>0</td>";
-                          } else {
+                                                                                  }
+                                                                                  $userQuery = "select value from cost where date = '$da' and gas_id = 3 ";
+                                                                                  $result = mysqli_query($connect, $userQuery);
+                                                                                  $row = mysqli_fetch_assoc($result);
+                                                                                  if (mysqli_num_rows($result) == 0) {
+                                                                                    echo "<td>0</td>";
+                                                                                  } else {
                           ?>
-                            <td><?php echo number_format($row['value']) ?></td>
+                            <td><?php echo number_format($row['value'],2) ?></td>
                           <?php } ?>
                         </tr>
                   <?php
