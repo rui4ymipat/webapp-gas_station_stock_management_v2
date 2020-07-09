@@ -292,7 +292,7 @@
                         <div class="showdetail">ปริมาณที่รับมา</div>
                         <table>
                           <tr>
-                            <td class="name">G91</td>
+                            <td class="name">E20</td>
                             <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="g91"></td>
                             <td class="lit">ลิตร</td>
                           </tr>
@@ -379,7 +379,7 @@
                           <th>ค่าเที่ยว</th>
                           <th style="width: 13%;">ค่าอื่นๆ</th>
                           <th style="width: 10%;">รวมค่าขนส่ง</th>
-                          <th style="width: 7%;">G91</th>
+                          <th style="width: 7%;">E20</th>
                           <th style="width: 7%;">G95</th>
                           <th style="width: 7%;">Diesel</th>
                         </tr>

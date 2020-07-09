@@ -286,16 +286,16 @@
                       </tr>
                       <tr class="setheader">
                         <th>G95</th>
-                        <th>G91</th>
+                        <th>E20</th>
                         <th>Diesel</th>
                         <th>G95</th>
-                        <th>G91</th>
+                        <th>E20</th>
                         <th>Diesel</th>
                         <th>G95</th>
-                        <th>G91</th>
+                        <th>E20</th>
                         <th>Diesel</th>
                         <th>G95</th>
-                        <th>G91</th>
+                        <th>E20</th>
                         <th>Diesel</th>
                       </tr>
                       <?php
@@ -427,7 +427,7 @@
                         <th style="width: 23%;height: 25px;">วันที่</th>
                         <th style="width: 9%;">กะ</th>
                         <th style="width: 20%;">G95</th>
-                        <th style="width: 20%;">G91</th>
+                        <th style="width: 20%;">E20</th>
                         <th style="width: 20%;">Diesel</th>
                       </tr>
                       <?php
@@ -551,7 +551,7 @@
                       <div class="showdetail">ปริมาณน้ำมันในหลุม</div>
                       <table class="account">
                         <tr>
-                          <td class="name">G91</td>
+                          <td class="name">E20</td>
                           <td><input type="text" name="g91" placeholder="ปริมาณ"></td>
                           <td>ลิตร</td>
                         </tr>
@@ -578,7 +578,7 @@
                         <div class="showdetail">ปริมาณน้ำมันบนรถทะเบียน 6134</div>
                         <table class="account">
                           <tr>
-                            <td class="name">G91</td>
+                            <td class="name">E20</td>
                             <td><input type="text" name="6134g91" placeholder="ปริมาณ"></td>
                             <td>ลิตร</td>
                           </tr>
@@ -598,7 +598,7 @@
                         <div class="showdetail">ปริมาณน้ำมันบนรถทะเบียน 1815</div>
                         <table class="account">
                           <tr>
-                            <td class="name">G91</td>
+                            <td class="name">E20</td>
                             <td><input type="text" name="1815g91" placeholder="ปริมาณ"></td>
                             <td>ลิตร</td>
                           </tr>
@@ -618,7 +618,7 @@
                         <div class="showdetail">ปริมาณน้ำมันบนรถ ISUZU</div>
                         <table class="account">
                           <tr>
-                            <td class="name">G91</td>
+                            <td class="name">E20</td>
                             <td><input type="text" name="isg91" placeholder="ปริมาณ"></td>
                             <td>ลิตร</td>
                           </tr>
@@ -648,13 +648,13 @@
                         <th colspan="3">รวม</th>
                       </tr>
                       <tr class="w">
-                        <th>G91</th>
+                        <th>E20</th>
                         <th>G95</th>
                         <th>Diesel</th>
-                        <th>G91</th>
+                        <th>E20</th>
                         <th>G95</th>
                         <th>Diesel</th>
-                        <th>G91</th>
+                        <th>E20</th>
                         <th>G95</th>
                         <th>Diesel</th>
                       </tr>
@@ -763,7 +763,7 @@
                         <th colspan="3" style="height: 25px;">รถอีซูซุ</th>
                       </tr>
                       <tr class="w">
-                        <th>G91</th>
+                        <th>E20</th>
                         <th>G95</th>
                         <th>Diesel</th>
                       </tr>

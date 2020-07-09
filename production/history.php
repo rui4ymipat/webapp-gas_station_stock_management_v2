@@ -343,7 +343,7 @@
                         <table class="account">
 
                           <tr>
-                            <td class="name">G91</td>
+                            <td class="name">E20</td>
                             <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="91p_a1" placeholder="ราคา"></td>
                             <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="91d_a1" placeholder="ปริมาณ" style="margin-left: 15px"></td>
                           </tr>
@@ -366,7 +366,7 @@
                         <table class="account">
 
                           <tr>
-                            <td class="name">G91</td>
+                            <td class="name">E20</td>
                             <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="91p_a2" placeholder="ราคา"></td>
                             <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="91d_a2" placeholder="ปริมาณ" style="margin-left: 15px"></td>
                           </tr>
@@ -389,7 +389,7 @@
                         <table class="account">
 
                           <tr>
-                            <td class="name">G91</td>
+                            <td class="name">E20</td>
                             <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="91p_a3" placeholder="ราคา"></td>
                             <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="91d_a3" placeholder="ปริมาณ" style="margin-left: 15px"></td>
                           </tr>
@@ -462,13 +462,13 @@
                                                           echo number_format($row['sum']) ?> ลิตร</th>
                     </tr>
                     <tr>
-                      <th>G91</th>
+                      <th>E20</th>
                       <th>G95</th>
                       <th>Diesel</th>
-                      <th>G91</th>
+                      <th>E20</th>
                       <th>G95</th>
                       <th>Diesel</th>
-                      <th>G91</th>
+                      <th>E20</th>
                       <th>G95</th>
                       <th>Diesel</th>
                     </tr>

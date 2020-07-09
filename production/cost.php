@@ -222,7 +222,7 @@
                       <?php if ($j == 0) { ?>
                         <tr>
                           <td style="height: 30px;" rowspan="3"><?php echo $show_date; ?></td>
-                          <td style="height: 30px;">G91</td>
+                          <td style="height: 30px;">E20</td>
                           <?php
                           $userQuery = "select price,value from history where date = '$da' and gas_id = 1 and account = 1";
                           $result = mysqli_query($connect, $userQuery);
@@ -606,7 +606,7 @@
 
                           ?><td><?php echo number_format((round($aa,2) * $cc), 2); ?></td><?php
                                                                                   } else { ?>
-                            <td><?php echo number_format(($bb * $sum_91) + (round($aa,2) * $cc), 2); ?></td>
+                            <td><?php $aa =round($aa,2); echo number_format(($bb * $sum_91) + ($aa * $cc), 2); ?></td>
                             <script type="text/javascript">console.log("<?php echo "$bb | $sum_91 | $aa | $cc | $da"; ?>")</script>
                           <?php
                                                                                   }

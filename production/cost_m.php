@@ -223,7 +223,7 @@
                       <?php if ($j == 0) { ?>
                         <tr>
                           <td style="height: 30px;" rowspan="3"><?php echo $show_date; ?></td>
-                          <td style="height: 30px;">G91</td>
+                          <td style="height: 30px;">E20</td>
                           <?php
                           $userQuery = "select price,value from history where date = '$da' and gas_id = 1 and account = 1";
                           $result = mysqli_query($connect, $userQuery);

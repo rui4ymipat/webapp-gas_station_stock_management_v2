@@ -336,7 +336,7 @@
                   var data = google.visualization.arrayToDataTable([
                     ['ยอดขาย', 'แก๊สโซฮอล์ 91'],
                     <?php
-                    $userQuery = "select date from gastank group by date order by date ASC limit 15";
+                    $userQuery = "select date from gastank group by date order by date DESC limit 15";
                     $result1 = mysqli_query($connect, $userQuery);
                     $date = [];
                     while ($lop = mysqli_fetch_assoc($result1)) {
@@ -403,7 +403,7 @@
                   var data = google.visualization.arrayToDataTable([
                     ['ยอดขาย', 'แก๊สโซฮอล์ 95'],
                     <?php
-                    $userQuery = "select date from gastank group by date order by date ASC limit 15";
+                    $userQuery = "select date from gastank group by date order by date DESC limit 15";
                     $result1 = mysqli_query($connect, $userQuery);
                     $date = [];
                     while ($lop = mysqli_fetch_assoc($result1)) {
@@ -471,7 +471,7 @@
                   var data = google.visualization.arrayToDataTable([
                     ['ยอดขาย', 'ดีเซล'],
                     <?php
-                    $userQuery = "select date from gastank group by date order by date ASC limit 15";
+                    $userQuery = "select date from gastank group by date order by date DESC limit 15";
                     $result1 = mysqli_query($connect, $userQuery);
                     $date = [];
                     while ($lop = mysqli_fetch_assoc($result1)) {
@@ -551,7 +551,7 @@
                   <h1 class="todayprice">ราคาน้ำมันหน้าปั้ม</h1>
                   <table class="showgas">
                     <tr class="name">
-                      <td><img src="https://www.bangchak.co.th/img/logo-oil/logo-gasohol-91.png" alt="g91"></td>
+                      <td><img src="https://crmmobile.bangchak.co.th/icon/E20evoWeb1-120.jpg"></td>
                       <td><img src="https://www.bangchak.co.th/img/logo-oil/logo-gasohol-95.png" alt="g95"></td>
                       <td><img src="https://www.bangchak.co.th/img/logo-oil/logo-Hi-diesel.png" alt="desel"></td>
                     </tr>
@@ -586,7 +586,7 @@
                   <h1 class="todayprice">ราคาน้ำมันกทม.</h1>
                   <table class="showgas">
                     <tr class="name">
-                      <td><img src="https://www.bangchak.co.th/img/logo-oil/logo-gasohol-91.png" alt="g91"></td>
+                      <td><img src="https://crmmobile.bangchak.co.th/icon/E20evoWeb1-120.jpg"></td>
                       <td><img src="https://www.bangchak.co.th/img/logo-oil/logo-gasohol-95.png" alt="g95"></td>
                       <td><img src="https://www.bangchak.co.th/img/logo-oil/logo-Hi-diesel.png" alt="desel"></td>
                     </tr>
@@ -752,7 +752,7 @@
                   <h1 class="todayprice">ปริมาณน้ำมันบนรถทะเบียน 6134</h1>
                   <table class="showgas">
                     <tr class="name">
-                      <td><img src="https://www.bangchak.co.th/img/logo-oil/logo-gasohol-91.png" alt="g91"></td>
+                      <td><img src="https://crmmobile.bangchak.co.th/icon/E20evoWeb1-120.jpg"></td>
                       <td><img src="https://www.bangchak.co.th/img/logo-oil/logo-gasohol-95.png" alt="g95"></td>
                       <td><img src="https://www.bangchak.co.th/img/logo-oil/logo-Hi-diesel.png" alt="desel"></td>
                     </tr>
@@ -785,7 +785,7 @@
                   <h1 class="todayprice">ปริมาณน้ำมันบนรถทะเบียน 1815</h1>
                   <table class="showgas">
                     <tr class="name">
-                      <td><img src="https://www.bangchak.co.th/img/logo-oil/logo-gasohol-91.png" alt="g91"></td>
+                      <td><img src="https://crmmobile.bangchak.co.th/icon/E20evoWeb1-120.jpg"></td>
                       <td><img src="https://www.bangchak.co.th/img/logo-oil/logo-gasohol-95.png" alt="g95"></td>
                       <td><img src="https://www.bangchak.co.th/img/logo-oil/logo-Hi-diesel.png" alt="desel"></td>
                     </tr>
@@ -818,7 +818,7 @@
                   <h1 class="todayprice">ปริมาณน้ำมันบนรถทะเบียน ISUZU</h1>
                   <table class="showgas">
                     <tr class="name">
-                      <td><img src="https://www.bangchak.co.th/img/logo-oil/logo-gasohol-91.png" alt="g91"></td>
+                      <td><img src="https://crmmobile.bangchak.co.th/icon/E20evoWeb1-120.jpg"></td>
                       <td><img src="https://www.bangchak.co.th/img/logo-oil/logo-gasohol-95.png" alt="g95"></td>
                       <td><img src="https://www.bangchak.co.th/img/logo-oil/logo-Hi-diesel.png" alt="desel"></td>
                     </tr>

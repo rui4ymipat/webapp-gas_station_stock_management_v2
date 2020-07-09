@@ -368,13 +368,13 @@
                                                           echo number_format($row['sum']) ?> ลิตร</th>
                     </tr>
                     <tr>
-                      <th>G91</th>
+                      <th>E20</th>
                       <th>G95</th>
                       <th>Diesel</th>
-                      <th>G91</th>
+                      <th>E20</th>
                       <th>G95</th>
                       <th>Diesel</th>
-                      <th>G91</th>
+                      <th>E20</th>
                       <th>G95</th>
                       <th>Diesel</th>
                     </tr>

@@ -323,7 +323,7 @@
                           <th>ค่าเที่ยว</th>
                           <th style="width: 13%;">ค่าอื่นๆ</th>
                           <th style="width: 10%;">รวมค่าขนส่ง</th>
-                          <th style="width: 7%;">G91</th>
+                          <th style="width: 7%;">E20</th>
                           <th style="width: 7%;">G95</th>
                           <th style="width: 7%;">Diesel</th>
                         </tr>
