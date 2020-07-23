@@ -126,8 +126,6 @@ if (empty($car) && empty($a)) {
         $result = mysqli_query($connect, $userQuery);
     }
 
-    date_default_timezone_set("Asia/Bangkok");
-    $date = date("Y-m-d");
     $sum_91 = 0;
     $s = 0;
     $userQuery = "select price,value from history where date = '$date' and gas_id = 1 and account = 1";
@@ -389,7 +387,6 @@ if (empty($car) && empty($a)) {
         $result = mysqli_query($connect, $userQuery);
         
     }
-
 
 
     $_SESSION['msg'] = "ดำเนินการสำเร็จ";

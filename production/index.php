@@ -657,7 +657,7 @@
                         $v = $row3['value'];
                         $s = ($row3['value'] / 20000) * 100;
                         ?>
-                        <h1 style="font-size: 170%;"><?php echo "G91 $v ลิตร($s%)";  ?></h1>
+                        <h1 style="font-size: 170%;"><?php echo "E20 $v ลิตร($s%)";  ?></h1>
                       </div>
                     </td>
                     <td style="padding-left: 100px;">
@@ -720,7 +720,7 @@
                   <h1 class="todayprice">ยอดขายย้อนหลัง 15 วัน</h1>
 
                   <br>
-                  <h1 style="font-size: 150%; padding-left: 26%;">แก็สโซฮอล์ 91</h1>
+                  <h1 style="font-size: 150%; padding-left: 26%;">แก็สโซฮอล์ E20</h1>
                   <div id="G91" style="width: 1000px; height: 400px;"></div>
                   <br>
                   <h1 style="font-size: 150%;padding-left: 26%;">แก็สโซฮอล์ 95</h1>

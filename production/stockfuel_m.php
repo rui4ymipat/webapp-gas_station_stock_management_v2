@@ -362,20 +362,38 @@
                             $sum95 = 0;
                             $sumdie = 0;
                             if ($i == 0) {
-                              $userQuery = "select * from buy_gas where date = '$da'";
+                              $userQuery = "select * from buy_gas where date = '$da' and substr(time_stamp,1,2) in (11,12,13,14,15,16,17,18)";
                               $result = mysqli_query($connect, $userQuery);
                               if (mysqli_num_rows($result) == 0) {
                                 ?>
-                                <td rowspan="2">0</td>
-                                <td rowspan="2">0</td>
-                                <td rowspan="2">0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
                               <?php
                               } else {
                                 $row = mysqli_fetch_assoc($result);
                               ?>
-                                <td rowspan="2"><?php echo number_format($row['G91']); ?></td>
-                                <td rowspan="2"><?php echo number_format($row['G95']); ?></td>
-                                <td rowspan="2"><?php echo number_format($row['Desel']); ?></td>
+                                <td><?php echo number_format($row['G91']); ?></td>
+                                <td><?php echo number_format($row['G95']); ?></td>
+                                <td><?php echo number_format($row['Desel']); ?></td>
+                              <?php
+                              }
+                            }
+                            else {
+                              $userQuery = "select * from buy_gas where date = '$da' and substr(time_stamp,1,2) in (19,20,21,22,23,24,1,2,3,4,5,6,7,8,9,10)";
+                              $result = mysqli_query($connect, $userQuery);
+                              if (mysqli_num_rows($result) == 0) {
+                                ?>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                              <?php
+                              } else {
+                                $row = mysqli_fetch_assoc($result);
+                              ?>
+                                <td><?php echo number_format($row['G91']); ?></td>
+                                <td><?php echo number_format($row['G95']); ?></td>
+                                <td><?php echo number_format($row['Desel']); ?></td>
                               <?php
                               }
                             }
@@ -457,7 +475,19 @@
                             <?php
                             }
                             if ($i == 0) {
-                              
+                              $userQuery = "select * from buy_gas where date = '$da' and substr(time_stamp,1,2) in (19,20,21,22,23,24,1,2,3,4,5,6,7,8,9,10)";
+                              $result3 = mysqli_query($connect, $userQuery);                             
+                              if (mysqli_num_rows($result3) == 0){
+                                $b91 = 0;
+                                $b95 = 0;
+                                $bdie = 0;
+                              }
+                              else{
+                                $row3 = mysqli_fetch_assoc($result3);
+                                $b91 = $row3['G91'];
+                                $b95 = $row3['G95'];
+                                $bdie = $row3['Desel'];
+                              }
                             ?>
 
                               <?php
@@ -472,24 +502,24 @@
                               } else {
                                 $row = mysqli_fetch_assoc($result);
                               ?>
-                                <td><?php echo number_format($row['dif'] ); ?></td>
+                                <td><?php echo number_format($row['dif'] +$b91 ); ?></td>
                                 <?php
                                 $userQuery = "select (select value from gastank where date < '$da' and substr(timestamp,1,2) in (19,20,21,22,23,24,1,2,3,4,5,6,7,8,9,10) and gas_id = 2 order by date DESC limit 1)-value as dif from gastank where date = '$da' and substr(timestamp,1,2) in (11,12,13,14,15,16,17,18) and gas_id = 2";
                                 $result = mysqli_query($connect, $userQuery);
                                 $row = mysqli_fetch_assoc($result);
                                 ?>
-                                <td><?php echo number_format($row['dif'] ); ?></td>
+                                <td><?php echo number_format($row['dif'] +$b95 ); ?></td>
                                 <?php
                                 $userQuery = "select (select value from gastank where date < '$da' and substr(timestamp,1,2) in (19,20,21,22,23,24,1,2,3,4,5,6,7,8,9,10) and gas_id = 3 order by date DESC limit 1)-value as dif from gastank where date = '$da' and substr(timestamp,1,2) in (11,12,13,14,15,16,17,18) and gas_id = 3";
                                 $result = mysqli_query($connect, $userQuery);
                                 $row = mysqli_fetch_assoc($result);
                                 ?>
-                                <td><?php echo number_format($row['dif'] ); ?></td>
+                                <td><?php echo number_format($row['dif'] +$bdie ); ?></td>
 
                               <?php
                               }
                             } else {
-                              $userQuery = "select * from buy_gas where date = '$da'";
+                              $userQuery = "select * from buy_gas where date = '$da' and substr(time_stamp,1,2) in (11,12,13,14,15,16,17,18)";
                               $result3 = mysqli_query($connect, $userQuery);                             
                               if (mysqli_num_rows($result3) == 0){
                                 $b91 = 0;
