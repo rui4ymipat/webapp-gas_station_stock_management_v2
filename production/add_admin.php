@@ -13,5 +13,5 @@ if(!$result)
 else
 {
     $_SESSION['msg'] = 'การดำเนินการสำเร็จ';
-    header("Location:management.php");    
+    header("Location:management.php");
 }

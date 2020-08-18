@@ -345,7 +345,7 @@
                           $Dep = mysqli_fetch_assoc($re1);
                         ?>
                           <tr>
-                            <td style="height: 30px;"><?php echo $Tdate  ?></td>
+                            <td style="height: 30px;"><a href="edit-informationGasCar.php?date=<?php echo $d; ?>&car_id=<?php echo $i; ?>"><?php echo $Tdate  ?></a></td>
                             <td><?php echo $row['number']; ?></td>
                             <td><?php echo number_format($row['value'], 2); ?></td>
                             <td><?php echo number_format($Dep['current_price'], 2); ?></td>

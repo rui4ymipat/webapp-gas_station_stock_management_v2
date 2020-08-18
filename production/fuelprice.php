@@ -386,7 +386,7 @@
                 </tr>
                 </table>
                 </form>
-                <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">ตารางค่ากลาง</h1>
+                <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">ตารางค่ากลาง ( กดที่วันที่เพื่อทำการแก้ไข )</h1>
                 <div class="column2">
                   <div class="set_col1">
                     <table border="1" style="text-align: center;">
@@ -423,7 +423,7 @@
                       ?>
                           <tr>
                             <?php if($i == 1){ ?>
-                            <td style="height: 30px;" rowspan="3"><?php echo $date; ?></td>
+                            <td style="height: 30px;" rowspan="3"><a href="edit_fuelprice.php?date=<?php echo $d; ?>"><?php echo $date; ?></a></td>
                             <?php }?>
                             <td style="height: 30px"><?php echo $row['gas']; ?></td>
                             <td><?php echo number_format($row['current_price'], 2); ?></td>

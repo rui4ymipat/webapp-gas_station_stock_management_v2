@@ -551,9 +551,9 @@
                   <h1 class="todayprice">ราคาน้ำมันหน้าปั้ม</h1>
                   <table class="showgas">
                     <tr class="name">
-                      <td><img src="https://crmmobile.bangchak.co.th/icon/E20evoWeb1-120.jpg"></td>
-                      <td><img src="https://www.bangchak.co.th/img/logo-oil/logo-gasohol-95.png" alt="g95"></td>
-                      <td><img src="https://www.bangchak.co.th/img/logo-oil/logo-Hi-diesel.png" alt="desel"></td>
+                    <td><img src="https://crmmobile.bangchak.co.th/icon/E20evoWeb2-76.jpg"></td>
+                      <td><img src="https://crmmobile.bangchak.co.th/icon/GSH95evoWeb2-76.jpg"></td>
+                      <td><img src="https://crmmobile.bangchak.co.th/icon/HiDieselSWeb2-76.jpg"></td>
                     </tr>
                     <tr class="price">
                       <td><?php echo number_format($data_sell[0], 2); ?><div style="font-size: 40%;">บาท/ลิตร</div>
@@ -586,9 +586,9 @@
                   <h1 class="todayprice">ราคาน้ำมันกทม.</h1>
                   <table class="showgas">
                     <tr class="name">
-                      <td><img src="https://crmmobile.bangchak.co.th/icon/E20evoWeb1-120.jpg"></td>
-                      <td><img src="https://www.bangchak.co.th/img/logo-oil/logo-gasohol-95.png" alt="g95"></td>
-                      <td><img src="https://www.bangchak.co.th/img/logo-oil/logo-Hi-diesel.png" alt="desel"></td>
+                      <td><img src="https://crmmobile.bangchak.co.th/icon/E20evoWeb2-76.jpg"></td>
+                      <td><img src="https://crmmobile.bangchak.co.th/icon/GSH95evoWeb2-76.jpg"></td>
+                      <td><img src="https://crmmobile.bangchak.co.th/icon/HiDieselSWeb2-76.jpg"></td>
                     </tr>
                     <tr class="price">
                       <td><?php echo number_format($data_current[0], 2); ?><div style="font-size: 40%;">บาท/ลิตร</div>
@@ -752,9 +752,9 @@
                   <h1 class="todayprice">ปริมาณน้ำมันบนรถทะเบียน 6134</h1>
                   <table class="showgas">
                     <tr class="name">
-                      <td><img src="https://crmmobile.bangchak.co.th/icon/E20evoWeb1-120.jpg"></td>
-                      <td><img src="https://www.bangchak.co.th/img/logo-oil/logo-gasohol-95.png" alt="g95"></td>
-                      <td><img src="https://www.bangchak.co.th/img/logo-oil/logo-Hi-diesel.png" alt="desel"></td>
+                      <td><img src="https://crmmobile.bangchak.co.th/icon/E20evoWeb2-76.jpg"></td>
+                      <td><img src="https://crmmobile.bangchak.co.th/icon/GSH95evoWeb2-76.jpg" alt="g95"></td>
+                      <td><img src="https://crmmobile.bangchak.co.th/icon/HiDieselSWeb2-76.jpg" alt="desel"></td>
                     </tr>
                     <tr class="price">
                       <td><?php echo number_format($g91)  ?> <div style="font-size: 40%;">ลิตร</div>
@@ -785,7 +785,7 @@
                   <h1 class="todayprice">ปริมาณน้ำมันบนรถทะเบียน 1815</h1>
                   <table class="showgas">
                     <tr class="name">
-                      <td><img src="https://crmmobile.bangchak.co.th/icon/E20evoWeb1-120.jpg"></td>
+                      <td><img src="https://crmmobile.bangchak.co.th/icon/E20evoWeb2-76.jpg"></td>
                       <td><img src="https://www.bangchak.co.th/img/logo-oil/logo-gasohol-95.png" alt="g95"></td>
                       <td><img src="https://www.bangchak.co.th/img/logo-oil/logo-Hi-diesel.png" alt="desel"></td>
                     </tr>
@@ -818,7 +818,7 @@
                   <h1 class="todayprice">ปริมาณน้ำมันบนรถทะเบียน ISUZU</h1>
                   <table class="showgas">
                     <tr class="name">
-                      <td><img src="https://crmmobile.bangchak.co.th/icon/E20evoWeb1-120.jpg"></td>
+                      <td><img src="https://crmmobile.bangchak.co.th/icon/E20evoWeb2-76.jpg"></td>
                       <td><img src="https://www.bangchak.co.th/img/logo-oil/logo-gasohol-95.png" alt="g95"></td>
                       <td><img src="https://www.bangchak.co.th/img/logo-oil/logo-Hi-diesel.png" alt="desel"></td>
                     </tr>

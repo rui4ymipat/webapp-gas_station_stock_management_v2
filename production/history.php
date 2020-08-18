@@ -414,6 +414,7 @@
                 <div class="column2">
                   <br>
                   <br>
+                  <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">ประวัติการสั่งซื้อ ( กดที่วันที่เพื่อทำการแก้ไข )</h1>
                   <form action="history_m.php" method="GET">
                     <div class="qwer">
                     <table  class="asdasd">
@@ -484,7 +485,7 @@
                       $d = $lop['date'];
                     ?>
                       <tr>
-                        <td style="width: 11%; height:30px;"><?php echo $date; ?></td>
+                        <td style="width: 11%; height:30px;"><a href="edit-history.php?date=<?php echo $d; ?>"><?php echo $date; ?></a></td>
                         <td><?php
                             $userQuery = "select (select name from car where id = history.car_id) as car from history where date = '$d' group by car";
                             $result = mysqli_query($connect, $userQuery);

@@ -271,167 +271,159 @@
               </div>
 
               <div class="setfont1">
-                
-                
-                <form action="fuelprice_m.php" method="GET">
-                <table>
-                <tr>
-                  
-                  <td><select name="select_m" class="form-control" >
-                  <option value="none" selected disabled hidden>เลือกเดือน</option>
-                  <option value="1">มกราคม</option>
-                  <option value="2">กุมภาพันธ์</option>
-                  <option value="3">มีนาคม</option>
-                  <option value="4">เมษายน</option>
-                  <option value="5">พฤษภาคม</option>
-                  <option value="6">มิถุนายน</option>
-                  <option value="7">กรกฎาคม</option>
-                  <option value="8">สิงหาคม</option>
-                  <option value="9">กันยายน</option>
-                  <option value="10">ตุลาคม </option>
-                  <option value="11">พฤศจิกายน</option>
-                  <option value="12">ธันวาคม</option>
-                  </select></td>
-                  <td><input type="submit" class="btn btn-success" value="Submit"></td>
-                </tr>
-                </table>
-                </form>
-                <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">ตารางค่ากลาง ( กดที่วันที่เพื่อทำการแก้ไข )</h1>
-                <div class="column2">
-                  <div class="set_col1">
-                    <table border="1" style="text-align: center;">
-                      <tr class="setheader">
-                        <th rowspan="2" style="height: 60px;">ว/ด/ป</th>
-                        <th rowspan="2">ชนิด</th>
-                        <th colspan="2" style="width: 24%;">กทม.</th>
-                        <th rowspan="2">ราคาหน้าปั้ม</th>
-                      </tr>
-                      <tr class="setl">
-                        <th>ราคา</th>
-                        <th>ปรับราคา</th>
-                      </tr>
+                <div class="column1">
+                <?php            
+                    $month = array('-', 'มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน', 'กรกฎาคม', 'สิงหาคม', 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม'); 
+                    $Tdate = explode("-", $_GET['date']);
+                    $Sdate = array($Tdate[2], $month[(int) $Tdate[1]], $Tdate[0] + 543);
+                    $d  = implode(" ", $Sdate);
+                ?>
+                  <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">แก้ไขข้อมูลราคาน้ำมันของวันที่ <?php echo $d; ?></h1>
+                  <div class="setborder">
+                    <?php
+                    if (!empty($_SESSION['msg'])) {
+                      session_start();
+                    ?>
+                      <script type="text/javascript">
+                        alert('<?php echo $_SESSION['msg'] ?>');
+                      </script>
+                    <?php
+                      unset($_SESSION['msg']);
+                    }
+                    require_once "connect.php";
+                    $date = $_GET['date'];
+                    $userQuery = "select * from sell where date = '$date' order by account,gas_id";
+                    $result = mysqli_query($connect, $userQuery);
+                    if (mysqli_num_rows($result) == 0){
+                        $a1_91_p = 0;
+                        $a1_91_d = 0;
+                        $a1_95_p = 0;
+                        $a1_95_d = 0;
+                        $a1_de_p = 0;
+                        $a1_de_d = 0;
+                        
+                        $a2_91_p = 0;
+                        $a2_91_d = 0;
+                        $a2_95_p = 0;
+                        $a2_95_d = 0;
+                        $a2_de_p = 0;
+                        $a2_de_d = 0;
 
-                      <?php
-
-                      require_once "connect.php";
-                      date_default_timezone_set("Asia/Bangkok");
-                      $ds = $_GET['select_m'];
-                      $userQuery = "select date from today_price where MONTH(date) = $ds group by date order by date DESC ";
-                      $result1 = mysqli_query($connect, $userQuery);
-                      $month = array('-', 'มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน', 'กรกฎาคม', 'สิงหาคม', 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม');
-                      while ($rows = mysqli_fetch_assoc($result1)) {
-                        $d = $rows['date'];
-                        $Tdate = explode("-", $rows['date']);
-                        $Sdate = array($Tdate[2], $month[(int) $Tdate[1]], $Tdate[0] + 543);
-                        $date  = implode(" ", $Sdate);
-                        $userQuery = "select (select name from gas where id = today_price.gas_id) as gas , current_price , sell_price from today_price where date = '$d' order by gas_id";
-                        $result = mysqli_query($connect, $userQuery);
-                        $i = 1;
-                        while ($row = mysqli_fetch_assoc($result)) {
-                          $userQuery = "select current_price from today_price where date < '$d' and gas_id = $i order by date DESC limit 1";
-                          $result2 = mysqli_query($connect, $userQuery);
-                          $r = mysqli_fetch_assoc($result2);
-                      ?>
-                          <tr>
-                            <?php if($i == 1){ ?>
-                              <td style="height: 30px;" rowspan="3"><a href="edit_fuelprice.php?date=<?php echo $d; ?>"><?php echo $date; ?></a></td>
-                            <?php }?>
-                            <td style="height: 30px"><?php echo $row['gas']; ?></td>
-                            <td><?php echo number_format($row['current_price'], 2); ?></td>
-                            <td><?php if($row['current_price'] - $r['current_price'] > 0){ echo "+";}  echo number_format($row['current_price'] - $r['current_price'] , 2); ?></td>
-                            <td><?php echo number_format($row['sell_price'], 2); ?></td>
-                          </tr>
-                      <?php
-                          $i++;
+                        $a3_91_p = 0;
+                        $a3_91_d = 0;
+                        $a3_95_p = 0;
+                        $a3_95_d = 0;
+                        $a3_de_p = 0;
+                        $a3_de_d = 0;
+                    }
+                    else{
+                        while ($row = mysqli_fetch_assoc($result)){
+                            $data_price[] = $row['price'];
+                            $data_discount[] = $row['discount']; 
                         }
-                      } ?>
-                    </table>
-                  </div>
-                  <div class="set_col2">
-                    <table border="1" style="text-align: center;">
-                      <tr class="setheader">
-                        <th colspan="3" style="height: 30px;">บัญชี 1</th>
-                        <th colspan="3">บัญชี 2</th>
-                        <th colspan="3">บัญชี 3</th>
-                      </tr>
-                      <tr>
-                        <th style="height: 30px;">ราคา</th>
-                        <th>ส่วนลด</th>
-                        <th>เท่ากับ</th>
-                        <th>ราคา</th>
-                        <th>ส่วนลด</th>
-                        <th>เท่ากับ</th>
-                        <th>ราคา</th>
-                        <th>ส่วนลด</th>
-                        <th>เท่ากับ</th>
-                      </tr>
-                      <?php
-                      require_once "connect.php";
-                      date_default_timezone_set("Asia/Bangkok");
-                      $setDateStart = date("Y-m-01");
-                      $setDateEnd = date("Y-m-31");
-                      $userQuery = "SELECT * from sell where account = 1 and MONTH(date) = $ds order by date DESC ,account ,gas_id ";
-                      $result = mysqli_query($connect, $userQuery);
-                      while ($row = mysqli_fetch_assoc($result)) {
-                        $a1_price[] = $row['price'];
-                        $a1_discount[] = $row['discount'];
-                      }
-                      if (mysqli_num_rows($result) == 0) {
-                        ?>
-                        <tr>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
+                        $a1_91_p = $data_price[0];
+                        $a1_91_d = $data_discount[0];
+                        $a1_95_p = $data_price[1];
+                        $a1_95_d = $data_discount[1];
+                        $a1_de_p = $data_price[2];
+                        $a1_de_d = $data_discount[2];
                         
-                        <?php
-                      }
+                        $a2_91_p = $data_price[3];
+                        $a2_91_d = $data_discount[3];
+                        $a2_95_p = $data_price[4];
+                        $a2_95_d = $data_discount[4];
+                        $a2_de_p = $data_price[5];
+                        $a2_de_d = $data_discount[5];
 
-                      $userQuery = "SELECT * from sell where account = 2 and MONTH(date) = $ds order by date DESC ,account ,gas_id";
-                      $result = mysqli_query($connect, $userQuery);
-                      while ($row = mysqli_fetch_assoc($result)) {
-                        $a2_price[] = $row['price'];
-                        $a2_discount[] = $row['discount'];
-                      }
-                      if (mysqli_num_rows($result) == 0) {
+                        $a3_91_p = $data_price[6];
+                        $a3_91_d = $data_discount[6];
+                        $a3_95_p = $data_price[7];
+                        $a3_95_d = $data_discount[7];
+                        $a3_de_p = $data_price[8];
+                        $a3_de_d = $data_discount[8];
+                    }
+                    $result = mysqli_query($connect, $userQuery);
+                    ?>
+                    <script>
+                    <?php for($i=0;$i<count($data_price);$i++)
+                    {
                         ?>
-                        
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        
+                        console.log("<?php echo $data_price[$i]," ",$data_discount[$i]; ?>")
                         <?php
-                      }
+                    } ?></script>
+                    <form action="edit-pricegas.php">
+                      <div class="set_line">
+                        <div class="showdetail">ข้อมูลราคา บัญชี 1</div>
+                        <table class="account">
 
-                      $userQuery = "SELECT * from sell where account = 3 and MONTH(date) = $ds order by date DESC ,account ,gas_id";
-                      $result = mysqli_query($connect, $userQuery);
-                      while ($row = mysqli_fetch_assoc($result)) {
-                        $a3_price[] = $row['price'];
-                        $a3_discount[] = $row['discount'];
-                      }
-                      if (mysqli_num_rows($result) == 0) {
-                        ?>
-                        
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        </tr>
-                        <?php
-                      }
-                      for ($i = 0; $i < count($a1_price); $i++) {
-                      ?>
-                        <tr>
-                          <td style="height: 30px;"><?php echo $a1_price[$i]; ?></td>
-                          <td><?php echo $a1_discount[$i] * -1; ?></td>
-                          <td><?php echo $a1_price[$i] - $a1_discount[$i]; ?></td>
-                          <td><?php echo $a2_price[$i]; ?></td>
-                          <td><?php echo $a2_discount[$i] * -1; ?></td>
-                          <td><?php echo $a2_price[$i] - $a2_discount[$i]; ?></td>
-                          <td><?php echo $a3_price[$i]; ?></td>
-                          <td><?php echo $a3_discount[$i] * -1; ?></td>
-                          <td><?php echo $a3_price[$i] - $a3_discount[$i]; ?></td>
-                        </tr>
-                      <?php } ?>
-                    </table>
+                          <tr>
+                            <td class="name">E20</td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="91p_a1" placeholder="ราคา" value="<?php echo $a1_91_p; ?>"></td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="91d_a1" placeholder="ส่วนลด" value="<?php echo $a1_91_d; ?>" style="margin-left: 15px"></td>
+                          </tr>
+
+                          <tr>
+                            <td class="name">G95</td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="95p_a1" placeholder="ราคา" value="<?php echo $a1_95_p; ?>"></td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="95d_a1" placeholder="ส่วนลด" value="<?php echo $a1_95_d; ?>" style="margin-left: 15px"></td>
+                          </tr>
+
+                          <tr>
+                            <td class="name">Diesel</td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="Dep_a1" placeholder="ราคา" value="<?php echo $a1_de_p; ?>"></td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="Ded_a1" placeholder="ส่วนลด" value="<?php echo $a1_de_d; ?>" style="margin-left: 15px"></td>
+                          </tr>
+                        </table>
+
+                      </div>
+                      <div class="set_line">
+                        <div class="showdetail">ข้อมูลราคา บัญชี 2</div>
+                        <table class="account">
+
+                          <tr>
+                            <td class="name">E20</td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="91p_a2" placeholder="ราคา" value="<?php echo $a2_91_p; ?>"></td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="91d_a2" placeholder="ส่วนลด" value="<?php echo $a2_91_d; ?>" style="margin-left: 15px"></td>
+                          </tr>
+
+                          <tr>
+                            <td class="name">G95</td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="95p_a2" placeholder="ราคา" value="<?php echo $a2_95_p; ?>"></td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="95d_a2" placeholder="ส่วนลด" value="<?php  echo $a2_95_d; ?>" style="margin-left: 15px"></td>
+                          </tr>
+
+                          <tr>
+                            <td class="name">Diesel</td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="Dep_a2" placeholder="ราคา" value="<?php echo $a2_de_p; ?>"></td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="Ded_a2" placeholder="ส่วนลด" value="<?php echo $a2_de_d; ?>" style="margin-left: 15px"></td>
+                          </tr>
+                        </table>
+
+                      </div>
+                      <div class="set_line">
+                        <div class="showdetail">ข้อมูลราคา บัญชี 3</div>
+                        <table class="account">
+                          <tr>
+                            <td class="name">E20</td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="91p_a3" placeholder="ราคา" value="<?php echo $a3_91_p; ?>"></td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="91d_a3" placeholder="ส่วนลด" value="<?php echo $a3_91_d; ?>" style="margin-left: 15px"></td>
+                          </tr>
+                          <tr>
+                            <td class="name">G95</td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="95p_a3" placeholder="ราคา" value="<?php echo $a3_95_p; ?>"></td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="95d_a3" placeholder="ส่วนลด" value="<?php echo $a3_95_d; ?>" style="margin-left: 15px"></td>
+                          </tr>
+
+                          <tr>
+                            <td class="name">Diesel</td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="Dep_a3" placeholder="ราคา" value="<?php echo $a3_de_p; ?>"></td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="Ded_a3" placeholder="ส่วนลด" value="<?php echo $a3_de_d; ?>" style="margin-left: 15px"></td>
+                          </tr>
+                        </table>
+                      </div>
+                    <input type="hidden" name="date" value="<?php echo $date; ?>">
+                      <input type="submit" class="btn btn-success" value="Submit">
+                    </form>
                   </div>
                 </div>
               </div>

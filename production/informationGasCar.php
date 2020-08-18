@@ -16,7 +16,8 @@
       .setborder {
         width: 100%;
       }
-      select.from-control{
+
+      select.from-control {
         width: 130px;
       }
     }
@@ -25,7 +26,8 @@
       .setborder {
         width: 100%;
       }
-      select.from-control{
+
+      select.from-control {
         width: 130px;
       }
     }
@@ -324,7 +326,7 @@
                           <tr>
                             <td class="name">หมายเหตุ</td>
                             <td><input type="text" name="detail"></td>
-                            
+
                           </tr>
                         </table>
                       </div>
@@ -337,7 +339,7 @@
 
                     $table = array('C6134', 'C1815', 'ISUZU');
                     ?>
-                    <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">ข้อมูลรถน้ำมัน</h1>
+                    <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">ข้อมูลรถน้ำมัน ( กดที่วันที่เพื่อทำการแก้ไข )</h1>
                     <form action="informationGasCar_m.php" method="GET">
                       <div class="qwer">
                         <table class="asdasd" style="width: 20%;">
@@ -363,7 +365,9 @@
                       </div>
                     </form>
                     <br>
-                    <?php for ($i = 0; $i < count($id); $i++) { ?>
+                    <?php
+                    
+                    for ($i = 0; $i < count($id); $i++) { ?>
                       <br>
                       <table border="1">
                         <tr>
@@ -400,7 +404,7 @@
                           $Dep = mysqli_fetch_assoc($re1);
                         ?>
                           <tr>
-                            <td style="height: 30px;"><?php echo $Tdate  ?></td>
+                            <td style="height: 30px;"><a href="edit-informationGasCar.php?date=<?php echo $d; ?>&car_id=<?php echo $i; ?>"><?php echo $Tdate  ?></a></td>
                             <td><?php echo $row['number']; ?></td>
                             <td><?php echo number_format($row['value'], 2); ?></td>
                             <td><?php echo number_format($Dep['sell_price'], 2); ?></td>
@@ -429,7 +433,7 @@
                     <div class="setborder">
 
                       <form action="inforCar-Em-pro.php" method="get">
-                        <div class="showdetail">ข้อมูลราคาบัญชี 1</div>
+                        <div class="showdetail">ข้อมูล</div>
                         <table>
                           <tr>
                             <td class="name">ทะเบียน 6134</td>
@@ -453,8 +457,8 @@
                   </div>
                   <div class="setcol2">
                     <div class="show_information">
-                      <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">ข้อมูล</h1>
-                      <table border="1" style="text-align: center; width:104%; ">
+                    <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">ข้อมูลรถน้ำมัน</h1>
+                    <table border="1" style="text-align: center; width:104%; ">
                         <tr>
                           <th rowspan="2" style="width: 13.2%;">วันที่</th>
                           <th colspan="3">ทะเบียน 6134</th>

@@ -120,7 +120,7 @@
         font-weight: 500;
       }
 
-      .column2 table.a {
+      .column2 table.a{
         border: 1px solid rgb(202, 206, 215);
         width: 100%;
         text-align: center;
@@ -317,161 +317,136 @@
               }
               ?>
               <div class="setfont1">
-               
-                <div class="column2">
-                <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">ประวัติการสั่งซื้อ ( กดที่วันที่เพื่อทำการแก้ไข )</h1>
-                  <form action="history_m.php" method="GET">
-                  <div class="qwer">
-                    <table  class="asdasd">
-                      <tr>        
-                        <td><select name="select_m" class="form-control">
-                            <option value="none" selected disabled hidden>เลือกเดือน</option>
-                            <option value="01">มกราคม</option>
-                            <option value="02">กุมภาพันธ์</option>
-                            <option value="03">มีนาคม</option>
-                            <option value="04">เมษายน</option>
-                            <option value="05">พฤษภาคม</option>
-                            <option value="06">มิถุนายน</option>
-                            <option value="07">กรกฎาคม</option>
-                            <option value="08">สิงหาคม</option>
-                            <option value="09">กันยายน</option>
-                            <option value="10">ตุลาคม </option>
-                            <option value="11">พฤศจิกายน</option>
-                            <option value="12">ธันวาคม</option>
-                          </select></td>
-                        <td><input type="submit" class="btn btn-success" value="Submit"></td>
-                      </tr>
-                    </table>
-                    </div>
-                  </form>
-                  <br>
-                  <table border="1" class="a">
-                    <tr>
-                      <th rowspan="2">วันที่</th>
-                      <th rowspan="2">รถขนน้ำมัน</th>
-                      <th colspan="3">บัญชี 1 สั่งซื้อรวม <?php
-                                                          date_default_timezone_set("Asia/Bangkok");
-                                                          $ds = $_GET['select_m'];
-                                                          $date_start = date("Y-$ds-01");
-                                                          $date_end = date("Y-$ds-31");
-                                                          $userQuery = "select sum(value) as sum from history where account = 1 and date between '$date_start' and '$date_end'";
-                                                          $result = mysqli_query($connect, $userQuery);
-                                                          $row = mysqli_fetch_assoc($result);
-                                                          echo number_format($row['sum']) ?> ลิตร</th>
-                      <th colspan="3">บัญชี 2 สั่งซื้อรวม <?php $userQuery = "select sum(value) as sum from history where account = 2 and date between '$date_start' and '$date_end'";
-                                                          $result = mysqli_query($connect, $userQuery);
-                                                          $row = mysqli_fetch_assoc($result);
-                                                          echo number_format($row['sum']) ?> ลิตร</th>
-                      <th colspan="3">บัญชี 3 สั่งซื้อรวม <?php $userQuery = "select sum(value) as sum from history where account = 3 and date between '$date_start' and '$date_end'";
-                                                          $result = mysqli_query($connect, $userQuery);
-                                                          $row = mysqli_fetch_assoc($result);
-                                                          echo number_format($row['sum']) ?> ลิตร</th>
-                    </tr>
-                    <tr>
-                      <th>E20</th>
-                      <th>G95</th>
-                      <th>Diesel</th>
-                      <th>E20</th>
-                      <th>G95</th>
-                      <th>Diesel</th>
-                      <th>E20</th>
-                      <th>G95</th>
-                      <th>Diesel</th>
-                    </tr>
+                <div class="column1">
                     <?php
-                    $month = array('-', 'มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน', 'กรกฎาคม', 'สิงหาคม', 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม');
                     
-                    $userQuery = "select date from history where MONTH(date) = $ds group by date order by date DESC ";
-                    $result1 = mysqli_query($connect, $userQuery);
-                    while ($lop = mysqli_fetch_assoc($result1)) {
-                      $Tdate = explode("-", $lop['date']);
-                      $Sdate = array($Tdate[2], $month[(int) $Tdate[1]], $Tdate[0] + 543);
-                      $date  = implode(" ", $Sdate);
-                      $d = $lop['date'];
+                    $month = array('-', 'มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน', 'กรกฎาคม', 'สิงหาคม', 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม'); 
+                    $Tdate = explode("-", $_GET['date']);
+                    $Sdate = array($Tdate[2], $month[(int) $Tdate[1]], $Tdate[0] + 543);
+                    $d  = implode(" ", $Sdate);
+                    
                     ?>
-                      <tr>
-                        <td style="width: 11%; height:30px;"><a href="edit-history.php?date=<?php echo $d; ?>"><?php echo $date; ?></a></td>
-                        <td><?php
-                            $userQuery = "select (select name from car where id = history.car_id) as car from history where date = '$d' group by car";
+                  <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">แก้ไขข้อมูลประวัติการสั่งซื้อของวัน <?php echo $d; ?></h1>
+                  <div class="setborder">
+                    <?php 
+
+                    require_once "connect.php";
+                    $date = $_GET['date'];
+                    $userQuery = "select * from history where date = '$date'";
+                    $result = mysqli_query($connect, $userQuery);
+                    while ($row = mysqli_fetch_assoc($result)){
+                        $tran_price = $row['tran_price'];
+                        $data_price[] = $row['price'];
+                        $data_value[] = $row['value'];
+                    }
+                    $a1_91_p = $data_price[0];
+                    $a1_91_v = $data_value[0];
+                    $a1_95_p = $data_price[1];
+                    $a1_95_v = $data_value[1];
+                    $a1_de_p = $data_price[2];
+                    $a1_de_v = $data_value[2];
+
+                    $a2_91_p = $data_price[3];
+                    $a2_91_v = $data_value[3];
+                    $a2_95_p = $data_price[4];
+                    $a2_95_v = $data_value[4];
+                    $a2_de_p = $data_price[5];
+                    $a2_de_v = $data_value[5];
+                                              
+                    $a3_91_p = $data_price[6];
+                    $a3_91_v = $data_value[6];
+                    $a3_95_p = $data_price[7];
+                    $a3_95_v = $data_value[7];
+                    $a3_de_p = $data_price[8];
+                    $a3_de_v = $data_value[8];
+                    
+                    ?>
+                    <form action="edit_history.php">
+                      <div class="col1">
+                        <div class="showdetail">รถขนน้ำมัน</div>
+                        <select name="cars" style="padding-left: 5%;width: 60%;height: 35px;margin-bottom: 15px;" class="form-control">
+                          <option value="none" selected disabled hidden>เลือกรถ</option>
+                          <?php 
+                            $userQuery = "SELECT * from car";
                             $result = mysqli_query($connect, $userQuery);
-                            $row = mysqli_fetch_assoc($result);
-                            echo $row['car'];
-                            ?> </td>
-                        <td><?php $userQuery = "select value from history where date = '$d' and gas_id = 1 and account = 1";
-                            $result = mysqli_query($connect, $userQuery);
-                            $row = mysqli_fetch_assoc($result);
-                            if (mysqli_num_rows($result) == 0) {
-                              echo "0";
-                            } else {
-                              echo number_format($row['value']);
-                            } ?></td>
-                        <td><?php $userQuery = "select value from history where date = '$d' and gas_id = 2 and account = 1";
-                            $result = mysqli_query($connect, $userQuery);
-                            $row = mysqli_fetch_assoc($result);
-                            if (mysqli_num_rows($result) == 0) {
-                              echo "0";
-                            } else {
-                              echo number_format($row['value']);
-                            } ?></td>
-                        <td><?php $userQuery = "select value from history where date = '$d' and gas_id = 3 and account = 1";
-                            $result = mysqli_query($connect, $userQuery);
-                            $row = mysqli_fetch_assoc($result);
-                            if (mysqli_num_rows($result) == 0) {
-                              echo "0";
-                            } else {
-                              echo number_format($row['value']);
-                            } ?></td>
-                        <td><?php $userQuery = "select value from history where date = '$d' and gas_id = 1 and account = 2";
-                            $result = mysqli_query($connect, $userQuery);
-                            $row = mysqli_fetch_assoc($result);
-                            if (mysqli_num_rows($result) == 0) {
-                              echo "0";
-                            } else {
-                              echo number_format($row['value']);
-                            } ?></td>
-                        <td><?php $userQuery = "select value from history where date = '$d' and gas_id = 2 and account = 2";
-                            $result = mysqli_query($connect, $userQuery);
-                            $row = mysqli_fetch_assoc($result);
-                            if (mysqli_num_rows($result) == 0) {
-                              echo "0";
-                            } else {
-                              echo number_format($row['value']);
-                            } ?></td>
-                        <td><?php $userQuery = "select value from history where date = '$d' and gas_id = 3 and account = 2";
-                            $result = mysqli_query($connect, $userQuery);
-                            $row = mysqli_fetch_assoc($result);
-                            if (mysqli_num_rows($result) == 0) {
-                              echo "0";
-                            } else {
-                              echo number_format($row['value']);
-                            } ?></td>
-                        <td><?php $userQuery = "select value from history where date = '$d' and gas_id = 1 and account = 3";
-                            $result = mysqli_query($connect, $userQuery);
-                            $row = mysqli_fetch_assoc($result);
-                            if (mysqli_num_rows($result) == 0) {
-                              echo "0";
-                            } else {
-                              echo number_format($row['value']);
-                            } ?></td>
-                        <td><?php $userQuery = "select value from history where date = '$d' and gas_id = 2 and account = 3";
-                            $result = mysqli_query($connect, $userQuery);
-                            $row = mysqli_fetch_assoc($result);
-                            if (mysqli_num_rows($result) == 0) {
-                              echo "0";
-                            } else {
-                              echo number_format($row['value']);
-                            } ?></td>
-                        <td><?php $userQuery = "select value from history where date = '$d' and gas_id = 3 and account = 3";
-                            $result = mysqli_query($connect, $userQuery);
-                            $row = mysqli_fetch_assoc($result);
-                            if (mysqli_num_rows($result) == 0) {
-                              echo "0";
-                            } else {
-                              echo number_format($row['value']);
-                            } ?></td>
-                      </tr>
-                    <?php } ?>
-                  </table>
+                          while ($row = mysqli_fetch_assoc($result)) { ?>
+                            <option value="<?php echo $row['id']; ?>"><?php echo $row['name'] ?></option>
+                          <?php } ?>
+                        </select>
+                        <table>
+                          <tr>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="a" placeholder="ค่าขนส่ง" value="<?php echo $tran_price; ?>"></td>
+                            <td class="name">บาท</td>
+                          </tr>
+                        </table>
+                      </div>
+                      <div class="col2">
+                        <div class="showdetail">ปริมาณที่สั่งซื้อ บัญชี 1</div>
+                        <table class="account">
+                          <tr>
+                            <td class="name">E20</td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="91p_a1" placeholder="ราคา" value="<?php echo $a1_91_p; ?>"></td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="91d_a1" placeholder="ปริมาณ" value="<?php echo $a1_91_v; ?>" style="margin-left: 15px"></td>
+                          </tr>
+                          <tr>
+                            <td class="name">G95</td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="95p_a1" placeholder="ราคา" value="<?php echo $a1_95_p; ?>"></td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="95d_a1" placeholder="ปริมาณ" value="<?php echo $a1_95_v; ?>" style="margin-left: 15px"></td>
+                          </tr>
+                          <tr>
+                            <td class="name">Diesel</td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="Dep_a1" placeholder="ราคา" value="<?php echo $a1_de_p; ?>"></td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="Ded_a1" placeholder="ปริมาณ" value="<?php echo $a1_de_v; ?>" style="margin-left: 15px"></td>
+                          </tr>
+                        </table>
+                      </div>
+                      <div class="col3">
+                        <div class="showdetail">ปริมาณที่สั่งซื้อ บัญชี 2</div>
+                        <table class="account">
+                          <tr>
+                            <td class="name">E20</td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="91p_a2" placeholder="ราคา" value="<?php echo $a2_91_p; ?>"></td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="91d_a2" placeholder="ปริมาณ" value="<?php echo $a2_91_v ?>" style="margin-left: 15px"></td>
+                          </tr>
+
+                          <tr>
+                            <td class="name">G95</td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="95p_a2" placeholder="ราคา" value="<?php echo $a2_95_p; ?>"></td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="95d_a2" placeholder="ปริมาณ" value="<?php echo $a2_95_v; ?>" style="margin-left: 15px"></td>
+                          </tr>
+
+                          <tr>
+                            <td class="name">Diesel</td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="Dep_a2" placeholder="ราคา" value="<?php echo $a2_de_p; ?>"></td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="Ded_a2" placeholder="ปริมาณ" value="<?php echo $a2_de_v; ?>" style="margin-left: 15px"></td>
+                          </tr>
+                        </table>
+                      </div>
+                      <div class="col4">
+                        <div class="showdetail">ปริมาณที่สั่งซื้อ บัญชี 3</div>
+                        <table class="account">
+                          <tr>
+                            <td class="name">E20</td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="91p_a3" placeholder="ราคา" value="<?php echo $a3_91_p; ?>"></td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="91d_a3" placeholder="ปริมาณ" value="<?php echo $a3_91_v; ?>" style="margin-left: 15px"></td>
+                          </tr>
+                          <tr>
+                            <td class="name">G95</td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="95p_a3" placeholder="ราคา" value="<?php echo $a3_95_p; ?>"></td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="95d_a3" placeholder="ปริมาณ" value="<?php echo $a3_95_v; ?>" style="margin-left: 15px"></td>
+                          </tr>
+
+                          <tr>
+                            <td class="name">Diesel</td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="Dep_a3" placeholder="ราคา" value="<?php echo $a3_de_p; ?>"></td>
+                            <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="Ded_a3" placeholder="ปริมาณ" value="<?php echo $a3_de_v; ?>" style="margin-left: 15px"></td>
+                          </tr>
+                        </table>
+                      </div>
+                        <input type="hidden" name="date" value="<?php echo $_GET['date']; ?>">
+                      <input style="border-radius: 10px;" type="submit" class="btn btn-success" value="Submit">
+                    </form>
+                  </div>
                 </div>
               </div>
 

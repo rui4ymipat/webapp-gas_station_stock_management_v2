@@ -274,7 +274,7 @@
                     </div>
                   </form>
                   <div class="c1">
-                    <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">ปริมาณน้ำมัน</h1>
+                    <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">ปริมาณน้ำมัน ( กดที่วันที่เพื่อทำการแก้ไข )</h1>
                     <table border="1" style="text-align: center; width: 100%;">
                       <tr>
                         <th rowspan="2" style="height: 50px;">วันที่</th>
@@ -317,7 +317,7 @@
                         ?>
                           <tr>
                             <?php if ($i == 0) { ?>
-                              <td rowspan="2"><?php echo $date; ?></td>
+                              <td rowspan="2"><a href="edit_stockFuel.php?date=<?php echo $da; ?>"><?php echo $date; ?></a></td>
                               <td style="height: 35px;"> เช้า </td>
                             <?php
                             } else {
@@ -693,7 +693,7 @@
                       date_default_timezone_set("Asia/Bangkok");
                       $d = date("Y-m-d");
                       $month = array('-', 'มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน', 'กรกฎาคม', 'สิงหาคม', 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม');
-                      $userQuery = "select date from gastank group by date order by date DESC limit 7";
+                      $userQuery = "select date from gastank group by date order by date DESC ";
                       $result1 = mysqli_query($connect, $userQuery);
                       while ($lop = mysqli_fetch_assoc($result1)) {
                         $da = $lop['date'];
@@ -798,7 +798,7 @@
                         <th>Diesel</th>
                       </tr>
                       <?php
-                      $userQuery = "select date from gastank group by date order by date DESC limit 7";
+                      $userQuery = "select date from gastank group by date order by date DESC ";
                       $result1 = mysqli_query($connect, $userQuery);
                       while ($lop = mysqli_fetch_assoc($result1)) {
                         

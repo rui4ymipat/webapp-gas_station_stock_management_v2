@@ -9,12 +9,18 @@ $de_c = $_GET['desel-c'];
 $de_s = $_GET['desel-s'];
 
 require_once "connect.php";
-$userQuery = "INSERT INTO today_price(gas_id,current_price,sell_price,date) VALUES(1,$g91_c,$g91_s,'$date') ";
+
+$userQuery = "select * from today_price where date = '$date' ";
 $result = mysqli_query($connect, $userQuery);
-$userQuery = "INSERT INTO today_price(gas_id,current_price,sell_price,date) VALUES(2,$g95_c,$g95_s,'$date') ";
-$result = mysqli_query($connect, $userQuery);
-$userQuery = "INSERT INTO today_price(gas_id,current_price,sell_price,date) VALUES(3,$de_c,$de_s,'$date') ";
-$result = mysqli_query($connect, $userQuery);
+if (mysqli_num_rows($result) == 0){
+    $userQuery = "INSERT INTO today_price(gas_id,current_price,sell_price,date) VALUES(1,$g91_c,$g91_s,'$date') ";
+    $result = mysqli_query($connect, $userQuery);
+    $userQuery = "INSERT INTO today_price(gas_id,current_price,sell_price,date) VALUES(2,$g95_c,$g95_s,'$date') ";
+    $result = mysqli_query($connect, $userQuery);
+    $userQuery = "INSERT INTO today_price(gas_id,current_price,sell_price,date) VALUES(3,$de_c,$de_s,'$date') ";
+    $result = mysqli_query($connect, $userQuery);
+}
+
 
 $userQuery = "select * from sell where date = '$date' ";
 $result = mysqli_query($connect, $userQuery);

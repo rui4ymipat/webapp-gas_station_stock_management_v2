@@ -299,7 +299,7 @@
                     </div>
                   </form>
                   <div class="c1">
-                    <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">ปริมาณน้ำมัน</h1>
+                    <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">ปริมาณน้ำมัน ( กดที่วันที่เพื่อทำการแก้ไข )</h1>
                     <table border="1" style="text-align: center; width: 100%;">
                       <tr>
                         <th rowspan="2" style="height: 50px;">วันที่</th>
@@ -341,7 +341,7 @@
                         ?>
                           <tr>
                             <?php if ($i == 0) { ?>
-                              <td rowspan="2"><?php echo $date; ?></td>
+                              <td rowspan="2"><a href="edit_stockFuel.php?date=<?php echo $da; ?>"><?php echo $date; ?></a></td>
                               <td style="height: 35px;"> เช้า </td>
                             <?php
                             } else {
@@ -627,6 +627,31 @@
                     </form>
                   </div>
                   <br>
+                  <div class="setborder" >
+                    <h1 style="font-weight: 800;color: #2B3E54;font-size: 200%;">กรอกข้อมูล</h1>
+                    <form action="add_buygas.php" method="GET">
+                      <div class="showdetail">ปริมาณที่ลง Tank</div>
+                      <table style="margin-top:20px;">
+                        <tr>
+                          <td class="name">E20</td>
+                          <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="g95" style="width: 90%;" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}"></td>
+                          <td style="font-size: 100%;">ลิตร</td>
+                        </tr>
+                        <tr>
+                          <td class="name">G95</td>
+                          <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="g91" style="width: 90%;" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}"></td>
+                          <td style="font-size: 100%;">ลิตร</td>
+                        </tr>
+                        <tr>
+                          <td class="name">Diesel</td>
+                          <td><input type="text" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}" name="die" style="width: 90%;" onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}"></td>
+                          <td style="font-size: 100%;">ลิตร</td>
+                        </tr>
+                      </table>
+                      <input type="submit" class="btn btn-success" value="Submit">
+                    </form>
+                  </div>
+                  <br>
                   <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">กรอกข้อมูลน้ำมันบนรถ</h1>
                   <div class="setborder" style="width: 100%;">
 
@@ -694,7 +719,7 @@
                       <input style="border-radius: 10px;" type="submit" class="btn btn-success" value="Submit">
                     </form>
                   </div>
-                  <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">ปริมาณน้ำมัน</h1>
+                  <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">ปริมาณน้ำมัน ( กดที่วันที่เพื่อทำการแก้ไข )</h1>
                   <div class="table_em" style="width: 100%;">
                     <table border="1" style="text-align: center; display:inline-block;width:70%;">
                       <tr>
