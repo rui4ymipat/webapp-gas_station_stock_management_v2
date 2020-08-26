@@ -12,6 +12,18 @@
       font-family: 'Prompt', sans-serif;
     }
 
+    input[type="date"] {
+      display: block;
+
+      /* Solution 1 */
+      -webkit-appearance: textfield;
+      -moz-appearance: textfield;
+      min-height: 1.2em;
+
+      /* Solution 2 */
+      min-width: 96%;
+    }
+
     .col1,
     .col2,
     .col3,
@@ -120,7 +132,7 @@
         font-weight: 500;
       }
 
-      .column2 table.a{
+      .column2 table.a {
         border: 1px solid rgb(202, 206, 215);
         width: 100%;
         text-align: center;
@@ -413,31 +425,40 @@
                 </div>
                 <div class="column2">
                   <br>
+                  <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">สร้างข้อมูลย้อนหลัง</h1>
+                  <form action="create-history.php" method="get">
+                    <table>
+                      <tr>
+                        <td><input type="date" name="date" placeholder="MM/DD/YYYY" onfocus="(this.type='date')"></td>
+                        <td><input type="submit" class="btn btn-success" value="Submit"></td>
+                      </tr>
+                    </table>
+                  </form>
                   <br>
                   <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">ประวัติการสั่งซื้อ ( กดที่วันที่เพื่อทำการแก้ไข )</h1>
                   <form action="history_m.php" method="GET">
                     <div class="qwer">
-                    <table  class="asdasd">
-                      <tr>
-                        
-                        <td><select name="select_m" class="form-control">
-                            <option value="none" selected disabled hidden>เลือกเดือน</option>
-                            <option value="01">มกราคม</option>
-                            <option value="02">กุมภาพันธ์</option>
-                            <option value="03">มีนาคม</option>
-                            <option value="04">เมษายน</option>
-                            <option value="05">พฤษภาคม</option>
-                            <option value="06">มิถุนายน</option>
-                            <option value="07">กรกฎาคม</option>
-                            <option value="08">สิงหาคม</option>
-                            <option value="09">กันยายน</option>
-                            <option value="10">ตุลาคม </option>
-                            <option value="11">พฤศจิกายน</option>
-                            <option value="12">ธันวาคม</option>
-                          </select></td>
-                        <td><input type="submit" class="btn btn-success" value="Submit"></td>
-                      </tr>
-                    </table>
+                      <table class="asdasd">
+                        <tr>
+
+                          <td><select name="select_m" class="form-control">
+                              <option value="none" selected disabled hidden>เลือกเดือน</option>
+                              <option value="01">มกราคม</option>
+                              <option value="02">กุมภาพันธ์</option>
+                              <option value="03">มีนาคม</option>
+                              <option value="04">เมษายน</option>
+                              <option value="05">พฤษภาคม</option>
+                              <option value="06">มิถุนายน</option>
+                              <option value="07">กรกฎาคม</option>
+                              <option value="08">สิงหาคม</option>
+                              <option value="09">กันยายน</option>
+                              <option value="10">ตุลาคม </option>
+                              <option value="11">พฤศจิกายน</option>
+                              <option value="12">ธันวาคม</option>
+                            </select></td>
+                          <td><input type="submit" class="btn btn-success" value="Submit"></td>
+                        </tr>
+                      </table>
                     </div>
                   </form>
                   <br>

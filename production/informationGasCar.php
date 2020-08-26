@@ -334,6 +334,15 @@
                     </form>
                   </div>
                   <br>
+                  <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">สร้างข้อมูลย้อนหลัง</h1>
+                  <form action="create-infogascar.php" method="get">
+                    <table>
+                      <tr>
+                        <td><input type="date" name="date"></td>
+                        <td><input type="submit" class="btn btn-success" value="Submit"></td>
+                      </tr>
+                    </table>                 
+                  </form>
                   <div class="show_information">
                     <?php
 

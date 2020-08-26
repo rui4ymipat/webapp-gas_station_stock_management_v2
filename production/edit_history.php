@@ -392,3 +392,4 @@ if (empty($car) && empty($a)) {
     $_SESSION['msg'] = "ดำเนินการสำเร็จ";
     header("Location:history.php");
 }
+?>
