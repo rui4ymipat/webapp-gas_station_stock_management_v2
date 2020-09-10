@@ -89,7 +89,7 @@
         }
 
         input[type="submit"] {
-            margin-left: 88%;
+            margin-left: 40%;
             margin-top: 3.5px;
             border-radius: 5px;
         }
@@ -360,6 +360,7 @@
                                                 <input type="hidden" name="date" value="<?php echo $da; ?>">
                                             </div>
                                             <input type="submit" class="btn btn-success" value="Submit">
+                                            <button class="btn btn-danger" type="button" style="border-radius: 5px;margin-top: 3.5px;margin-left: 30px; color: white;"><a style="color: white;" href="delete-infogascar.php?date=<?php echo $da; ?>&cars=<?php echo $re_car; ?>">Delete</a></button>
                                         </form>
                                     </div>
 

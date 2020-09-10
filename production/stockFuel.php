@@ -826,7 +826,7 @@
                                 <td>0</td>
                                 <td>0</td>
                               <?php
-                              } else {
+                                } else {
                                 $row = mysqli_fetch_assoc($result);
                               ?>
                                 <td><?php echo number_format($row['G91']); ?></td>

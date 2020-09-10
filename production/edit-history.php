@@ -11,7 +11,7 @@
     .site_title {
       font-family: 'Prompt', sans-serif;
     }
-
+    
     .col1,
     .col2,
     .col3,
@@ -120,7 +120,7 @@
         font-weight: 500;
       }
 
-      .column2 table.a{
+      .column2 table.a {
         border: 1px solid rgb(202, 206, 215);
         width: 100%;
         text-align: center;
@@ -318,26 +318,26 @@
               ?>
               <div class="setfont1">
                 <div class="column1">
-                    <?php
-                    
-                    $month = array('-', 'มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน', 'กรกฎาคม', 'สิงหาคม', 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม'); 
-                    $Tdate = explode("-", $_GET['date']);
-                    $Sdate = array($Tdate[2], $month[(int) $Tdate[1]], $Tdate[0] + 543);
-                    $d  = implode(" ", $Sdate);
-                    
-                    ?>
+                  <?php
+
+                  $month = array('-', 'มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน', 'กรกฎาคม', 'สิงหาคม', 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม');
+                  $Tdate = explode("-", $_GET['date']);
+                  $Sdate = array($Tdate[2], $month[(int) $Tdate[1]], $Tdate[0] + 543);
+                  $d  = implode(" ", $Sdate);
+
+                  ?>
                   <h1 style="font-weight: 800;color: #2B3E54;font-size: 180%;">แก้ไขข้อมูลประวัติการสั่งซื้อของวัน <?php echo $d; ?></h1>
                   <div class="setborder">
-                    <?php 
+                    <?php
 
                     require_once "connect.php";
                     $date = $_GET['date'];
                     $userQuery = "select * from history where date = '$date'";
                     $result = mysqli_query($connect, $userQuery);
-                    while ($row = mysqli_fetch_assoc($result)){
-                        $tran_price = $row['tran_price'];
-                        $data_price[] = $row['price'];
-                        $data_value[] = $row['value'];
+                    while ($row = mysqli_fetch_assoc($result)) {
+                      $tran_price = $row['tran_price'];
+                      $data_price[] = $row['price'];
+                      $data_value[] = $row['value'];
                     }
                     $a1_91_p = $data_price[0];
                     $a1_91_v = $data_value[0];
@@ -352,23 +352,23 @@
                     $a2_95_v = $data_value[4];
                     $a2_de_p = $data_price[5];
                     $a2_de_v = $data_value[5];
-                                              
+
                     $a3_91_p = $data_price[6];
                     $a3_91_v = $data_value[6];
                     $a3_95_p = $data_price[7];
                     $a3_95_v = $data_value[7];
                     $a3_de_p = $data_price[8];
                     $a3_de_v = $data_value[8];
-                    
+
                     ?>
                     <form action="edit_history.php">
                       <div class="col1">
                         <div class="showdetail">รถขนน้ำมัน</div>
                         <select name="cars" style="padding-left: 5%;width: 60%;height: 35px;margin-bottom: 15px;" class="form-control">
                           <option value="none" selected disabled hidden>เลือกรถ</option>
-                          <?php 
-                            $userQuery = "SELECT * from car";
-                            $result = mysqli_query($connect, $userQuery);
+                          <?php
+                          $userQuery = "SELECT * from car";
+                          $result = mysqli_query($connect, $userQuery);
                           while ($row = mysqli_fetch_assoc($result)) { ?>
                             <option value="<?php echo $row['id']; ?>"><?php echo $row['name'] ?></option>
                           <?php } ?>
@@ -443,9 +443,12 @@
                           </tr>
                         </table>
                       </div>
-                        <input type="hidden" name="date" value="<?php echo $_GET['date']; ?>">
+                      <input type="hidden" name="date" value="<?php echo $_GET['date']; ?>">
+
                       <input style="border-radius: 10px;" type="submit" class="btn btn-success" value="Submit">
+                      <button class="btn btn-danger" type="button" style="border-radius: 10px;margin-top: 9px;margin-left: 30px; color: white;"><a style="color: white;" href="delete-history.php?date=<?php echo $_GET['date']; ?>">Delete</a></button>
                     </form>
+
                   </div>
                 </div>
               </div>
